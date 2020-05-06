@@ -1,0 +1,144 @@
+.close-btn {
+  background-color: white;
+  border: 1px solid;
+  border-color: lightgray;
+  color: lightgray;
+}
+
+.create-acc-head {
+  background-color: #EFFDFF;
+  color: #309FD8;
+  padding: 7px;
+}
+
+.right {
+  text-align: right;
+}
+
+.alred-reg {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.sign-signup-btn {
+  border: none;
+  color: #E72692;
+  background-color: #EFFDFF;
+  font-weight: 500;
+}
+
+.back-image {
+  background-image: url(/assets/images/banner.svg);
+  height: 87%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.date-picker {
+  text-align: center;
+  background-color: white !important;
+  padding-bottom: 8px;
+  -webkit-box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
+  -moz-box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
+  box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
+}
+
+.input-names {
+  font-size: 13px;
+  font-weight: 500;
+  color: lightgray;
+  margin-bottom: 0px !important;
+  margin-top: 9px;
+}
+
+.display {
+  display: inline-flex;
+}
+
+.birthdate {
+  display: inline-block;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid #E72692;
+  color: lightgray;
+}
+
+.form-details {
+  margin-top: 20px;
+  background: white;
+  padding: 3px 20px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
+}
+
+.select-guardian {
+  width: 30%;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.btn-signup {
+  color: white;
+  border: none;
+  background-color: #309FD8;
+  font-weight: 700;
+  padding: 7px 29px 7px 29px;
+  border-radius: 5px;
+  margin-bottom: 7px;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.form-details {
+  margin-top: 20px;
+  background: white;
+  padding: 3px 20px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
+}
+
+.input-fields {
+  display: block;
+  border: none;
+  border-bottom: 1px solid #E72692;
+  color: lightgray;
+  width: 100%;
+  color: black;
+  padding-left: 5px;
+}
+
+.footer-text {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.footer-updates {
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.check-boxes {
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+}
+
+.col-yel {
+  color: #FFB300;
+}
+
+.center {
+  text-align: center !important;
+}

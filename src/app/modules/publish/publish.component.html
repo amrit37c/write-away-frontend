@@ -1,0 +1,554 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <button type="button" class="logo-btn">We're Publishing!</button>
+    </div>
+    <div class="col-md-6 center center-header">
+      <div class="titles-header ">
+        <span>Titles</span><span class="header-titles">300 </span>
+        <span>Genres</span><span class="header-titles">300</span>
+      </div>
+    </div>
+    <div class="col-md-3 right right-header pull-right">
+      <div class="titles-header">
+        <i class="fa fa-bars" aria-hidden="true" [ngClass]="{ 'col-blue': !gridView, 'col-black': gridView }"
+          (click)="renderView('list')" [ngStyle]="{ 'margin-right': gridView ? '20px' : '20px' }"></i>
+        <i class="fa fa-th" aria-hidden="true" [ngClass]="{ 'col-blue': gridView, 'col-black': !gridView }"
+          (click)="renderView('grid')"></i>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" [ngClass]="{'publish-body' : gridView}">
+    <div class="hero-area container" *ngIf="gridView">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-12">
+
+          <div class="left_sidebar">
+            <div class="row">
+              <div class="col-lg-5 col-12">
+                <div class="left_sidebar_img">
+                  <img src="/assets/images/write.svg" alt="">
+                </div>
+                <!-- <span class="video_tag"><i class="fa fa-copy"></i>Video</span> -->
+                <div class="publisher_desc">
+                  <span>Publisher:</span>
+                  <div class="publisher_name">
+                    <div>
+                      <img src="/assets/images/publisher.svg" alt="">
+                      <span class="name">Daniel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7 col-12">
+                <h3 class="text-uppercase">one novelist's approach elizabeth george</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna Lorem ipsum dolor sit amet, consectetur
+                  adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  sed do eiusmod tempor incididunt ut labore et dolore magna Lorem ipsum dolor sit
+                  amet.
+                  sed do eiusmod tempor incididunt ut labore et aliqua.
+                </p>
+                <div class="classic_details">
+                  <div class="classic_post">
+                    <p>Genres: <span>Classic, Fantasy</span></p>
+                    <p>Age Group: <span>8-14 years</span></p>
+                    <p>Word Count: <span>100 to 300 words</span></p>
+                    <p>Closing Date: <span>Jan 20, 2020</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-12">
+                <div class="follow_details top-fix">
+                  <div class="follow_links">
+                    <p>
+                      <i class="fa fa-share col-blue share-icons"></i>
+                      <span class="span_top_likes">
+                        Share
+                      </span>
+                    </p>
+                    <p class="book_mark_link"><i class="fa fa-bookmark-o"></i>
+                      <span class="clr-blk">Bookmark</span>
+                    </p>
+                  </div>
+
+
+                  <div class="follow_btn">
+                    <a href="publishing.html">Write On this</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+
+          <div class="left_sidebar">
+            <div class="row">
+              <div class="col-lg-5 col-12">
+                <div class="left_sidebar_img">
+                  <img src="/assets/images/write.svg" alt="">
+                </div>
+                <!-- <span class="video_tag"><i class="fa fa-copy"></i>Video</span> -->
+                <div class="publisher_desc">
+                  <span>Publisher:</span>
+                  <div class="publisher_name">
+                    <div>
+                      <img src="/assets/images/publisher.svg" alt="">
+                      <span class="name">Daniel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7 col-12">
+                <h3 class="text-uppercase">one novelist's approach elizabeth george</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna Lorem ipsum dolor sit amet, consectetur
+                  adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  sed do eiusmod tempor incididunt ut labore et dolore magna Lorem ipsum dolor sit
+                  amet.
+                  sed do eiusmod tempor incididunt ut labore et aliqua.
+                </p>
+                <div class="classic_details">
+                  <div class="classic_post">
+                    <p>Genres: <span>Classic, Fantasy</span></p>
+                    <p>Age Group: <span>8-14 years</span></p>
+                    <p>Word Count: <span>100 to 300 words</span></p>
+                    <p>Closing Date: <span>Jan 20, 2020</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-12">
+                <div class="follow_details top-fix">
+                  <div class="follow_links">
+                    <!-- <p class="share-wq"><i class="fa fa-lg fa-share share-icons back-blue2" aria-hidden="true"></i>
+                      Share</p> -->
+                    <p>
+                      <i class="fa fa-share col-blue share-icons"></i>
+                      <span class="span_top_likes">
+                        Share
+                      </span>
+                    </p>
+                    <p class="book_mark_link"><i class="fa fa-bookmark-o"></i>
+                      <span class="clr-blk">Bookmark</span>
+                    </p>
+                  </div>
+
+
+                  <div class="follow_btn">
+                    <a href="publishing.html">Write On this</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+
+          <div class="left_sidebar">
+            <div class="row">
+              <div class="col-lg-5 col-12">
+                <div class="left_sidebar_img">
+                  <img src="/assets/images/write.svg" alt="">
+                </div>
+                <!-- <span class="video_tag"><i class="fa fa-copy"></i>Video</span> -->
+                <div class="publisher_desc">
+                  <span>Publisher:</span>
+                  <div class="publisher_name">
+                    <div>
+                      <img src="/assets/images/publisher.svg" alt="">
+                      <span class="name">Daniel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7 col-12">
+                <h3 class="text-uppercase">one novelist's approach elizabeth george</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna Lorem ipsum dolor sit amet, consectetur
+                  adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  sed do eiusmod tempor incididunt ut labore et dolore magna Lorem ipsum dolor sit
+                  amet.
+                  sed do eiusmod tempor incididunt ut labore et aliqua.
+                </p>
+                <div class="classic_details">
+                  <div class="classic_post">
+                    <p>Genres: <span>Classic, Fantasy</span></p>
+                    <p>Age Group: <span>8-14 years</span></p>
+                    <p>Word Count: <span>100 to 300 words</span></p>
+                    <p>Closing Date: <span>Jan 20, 2020</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-12">
+                <div class="follow_details top-fix">
+                  <div class="follow_links">
+                    <!-- <p class="share-wq"><i class="fa fa-lg fa-share share-icons back-blue2" aria-hidden="true"></i>
+                      Share</p> -->
+                    <p>
+                      <i class="fa fa-share col-blue share-icons"></i>
+                      <span class="span_top_likes">
+                        Share
+                      </span>
+                    </p>
+                    <p class="book_mark_link"><i class="fa fa-bookmark-o"></i>
+                      <span class="clr-blk">Bookmark</span>
+                    </p>
+                  </div>
+
+
+                  <div class="follow_btn">
+                    <a href="publishing.html">Write On this</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+
+          <div class="left_sidebar">
+            <div class="row">
+              <div class="col-lg-5 col-12">
+                <div class="left_sidebar_img">
+                  <img src="/assets/images/write.svg" alt="">
+                </div>
+                <!-- <span class="video_tag"><i class="fa fa-copy"></i>Video</span> -->
+                <div class="publisher_desc">
+                  <span>Publisher:</span>
+                  <div class="publisher_name">
+                    <div>
+                      <img src="/assets/images/publisher.svg" alt="">
+                      <span class="name">Daniel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7 col-12">
+                <h3 class="text-uppercase">one novelist's approach elizabeth george</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna Lorem ipsum dolor sit amet, consectetur
+                  adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  sed do eiusmod tempor incididunt ut labore et dolore magna Lorem ipsum dolor sit
+                  amet.
+                  sed do eiusmod tempor incididunt ut labore et aliqua.
+                </p>
+                <div class="classic_details">
+                  <div class="classic_post">
+                    <p>Genres: <span>Classic, Fantasy</span></p>
+                    <p>Age Group: <span>8-14 years</span></p>
+                    <p>Word Count: <span>100 to 300 words</span></p>
+                    <p>Closing Date: <span>Jan 20, 2020</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-12">
+                <div class="follow_details top-fix">
+                  <div class="follow_links">
+                    <!-- <p class="share-wq"><i class="fa fa-lg fa-share share-icons back-blue2" aria-hidden="true"></i>
+                      Share</p> -->
+                    <p>
+                      <i class="fa fa-share col-blue share-icons"></i>
+                      <span class="span_top_likes">
+                        Share
+                      </span>
+                    </p>
+                    <p class="book_mark_link"><i class="fa fa-bookmark-o"></i>
+                      <span class="clr-blk">Bookmark</span>
+                    </p>
+                  </div>
+
+
+                  <div class="follow_btn">
+                    <a href="publishing.html">Write On this</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" *ngIf="!gridView">
+    <div class="top-body">
+      <!-- bars -->
+      <div class="row center table-header">
+        <p class="col-md-1">S.No</p>
+        <p class="col-md-3">Title/Brief</p>
+        <p class="col-md-1">Genres</p>
+        <p class="col-md-2">Languages/Category</p>
+        <p class="col-md-2">Closing Date</p>
+        <p class="col-md-2">Publisher</p>
+        <p class="col-md-1"></p>
+      </div>
+      <!-- publishing body -->
+      <div class="row background-light-blue table-row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+          <div class="row title-option">
+            <div class="col-md-4 right img-div">
+              <img class="option-img" src="/assets/images/write.svg" />
+              <div class="video-icon">
+                <i class="fa fa-file-video-o" aria-hidden="true"></i> Video
+              </div>
+            </div>
+            <div class="col-md-8">
+              <p class="option-heading">
+                ONE NOVELIST'S APPROACH ELISABETH GEORGE
+              </p>
+              <p class="option-description">
+                Lorem ipsum dolor sit amet consectetur elit. Impedit debitis
+                doloremque at quos non officiis.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-2 right">
+          <button type="button" class="write-on-this-btn">
+            Write on this
+          </button>
+          <div class="follow-span">
+            <i class="fa fa-commenting color-red"></i>
+            <span>Follow</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row background-light-pink table-row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+          <div class="row title-option">
+            <div class="col-md-4 right img-div">
+              <img class="option-img" src="/assets/images/write.svg" />
+              <div class="video-icon">
+                <i class="fa fa-file-video-o" aria-hidden="true"></i> Video
+              </div>
+            </div>
+            <div class="col-md-8">
+              <p class="option-heading">
+                ONE NOVELIST'S APPROACH ELISABETH GEORGE
+              </p>
+              <p class="option-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+                debitis doloremque at quos non officiis.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-2 right">
+          <button type="button" class="background-dark-pink write-on-this-btn">
+            Write on this
+          </button>
+          <div class="follow-span">
+            <i class="fa fa-commenting color-red"></i>
+            <span>Follow</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row background-light-blue table-row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3">
+          <div class="row title-option">
+            <div class="col-md-4 right img-div">
+              <img class="option-img" src="/assets/images/write.svg" />
+              <div class="video-icon">
+                <i class="fa fa-file-video-o" aria-hidden="true"></i> Video
+              </div>
+            </div>
+            <div class="col-md-8">
+              <p class="option-heading">
+                ONE NOVELIST'S APPROACH ELISABETH GEORGE
+              </p>
+              <p class="option-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+                debitis doloremque at quos non officiis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6"></div>
+        <div class="col-md-2 right">
+          <button type="button" class="write-on-this-btn">
+            Write on this
+          </button>
+          <div class="follow-span">
+            <i class="fa fa-commenting color-red"></i>
+            <span>Follow</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row background-light-pink table-row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3">
+          <div class="row title-option">
+            <div class="col-md-4 right img-div">
+              <img class="option-img" src="/assets/images/write.svg" />
+              <div class="video-icon">
+                <i class="fa fa-file-video-o" aria-hidden="true"></i> Video
+              </div>
+            </div>
+            <div class="col-md-8">
+              <p class="option-heading">
+                ONE NOVELIST'S APPROACH ELISABETH GEORGE
+              </p>
+              <p class="option-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+                debitis doloremque at quos non officiis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6"></div>
+        <div class="col-md-2 right">
+          <button type="button" class="background-dark-pink write-on-this-btn">
+            Write on this
+          </button>
+          <div class="follow-span">
+            <i class="fa fa-commenting color-red"></i>
+            <span>Follow</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row background-light-blue table-row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3">
+          <div class="row title-option">
+            <div class="col-md-4 right img-div">
+              <img class="option-img" src="/assets/images/write.svg" />
+              <div class="video-icon">
+                <i class="fa fa-file-video-o" aria-hidden="true"></i> Video
+              </div>
+            </div>
+            <div class="col-md-8">
+              <p class="option-heading">
+                ONE NOVELIST'S APPROACH ELISABETH GEORGE
+              </p>
+              <p class="option-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
+                debitis doloremque at quos non officiis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6"></div>
+        <div class="col-md-2 right">
+          <button type="button" class="write-on-this-btn">
+            Write on this
+          </button>
+          <div class="follow-span">
+            <i class="fa fa-commenting color-red"></i>
+            <span>Follow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <h4 class="load-more">Load More...</h4>
+    <div class="carousel-cont">
+      <div class="carousel-headings text-center">
+        <p> <span class="color-pink">Su</span>ggested Publishing</p>
+      </div>
+      <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+        [indicatorsByChunk]="true">
+        <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+          <div class="row">
+            <div class="col-md-4">
+              <img [src]="slide.image" alt="image slide" class="slider-img">
+            </div>
+            <div class="col-md-8 text-justify">
+              <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+                elit.Impedit debitis doloremque at quos non officiis.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="carousel-caption">
+            <!-- <p>- John Doe</p>
+            <span class="firm_name">ABC Company</span> -->
+          </div>
+        </slide>
+      </carousel>
+    </div>
+    <div class="carousel-cont">
+      <div class="carousel-headings text-center">
+        <p> <span class="color-pink">Yo</span>ur Followings</p>
+      </div>
+      <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+        [indicatorsByChunk]="true">
+        <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+          <div class="row">
+            <div class="col-md-4">
+              <img [src]="slide.image" alt="image slide" class="slider-img">
+            </div>
+            <div class="col-md-8 text-justify">
+              <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+                elit.Impedit debitis doloremque at quos non officiis.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="carousel-caption">
+            <!-- <p>- John Doe</p>
+            <span class="firm_name">ABC Company</span> -->
+          </div>
+        </slide>
+      </carousel>
+    </div>
+    <div class="carousel-cont">
+      <div class="carousel-headings text-center">
+        <p> <span class="color-pink">Yo</span>ur Recent Writing Selections</p>
+      </div>
+      <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+        [indicatorsByChunk]="true">
+        <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+          <div class="row">
+            <div class="col-md-4">
+              <img [src]="slide.image" alt="image slide" class="slider-img">
+            </div>
+            <div class="col-md-8 text-justify">
+              <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+                elit.Impedit debitis doloremque at quos non officiis.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="carousel-caption">
+            <!-- <p>- John Doe</p>
+            <span class="firm_name">ABC Company</span> -->
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </div>

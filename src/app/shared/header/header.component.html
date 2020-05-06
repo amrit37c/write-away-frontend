@@ -1,0 +1,304 @@
+<!-- Start Header -->
+<header id="header" [ngClass]="{'header' : !currentPage }">
+  <div class="middle-bar">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Header for main page -->
+        <div class="col-lg-4 col-md-4 col-12" *ngIf="!currentPage">
+          <div class="logo">
+            <a><img src="assets/images/{{logo}}" alt="logo" style="width:100%" /></a>
+          </div>
+        </div>
+        <!-- Header for main page -->
+        <!-- Header for other page -->
+        <div class="col-lg-3 col-md-3" *ngIf="currentPage">
+          <div class="logo">
+            <a><img src="assets/images/{{logo}}" alt="logo" style="width:100%" /></a>
+          </div>
+        </div>
+        <!-- Header for other page -->
+        <div class="col-lg-5 col-md-5 col-sm-6 col-12">
+          <div class="col-12">
+            <div class="col_form_area">
+              <div class="form-group">
+                <select name="subject" *ngIf="blogRoute">
+                  <option class="option" value="1">For Age 10-12 Years</option>
+                  <option class="option" value="1">For Age 10-14 Years</option>
+                  <option class="option" value="1">For Age 10-16 Years</option>
+                  <option class="option" value="1">For Age 10-18 Years</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-lg-3"></div> -->
+        <div class="col-lg-3 col-md-3 col-sm-6 col-12" *ngIf="!currentPage">
+          <div class="btn_area" *ngIf="!userLogin">
+            <div class="search_btn">
+              <i class="fa fa-search"></i>
+            </div>
+            <div class="btn_img">
+              <a (click)="openModal(template)"><img src="./assets/images/LOGIN.png" /></a>
+
+              <a (click)="openModal(templateSignup)">
+                <img src="./assets/images/REG.png" class="align" /></a>
+            </div>
+          </div>
+          <div class="right-header" style="float: right;" *ngIf="userLogin">
+            <img src="assets/images/publisher.svg">
+            <div>
+              <button>Ricky</button>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-12 text-right  right-header" *ngIf="currentPage">
+          <i class="fa fa-lg fa-search search-icon" aria-hidden="true"></i>
+          <select>
+            <option>View Options</option>
+            <option>Titles (A-Z/Z-A)</option>
+            <option>Date (UP/DOWN)</option>
+            <option>Reads (UP/DOWN)</option>
+            <option>Likes (UP/DOWN)</option>
+          </select>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--/ End Header -->
+<!-- Login Modal -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Login Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div>
+        <button class="close-btn"><i class="fa fa-close"></i>
+        </button>
+      </div>
+      <!-- <head -->
+      <div class="row create-acc-head">
+        <div class="col-md-6">
+          <h4>Sign In</h4>
+        </div>
+        <div class="col-md-6 right mobile-res">
+          <span class="alred-reg">Not yet Registered?</span>
+          <a href="#"> <button class="sign-signup-btn">Sign Up</button></a>
+
+        </div>
+      </div>
+
+      <!-- body -->
+
+
+      <div class="back-image">
+
+        <!-- form -->
+
+        <div class="row">
+
+          <div class="col-md-2"></div>
+
+          <div class="col-md-8">
+            <div class="form-details">
+              <p class="input-names">Please enter your credential below.</p>
+              <h6 class="headings-input-fields">Username</h6>
+              <form role="form" [formGroup]="loginForm">
+                <label class="input-names">Enter Your Email ID</label>
+                <input type="text" class="input-fields" formControlName="email">
+
+                <h6 class="headings-input-fields">Password</h6>
+
+                <label class="input-names">Enter Your Password</label>
+                <input type="password" class="input-fields" formControlName="password">
+
+                <div class="row">
+                  <div class="col-md-4 left">
+
+                    <!-- <span> <input type="checkbox" class="check-boxes"></span> -->
+                    <h6 class="headings-input-fields">Remember Me</h6>
+
+                  </div>
+                  <div class="col-md-4 center">
+                    <!-- <button class="btn-signup">Submit</button> -->
+                    <button type="button " (click)="onSubmitLogin()" class="btn btn-signup">Submit</button>
+
+                  </div>
+
+                  <div class="col-md-4 Right">
+
+                    <a href="forgot-password.html">
+                      <h6 class="headings-input-fields forgot-pass"> Forgot Password</h6>
+                    </a>
+
+                  </div>
+
+
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-2"></div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!-- Login Modal -->
+<!-- Signup Modal -->
+<ng-template #templateSignup>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Signup Modal</h4><br />
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div>
+        <button class="close-btn" (click)="modalRef.hide()"><i class="fa fa-close"></i>
+        </button>
+      </div>
+      <!-- <head -->
+      <div class="row create-acc-head">
+        <div class="col-md-6">
+          <h4>Create an Account</h4>
+        </div>
+        <div class="col-md-6 right mobile-res">
+          <span class="alred-reg">Already Registered?</span>
+          <a href="sign-In.html"><button class="sign-signup-btn">Sign In</button></a>
+        </div>
+      </div>
+
+      <!-- body -->
+
+
+      <div class="back-image">
+
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="date-picker">
+              <span class="input-names"> Please select</span>
+              <h6 class="display">Date of Birth</h6>
+              <div>
+                <select class="birthdate" [(ngModel)]="selectedMonth" (change)="getDates()">
+                  <option *ngFor="let month of months">{{month}}</option>
+                </select>
+                <select class="birthdate" [(ngModel)]="selectedDate">
+                  <option *ngFor="let item of getDates();">{{item}}</option>
+                </select>
+                <select class="birthdate" [(ngModel)]="selectedYear" (change)="calculateAge()">
+                  <option *ngFor="let item of getYears();">{{item}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-2"></div>
+
+          <div class="col-md-8" *ngIf="enableEditUserInfo">
+            <form role="form" [formGroup]="registerForm">
+              <div class="form-details" *ngIf="enableEditGuardianInfo && enableEditUserInfo">
+                <h6 class="">Parent/Guardian details:</h6>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <select class="birthdate select-guardian" formControlName="guardian">
+                      <option>Father</option>
+                      <option>Mother</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="input-names">First/Middle Name</label>
+                    <input required type="text" class="input-fields" formControlName="guardianFirstName">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="input-names">Last Name</label>
+                    <input required type="text" class="input-fields" formControlName="guardianLastName">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="input-names">Email ID</label>
+                    <input required type="text" class="input-fields" formControlName="guardianEmail">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="center">
+                      <button class="btn-signup " (click)="onSubmit()">Submit</button>
+                    </div>
+                  </div>
+
+
+                </div>
+
+
+
+
+
+              </div>
+
+              <!-- form-second -->
+
+              <div class="form-details" *ngIf="enableEditUserInfo && !enableEditGuardianInfo">
+                <h6 class="">Login Details:</h6>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <label class="input-names">First/Middle Name</label>
+                    <input type="text" class="input-fields" formControlName="firstName">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="input-names">Last Name</label>
+                    <input type="text" class="input-fields" formControlName="lastName">
+                  </div>
+                </div>
+
+
+                <label class="input-names">Email ID</label>
+                <input type="text" class="input-fields" formControlName="email">
+
+                <label class="input-names">Password</label>
+                <input type="password" class="input-fields" formControlName="password">
+
+                <label class="input-names">Reconfirm Password</label>
+                <input type="password" class="input-fields" formControlName="confirmPassword">
+
+                <div class="center footer-text">
+                  <p class="footer-updates">Keep me posted with offers/updates etc</p>
+                  <input type="checkbox" class="check-boxes">
+                  <span>I accept the </span> <span class="col-yel">Terms of Use &amp; Legal Policies</span>
+                </div>
+                <div class="center">
+                  <button class="btn-signup" type="button " (click)="onSubmit()" class="btn "
+                    [ngClass]="{ btn_disable: registerForm.invalid }" [disabled]="registerForminvalid"
+                    *ngIf="enableEditGuardianInfo">Sign
+                    Up</button>
+                  <button type="button " (click)="adultUser ? onSubmit() : enableGuardianForm()" class="btn btn-signup"
+                    [ngClass]="{ btn_disable: registerForm.invalid }">{{ adultUser ?  'Sign Up' : 'Next'}}</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-2"></div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!-- Signup Modal -->
