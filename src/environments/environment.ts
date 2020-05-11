@@ -8,6 +8,7 @@ export const environment = {
   apis: {
     register: "user/register",
     login: "user/login",
+    blogs: "blog",
   },
 };
 

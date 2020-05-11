@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { BlogService } from "src/app/service/blog/blog.service";
 
 @Component({
   selector: "app-home",
@@ -19,10 +20,38 @@ export class HomeComponent implements OnInit {
     { image: "assets/images/04.jpg" },
   ];
 
-  constructor() {}
+  blogIndex: number = 0;
+  blogs: Array<any> = [];
 
-  ngOnInit() {}
+  constructor(private blogService: BlogService) {}
+
+  ngOnInit() {
+    this.getBlogs();
+  }
   onSlideRangeChange(indexes: number[]): void {
     this.slidesChangeMessage = `Slides have been switched: ${indexes}`;
+  }
+
+  getBlogs() {
+    this.blogService.get().subscribe((_response) => {
+      this.blogs = _response.body.data;
+    });
+  }
+
+  blogPublishSlider(type: String) {
+    if (type === "-") {
+      if (this.blogIndex < 1) {
+        this.blogIndex = this.blogs.length - 1;
+      } else {
+        this.blogIndex--;
+      }
+    } else {
+      if (this.blogIndex == this.blogs.length - 1) {
+        this.blogIndex = 0;
+        return;
+      } else {
+        this.blogIndex++;
+      }
+    }
   }
 }

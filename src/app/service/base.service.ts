@@ -16,21 +16,29 @@ export class BaseService {
   constructor(apiUrl, public http: HttpClient, router) {
     this.url = apiUrl;
     this.router = router;
+    console.log("Base ", this.url);
   }
 
   /***
    * GET All record from the server
    **/
 
-  get(json?: string, page?, sort?): Observable<any> {
+  get(json?: Object, page?, sort?): Observable<any> {
     // const queryStrings = { size: environment.ItemperPage, page };
     // let httpParams = new HttpParams()
     //   .set("size", environment.ItemperPage)
     //   .set("page", page);
-
+    let httpParams;
+    if (json) {
+      httpParams = new HttpParams().set(
+        Object.keys(json)[0],
+        Object.values(json)[0]
+      );
+    }
     return this.http
       .get<any>(this.url, {
         // headers: this.token(),
+        params: httpParams,
         responseType: "json",
         observe: "response",
       })

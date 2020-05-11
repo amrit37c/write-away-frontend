@@ -18,7 +18,7 @@ const routes: Routes = [
       import("./modules/publish/publish.module").then((m) => m.PublishModule),
   },
   {
-    path: "blogs",
+    path: "blogs/:id",
     loadChildren: () =>
       import("./modules/blogs/blogs.module").then((m) => m.BlogsModule),
   },

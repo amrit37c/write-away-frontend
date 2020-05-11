@@ -21,15 +21,15 @@
   <div class="container-fluid" [ngClass]="{'publish-body' : gridView}">
     <div class="hero-area container" *ngIf="gridView">
       <div class="row">
-        <div class="col-lg-6 col-md-6 col-12">
+        <div class="col-lg-6 col-md-6 col-12" *ngFor="let blog of blogs;let i=index;">
 
           <div class="left_sidebar">
             <div class="row">
               <div class="col-lg-5 col-12">
                 <div class="left_sidebar_img">
-                  <img src="/assets/images/write.svg" alt="">
+                  <img src="http://localhost:3000/images/{{blog.media}}" alt="">
                 </div>
-                <!-- <span class="video_tag"><i class="fa fa-copy"></i>Video</span> -->
+
                 <div class="publisher_desc">
                   <span>Publisher:</span>
                   <div class="publisher_name">
@@ -41,14 +41,9 @@
                 </div>
               </div>
               <div class="col-lg-7 col-12">
-                <h3 class="text-uppercase">one novelist's approach elizabeth george</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna Lorem ipsum dolor sit amet, consectetur
-                  adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  sed do eiusmod tempor incididunt ut labore et dolore magna Lorem ipsum dolor sit
-                  amet.
-                  sed do eiusmod tempor incididunt ut labore et aliqua.
+                <h3 class="text-uppercase">{{blog.title}}</h3>
+                <p [innerHTML]="blog.content">
+
                 </p>
                 <div class="classic_details">
                   <div class="classic_post">
@@ -124,8 +119,6 @@
               <div class="col-lg-12 col-12">
                 <div class="follow_details top-fix">
                   <div class="follow_links">
-                    <!-- <p class="share-wq"><i class="fa fa-lg fa-share share-icons back-blue2" aria-hidden="true"></i>
-                      Share</p> -->
                     <p>
                       <i class="fa fa-share col-blue share-icons"></i>
                       <span class="span_top_likes">
@@ -147,15 +140,13 @@
           </div>
 
         </div>
-        <div class="col-lg-6 col-md-6 col-12">
-
+        <!-- <div class="col-lg-6 col-md-6 col-12">
           <div class="left_sidebar">
             <div class="row">
               <div class="col-lg-5 col-12">
                 <div class="left_sidebar_img">
                   <img src="/assets/images/write.svg" alt="">
                 </div>
-                <!-- <span class="video_tag"><i class="fa fa-copy"></i>Video</span> -->
                 <div class="publisher_desc">
                   <span>Publisher:</span>
                   <div class="publisher_name">
@@ -188,8 +179,6 @@
               <div class="col-lg-12 col-12">
                 <div class="follow_details top-fix">
                   <div class="follow_links">
-                    <!-- <p class="share-wq"><i class="fa fa-lg fa-share share-icons back-blue2" aria-hidden="true"></i>
-                      Share</p> -->
                     <p>
                       <i class="fa fa-share col-blue share-icons"></i>
                       <span class="span_top_likes">
@@ -200,8 +189,6 @@
                       <span class="clr-blk">Bookmark</span>
                     </p>
                   </div>
-
-
                   <div class="follow_btn">
                     <a href="publishing.html">Write On this</a>
                   </div>
@@ -209,17 +196,14 @@
               </div>
             </div>
           </div>
-
-        </div>
-        <div class="col-lg-6 col-md-6 col-12">
-
+        </div> -->
+        <!-- <div class="col-lg-6 col-md-6 col-12">
           <div class="left_sidebar">
             <div class="row">
               <div class="col-lg-5 col-12">
                 <div class="left_sidebar_img">
                   <img src="/assets/images/write.svg" alt="">
                 </div>
-                <!-- <span class="video_tag"><i class="fa fa-copy"></i>Video</span> -->
                 <div class="publisher_desc">
                   <span>Publisher:</span>
                   <div class="publisher_name">
@@ -252,8 +236,6 @@
               <div class="col-lg-12 col-12">
                 <div class="follow_details top-fix">
                   <div class="follow_links">
-                    <!-- <p class="share-wq"><i class="fa fa-lg fa-share share-icons back-blue2" aria-hidden="true"></i>
-                      Share</p> -->
                     <p>
                       <i class="fa fa-share col-blue share-icons"></i>
                       <span class="span_top_likes">
@@ -264,8 +246,6 @@
                       <span class="clr-blk">Bookmark</span>
                     </p>
                   </div>
-
-
                   <div class="follow_btn">
                     <a href="publishing.html">Write On this</a>
                   </div>
@@ -273,8 +253,64 @@
               </div>
             </div>
           </div>
-
         </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <div class="left_sidebar">
+            <div class="row">
+              <div class="col-lg-5 col-12">
+                <div class="left_sidebar_img">
+                  <img src="/assets/images/write.svg" alt="">
+                </div>
+                <div class="publisher_desc">
+                  <span>Publisher:</span>
+                  <div class="publisher_name">
+                    <div>
+                      <img src="/assets/images/publisher.svg" alt="">
+                      <span class="name">Daniel</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7 col-12">
+                <h3 class="text-uppercase">one novelist's approach elizabeth george</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna Lorem ipsum dolor sit amet, consectetur
+                  adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  sed do eiusmod tempor incididunt ut labore et dolore magna Lorem ipsum dolor sit
+                  amet.
+                  sed do eiusmod tempor incididunt ut labore et aliqua.
+                </p>
+                <div class="classic_details">
+                  <div class="classic_post">
+                    <p>Genres: <span>Classic, Fantasy</span></p>
+                    <p>Age Group: <span>8-14 years</span></p>
+                    <p>Word Count: <span>100 to 300 words</span></p>
+                    <p>Closing Date: <span>Jan 20, 2020</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-12">
+                <div class="follow_details top-fix">
+                  <div class="follow_links">
+                    <p>
+                      <i class="fa fa-share col-blue share-icons"></i>
+                      <span class="span_top_likes">
+                        Share
+                      </span>
+                    </p>
+                    <p class="book_mark_link"><i class="fa fa-bookmark-o"></i>
+                      <span class="clr-blk">Bookmark</span>
+                    </p>
+                  </div>
+                  <div class="follow_btn">
+                    <a href="publishing.html">Write On this</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -293,24 +329,21 @@
         <p class="col-md-1"></p>
       </div>
       <!-- publishing body -->
-      <div class="row background-light-blue table-row">
+      <div class="row background-light-blue table-row" *ngFor="let blog of blogs;let i=index">
         <div class="col-md-1"></div>
         <div class="col-md-3">
           <div class="row title-option">
             <div class="col-md-4 right img-div">
-              <img class="option-img" src="/assets/images/write.svg" />
+              <img class="option-img" src="http://localhost:3000/images/{{blog.media}}" />
               <div class="video-icon">
                 <i class="fa fa-file-video-o" aria-hidden="true"></i> Video
               </div>
             </div>
             <div class="col-md-8">
               <p class="option-heading">
-                ONE NOVELIST'S APPROACH ELISABETH GEORGE
+                {{blog.title}}
               </p>
-              <p class="option-description">
-                Lorem ipsum dolor sit amet consectetur elit. Impedit debitis
-                doloremque at quos non officiis.
-              </p>
+              <p class="option-description" [innerHTML]="blog.content"></p>
             </div>
           </div>
         </div>

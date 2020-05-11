@@ -16,14 +16,11 @@
   <!-- ---------------body --------------->
 
   <div class="">
-
-
-
     <div class="container-fluid center blog-body">
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-          <img src="/assets/images/hunt.svg" class="hunt-img">
+          <img src="http://localhost:3000/images/{{blog.media}}" *ngIf="blog && blog.media" class="hunt-img">
         </div>
         <div class="col-md-3"></div>
       </div>
@@ -32,69 +29,19 @@
         <div class="col-md-8 center">
           <div class="row">
             <div class="col-lg-2">
-              <span class="date"> June10, 2019 </span>
+              <span class="date" *ngIf="blog && blog.content"> {{blog.createdAt | date: 'MMM dd, yyyy'}} </span>
             </div>
             <div class="col-lg-10">
-              <h3 class="blog-title">ONE NOVELIST'S APPROACH</h3>
+              <h3 class="blog-title" *ngIf="blog && blog.title">{{blog.title}}</h3>
             </div>
           </div>
 
 
           <div class="text-style">
-            
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum.
-            </p>
 
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis
-              aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum.
-            </p>
-          </div>
+            <p [innerHTML]="blog.content" *ngIf="blog && blog.content">
 
-          <div class="text-quote text-style">
-            <p class="commas">,,</p>
-            <p class="commas-sec"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis
-              aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum.</p>
-          </div>
-          <div class="text-style">
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis
-              aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum. </p>
-          </div>
-          <div class="text-style">
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis
-              aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-              laborum. </p>
+            </p>
           </div>
 
           <div class="row">
@@ -103,7 +50,7 @@
                 <div class="col-md-4 icons-res">
 
                   <i class="fa fa-book new-icons-blog fa-lg  clr1"></i>
-                  <span class="pricing">1500</span>
+                  <span class="pricing" *ngIf="blog && blog.readCount">{{blog.readCount}}</span>
                   <div>
                     <span class="info-icon blog-icons">Reads</span>
                   </div>
@@ -114,7 +61,7 @@
 
 
                   <i class="fa fa-lg new-icons-blog  fa-heart-o clr2" aria-hidden="true"></i>
-                  <span class="pricing">90</span>
+                  <span class="pricing" *ngIf="blog && blog.likeCount">{{blog.likeCount}}</span>
                   <div>
                     <span class="info-icon blog-icons">Likes</span>
                   </div>
@@ -126,9 +73,8 @@
                   <i class="fa  new-icons-blog fa-share share-eco  ">
                   </i>
 
-                  <span class="pricing">450</span>
+                  <span class="pricing" *ngIf="blog && blog.shareCount">{{blog.shareCount}}</span>
                   <div>
-
                     <span class="info-icon blog-icons">Shares</span>
                   </div>
 
@@ -154,48 +100,23 @@
 
       <div class="row">
 
-        <div class="col-md-3"></div>
-
-        <div class="col-md-3 recent-blog-blk">
-          <div class="date-recent"> <span> June10, 2019</span> </div>
+        <div class="col-md-3 recent-blog-blk" *ngFor="let blog of recentBlogs">
+          <div class="date-recent"> <span> {{ blog.createdAt | date : 'MMM dd,yyyy'   }}</span> </div>
           <div class="rcbb">
             <div class="recent-blog-img">
-              <img src="/assets/images/recent-blogs.jpg">
+              <img src="http://localhost:3000/images/{{blog.media}}">
             </div>
             <div class="comm-font">
-              <p>Communication</p>
+              <p>{{blog.title}}</p>
             </div>
             <div class="recent-text-font">
-              <p>Lorem ipsum dolor sit efef gad amet, efe consectetur fe fadipiscing elit, incididunt ut labore
-                et dolore dwd, efe consectetur fe fadipiscing elit.</p>
+              <p [innerHTML]="blog.content"></p>
             </div>
             <span class="read-more">
-              <p>Read More </p>
+              <p (click)="addToRecent(blog._id)"> Read More </p>
             </span>
           </div>
         </div>
-
-        <div class="col-md-3 recent-blog-blk recent-blog-blk-2 ">
-          <div class="date-recent"> <span> June10, 2019</span> </div>
-          <div class="rcbb">
-            <div class="recent-blog-img">
-              <img src="/assets/images/recent-blogs.jpg">
-            </div>
-            <div class="comm-font">
-              <p>Communication</p>
-            </div>
-            <div class="recent-text-font">
-              <p>Lorem ipsum dolor sit efef gad amet, efe consectetur fe fadipiscing elit,
-                incididunt ut labore
-                et dolore dwd, efe consectetur fe fadipiscing elit.</p>
-            </div>
-            <span class="read-more">
-              <p>Read More </p>
-            </span>
-          </div>
-        </div>
-
-        <div class="col-md-3"></div>
       </div>
 
       <div class="top-margin"></div>
@@ -207,6 +128,89 @@
         </div>
       </div>
     </div>
+
+
+    <!-- Recent BLOG READ MORE VIEW -->
+    <div class="container-fluid center blog-body" *ngIf="(recentBlog | json)  != ({} | json)">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <img src="http://localhost:3000/images/{{recentBlog.media}}" *ngIf="recentBlog && recentBlog.media"
+            class="hunt-img">
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 center">
+          <div class="row">
+            <div class="col-lg-2">
+              <span class="date" *ngIf="recentBlog && recentBlog.content">
+                {{recentBlog.createdAt | date: 'MMM dd, yyyy'}} </span>
+            </div>
+            <div class="col-lg-10">
+              <h3 class="blog-title" *ngIf="recentBlog && recentBlog.title">{{recentBlog.title}}</h3>
+            </div>
+          </div>
+
+
+          <div class="text-style">
+
+            <p [innerHTML]="recentBlog.content" *ngIf="recentBlog && recentBlog.content">
+
+            </p>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="row blog-body-icons">
+                <div class="col-md-4 icons-res">
+
+                  <i class="fa fa-book new-icons-blog fa-lg  clr1"></i>
+                  <span class="pricing">{{blog.readCount || 0}}</span>
+                  <div>
+                    <span class="info-icon blog-icons">Reads</span>
+                  </div>
+
+                </div>
+
+                <div class="col-md-4 icons-res">
+
+
+                  <i class="fa fa-lg new-icons-blog  fa-heart-o clr2" aria-hidden="true"></i>
+                  <span class="pricing" *ngIf="recentBlog.likeCount">{{recentBlog.likeCount || 0}}</span>
+                  <div>
+                    <span class="info-icon blog-icons">Likes</span>
+                  </div>
+
+
+                </div>
+
+                <div class="col-md-4 icons-res">
+                  <i class="fa  new-icons-blog fa-share share-eco  ">
+                  </i>
+
+                  <span class="pricing" *ngIf="recentBlog.shareCount">{{recentBlog.shareCount || 0}}</span>
+                  <div>
+                    <span class="info-icon blog-icons">Shares</span>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-md-6"></div>
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+    <!-- Recent BLOG READ MORE VIEW -->
 
   </div>
 </div>

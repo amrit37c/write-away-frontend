@@ -6,14 +6,14 @@
         <!-- Header for main page -->
         <div class="col-lg-4 col-md-4 col-12" *ngIf="!currentPage">
           <div class="logo">
-            <a><img src="assets/images/{{logo}}" alt="logo" style="width:100%" /></a>
+            <a><img src="assets/images/{{logo}}" routerLink="/home" alt="logo" style="width:100%" /></a>
           </div>
         </div>
         <!-- Header for main page -->
         <!-- Header for other page -->
         <div class="col-lg-3 col-md-3" *ngIf="currentPage">
           <div class="logo">
-            <a><img src="assets/images/{{logo}}" alt="logo" style="width:100%" /></a>
+            <a><img src="assets/images/{{logo}}" routerLink="/home" alt="logo" style="width:100%" /></a>
           </div>
         </div>
         <!-- Header for other page -->

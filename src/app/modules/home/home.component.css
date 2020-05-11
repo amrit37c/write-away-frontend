@@ -810,7 +810,7 @@ ul li {
   word-spacing: 5px;
   font-size: 22px;
   font-family: Montserrat;
-  padding-top: 10px;
+  padding-top: 2rem;
 }
 
 .out-of-hero-area p {
@@ -909,8 +909,8 @@ ul li {
 }
 
 .top-fix {
-  padding-top: 72px !important;
-  padding-bottom: 22px !important;
+  padding-top: 69px !important;
+
 }
 
 /* Index after modify  images */
@@ -1064,12 +1064,20 @@ ul li {
   color: #7aced8;
 }
 
+
 /* 01/05 */
 .service_right_desc,
 .social_read.responsive-a a,
 .email-btn,
 .follow_links,
-.publisher_desc {
+.publisher_desc,
+.hero-area {
   font-family: Montserrat;
 
+}
+
+/* 08-05 */
+/* slider of  */
+.slider-direction-icon {
+  cursor: pointer;
 }

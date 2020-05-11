@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { BlogService } from "src/app/service/blog/blog.service";
 
 @Component({
   selector: "app-publish",
@@ -11,6 +12,7 @@ export class PublishComponent implements OnInit {
   itemsPerSlide = 3;
   singleSlideOffset = false;
   noWrap = false;
+  blogs: Array<any> = [];
 
   slidesChangeMessage = "";
   slides = [
@@ -20,9 +22,11 @@ export class PublishComponent implements OnInit {
     { image: "assets/images/write.svg" },
     { image: "assets/images/write.svg" },
   ];
-  constructor() {}
+  constructor(private service: BlogService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getBlogs(); // fetch blogs
+  }
 
   /**
    * // TODO: comment renderView
@@ -32,5 +36,11 @@ export class PublishComponent implements OnInit {
    */
   renderView(type: string) {
     type === "list" ? (this.gridView = false) : (this.gridView = true);
+  }
+
+  getBlogs() {
+    this.service.get().subscribe((_response) => {
+      this.blogs = _response.body.data;
+    });
   }
 }
