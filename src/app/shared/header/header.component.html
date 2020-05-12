@@ -40,7 +40,7 @@
             <div class="btn_img">
               <a (click)="openModal(template)"><img src="./assets/images/LOGIN.png" /></a>
 
-              <a (click)="openModal(templateSignup)">
+              <a (click)="openModal(templateSignup)" class="cursor">
                 <img src="./assets/images/REG.png" class="align" /></a>
             </div>
           </div>
@@ -71,24 +71,27 @@
 <!-- Login Modal -->
 <ng-template #template>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Login Modal</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
     <div class="container-fluid">
-      <div>
+      <!-- <div>
         <button class="close-btn"><i class="fa fa-close"></i>
         </button>
-      </div>
+      </div> -->
       <!-- <head -->
       <div class="row create-acc-head">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <h4>Sign In</h4>
         </div>
-        <div class="col-md-6 right mobile-res">
-          <span class="alred-reg">Not yet Registered?</span>
+        <div class="col-md-2 right mobile-res">
+
+        </div>
+        <div class="col-md-6 right">
+          <span class="alred-reg not-reg-modal">Not yet Registered?</span>
+
           <a href="#"> <button class="sign-signup-btn">Sign Up</button></a>
 
         </div>
@@ -103,9 +106,8 @@
 
         <div class="row">
 
-          <div class="col-md-2"></div>
 
-          <div class="col-md-8">
+          <div class="col-md-12 login-modal">
             <div class="form-details">
               <p class="input-names">Please enter your credential below.</p>
               <h6 class="headings-input-fields">Username</h6>
@@ -120,10 +122,10 @@
 
                 <div class="row">
                   <div class="col-md-4 left">
-
-                    <!-- <span> <input type="checkbox" class="check-boxes"></span> -->
-                    <h6 class="headings-input-fields">Remember Me</h6>
-
+                    <p class="remeber-section">
+                      <span> <input type="checkbox" class="modal-check"></span>
+                      <span class="headings-input-fields ">Remember Me</span>
+                    </p>
                   </div>
                   <div class="col-md-4 center">
                     <!-- <button class="btn-signup">Submit</button> -->
@@ -134,7 +136,7 @@
                   <div class="col-md-4 Right">
 
                     <a href="forgot-password.html">
-                      <h6 class="headings-input-fields forgot-pass"> Forgot Password</h6>
+                      <h6 class="headings-input-fields forget-pass-login-modal"> Forgot Password</h6>
                     </a>
 
                   </div>
@@ -145,7 +147,6 @@
             </div>
           </div>
 
-          <div class="col-md-2"></div>
 
         </div>
 
@@ -157,24 +158,24 @@
 <!-- Signup Modal -->
 <ng-template #templateSignup>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Signup Modal</h4><br />
+    <!-- <h4 class="modal-title pull-left">Signup Modal</h4><br /> -->
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body ">
     <div class="container-fluid">
-      <div>
+      <!-- <div>
         <button class="close-btn" (click)="modalRef.hide()"><i class="fa fa-close"></i>
         </button>
-      </div>
+      </div> -->
       <!-- <head -->
-      <div class="row create-acc-head">
-        <div class="col-md-6">
-          <h4>Create an Account</h4>
+      <div class="row create-acc-head ">
+        <div class="col-md-6 ">
+          <h5>Create an Account</h5>
         </div>
         <div class="col-md-6 right mobile-res">
-          <span class="alred-reg">Already Registered?</span>
+          <span class="alred-reg not-reg-modal">Already Registered?</span>
           <a href="sign-In.html"><button class="sign-signup-btn">Sign In</button></a>
         </div>
       </div>
@@ -185,12 +186,21 @@
       <div class="back-image">
 
         <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
             <div class="date-picker">
-              <span class="input-names"> Please select</span>
-              <h6 class="display">Date of Birth</h6>
-              <div>
+              <div class="row">
+                <div class="col-6">
+                  <span class="input-names"> Please select</span>
+                </div>
+                <div class="col-6">
+
+                  <h6 class="display">Date of Birth</h6>
+
+                </div>
+              </div>
+
+              <div class="select-dates">
                 <select class="birthdate" [(ngModel)]="selectedMonth" (change)="getDates()">
                   <option *ngFor="let month of months">{{month}}</option>
                 </select>
@@ -203,14 +213,13 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4"></div>
+          <div class="col-md-2"></div>
         </div>
 
         <div class="row">
 
-          <div class="col-md-2"></div>
 
-          <div class="col-md-8" *ngIf="enableEditUserInfo">
+          <div class="col-md-12" *ngIf="enableEditUserInfo">
             <form role="form" [formGroup]="registerForm">
               <div class="form-details" *ngIf="enableEditGuardianInfo && enableEditUserInfo">
                 <h6 class="">Parent/Guardian details:</h6>
@@ -251,7 +260,7 @@
 
               <!-- form-second -->
 
-              <div class="form-details" *ngIf="enableEditUserInfo && !enableEditGuardianInfo">
+              <div class="form-details log-details" *ngIf="enableEditUserInfo && !enableEditGuardianInfo">
                 <h6 class="">Login Details:</h6>
 
                 <div class="row">
@@ -275,10 +284,21 @@
                 <label class="input-names">Reconfirm Password</label>
                 <input type="password" class="input-fields" formControlName="confirmPassword">
 
-                <div class="center footer-text">
-                  <p class="footer-updates">Keep me posted with offers/updates etc</p>
-                  <input type="checkbox" class="check-boxes">
-                  <span>I accept the </span> <span class="col-yel">Terms of Use &amp; Legal Policies</span>
+                <div class="center footer-updates">
+                  <span>Keep me posted with offers/updates etc</span>
+                  <input type="radio" class="radio-btns" id="yes" name="select"> <span> Yes</span>
+                  <input type="radio" class="radio-btns" id="no" name="select"> <span> No</span>
+                  <div class="row">
+                    <div class="col-2 right-alig">
+                      <input type="checkbox" class="check-btms">
+
+                    </div>
+                    <div class="col-10 left-alig">
+                      <span>I accept the </span> <span class="col-yel">Terms of Use &amp; Legal Policies</span>
+
+                    </div>
+
+                  </div>
                 </div>
                 <div class="center">
                   <button class="btn-signup" type="button " (click)="onSubmit()" class="btn "
@@ -292,7 +312,6 @@
             </form>
           </div>
 
-          <div class="col-md-2"></div>
 
         </div>
 

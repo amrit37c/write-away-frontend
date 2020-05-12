@@ -1,11 +1,33 @@
 .header {
   height: 80px;
 }
-
+.login-modal{
+  padding-bottom: 20px;
+}
+.forget-pass-login-modal{
+  font-size: 13px;
+  margin-top: 6px;
+}
 .header .logo {
   position: absolute;
   top: 0;
   width: 260px;
+}
+.right{
+  text-align: right;
+}
+.select-dates{
+  padding-top: 10px;
+
+}
+.cursor {
+  cursor: pointer;
+}
+.select-dates select{
+cursor: pointer;
+}
+.not-reg-modal{
+  margin-right: 10px;
 }
 
 .logo {
@@ -182,20 +204,30 @@
 }
 
 .back-image {
-  background-image: url(/assets/images/banner.svg);
+  background-image: url(/assets/images/main-banner45.svg);
   height: 87%;
   background-size: 100%;
   background-repeat: no-repeat;
 }
-
+.modal-check{
+  display: inline-block;
+  margin-right: 5px;
+position: relative;
+top: 2px;
+cursor: pointer;
+}
+.remeber-section{
+  margin-top: 16px;
+}
 .form-details {
   margin-top: 20px;
-  background: white;
   padding: 3px 20px;
   border-radius: 4px;
   -webkit-box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
+  border: 1px solid  lightgray;
+
 }
 
 .input-names {
@@ -213,7 +245,7 @@
 .input-names {
   font-size: 13px;
   font-weight: 500;
-  color: lightgray;
+  color: darkgray;
   margin-bottom: 0px !important;
   margin-top: 9px;
 }
@@ -226,6 +258,54 @@
   width: 100%;
   color: black;
   padding-left: 5px;
+  background-color: transparent;
+}
+.log-details{
+  padding-top: 16px;
+
+}
+.radio-btns{
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+  top: 3px;
+
+}
+  /* .footer-updates chekbox{} */
+  .check-btms{
+    position: relative;
+    left: 39px;
+    top: 18pcx;
+    top: 6px;
+  }
+  .col-yel{
+    color: #FFB300;
+  }
+/* .radio-btns :checked{
+ color: red;
+ background-color: red;
+
+} */
+.right-alig
+{
+  text-align: right !important;
+
+}
+.left-alig
+{
+  text-align: left !important;
+
+}
+.center{
+  text-align: center;
+}
+.footer-updates span{
+  font-weight: 800;
+    font-size: 11px;
+}
+.input-fields:focus{
+  
+  background-color: white;
 }
 
 .headings-input-fields {
@@ -259,6 +339,8 @@ a.forget-password {
   -webkit-box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
   -moz-box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
   box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
+  padding-top: 17px;
+    padding-bottom: 23px;
 }
 
 .display {
