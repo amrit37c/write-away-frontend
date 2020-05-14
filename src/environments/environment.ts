@@ -9,6 +9,8 @@ export const environment = {
     register: "user/register",
     login: "user/login",
     blogs: "blog",
+    publications: "publication",
+    userPublication: "/publication/user-content",
   },
 };
 

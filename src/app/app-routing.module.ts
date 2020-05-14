@@ -22,6 +22,7 @@ const routes: Routes = [
     loadChildren: () =>
       import("./modules/blogs/blogs.module").then((m) => m.BlogsModule),
   },
+  { path: 'user-profile', loadChildren: () => import('./modules/user-profile/user-profile.module').then(m => m.UserProfileModule) },
   // { path: 'components', loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule) },
 ];
 

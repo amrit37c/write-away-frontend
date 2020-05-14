@@ -1,0 +1,303 @@
+<div class="container-fluid">
+  <!-- header -->
+
+  <div class="row pad-zero">
+
+    <div class="col-md-3 pad-zero">
+      <button type="button" class="logo-btn">My Desk</button>
+    </div>
+
+    <div class="col-md-9 right right-header pull-right ">
+      <div class="my-desk-heading background-light-pink">
+        <p> <span class="color-pink">He</span>llo! Ricky <span class="col-blue">{{count || 0}}</span></p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <app-user-sidebar></app-user-sidebar>
+    </div>
+    <div class="col-md-9">
+
+      <div class="container-fluid list-view-my-desk">
+
+
+        <div class="parts">
+          Part A:<span class="col-gray-part">(25%)</span>
+        </div>
+
+        <div class=" edit-form-align background-light-pink">
+          <div class="row field-size">
+            <div class="col-5 ">
+              <span>First/Middle Name</span>
+              <input type="text" value="Ricky" formControlName="name">
+
+            </div>
+            <div class="col-5">
+              <span>Last Name</span>
+              <input type="text" placeholder="Pointing">
+
+
+            </div>
+            <div class="col-2"></div>
+            <div class="col-3">
+              <span>a.k.a</span>
+              <input type="text" class="select-one" placeholder="... ... ... ...">
+
+
+            </div>
+            <div class="col-2">
+              <h6 class="dsplay-this">Display this</h6>
+
+            </div>
+
+            <div class="col-1 pad-20">
+              <input type="radio" class="radioss" id="aka" name="display" value="aka">
+
+            </div>
+            <div class="col-1 pad-20">
+              <label for="aka">aka</label>
+
+            </div>
+            <div class="col-1 pad-20">
+              <input type="radio" id="firstname" name="display" value="firstname">
+
+            </div>
+            <div class="col-2 pad-20">
+              <label for="aka">First/Middle Name</label>
+
+            </div>
+            <div class="col-1 ">
+
+            </div>
+
+            <div class="col-md-10">
+
+              <span>About me:</span>
+              <textarea placeholder="Let everyone Know a little bit about yourself"></textarea>
+
+            </div>
+            <div class="col-md-2"></div>
+
+          </div>
+
+
+        </div>
+
+        <div class=" edit-form-align background-light-pink">
+          <div class="row field-size">
+            <div class="col-5 ">
+              <span>DOB:</span>
+              <input type="date">
+              <span>Gender:</span>
+              <select>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+
+              </select>
+
+            </div>
+            <div class="col-5">
+              <span>Email ID:</span>
+              <input type="text" placeholder="Pointing">
+
+
+            </div>
+            <div class="col-2"></div>
+            <div class="col-5">
+
+              <span>Mobile No:</span>
+              <input type="text">
+            </div>
+            <div class="col-5">
+
+              <span>Landline:</span>
+              <input type="text">
+            </div>
+            <div class="col-md-2"></div>
+
+          </div>
+
+
+        </div>
+
+        <div class="my-desk-heading background-light-pink">
+          <p> <span class="color-pink">Pa</span>rent/Guardian Details:</p>
+
+        </div>
+
+        <div class=" edit-form-align background-light-pink">
+          <div class="row field-size">
+            <div class="col-5">
+
+              <span>Relations:</span>
+              <select>
+                <option value="Father">Father</option>
+                <option value="Mother">Mother</option>
+
+              </select>
+            </div>
+            <div class="col-5">
+
+            </div>
+            <div class="col-md-2"></div>
+
+            <div class="col-5 ">
+              <span>First Name:</span>
+              <input type="text">
+              <span>DOB:</span>
+              <input type="date">
+              <span>Mobile No:</span>
+              <input type="text">
+            </div>
+            <div class="col-5">
+              <span>Last Name:</span>
+              <input type="text" placeholder="Pointing">
+              <span>Email ID:</span>
+              <input type="text" placeholder="... ... ...">
+              <span>LandLine:</span>
+              <input type="text" placeholder="... ... ...">
+
+
+            </div>
+            <div class="col-2"></div>
+
+
+          </div>
+
+
+
+        </div>
+        <div class="parts">
+          Part B:<span class="col-gray-part">(25%)</span>
+        </div>
+
+        <div class=" edit-form-align background-light-pink">
+          <div class="row field-size">
+            <div class="col-10">
+
+              <span>School:</span>
+              <select>
+                <option value="Father">Father</option>
+                <option value="Mother">Mother</option>
+
+              </select>
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-5">
+
+              <span>Class:</span>
+              <input type="text" placeholder="... ... ... ...">
+            </div>
+            <div class="col-5">
+              <span>Section:</span>
+              <input type="text" placeholder="... ... ... ...">
+            </div>
+            <div class="col-md-2"></div>
+
+          </div>
+
+
+
+        </div>
+
+        <div class="parts">
+          Part C:<span class="col-gray-part">(25%)</span>
+        </div>
+
+        <div class="my-desk-heading background-light-pink">
+          <p>
+            <span class="color-pink">So</span>cial Media Links:
+            <i class="fa  fa-facebook   left-bar-btmss"></i>
+            <i class="fa  fa-instagram  left-bar-btmss"></i>
+            <i class="fa  fa-twitter   left-bar-btmss"></i>
+            <i class="fa  fa-linkedin  left-bar-btmss"></i>
+            <i class="fa  fa-google-plus  left-bar-btmss"></i>
+          </p>
+          <h6 class="add-social">+ Add Social Media</h6>
+          <p></p>
+
+
+        </div>
+
+        <div class="parts">
+          Part D:<span class="col-gray-part">(25%)</span>
+        </div>
+
+
+        <div class=" edit-form-align background-light-pink">
+          <div class="row field-size">
+            <div class="col-10">
+
+              <span>Address:</span>
+              <input type="text" placeholder="... ... ... ...">
+            </div>
+
+            <div class="col-md-2"></div>
+
+            <div class="col-5">
+
+              <span>Country::</span>
+              <select>
+                <option></option>
+                <option></option>
+
+              </select> <span>City:</span>
+              <select>
+                <option></option>
+                <option></option>
+
+              </select> </div>
+            <div class="col-5">
+              <span>State:</span>
+              <select>
+                <option></option>
+                <option></option>
+
+              </select> <span>Pin/Zip Code:</span>
+              <select>
+                <option></option>
+                <option></option>
+
+              </select>
+            </div>
+            <div class="col-md-2"></div>
+
+          </div>
+
+
+
+        </div>
+
+        <div class=" edit-form-align ">
+          <div class="row field-size">
+            <div class="col-5 text-right">
+              <button class="cancl-btn-edit">Cancel</button>
+            </div>
+            <div class="col-5">
+              <button class="cancl-btn-edit update-edit">Update</button>
+
+            </div>
+            <div class="col-md-2"></div>
+
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>

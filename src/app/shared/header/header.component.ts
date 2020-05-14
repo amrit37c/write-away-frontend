@@ -55,8 +55,15 @@ export class HeaderComponent implements OnInit {
     private userService: UserService
   ) {
     this.router.events.subscribe((evt) => {
+      console.log("this", this.router.url);
       if (!(evt instanceof NavigationEnd)) {
-        if (this.router.url == "/home") {
+        if (
+          this.router.url == "/home" ||
+          this.router.url == "/user-profile/my-reading" ||
+          this.router.url == "/user-profile/my-submissions" ||
+          this.router.url == "/user-profile/my-bookmarks" ||
+          this.router.url == "/user-profile/my-profile"
+        ) {
           this.logo = "Full-Logo-WA.svg";
           this.currentPage = false;
           this.blogRoute = false;
