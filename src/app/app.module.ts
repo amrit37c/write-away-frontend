@@ -20,6 +20,7 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { ForgetPassComponent } from './modules/forget-pass/forget-pass.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HttpClientModule } from "@angular/common/http";
     LoginComponent,
     SignupComponent,
     FooterComponent,
+    ForgetPassComponent,
   ],
   imports: [
     BrowserModule,

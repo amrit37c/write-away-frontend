@@ -1,12 +1,16 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { LoginComponent } from "./modules/login/login.component";
-import { SignupComponent } from "./modules/signup/signup.component";
+import { LoginComponent } from './modules/login/login.component';
+import { SignupComponent } from './modules/signup/signup.component';
+import { ForgetPassComponent } from './modules/forget-pass/forget-pass.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
+  { path: "forget-pass", component: ForgetPassComponent },
+
+  
   {
     path: "home",
     loadChildren: () =>
@@ -29,4 +33,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
