@@ -8,7 +8,10 @@ import { MyBookmarksComponent } from "./my-bookmarks/my-bookmarks.component";
 import { MySubmissionsComponent } from "./my-submissions/my-submissions.component";
 import { MyProfileComponent } from "./my-profile/my-profile.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { WritePublicationComponent } from './write-publication/write-publication.component';
+import { WritePublicationComponent } from "./write-publication/write-publication.component";
+import { ComponentsModule } from "src/app/components/components.module";
+import { CarouselModule } from "ngx-bootstrap/carousel";
+import { ModalModule } from "ngx-bootstrap/modal";
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { WritePublicationComponent } from './write-publication/write-publication
     UserProfileRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    ComponentsModule,
+    CarouselModule.forRoot(),
+    ModalModule.forRoot(),
   ],
 })
 export class UserProfileModule {}

@@ -10,8 +10,9 @@ const routes: Routes = [
   { path: "my-reading", component: MyReadingComponent },
   { path: "my-bookmarks", component: MyBookmarksComponent },
   { path: "my-submissions", component: MySubmissionsComponent },
-  { path: "my-profile", component: MyProfileComponent },
+  { path: "edit-profile", component: MyProfileComponent },
   { path: "write-publication", component: WritePublicationComponent },
+  { path: "write-publication/:id", component: WritePublicationComponent },
 ];
 
 @NgModule({

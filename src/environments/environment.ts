@@ -10,7 +10,7 @@ export const environment = {
     login: "user/login",
     blogs: "blog",
     publications: "publication",
-    userPublication: "/publication/user-content",
+    userPublication: "publication/user-content",
   },
 };
 

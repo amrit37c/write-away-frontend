@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-user-sidebar',
-  templateUrl: './user-sidebar.component.html',
-  styleUrls: ['./user-sidebar.component.css']
+  selector: "app-user-sidebar",
+  templateUrl: "./user-sidebar.component.html",
+  styleUrls: ["./user-sidebar.component.css"],
 })
 export class UserSidebarComponent implements OnInit {
+  show: boolean = true;
+  @Input() display;
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  ngOnChanges() {
+    this.show = this.display;
   }
-
 }

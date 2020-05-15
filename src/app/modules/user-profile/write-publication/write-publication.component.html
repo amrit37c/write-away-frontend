@@ -4,7 +4,7 @@
   <div class="row pad-zero">
 
     <div class="col-md-3 pad-zero">
-      <button type="button" class="logo-btn">My Desk</button>
+      <button type="button" class="logo-btn">We're Publishing</button>
     </div>
 
     <div class="col-md-9 right right-header pull-right ">
@@ -16,281 +16,181 @@
 
   </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="!data">
   <div class="row">
-    <div class="col-md-3">
-      <app-user-sidebar></app-user-sidebar>
+    <div class="col-md-3" style="display: none;">
+      <app-user-sidebar [display]="false"></app-user-sidebar>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
 
-      <div class="container-fluid list-view-my-desk">
+      <div class="main-body">
 
-
-        <div class="parts">
-          Part A:<span class="col-gray-part">(25%)</span>
-        </div>
-
-        <div class=" edit-form-align background-light-pink">
-          <div class="row field-size">
-            <div class="col-5 ">
-              <span>First/Middle Name</span>
-              <input type="text" value="Ricky" formControlName="name">
-
-            </div>
-            <div class="col-5">
-              <span>Last Name</span>
-              <input type="text" placeholder="Pointing">
-
-
-            </div>
-            <div class="col-2"></div>
-            <div class="col-3">
-              <span>a.k.a</span>
-              <input type="text" class="select-one" placeholder="... ... ... ...">
-
-
-            </div>
-            <div class="col-2">
-              <h6 class="dsplay-this">Display this</h6>
-
-            </div>
-
-            <div class="col-1 pad-20">
-              <input type="radio" class="radioss" id="aka" name="display" value="aka">
-
-            </div>
-            <div class="col-1 pad-20">
-              <label for="aka">aka</label>
-
-            </div>
-            <div class="col-1 pad-20">
-              <input type="radio" id="firstname" name="display" value="firstname">
-
-            </div>
-            <div class="col-2 pad-20">
-              <label for="aka">First/Middle Name</label>
-
-            </div>
-            <div class="col-1 ">
-
-            </div>
-
-            <div class="col-md-10">
-
-              <span>About me:</span>
-              <textarea placeholder="Let everyone Know a little bit about yourself"></textarea>
-
-            </div>
-            <div class="col-md-2"></div>
-
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-8 right-pink-head">
+            <p class="novelists-approach">ONE NOVELIST'S APPROACH</p>
+            <p class="novelists-approach">ELIZABETH GEORGE</p>
           </div>
-
-
         </div>
 
-        <div class=" edit-form-align background-light-pink">
-          <div class="row field-size">
-            <div class="col-5 ">
-              <span>DOB:</span>
-              <input type="date">
-              <span>Gender:</span>
-              <select>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+        <div class="row back-light-blue description-container">
+          <div class="col-md-4 write-away-img">
+            <img src="./assets/images/read-away-publish.jpg">
 
-              </select>
-
-            </div>
-            <div class="col-5">
-              <span>Email ID:</span>
-              <input type="text" placeholder="Pointing">
+            <div class="text-center">
 
 
-            </div>
-            <div class="col-2"></div>
-            <div class="col-5">
-
-              <span>Mobile No:</span>
-              <input type="text">
-            </div>
-            <div class="col-5">
-
-              <span>Landline:</span>
-              <input type="text">
-            </div>
-            <div class="col-md-2"></div>
-
-          </div>
+              <div class="left-sec-name">
+                <img class="prof-imgss" src="./assets/images/publisher.svg">
+                <p class="publisher-name">Daniel</p>
+                <p class="publisher-name">Age Groups <span class="col-grey">8-14 years</span></p>
+                <p class="publisher-name">Word Count<span class="col-grey">Upto 300 Words</span></p>
+                <p class="publisher-name">Closing Date<span class="col-grey">June 10,2019</span></p>
 
 
-        </div>
+              </div>
+              <div class="row names-icons">
+                <div class="col-6 ">
+                  <i class="fa fa-share share-eco-editor"></i> <span>Shares</span>
+                </div>
+                <div class="col-6">
+                  <i class="fa fa-bookmark-o col-redss"></i> <span>Bookmarks</span>
+                </div>
 
-        <div class="my-desk-heading background-light-pink">
-          <p> <span class="color-pink">Pa</span>rent/Guardian Details:</p>
-
-        </div>
-
-        <div class=" edit-form-align background-light-pink">
-          <div class="row field-size">
-            <div class="col-5">
-
-              <span>Relations:</span>
-              <select>
-                <option value="Father">Father</option>
-                <option value="Mother">Mother</option>
-
-              </select>
-            </div>
-            <div class="col-5">
-
-            </div>
-            <div class="col-md-2"></div>
-
-            <div class="col-5 ">
-              <span>First Name:</span>
-              <input type="text">
-              <span>DOB:</span>
-              <input type="date">
-              <span>Mobile No:</span>
-              <input type="text">
-            </div>
-            <div class="col-5">
-              <span>Last Name:</span>
-              <input type="text" placeholder="Pointing">
-              <span>Email ID:</span>
-              <input type="text" placeholder="... ... ...">
-              <span>LandLine:</span>
-              <input type="text" placeholder="... ... ...">
+              </div>
 
 
             </div>
-            <div class="col-2"></div>
 
 
           </div>
+          <div class="col-md-8">
+            <p class="description-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus,
+              nemo fugit, explicabo nihil blanditiis vel placeat aperiam facere esse
+              eligendi sequi et nulla repudiandae asperiores repellat magnam! Quod
+              exercitationem id dolore culpa hic earum voluptates nam odio expedita
+              vitae necessitatibus facere quaerat autem porro voluptatum, aliquam
+              soluta aspernatur explicabo perferendis, est consectetur laborum?
+              Perspiciatis corrupti quasi fuga quis aliquid explicabo dolores,
+              architecto et impedit sit, maxime magnam dolore doloribus delectus iste,
+              vel quia. Quia, repudiandae dicta! Temporibus obcaecati excepturi blanditiis
+              nobis fuga atque aspernatur quisquam delectus soluta eos? Esse pariatur quo
+              libero alias deserunt, sunt rerum quisquam facilis recusandae sapiente.
+              vel quia. Quia, repudiandae dicta! Temporibus obcaecati excepturi blanditiis
+              nobis fuga atque aspernatur quisquam delectus soluta eos? Esse pariatur quo
+              libero alias deserunt, sunt rerum quisquam facilis recusandae sapiente.</p>
+            <div class="row buttons-editor">
+              <div class="col-6"><button>Kick Starter</button></div>
+              <div class="col-6 text-right"><button>Your 'How-To' Book Starter</button></div>
 
-
-
-        </div>
-        <div class="parts">
-          Part B:<span class="col-gray-part">(25%)</span>
-        </div>
-
-        <div class=" edit-form-align background-light-pink">
-          <div class="row field-size">
-            <div class="col-10">
-
-              <span>School:</span>
-              <select>
-                <option value="Father">Father</option>
-                <option value="Mother">Mother</option>
-
-              </select>
             </div>
+            <div class="notes">
 
-            <div class="col-md-2"></div>
-
-            <div class="col-5">
-
-              <span>Class:</span>
-              <input type="text" placeholder="... ... ... ...">
             </div>
-            <div class="col-5">
-              <span>Section:</span>
-              <input type="text" placeholder="... ... ... ...">
-            </div>
-            <div class="col-md-2"></div>
-
           </div>
 
-
-
-        </div>
-
-        <div class="parts">
-          Part C:<span class="col-gray-part">(25%)</span>
-        </div>
-
-        <div class="my-desk-heading background-light-pink">
-          <p>
-            <span class="color-pink">So</span>cial Media Links:
-            <i class="fa  fa-facebook   left-bar-btmss"></i>
-            <i class="fa  fa-instagram  left-bar-btmss"></i>
-            <i class="fa  fa-twitter   left-bar-btmss"></i>
-            <i class="fa  fa-linkedin  left-bar-btmss"></i>
-            <i class="fa  fa-google-plus  left-bar-btmss"></i>
-          </p>
-          <h6 class="add-social">+ Add Social Media</h6>
-          <p></p>
-
-
-        </div>
-
-        <div class="parts">
-          Part D:<span class="col-gray-part">(25%)</span>
         </div>
 
 
-        <div class=" edit-form-align background-light-pink">
-          <div class="row field-size">
-            <div class="col-10">
+        <!-- Editor -->
 
-              <span>Address:</span>
-              <input type="text" placeholder="... ... ... ...">
+        <app-editor [data]="editorData" (editorContent)="getContent($event)"></app-editor>
+
+        <!-- buttons -->
+
+        <div class="text-center my-btns">
+          <button type="button" class="btn btn-cancel">Cancel</button>
+          <button type="button" class="btn btn-save">Save</button>
+          <button type="button" class="btn btn-send">Send for Publishing</button>
+        </div>
+
+        <!-- Sliders -->
+        <div class="container">
+          <h4 class="load-more">Load More...</h4>
+          <div class="carousel-cont">
+            <div class="carousel-headings text-center">
+              <p> <span class="color-pink">Su</span>ggested Publishing</p>
             </div>
+            <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+              [indicatorsByChunk]="true">
+              <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img [src]="slide.image" alt="image slide" class="slider-img">
+                  </div>
+                  <div class="col-md-8 text-justify">
+                    <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+                      elit.Impedit debitis doloremque at quos non officiis.
+                    </p>
+                  </div>
 
-            <div class="col-md-2"></div>
+                </div>
 
-            <div class="col-5">
-
-              <span>Country::</span>
-              <select>
-                <option></option>
-                <option></option>
-
-              </select> <span>City:</span>
-              <select>
-                <option></option>
-                <option></option>
-
-              </select> </div>
-            <div class="col-5">
-              <span>State:</span>
-              <select>
-                <option></option>
-                <option></option>
-
-              </select> <span>Pin/Zip Code:</span>
-              <select>
-                <option></option>
-                <option></option>
-
-              </select>
-            </div>
-            <div class="col-md-2"></div>
-
+                <div class="carousel-caption">
+                  <!-- <p>- John Doe</p>
+                    <span class="firm_name">ABC Company</span> -->
+                </div>
+              </slide>
+            </carousel>
           </div>
-
-
-
-        </div>
-
-        <div class=" edit-form-align ">
-          <div class="row field-size">
-            <div class="col-5 text-right">
-              <button class="cancl-btn-edit">Cancel</button>
+          <div class="carousel-cont">
+            <div class="carousel-headings text-center">
+              <p> <span class="color-pink">Yo</span>ur Followings</p>
             </div>
-            <div class="col-5">
-              <button class="cancl-btn-edit update-edit">Update</button>
+            <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+              [indicatorsByChunk]="true">
+              <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img [src]="slide.image" alt="image slide" class="slider-img">
+                  </div>
+                  <div class="col-md-8 text-justify">
+                    <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+                      elit.Impedit debitis doloremque at quos non officiis.
+                    </p>
+                  </div>
 
-            </div>
-            <div class="col-md-2"></div>
+                </div>
 
+                <div class="carousel-caption">
+                  <!-- <p>- John Doe</p>
+                    <span class="firm_name">ABC Company</span> -->
+                </div>
+              </slide>
+            </carousel>
           </div>
+          <div class="carousel-cont">
+            <div class="carousel-headings text-center">
+              <p> <span class="color-pink">Yo</span>ur Recent Writing Selections</p>
+            </div>
+            <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+              [indicatorsByChunk]="true">
+              <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img [src]="slide.image" alt="image slide" class="slider-img">
+                  </div>
+                  <div class="col-md-8 text-justify">
+                    <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+                      elit.Impedit debitis doloremque at quos non officiis.
+                    </p>
+                  </div>
 
+                </div>
 
-
+                <div class="carousel-caption">
+                  <!-- <p>- John Doe</p>
+                    <span class="firm_name">ABC Company</span> -->
+                </div>
+              </slide>
+            </carousel>
+          </div>
         </div>
+
+        <!-- Sliders -->
 
 
       </div>
@@ -301,3 +201,196 @@
 
 
 </div>
+<div class="container-fluid" *ngIf="data">
+  <div class="row">
+    <div class="col-md-3" style="display: none;">
+      <app-user-sidebar [display]="false"></app-user-sidebar>
+    </div>
+    <div class="col-md-12">
+
+      <div class="main-body">
+
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-8 right-pink-head">
+            <p class="novelists-approach">{{data.title}}</p>
+            <p class="novelists-approach">{{ data.publishedBy | titlecase }}</p>
+          </div>
+        </div>
+
+        <div class="row back-light-blue description-container">
+          <div class="col-md-4 write-away-img">
+            <img src="http://localhost:3000/images/{{data.mediaCover}}">
+
+            <div class="text-center">
+              <div class="left-sec-name">
+                <img class="prof-imgss" src="./assets/images/publisher.svg">
+                <p class="publisher-name">{{ data && data.publishedBy}}</p>
+                <p class="publisher-name">Age Groups <span
+                    class="col-grey">{{data && data.ageGroup && data.ageGroup.ageRange.join('-')}}
+                    years</span></p>
+                <p class="publisher-name">Word Count<span
+                    class="col-grey">{{data && data.wordCount && data.wordCount.join('-')}}
+                    words</span></p>
+                <p class="publisher-name">Closing Date<span
+                    class="col-grey">{{ data && data.closingDate | date : 'MMM dd, yyyy'}}</span></p>
+              </div>
+              <div class="row names-icons">
+                <div class="col-6 ">
+                  <i class="fa fa-share share-eco-editor"></i> <span>Shares</span>
+                </div>
+                <div class="col-6">
+                  <i class="fa fa-bookmark-o col-redss"></i> <span>Bookmarks</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <p class="description-p">
+              {{data.brief}}
+            </p>
+            <div class="row buttons-editor">
+              <div class="col-6"><button>Kick Starter</button></div>
+              <div class="col-6 text-right"><button>Your 'How-To' Book Starter</button></div>
+
+            </div>
+            <div class="notes">
+              {{data.kickbookDesc}}
+            </div>
+          </div>
+        </div>
+        <!-- Editor -->
+        <div class="row">
+          <div class="col-2">
+            <div class="media-upload" (click)="openModal(genreMedia)">Upload Media
+            </div>
+          </div>
+          <div class="col-10">
+            <div class="topic">Enter Topic</div>
+            <app-editor [data]="editorData" (editorContent)="getContent($event)"></app-editor>
+          </div>
+
+
+          <!-- <div class="col-md-12">
+            <input type="text" class="form-control mb-3" placeholder="Enter Topic" [(ngModel)]="topic">
+            <div class="upload-media" (click)="displayGenre()">
+              <div>
+                <img style="float: left;" *ngFor="let row of data.genres && data.genres.topicMedia"
+                  class="img-responsive img-fluid" src="http://localhost:3000/images/{{row}}"
+                  (click)="addToMedia(row)" />
+              </div>
+            </div>
+            <app-editor [data]="editorData" (editorContent)="getContent($event)"></app-editor>
+
+          </div> -->
+          <div class="col-md-12 text-center my-btns">
+            <button type="button" class="btn btn-cancel">Cancel</button>
+            <button type="button" class="btn btn-save" (click)="onSubmit()">Save</button>
+            <button type="button" class="btn btn-send" (click)="onSubmit('publish')">Send for Publishing</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sliders -->
+<div class="container">
+  <h4 class="load-more">Load More...</h4>
+  <div class="carousel-cont">
+    <div class="carousel-headings text-center">
+      <p> <span class="color-pink">Su</span>ggested Publishing</p>
+    </div>
+    <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+      [indicatorsByChunk]="true">
+      <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+        <div class="row">
+          <div class="col-md-4">
+            <img [src]="slide.image" alt="image slide" class="slider-img">
+          </div>
+          <div class="col-md-8 text-justify">
+            <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+              elit.Impedit debitis doloremque at quos non officiis.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="carousel-caption">
+          <!-- <p>- John Doe</p>
+            <span class="firm_name">ABC Company</span> -->
+        </div>
+      </slide>
+    </carousel>
+  </div>
+  <div class="carousel-cont">
+    <div class="carousel-headings text-center">
+      <p> <span class="color-pink">Yo</span>ur Followings</p>
+    </div>
+    <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+      [indicatorsByChunk]="true">
+      <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+        <div class="row">
+          <div class="col-md-4">
+            <img [src]="slide.image" alt="image slide" class="slider-img">
+          </div>
+          <div class="col-md-8 text-justify">
+            <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+              elit.Impedit debitis doloremque at quos non officiis.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="carousel-caption">
+          <!-- <p>- John Doe</p>
+            <span class="firm_name">ABC Company</span> -->
+        </div>
+      </slide>
+    </carousel>
+  </div>
+  <div class="carousel-cont">
+    <div class="carousel-headings text-center">
+      <p> <span class="color-pink">Yo</span>ur Recent Writing Selections</p>
+    </div>
+    <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+      [indicatorsByChunk]="true">
+      <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+        <div class="row">
+          <div class="col-md-4">
+            <img [src]="slide.image" alt="image slide" class="slider-img">
+          </div>
+          <div class="col-md-8 text-justify">
+            <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+              elit.Impedit debitis doloremque at quos non officiis.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="carousel-caption">
+          <!-- <p>- John Doe</p>
+            <span class="firm_name">ABC Company</span> -->
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</div>
+
+<!-- Sliders -->
+<ng-template #genreMedia>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="text-center mb-3" *ngFor="let row of data.genres && data.genres.topicMedia">
+      <img style="float: left;" class="img-responsive img-fluid mb-2" src="http://localhost:3000/images/{{row}}" />
+      <button class="btn btn-primary" (click)="addToMedia(row)"> Select this Genre Image</button>
+    </div>
+  </div>
+</ng-template>

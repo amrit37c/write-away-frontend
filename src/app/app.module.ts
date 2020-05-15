@@ -21,6 +21,8 @@ import { FooterComponent } from "./shared/footer/footer.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
+import { BsDropdownModule } from "ngx-bootstrap/dropdown";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,7 @@ import { HttpClientModule } from "@angular/common/http";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BsDropdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -62,7 +62,8 @@ export class HeaderComponent implements OnInit {
           this.router.url == "/user-profile/my-reading" ||
           this.router.url == "/user-profile/my-submissions" ||
           this.router.url == "/user-profile/my-bookmarks" ||
-          this.router.url == "/user-profile/my-profile"
+          this.router.url == "/user-profile/my-profile" ||
+          this.router.url == "/user-profile/write-publication"
         ) {
           this.logo = "Full-Logo-WA.svg";
           this.currentPage = false;
@@ -71,6 +72,7 @@ export class HeaderComponent implements OnInit {
         } else {
           if (this.router.url == "/blogs") {
             this.blogRoute = true;
+            this.currentPage = false;
           } else {
             this.logo = "logo.svg";
             this.blogRoute = false;
@@ -217,5 +219,10 @@ export class HeaderComponent implements OnInit {
     this.enableEditUserInfo = false;
     this.adultUser = false;
     this.modalRef.hide();
+  }
+
+  logout() {
+    localStorage.removeItem("token");
+    this.router.navigateByUrl("/home");
   }
 }

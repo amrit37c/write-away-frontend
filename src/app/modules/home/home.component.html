@@ -235,10 +235,12 @@
           <h3><span class="pink_text">We'</span>re Publishing!</h3>
           <ul class="other_text">
             <li class="text_titles">
-              <span>Titles <a href="#" target="_blank">300</a></span>
+              <span *ngIf="openPublications.length">Titles <a href="#"
+                  target="_blank">{{ openPublications[openPublicationIndex].title.length }}</a></span>
             </li>
             <li class="text_titles">
-              <span>Genres <a href="#" target="_blank">300</a></span>
+              <span *ngIf="openPublications.length">Genres <a href="#"
+                  target="_blank">{{openPublications[openPublicationIndex].genres.title.length || 0}}</a></span>
             </li>
             <li class="text_titles">
               <span><a routerLink="/publish">View All <i class="fa fa-long-arrow-right"></i></a></span>
@@ -249,8 +251,8 @@
           <div class="row">
             <div class="col-lg-5 col-12">
               <div class="left_sidebar_img">
-                <img src="http://localhost:3000/images/{{blogs[blogIndex]['media']}}" alt=""
-                  *ngIf="blogs.length && blogs[blogIndex].media" />
+                <img src="http://localhost:3000/images/{{openPublications[openPublicationIndex]['mediaCover']}}" alt=""
+                  *ngIf="openPublications.length && openPublications[openPublicationIndex].mediaCover" />
               </div>
               <div class="publisher_desc">
                 <span>Publisher:</span>
@@ -263,16 +265,21 @@
               </div>
             </div>
             <div class="col-lg-7 mobile-view col-12">
-              <h3 class="text-uppercase" *ngIf="blogs.length">
-                {{blogs[blogIndex].title}}
+              <h3 class="text-uppercase" *ngIf="openPublications.length">
+                {{openPublications[openPublicationIndex].title}}
               </h3>
-              <p [innerHTML]="blogs[blogIndex].content" *ngIf="blogs.length"></p>
+              <p [innerHTML]="openPublications[openPublicationIndex].brief" *ngIf="openPublications.length"></p>
               <div class="classic_details">
                 <div class="classic_post">
-                  <p>Genres: <span>Classic, Fantasy</span></p>
-                  <p>Languages: <span>English</span></p>
-                  <p>Age Group: <span>12-16</span></p>
-                  <p>Closing Date: <span>Jan 20, 2020</span></p>
+                  <p *ngIf="openPublications.length">Genres:
+                    <span>{{openPublications[openPublicationIndex].genres.title}}</span></p>
+                  <p *ngIf="openPublications.length">Languages:
+                    <span>{{openPublications[openPublicationIndex].language | titlecase}}</span></p>
+                  <p *ngIf="openPublications.length">Age Group:
+                    <span>{{openPublications[openPublicationIndex].ageGroup.ageRange.join('-')}}</span></p>
+                  <p *ngIf="openPublications.length">Closing Date:
+                    <span>{{openPublications[openPublicationIndex].closingDate | date: 'MMM dd, yyyy'}}</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -291,7 +298,9 @@
                   </p>
                 </div>
                 <div class="follow_btn">
-                  <button class="write-on-btn">Write</button>
+                  <button class="write-on-btn"
+                    routerLink="/user-profile/write-publication/{{openPublications[openPublicationIndex].id}}"
+                    *ngIf="openPublications.length">Write</button>
                 </div>
               </div>
             </div>
@@ -299,10 +308,10 @@
         </div>
         <div class="out-of-hero-area">
           <p>
-            <span (click)="blogPublishSlider('-')" class="fa fa-angle-left slider-direction-icon"></span>
+            <span (click)="publishCationSlider('-', 'open')" class="fa fa-angle-left slider-direction-icon"></span>
             <span class="sp-sp">
-              <span class="clr-pink"> {{blogIndex +1}}</span>/{{blogs.length}} </span>
-            <span (click)="blogPublishSlider('+')" class="fa fa-angle-right slider-direction-icon"></span>
+              <span class="clr-pink"> {{openPublicationIndex +1}}</span>/{{openPublications.length}} </span>
+            <span (click)="publishCationSlider('+', 'open')" class="fa fa-angle-right slider-direction-icon"></span>
           </p>
         </div>
       </div>
@@ -311,13 +320,15 @@
           <h3><span class="pink_text">Re</span>ading Room!</h3>
           <ul class="other_text">
             <li class="text_titles">
-              <span>Titles <a href="#" target="_blank">300</a></span>
+              <span *ngIf="closedPublications.length">Titles <a href="#"
+                  target="_blank">{{closedPublications[closedPublicationIndex].title.length}}</a></span>
             </li>
             <li class="text_titles">
-              <span>Genres <a href="#" target="_blank">300</a></span>
+              <span *ngIf="closedPublications.length">Genres <a href="#"
+                  target="_blank">{{closedPublications[closedPublicationIndex].genres.title.length}}</a></span>
             </li>
             <li class="text_titles">
-              <span>Topics <a href="#" target="_blank">300</a></span>
+              <span>Topics <a href="#" target="_blank">{{'0'}}</a></span>
             </li>
             <li class="text_titles">
               <span>View All <i class="fa fa-long-arrow-right"></i></span>
@@ -328,9 +339,11 @@
           <div class="row">
             <div class="col-lg-5 col-12">
               <div class="left_sidebar_img">
-                <img src="./assets/images/read-away-publish.jpg" alt="" />
+                <img src="http://localhost:3000/images/{{closedPublications[closedPublicationIndex]['mediaCover']}}"
+                  alt="" *ngIf="closedPublications.length" />
               </div>
-              <span class="video_tag">June 10,2019</span>
+              <span class="video_tag"
+                *ngIf="closedPublications.length">{{closedPublications[closedPublicationIndex].createdAt | date: 'MMM dd, yyyy'}}</span>
               <div class="publisher_desc">
                 <span>Publisher:</span>
                 <div class="publisher_name">
@@ -341,35 +354,37 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-7 mobile-view col-12">
-              <h3 class="text-uppercase">writing prompts for arnold cheyney</h3>
+            <div class="col-lg-7 mobile-view col-12" *ngIf="closedPublications.length">
+              <h3 class="text-uppercase" *ngIf="closedPublications.length">
+                {{closedPublications[closedPublicationIndex].title}}</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. sed do
-                eiusmod tempor incididunt ut labore et dolore magna Lorem ipsum
-                dolor sit amet. sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
+                {{closedPublications[closedPublicationIndex].brief}}
               </p>
               <div class="classic_details">
                 <div class="classic_post">
-                  <p>Genres: <span>Classic, Fantasy</span></p>
-                  <p>Languages: <span>English</span></p>
-                  <p>Age Group: <span>12-16</span></p>
+                  <p *ngIf="closedPublications.length">Genres:
+                    <span>{{closedPublications[closedPublicationIndex].genres.title}}</span></p>
+                  <p *ngIf="closedPublications.length">Languages:
+                    <span>{{closedPublications[closedPublicationIndex].language | titlecase}}</span></p>
+                  <p *ngIf="closedPublications.length">Age Group:
+                    <span>{{closedPublications[closedPublicationIndex].ageGroup.ageRange.join('-')}}</span>
+                  </p>
+                  <p>Closing Date:
+                    <span>{{closedPublications[closedPublicationIndex].closingDate | date: 'MMM dd, yyyy'}}</span>
+                  </p>
                 </div>
                 <div class="social_likes justify-content-between d-flex size-set">
                   <div class="social_likes_1 d-flex justify-content-between">
                     <span class="span_top_likes"><i class="fa fa-map"></i></span>
-                    <p><span>1500</span> <span>Reads</span></p>
+                    <p><span>0</span> <span>Reads</span></p>
                   </div>
                   <div class="social_likes_1 d-flex justify-content-between">
                     <span class="span_top_likes"><i class="fa fa-heart-o col-red"></i></span>
-                    <p><span>90</span> <span>Likes</span></p>
+                    <p><span>0</span> <span>Likes</span></p>
                   </div>
                   <div class="social_likes_1 d-flex justify-content-between">
                     <span class="span_top_likes"><i class="fa fa-share col-blue share-icons"></i></span>
-                    <p><span>450</span> <span>shares</span></p>
+                    <p><span>0</span> <span>shares</span></p>
                   </div>
                 </div>
               </div>
@@ -401,10 +416,10 @@
         </div>
         <div class="out-of-hero-area">
           <p>
-            <span (click)="blogPublishSlider('-')" class="fa fa-angle-left slider-direction-icon"></span>
+            <span (click)="blogPublishSlider('-', 'closed')" class="fa fa-angle-left slider-direction-icon"></span>
             <span class="sp-sp">
-              <span class="clr-pink"> {{blogIndex +1}}</span>/{{blogs.length}} </span>
-            <span (click)="blogPublishSlider('+')" class="fa fa-angle-right slider-direction-icon"></span>
+              <span class="clr-pink"> {{closedPublicationIndex+1}}</span>/{{closedPublications.length}} </span>
+            <span (click)="blogPublishSlider('+', 'closed')" class="fa fa-angle-right slider-direction-icon"></span>
           </p>
         </div>
       </div>
