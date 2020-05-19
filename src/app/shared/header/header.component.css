@@ -1,32 +1,40 @@
 .header {
   height: 80px;
 }
-.login-modal{
+
+.login-modal {
   padding-bottom: 20px;
 }
-.forget-pass-login-modal{
+
+.forget-pass-login-modal {
   font-size: 13px;
   margin-top: 6px;
 }
+
 .header .logo {
   position: absolute;
   top: 0;
   width: 260px;
 }
-.right{
+
+.right {
   text-align: right;
 }
-.select-dates{
+
+.select-dates {
   padding-top: 10px;
 
 }
+
 .cursor {
   cursor: pointer;
 }
-.select-dates select{
-cursor: pointer;
+
+.select-dates select {
+  cursor: pointer;
 }
-.not-reg-modal{
+
+.not-reg-modal {
   margin-right: 10px;
 }
 
@@ -179,7 +187,7 @@ cursor: pointer;
 }
 
 .right-header {
-  padding-top: 25px !important;
+  padding-top: 15px !important;
   padding-right: 30px !important;
 }
 
@@ -209,16 +217,19 @@ cursor: pointer;
   background-size: 100%;
   background-repeat: no-repeat;
 }
-.modal-check{
+
+.modal-check {
   display: inline-block;
   margin-right: 5px;
-position: relative;
-top: 2px;
-cursor: pointer;
+  position: relative;
+  top: 2px;
+  cursor: pointer;
 }
-.remeber-section{
+
+.remeber-section {
   margin-top: 16px;
 }
+
 .form-details {
   margin-top: 20px;
   padding: 3px 20px;
@@ -226,7 +237,7 @@ cursor: pointer;
   -webkit-box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
-  border: 1px solid  lightgray;
+  border: 1px solid lightgray;
 
 }
 
@@ -260,51 +271,58 @@ cursor: pointer;
   padding-left: 5px;
   background-color: transparent;
 }
-.log-details{
+
+.log-details {
   padding-top: 16px;
 
 }
-.radio-btns{
+
+.radio-btns {
   display: inline-block;
   margin-left: 10px;
   position: relative;
   top: 3px;
 
 }
-  /* .footer-updates chekbox{} */
-  .check-btms{
-    position: relative;
-    left: 39px;
-    top: 18pcx;
-    top: 6px;
-  }
-  .col-yel{
-    color: #FFB300;
-  }
+
+/* .footer-updates chekbox{} */
+.check-btms {
+  position: relative;
+  left: 39px;
+  top: 18pcx;
+  top: 6px;
+}
+
+.col-yel {
+  color: #FFB300;
+}
+
 /* .radio-btns :checked{
  color: red;
  background-color: red;
 
 } */
-.right-alig
-{
+.right-alig {
   text-align: right !important;
 
 }
-.left-alig
-{
+
+.left-alig {
   text-align: left !important;
 
 }
-.center{
+
+.center {
   text-align: center;
 }
-.footer-updates span{
+
+.footer-updates span {
   font-weight: 800;
-    font-size: 11px;
+  font-size: 11px;
 }
-.input-fields:focus{
-  
+
+.input-fields:focus {
+
   background-color: white;
 }
 
@@ -340,7 +358,7 @@ a.forget-password {
   -moz-box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
   box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
   padding-top: 17px;
-    padding-bottom: 23px;
+  padding-bottom: 23px;
 }
 
 .display {

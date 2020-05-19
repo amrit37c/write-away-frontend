@@ -22,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { ForgetPassComponent } from './modules/forget-pass/forget-pass.component';
 
+import { BsDropdownModule } from "ngx-bootstrap/dropdown";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,7 @@ import { ForgetPassComponent } from './modules/forget-pass/forget-pass.component
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BsDropdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

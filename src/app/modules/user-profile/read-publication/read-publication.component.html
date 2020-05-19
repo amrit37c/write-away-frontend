@@ -1,0 +1,336 @@
+<div class="container-fluid">
+  <!-- header -->
+
+  <div class="row pad-zero">
+
+    <div class="col-md-3 pad-zero">
+      <button type="button" class="logo-btn">We're Publishing</button>
+    </div>
+
+    <div class="col-md-9 right right-header text-center ">
+      <div class="my-desk-heading background-light-pink">
+        <p> Writing Prompts for Grades <br />
+          Arnold Cheyney
+        </p>
+
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-12  background-light-blue">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="img">
+            <img src="assets/images/read-away-publish.jpg" class="img-responsive">
+          </div>
+          <div>
+            <h4>Publisher</h4>
+            <img src="/assets/images/publisher.svg" class="img-responsive">
+            <h5>Daniel</h5>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <p>
+            <strong>Genres:</strong> Classic, Fantasy
+          </p>
+          <div class="table">
+            <p class="table-title text-center">Contents</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Topics</th>
+                  <th>Authors</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="header-titles">Test</td>
+                  <td><img src="author.jpg" class="img-responsive"></td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td class="header-titles">Test</td>
+                  <td><img src="author.jpg" class="img-responsive"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<div class="container-fluid" *ngIf="!data">
+  <div class="row">
+    <div class="col-md-3" style="display: none;">
+      <app-user-sidebar [display]="false"></app-user-sidebar>
+    </div>
+    <div class="col-md-12">
+
+      <div class="main-body">
+
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-8 right-pink-head">
+            <p class="novelists-approach">ONE NOVELIST'S APPROACH</p>
+            <p class="novelists-approach">ELIZABETH GEORGE</p>
+          </div>
+        </div>
+
+        <div class="row back-light-blue description-container">
+          <div class="col-md-4 write-away-img">
+            <img src="./assets/images/read-away-publish.jpg">
+
+            <div class="text-center">
+
+
+              <div class="left-sec-name">
+                <img class="prof-imgss" src="./assets/images/publisher.svg">
+                <p class="publisher-name">Daniel</p>
+                <p class="publisher-name">Age Groups <span class="col-grey">8-14 years</span></p>
+                <p class="publisher-name">Word Count<span class="col-grey">Upto 300 Words</span></p>
+                <p class="publisher-name">Closing Date<span class="col-grey">June 10,2019</span></p>
+
+
+              </div>
+              <div class="row names-icons">
+                <div class="col-6 ">
+                  <i class="fa fa-share share-eco-editor"></i> <span>Shares</span>
+                </div>
+                <div class="col-6">
+                  <i class="fa fa-bookmark-o col-redss"></i> <span>Bookmarks</span>
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+          <div class="col-md-8">
+            <p class="description-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus,
+              nemo fugit, explicabo nihil blanditiis vel placeat aperiam facere esse
+              eligendi sequi et nulla repudiandae asperiores repellat magnam! Quod
+              exercitationem id dolore culpa hic earum voluptates nam odio expedita
+              vitae necessitatibus facere quaerat autem porro voluptatum, aliquam
+              soluta aspernatur explicabo perferendis, est consectetur laborum?
+              Perspiciatis corrupti quasi fuga quis aliquid explicabo dolores,
+              architecto et impedit sit, maxime magnam dolore doloribus delectus iste,
+              vel quia. Quia, repudiandae dicta! Temporibus obcaecati excepturi blanditiis
+              nobis fuga atque aspernatur quisquam delectus soluta eos? Esse pariatur quo
+              libero alias deserunt, sunt rerum quisquam facilis recusandae sapiente.
+              vel quia. Quia, repudiandae dicta! Temporibus obcaecati excepturi blanditiis
+              nobis fuga atque aspernatur quisquam delectus soluta eos? Esse pariatur quo
+              libero alias deserunt, sunt rerum quisquam facilis recusandae sapiente.</p>
+            <div class="row buttons-editor">
+              <div class="col-6"><button>Kick Starter</button></div>
+              <div class="col-6 text-right"><button>Your 'How-To' Book Starter</button></div>
+
+            </div>
+            <div class="notes">
+
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- Editor -->
+
+        <app-editor [data]="editorData" (editorContent)="getContent($event)"></app-editor>
+
+        <!-- buttons -->
+
+        <div class="text-center my-btns">
+          <button type="button" class="btn btn-cancel">Cancel</button>
+          <button type="button" class="btn btn-save">Save</button>
+          <button type="button" class="btn btn-send">Send for Publishing</button>
+        </div>
+
+        <!-- Sliders -->
+        <div class="container">
+          <h4 class="load-more">Load More...</h4>
+          <div class="carousel-cont">
+            <div class="carousel-headings text-center">
+              <p> <span class="color-pink">Su</span>ggested Publishing</p>
+            </div>
+            <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+              [indicatorsByChunk]="true">
+              <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img [src]="slide.image" alt="image slide" class="slider-img">
+                  </div>
+                  <div class="col-md-8 text-justify">
+                    <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+                      elit.Impedit debitis doloremque at quos non officiis.
+                    </p>
+                  </div>
+
+                </div>
+
+                <div class="carousel-caption">
+                  <!-- <p>- John Doe</p>
+                      <span class="firm_name">ABC Company</span> -->
+                </div>
+              </slide>
+            </carousel>
+          </div>
+          <div class="carousel-cont">
+            <div class="carousel-headings text-center">
+              <p> <span class="color-pink">Yo</span>ur Followings</p>
+            </div>
+            <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+              [indicatorsByChunk]="true">
+              <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img [src]="slide.image" alt="image slide" class="slider-img">
+                  </div>
+                  <div class="col-md-8 text-justify">
+                    <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+                      elit.Impedit debitis doloremque at quos non officiis.
+                    </p>
+                  </div>
+
+                </div>
+
+                <div class="carousel-caption">
+                  <!-- <p>- John Doe</p>
+                      <span class="firm_name">ABC Company</span> -->
+                </div>
+              </slide>
+            </carousel>
+          </div>
+          <div class="carousel-cont">
+            <div class="carousel-headings text-center">
+              <p> <span class="color-pink">Yo</span>ur Recent Writing Selections</p>
+            </div>
+            <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+              [indicatorsByChunk]="true">
+              <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img [src]="slide.image" alt="image slide" class="slider-img">
+                  </div>
+                  <div class="col-md-8 text-justify">
+                    <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+                      elit.Impedit debitis doloremque at quos non officiis.
+                    </p>
+                  </div>
+
+                </div>
+
+                <div class="carousel-caption">
+                  <!-- <p>- John Doe</p>
+                      <span class="firm_name">ABC Company</span> -->
+                </div>
+              </slide>
+            </carousel>
+          </div>
+        </div>
+
+        <!-- Sliders -->
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>
+
+<!-- Sliders -->
+<div class="container">
+  <h4 class="load-more">Load More...</h4>
+  <div class="carousel-cont">
+    <div class="carousel-headings text-center">
+      <p> <span class="color-pink">Su</span>ggested Publishing</p>
+    </div>
+    <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+      [indicatorsByChunk]="true">
+      <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+        <div class="row">
+          <div class="col-md-4">
+            <img [src]="slide.image" alt="image slide" class="slider-img">
+          </div>
+          <div class="col-md-8 text-justify">
+            <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+              elit.Impedit debitis doloremque at quos non officiis.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="carousel-caption">
+          <!-- <p>- John Doe</p>
+              <span class="firm_name">ABC Company</span> -->
+        </div>
+      </slide>
+    </carousel>
+  </div>
+  <div class="carousel-cont">
+    <div class="carousel-headings text-center">
+      <p> <span class="color-pink">Yo</span>ur Followings</p>
+    </div>
+    <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+      [indicatorsByChunk]="true">
+      <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+        <div class="row">
+          <div class="col-md-4">
+            <img [src]="slide.image" alt="image slide" class="slider-img">
+          </div>
+          <div class="col-md-8 text-justify">
+            <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+              elit.Impedit debitis doloremque at quos non officiis.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="carousel-caption">
+          <!-- <p>- John Doe</p>
+              <span class="firm_name">ABC Company</span> -->
+        </div>
+      </slide>
+    </carousel>
+  </div>
+  <div class="carousel-cont">
+    <div class="carousel-headings text-center">
+      <p> <span class="color-pink">Yo</span>ur Recent Writing Selections</p>
+    </div>
+    <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+      [indicatorsByChunk]="true">
+      <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+        <div class="row">
+          <div class="col-md-4">
+            <img [src]="slide.image" alt="image slide" class="slider-img">
+          </div>
+          <div class="col-md-8 text-justify">
+            <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur
+              elit.Impedit debitis doloremque at quos non officiis.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="carousel-caption">
+          <!-- <p>- John Doe</p>
+              <span class="firm_name">ABC Company</span> -->
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</div>

@@ -46,9 +46,30 @@
           </div>
           <div class="right-header" style="float: right;" *ngIf="userLogin">
             <img src="assets/images/publisher.svg">
-            <div>
+            <!-- <div>
               <button>Ricky</button>
+              <button class="dropdown-toggle" data-toggle="dropdown">Ricky Pointing</button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Link 1</a>
+                <a class="dropdown-item" href="#">Link 2</a>
+                <a class="dropdown-item" href="#">Link 3</a>
+              </div>
 
+            </div> -->
+            <div class="btn-group" dropdown>
+              <button id="button-basic" dropdownToggle type="button" class="dropdown-toggle"
+                aria-controls="dropdown-basic">
+                Ricky Pointing
+              </button>
+              <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                <li role="menuitem"><a class="dropdown-item" routerLink="/user-profile/my-desk">My Desk</a></li>
+                <li role="menuitem"><a class="dropdown-item" routerLink="user-profile/edit-profile">Edit Profile</a>
+                </li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Change Password</a></li>
+                <li class="divider dropdown-divider"></li>
+                <li role="menuitem"><a class="dropdown-item" (click)="logout()">Logout</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
