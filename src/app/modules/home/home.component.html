@@ -408,7 +408,9 @@
                   </p>
                 </div>
                 <div class="follow_btn">
-                  <a href="#" target="_blank">Read</a>
+                  <!-- <a href="#" target="_blank">Read</a> -->
+                  <button class="write-on-btn" routerLink="/user-profile/read-publication"
+                    *ngIf="openPublications.length">Read</button>
                 </div>
               </div>
             </div>

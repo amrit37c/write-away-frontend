@@ -3,6 +3,7 @@ import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
 import { BsModalService, BsModalRef, ModalOptions } from "ngx-bootstrap/modal";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { UserService } from "src/app/service/user/user.service";
+import * as jwt_decode from "jwt-decode";
 
 @Component({
   selector: "app-header",
@@ -63,7 +64,9 @@ export class HeaderComponent implements OnInit {
           this.router.url == "/user-profile/my-submissions" ||
           this.router.url == "/user-profile/my-bookmarks" ||
           this.router.url == "/user-profile/my-profile" ||
-          this.router.url == "/user-profile/write-publication"
+          this.router.url == "/user-profile/write-publication" ||
+          this.router.url == "/user-profile/my-desk" ||
+          this.router.url == "/user-profile/edit-profile"
         ) {
           this.logo = "Full-Logo-WA.svg";
           this.currentPage = false;
@@ -146,6 +149,8 @@ export class HeaderComponent implements OnInit {
     this.userService.login(json).subscribe((_response) => {
       if (_response.status == 200) {
         this.userLogin = true;
+        const token = _response.body.data.token;
+
         localStorage.setItem("token", _response.body.data.token);
       }
       alert(_response.body.message);

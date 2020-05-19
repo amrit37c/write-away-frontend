@@ -1,0 +1,304 @@
+/* logo button */
+.logo-btn {
+  background-color: #D43299;
+  color: white;
+  border: 0;
+  width: 100%;
+  height: 40px;
+  font-weight: 500;
+}
+
+/* logo button */
+
+.my-desk-heading {
+  padding: 1px;
+  margin-top: 2px;
+  padding-left: 14px;
+  padding-top: 9px;
+  font-weight: 700;
+  display: flex;
+}
+
+.color-pink {
+  color: #D43299 !important;
+}
+
+.col-blue {
+  color: #1ca9c9;
+}
+
+.table-header {
+  background-color: #3B9BF1;
+  color: white;
+  padding-top: 14px;
+}
+
+.table-header p {
+  border-right: 1px solid white;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.background-light-blue {
+  background-color: #EFFDFE !important;
+}
+
+.background-light-pink {
+  background-color: #FDF7FB !important;
+}
+
+.color-blues {
+  color: #3B9BF1;
+  text-decoration: underline !important;
+}
+
+.rounded-div {
+  padding: 11px 18px;
+  margin: 9px 0;
+  border: 6px solid #ffffff;
+  border-radius: 37px;
+}
+
+.align-bookimg {
+  position: absolute;
+  margin-left: -21px;
+  /* vertical-align: middle; */
+  margin-top: 11px;
+}
+
+.clr1 {
+  color: skyblue;
+}
+
+.left-icons-multiple {
+  border-top: 1px solid !important;
+}
+
+.align-reads {
+  margin-left: 6px;
+}
+
+.clr2 {
+  color: red;
+}
+
+.align-reads {
+  margin-left: 6px;
+}
+
+.star-icon {
+  color: gold;
+  font-size: 10px !important;
+  margin-top: 6px;
+}
+
+.open-btn {
+  background-color: #D43299;
+  border: 0;
+  color: white;
+  padding: 4px;
+  min-width: 72px;
+  max-width: 72px;
+  border-radius: 18px;
+}
+
+.color-blue {
+  background-color: #3B9BF1;
+}
+
+
+.list-view-my-desk {
+  margin-top: 20px !important;
+}
+
+.color-blue {
+  background-color: #3B9BF1;
+}
+
+.color-blues {
+  color: #3B9BF1;
+  text-decoration: underline !important;
+}
+
+.load-more {
+  color: darkgray;
+  margin-top: 15px;
+}
+
+.img-writing {
+  width: 100%;
+}
+
+.back-red p {
+  color: lightgray;
+  font-size: 11px;
+}
+
+.logo-publisher p {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.logo-publisher img {
+  width: 29%;
+}
+
+.follows-pad {
+  padding-top: 34px;
+}
+
+.vedio-write {
+  border: 1px solid #000;
+  text-align: right !important;
+  margin-bottom: 22px;
+}
+
+.video-cont {
+  -webkit-box-shadow: -1px 10px 9px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 10px 9px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 10px 9px -8px rgba(0, 0, 0, 0.75);
+  color: #1ca9c9;
+  width: 35%;
+  float: right;
+}
+
+.video-text {
+  font-size: 10px;
+}
+
+.back-shadow {
+  -webkit-box-shadow: -1px 10px 9px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 10px 9px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 10px 9px -8px rgba(0, 0, 0, 0.75);
+}
+
+.right-writeting span {
+  font-size: 10px;
+  margin-left: 5px;
+  font-weight: 400;
+  color: #7F7F7F;
+}
+
+.right-writeting {
+  font-size: 11px;
+}
+
+.btn-read-wrinting button {
+  background-color: #3B9BF1;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 25px 4px 25px;
+  margin-top: 22px;
+  margin-bottom: 19px;
+}
+
+.main-item {
+  padding: 0 30px 0 30px;
+}
+
+.main-item-p {
+  line-height: 1.2;
+  color: #7F7F7F;
+  font-weight: 100 !important;
+}
+
+.pad-zero {
+  padding: 0%;
+}
+
+.follow-icon {
+  filter: invert(54%) sepia(68%) saturate(1606%) hue-rotate(314deg) brightness(86%) contrast(114%);
+}
+
+.icons-one {
+  font-size: 9px;
+  font-weight: 600;
+  padding-left: 20px;
+}
+
+.icons-one img {
+  width: 35%;
+}
+
+.color-blue {
+  background-color: #2F8ED9;
+  color: white;
+}
+
+.btn-read-wrinting {
+  padding-top: 22px;
+}
+
+.btn-read-wrinting {
+  padding-top: 22px;
+}
+
+.btn-read-wrinting button {
+  padding: 3px 40px 3px 40px;
+}
+
+.second-heading {
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.icon-padd {
+  padding-left: 10px;
+}
+
+.book-img {
+  margin-left: -8px;
+  margin-top: 3px;
+}
+
+.m-top {
+  margin-top: 25px;
+}
+
+.second-row-btn {
+  padding: 0%;
+}
+
+.share-textt {
+  margin-top: -5px !important;
+  padding-left: 4px;
+}
+
+.sacsc {
+  margin-top: 3px !important;
+}
+
+.no-below-item {
+  padding-top: 5px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bookmark-icon-my {
+  color: red;
+  font-size: 12px;
+}
+
+.share-icon-left-bar {
+  color: white;
+  background-color: #1CA9C9;
+  padding: 3px;
+  border-radius: 12px;
+  position: absolute;
+  top: -6px;
+  left: 15px;
+}
+
+.no-below-item p {
+  color: #000;
+}
+
+.slider-direction-icon {
+  cursor: pointer;
+}
+
+.clr-pink {
+  color: #FE01A2;
+}

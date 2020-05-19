@@ -12,6 +12,8 @@ import { WritePublicationComponent } from "./write-publication/write-publication
 import { ComponentsModule } from "src/app/components/components.module";
 import { CarouselModule } from "ngx-bootstrap/carousel";
 import { ModalModule } from "ngx-bootstrap/modal";
+import { MyDeskComponent } from './my-desk/my-desk.component';
+import { ReadPublicationComponent } from './read-publication/read-publication.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { ModalModule } from "ngx-bootstrap/modal";
     MySubmissionsComponent,
     MyProfileComponent,
     WritePublicationComponent,
+    MyDeskComponent,
+    ReadPublicationComponent,
   ],
   imports: [
     CommonModule,
