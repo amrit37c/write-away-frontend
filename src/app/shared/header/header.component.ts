@@ -68,7 +68,7 @@ export class HeaderComponent implements OnInit {
           this.router.url == "/user-profile/my-desk" ||
           this.router.url == "/user-profile/edit-profile"
         ) {
-          this.logo = "Full-Logo-WA.svg";
+          this.logo = "logo.svg";
           this.currentPage = false;
           this.blogRoute = false;
           return;
@@ -77,7 +77,7 @@ export class HeaderComponent implements OnInit {
             this.blogRoute = true;
             this.currentPage = false;
           } else {
-            this.logo = "logo.svg";
+            this.logo = "Full-Logo-WA.svg";
             this.blogRoute = false;
             this.currentPage = true;
           }
@@ -228,6 +228,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     localStorage.removeItem("token");
+    this.userLogin = false;
     this.router.navigateByUrl("/home");
   }
 }

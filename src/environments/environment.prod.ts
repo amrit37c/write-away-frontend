@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl: "http://18.222.251.77:80/api/v1/",
+  baseUrl: "http://demo.writeawayy.com:3000/api/v1/",
   apis: {
     register: "user/register",
     login: "user/login",
