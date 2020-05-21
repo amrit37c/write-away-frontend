@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { BlogService } from "src/app/service/blog/blog.service";
 import { PublicationService } from "src/app/service/publications/publication.service";
+import * as jwt_decode from "jwt-decode";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-home",
@@ -29,15 +31,24 @@ export class HomeComponent implements OnInit {
   publications: Array<any> = [];
   openPublications: Array<any> = [];
   closedPublications: Array<any> = [];
+  userId;
 
   constructor(
     private blogService: BlogService,
-    private publicationService: PublicationService
+    private publicationService: PublicationService,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.getBlogs(); //get blogs
     this.getPublications(); //get blogs
+
+    // check user is login
+    const token = localStorage.getItem("token");
+    const { id } = jwt_decode(token);
+    if (id) {
+      this.userId = id;
+    }
   }
   onSlideRangeChange(indexes: number[]): void {
     this.slidesChangeMessage = `Slides have been switched: ${indexes}`;
@@ -58,6 +69,8 @@ export class HomeComponent implements OnInit {
       this.closedPublications = this.publications.filter(
         (el) => el.publicationStatus == 3
       );
+
+      console.log("this", this.openPublications);
     });
   }
 
@@ -109,5 +122,43 @@ export class HomeComponent implements OnInit {
         }
       }
     }
+  }
+
+  addToFollowing(id) {
+    console.log("publication  id", this.userId);
+    if (!this.userId) {
+      this.openLogin();
+    }
+    this.publicationService
+      .saveUserPublishing({
+        publicationType: "bookmark",
+        publicationId: id,
+        publishedBy: this.userId,
+      })
+      .subscribe((_response) => {
+        console.log(">>>>", _response);
+      });
+  }
+
+  sharePublication(link) {
+    if (!this.userId) {
+      this.openLogin();
+    }
+  }
+  writePublication(id) {
+    if (!this.userId) {
+      this.openLogin();
+      return;
+    }
+    this.router.navigateByUrl(
+      "/user-profile/write-publication/" +
+        this.openPublications[this.openPublicationIndex]._id
+    );
+  }
+  openLogin() {
+    let element: HTMLElement = document.getElementsByClassName("btn_img")[0]
+      .firstElementChild as HTMLElement;
+    element.click();
+    return;
   }
 }

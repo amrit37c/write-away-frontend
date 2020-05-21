@@ -759,7 +759,9 @@ button {
 .left_sidebar,
 .hero-area,
 .load-more,
-.btn, .media-upload, .topic {
+.btn,
+.media-upload,
+.topic {
   font-family: Montserrat;
 }
 
@@ -783,4 +785,5 @@ button {
   font-style: italic;
   border-color: #D43299;
   margin-bottom: 20px;
+  width: 100%;
 }

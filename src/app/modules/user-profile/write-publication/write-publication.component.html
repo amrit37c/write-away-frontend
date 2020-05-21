@@ -240,7 +240,10 @@
                   <i class="fa fa-share share-eco-editor"></i> <span>Shares</span>
                 </div>
                 <div class="col-6">
-                  <i class="fa fa-bookmark-o col-redss"></i> <span>Bookmarks</span>
+                  <i class="fa col-redss"
+                    (click)="data['userPublication'] && data['userPublication'][0].publicationType=='bookmark' ? updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(data['userPublication'][0]._id, 'add') "
+                    [ngClass]="{'fa-bookmark':data['userPublication'] && data['userPublication'][0].publicationType=='bookmark', 'fa-bookmark-o': data['userPublication'] && data['userPublication'][0].publicationType!='bookmark'}"></i>
+                  <span>Bookmarks</span>
                 </div>
               </div>
             </div>
@@ -266,8 +269,10 @@
             </div>
           </div>
           <div class="col-10">
-            <div class="topic">Enter Topic</div>
-            <app-editor [data]="editorData" (editorContent)="getContent($event)"></app-editor>
+            <form role="form" [formGroup]="submissionForm">
+              <input type="text" class="topic" placeholder="Enter Topic" formControlName="topic" />
+              <app-editor [data]=" editorData" (editorContent)="getContent($event)"></app-editor>
+            </form>
           </div>
 
 
@@ -296,21 +301,20 @@
 <!-- Sliders -->
 <div class="container">
   <h4 class="load-more">Load More...</h4>
-  <div class="carousel-cont">
+  <div class="carousel-cont" *ngIf="suggestedPublication.length>0">
     <div class="carousel-headings text-center">
       <p> <span class="color-pink">Su</span>ggested Publishing</p>
     </div>
-    <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
+    <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="true"
       [indicatorsByChunk]="true">
-      <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+      <slide *ngFor="let slide of suggestedPublication; let index=index" class="slider-cont">
         <div class="row">
           <div class="col-md-4">
-            <img [src]="slide.image" alt="image slide" class="slider-img">
+            <img src="http://localhost:3000/images/{{slide.mediaCover}}" alt="image slide" class="slider-img">
           </div>
           <div class="col-md-8 text-justify">
-            <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur
-              elit.Impedit debitis doloremque at quos non officiis.
+            <h6 class="novel-title">{{ slide.title }}</h6>
+            <p class="text-justify"> {{ slide.brief }}
             </p>
           </div>
 
@@ -390,7 +394,8 @@
   <div class="modal-body">
     <div class="text-center mb-3" *ngFor="let row of data.genres && data.genres.topicMedia">
       <img style="float: left;" class="img-responsive img-fluid mb-2" src="http://localhost:3000/images/{{row}}" />
-      <button class="btn btn-primary" (click)="addToMedia(row)"> Select this Genre Image</button>
+      <button class="btn btn-primary" (click)="addToMedia(row)">
+        {{ mediaAvailable.includes(row) ? 'Selected': 'Select this Genre Image' }} </button>
     </div>
   </div>
 </ng-template>

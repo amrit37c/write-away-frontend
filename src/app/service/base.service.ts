@@ -37,7 +37,7 @@ export class BaseService {
     }
     return this.http
       .get<any>(this.url, {
-        // headers: this.token(),
+        headers: this.token(),
         params: httpParams,
         responseType: "json",
         observe: "response",
@@ -57,7 +57,7 @@ export class BaseService {
   getOne(id?: string): Observable<any> {
     return this.http
       .get<any>(id ? `${this.url}/${id}` : `${this.url}`, {
-        // headers: this.token(),
+        headers: this.token(),
         observe: "response",
         responseType: "json",
       })
@@ -74,7 +74,7 @@ export class BaseService {
   post(payload): Observable<any> {
     return this.http
       .post<any>(this.url, payload, {
-        // headers: this.token(),
+        headers: this.token(),
         responseType: "json",
         observe: "response",
       })
@@ -92,7 +92,7 @@ export class BaseService {
   delete(id): Observable<any> {
     return this.http
       .delete<any>(`${this.url}/${id}`, {
-        // headers: this.token(),
+        headers: this.token(),
         responseType: "json",
       })
       .pipe(
@@ -109,7 +109,7 @@ export class BaseService {
   put(id, payload): Observable<any> {
     return this.http
       .put<any>(`${this.url}/${id}`, payload, {
-        // headers: this.token(),
+        headers: this.token(),
         responseType: "json",
         observe: "response",
       })
@@ -126,7 +126,7 @@ export class BaseService {
   patch(id, payload): Observable<any> {
     return this.http
       .patch<any>(`${this.url}/${id}`, payload, {
-        // headers: this.token(),
+        headers: this.token(),
         responseType: "json",
       })
       .pipe(
@@ -182,6 +182,18 @@ export class BaseService {
       return throwError(err);
     } else {
       return throwError(err);
+    }
+  }
+
+  token() {
+    let token = localStorage.getItem("token");
+    // create authorization header with jwt token
+    if (token) {
+      const headers = new HttpHeaders({ Authorization: `Bearer ${token}` });
+
+      return headers;
+    } else {
+      return new HttpHeaders();
     }
   }
 }
