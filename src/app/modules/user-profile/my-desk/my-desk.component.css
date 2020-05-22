@@ -130,7 +130,7 @@
 }
 
 .back-red p {
-  color: lightgray;
+  color: #7e7e7e !important;
   font-size: 11px;
 }
 
@@ -302,4 +302,8 @@
 .clr-pink {
   color: #FE01A2;
 }
+/* .font-apply
+ {
+  font-family: Montserrat;
 
+} */
