@@ -141,7 +141,7 @@ export class BaseService {
   handleError(err) {
     let message;
     if (err.status === 401) {
-      alert(err.message);
+      this.router.navigateByUrl("/home");
       // if (err.error.err) {
       // } else {
       //   if (this.type == "admin") {

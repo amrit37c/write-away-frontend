@@ -155,6 +155,14 @@ export class HomeComponent implements OnInit {
         this.openPublications[this.openPublicationIndex]._id
     );
   }
+  readBlog(id) {
+    if (!this.userId) {
+      this.openLogin();
+      return;
+    }
+    this.router.navigateByUrl("/blogs/" + id);
+    // routerLink="/blogs/{{blogs[0]._id}}"
+  }
   openLogin() {
     let element: HTMLElement = document.getElementsByClassName("btn_img")[0]
       .firstElementChild as HTMLElement;

@@ -213,7 +213,7 @@
                     </div>
                   </div>
                   <div class="social_read responsive-a">
-                    <a routerLink="/blogs/{{blogs[0]._id}}" *ngIf="blogs.length">Read More</a>
+                    <a (click)="readBlog(blogs[0]._id)" *ngIf="blogs.length">Read More</a>
                   </div>
                 </div>
               </div>

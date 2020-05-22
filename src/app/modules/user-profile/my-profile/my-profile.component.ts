@@ -58,8 +58,6 @@ export class MyProfileComponent implements OnInit {
   }
 
   getUserInfo() {
-    this.service.getOne(this.userId).subscribe((_response) => {
-      console.log(_response);
-    });
+    this.service.getOne(this.userId).subscribe((_response) => {});
   }
 }
