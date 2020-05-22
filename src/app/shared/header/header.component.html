@@ -91,10 +91,14 @@
 <!--/ End Header -->
 <!-- Login Modal -->
 <ng-template #template>
+  <div class="fff">
   <div class="modal-header">
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <div class="left">
+
+    <button type="button" class="close closepop-btn" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
+  </div>
   </div>
   <div class="modal-body">
     <div class="container-fluid">
@@ -113,7 +117,7 @@
         <div class="col-md-6 right">
           <span class="alred-reg not-reg-modal">Not yet Registered?</span>
 
-          <a href="#"> <button class="sign-signup-btn">Sign Up</button></a>
+          <a href="#"> <button class="sign-signup-btn sign-up-pop-col">Sign Up</button></a>
 
         </div>
       </div>
@@ -174,22 +178,25 @@
       </div>
     </div>
   </div>
+</div>
 </ng-template>
 <!-- Login Modal -->
 <!-- Signup Modal -->
 <ng-template #templateSignup>
   <div class="modal-header">
     <!-- <h4 class="modal-title pull-left">Signup Modal</h4><br /> -->
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <div class="left">
+    <button type="button" class="close closepop-btn" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+  </div>  
   <div class="modal-body ">
     <div class="container-fluid">
       <!-- <div>
         <button class="close-btn" (click)="modalRef.hide()"><i class="fa fa-close"></i>
         </button>
-      </div> -->
+      </div> -->  
       <!-- <head -->
       <div class="row create-acc-head ">
         <div class="col-md-6 ">
@@ -197,7 +204,7 @@
         </div>
         <div class="col-md-6 right mobile-res">
           <span class="alred-reg not-reg-modal">Already Registered?</span>
-          <a href="sign-In.html"><button class="sign-signup-btn">Sign In</button></a>
+          <a href="sign-In.html"><button class="sign-signup-btn sign-up-pop-col">Sign In</button></a>
         </div>
       </div>
 
@@ -211,18 +218,44 @@
           <div class="col-md-8">
             <div class="date-picker">
               <div class="row">
-                <div class="col-6">
+                <div class="col-1"></div>
+
+                <div class="col-5 right">
                   <span class="input-names"> Please select</span>
                 </div>
-                <div class="col-6">
+                <div class="col-5 left">
 
                   <h6 class="display">Date of Birth</h6>
 
                 </div>
+                <div class="col-1"></div>
+
               </div>
 
-              <div class="select-dates">
-                <select class="birthdate" [(ngModel)]="selectedMonth" (change)="getDates()">
+              
+                <div class="">
+                  <div class="row select-dates caret-icons">
+                <div class="col-6 right">
+                  <select class="birthdate" [(ngModel)]="selectedMonth" (change)="getDates()">
+                    <option *ngFor="let month of months">{{month}}</option>
+                  </select><i class="fa fa-caret-down" aria-hidden="true"></i>
+                </div>
+               
+                <div class="col-3 left">
+                  <select class="birthdate update-birthdate" [(ngModel)]="selectedDate">
+
+                    <option *ngFor="let item of getDates();">{{item}}</option>
+                  </select>
+                  <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </div>
+                <div class="col-3 left ">
+                  <select class="birthdate update-birthdate" [(ngModel)]="selectedYear" (change)="calculateAge()">
+                    <option *ngFor="let item of getYears();">{{item}}</option>
+                  </select><i class="fa fa-caret-down" aria-hidden="true"></i>
+                </div>
+              </div>
+                </div>
+                <!-- <select class="birthdate" [(ngModel)]="selectedMonth" (change)="getDates()">
                   <option *ngFor="let month of months">{{month}}</option>
                 </select>
                 <select class="birthdate" [(ngModel)]="selectedDate">
@@ -230,8 +263,8 @@
                 </select>
                 <select class="birthdate" [(ngModel)]="selectedYear" (change)="calculateAge()">
                   <option *ngFor="let item of getYears();">{{item}}</option>
-                </select>
-              </div>
+                </select> -->
+             
             </div>
           </div>
           <div class="col-md-2"></div>

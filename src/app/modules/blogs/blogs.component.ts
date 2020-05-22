@@ -57,7 +57,6 @@ export class BlogsComponent implements OnInit {
       } else {
         this.archievedBlogs = _response.body.data;
       }
-
       if (!this.recentBlogs.length) {
         this.recentBlogs = this.archievedBlogs.splice(0, 4);
       }

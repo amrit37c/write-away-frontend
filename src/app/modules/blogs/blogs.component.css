@@ -197,3 +197,15 @@
     border-radius: 10px;
     font-size: 10px;
 }
+.img-updated{
+  display: flex;
+  position: relative;
+  top: 11px;
+  left: 14px;
+
+  width: 13%;
+}
+.updated-img{
+  margin-top: 9px;
+
+}

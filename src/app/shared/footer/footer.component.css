@@ -8,6 +8,8 @@
   color: #9F9F9F;
   margin-top: 11px;
   margin-bottom: 2px;
+  font-weight: 600;
+
 }
 
 .circle {
@@ -114,3 +116,28 @@
 }
 
 /* Footer area */
+.added-footer{
+  font-weight: 600;
+
+}
+.added-icons i{
+  color: #D43299;
+
+}
+.added-icons {
+  color: #219AD3;
+  
+}
+.quote-footer{
+  font-size: 8px;
+  border: 2px solid #D43299;
+  padding: 3px;
+  border-radius: 9px;
+}
+.input-footer-head{
+  padding-top: 20px;
+  font-weight: 600;
+}
+.input-footer-head span {
+  color: white;
+}

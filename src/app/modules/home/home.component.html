@@ -1,11 +1,14 @@
 <!-- About Us Start -->
 <section class="about-us section">
-  <div class="container">
-    <div class="row">
+  <div class="container-fluid">
+    <div class="row updated-alignment">
       <div class="col-lg-6 col-12 wow fadeInRight" data-wow-delay="0.6s">
-        <div class="about-content">
-          <span class="short_heading">Start</span>
-          <h2>Reading Today</h2>
+        <div class="about-content updated-content">
+          <!-- <span class="short_heading">Start</span> -->
+          <h4>Write</h4>
+          <h4>Write more.</h4>
+
+          <h4>Write even more </h4>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna Lorem ipsum
@@ -30,8 +33,8 @@
 
 <!-- Know More Start -->
 <section class="know_more section">
-  <div class="container p-0">
-    <div class="row mb-4">
+  <div class="container-fluid">
+    <div class="row updated-alignment mb-4">
       <div class="col-lg-6 col-md-12 col-12 wow fadeIn" data-wow-delay="0.6s">
         <div class="book_store book_store_blue d-flex">
           <div class="row">
@@ -98,7 +101,7 @@
       <!-- share away -->
 
     </div>
-    <div class="row">
+    <div class="row updated-alignment">
       <div class="col-lg-5 col-md-12 col-12 wow fadeIn" data-wow-delay="0.8s">
         <div class="book_store book_store_pink back_green  d-flex">
 
@@ -182,6 +185,27 @@
                 <!-- <img src="/assets/images/gallery-4.jpg" alt="Blog image" /> -->
                 <img src="http://localhost:3000/images/{{blogs[0].media}}" *ngIf="blogs.length" alt="Blog image" />
               </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-2">
+                    <span class="updated-map"><img src="/assets/images/boki.svg" class="img-updated" alt="dff">
+                    </span>
+                  </div>
+                  <div class="col-10 col-greys">
+
+                    <span class="updated-num">1500</span>
+                    <p><span class="reads-updated">Reads</span></p>
+                  </div>
+                    
+                  </div>
+                </div>
+                <div class="col-6 right updated-icons">
+                  <i class="fa fa-heart-o col-red"></i>
+                  <i class="fa fa-share  share-icons share-updated"></i>
+                  <i class="fa fa-bookmark-o col-yel  "></i>
+                </div>
+              </div>
             </div>
             <div class="col-lg-7 col-12">
               <div class="service_right_desc">
@@ -199,7 +223,7 @@
                 </div>
                 <div class="service_icon_details d-flex justify-content-between">
                   <div class="social_likes justify-content-between d-flex">
-                    <div class="social_likes_1 d-flex justify-content-between">
+                    <!-- <div class="social_likes_1 d-flex justify-content-between">
                       <span class="span_top_likes"><i class="fa fa-map"></i></span>
                       <p><span>{{blogs[0] && blogs[0].readCount}}</span> <span>Reads</span></p>
                     </div>
@@ -210,7 +234,7 @@
                     <div class="social_likes_1 d-flex justify-content-between">
                       <span class="span_top_likes"><i class="fa fa-share col-blue share-icons"></i></span>
                       <p><span>{{blogs[0] && blogs[0].shareCount}}</span> <span>shares</span></p>
-                    </div>
+                    </div> -->
                   </div>
                   <div class="social_read responsive-a">
                     <a (click)="readBlog(blogs[0]._id)" *ngIf="blogs.length">Read More</a>
@@ -296,12 +320,16 @@
                     (click)="data['userPublication'] && data['userPublication'][0].publicationType=='bookmark' ? updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(data['userPublication'][0]._id, 'add') "
                     [ngClass]="{'fa-bookmark':data['userPublication'] && data['userPublication'][0].publicationType=='bookmark', 'fa-bookmark-o': data['userPublication'] && data['userPublication'][0].publicationType!='bookmark'}"></i> -->
                   <p class="book_mark_link" (click)="addToFollowing(openPublications[openPublicationIndex].id)">
-                    <i class="fa fa-bookmark-o"></i>
-
+                     <i class="fa fa-bookmark-o"></i> 
                     <!-- {{openPublications[openPublicationIndex]['userPublication'] | json}} -->
                     <!-- <i class="fa col-redss"
-                      (click)="openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark' ? updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(openPublications[openPublicationIndex]['userPublication'][0]._id, 'add') "
-                      [ngClass]="{'fa-bookmark':openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark', 'fa-bookmark-o': openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]['userPublication'][0].publicationType!='bookmark'}"></i> -->
+                      (click)="openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark' ?
+                       updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(openPublications[openPublicationIndex]
+                       ['userPublication'][0]._id, 'add') "
+                      [ngClass]="{'fa-bookmark':openPublications[openPublicationIndex]['userPublication'] 
+                      && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark', 
+                      'fa-bookmark-o': openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]
+                      ['userPublication'][0].publicationType!='bookmark'}"></i> -->
                     <span>Bookmarks</span>
 
                   </p>
@@ -443,7 +471,7 @@
   <div class="container">
     <div class="row m-0">
       <div class="col-lg-12 col-12">
-        <h3 class="text-center testimonials_title  mt-5 mb-2"><span>Te</span>stimonials</h3>
+        <h3 class="text-center testimonials_title testi-updated   mt-5 mb-2"><span>Te</span>stimonials</h3>
         <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
           [indicatorsByChunk]="true">
           <slide *ngFor="let slide of slides; let index=index" class="slider-cont">

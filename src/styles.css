@@ -458,7 +458,7 @@ input:-webkit-autofill:focus {
 
 .new-icons-blog {
   position: relative;
-  right: 20px;
+  right: 36px;
   top: 15px;
 }
 
@@ -470,7 +470,7 @@ input:-webkit-autofill:focus {
 
 .share-eco {
   font-size: 15px;
-  background-color: #007bff;
+  background-color: #219AD3;
   padding: 3px;
   border-radius: 13px;
   color: white !important;
