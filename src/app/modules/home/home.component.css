@@ -1071,7 +1071,10 @@ ul li {
 .email-btn,
 .follow_links,
 .publisher_desc,
-.hero-area {
+.hero-area,
+.testi-updated,
+.added-footer
+ {
   font-family: Montserrat;
 
 }
@@ -1080,4 +1083,55 @@ ul li {
 /* slider of  */
 .slider-direction-icon {
   cursor: pointer;
+}
+
+
+/* 22-05 */
+
+.testi-updated{
+  color: #3b9bf1;
+}
+.updated-content h4{
+  line-height: 39px;
+
+}
+.updated-alignment{
+  padding: 0px 44px 0px 72px;
+
+}
+.right{
+  text-align: right;
+}
+.col-yel{
+  color: #ffcc57;
+  font-size: 21px;
+}
+.updated-icons{
+  margin-top: 10px;
+}
+.updated-icons i{
+ margin-left: 13px;
+}
+.share-updated{
+  position: relative;
+  top: -4px;
+}
+.reads-updated{
+  border-top: 1px solid;
+  /* position: relative;
+  left: 12px;
+  top: -5px; */
+
+}
+.updated-map{
+  position: relative;
+  top: 15px;
+  left: 9px;
+  font-size: 16px;
+  color: #7aced8;
+}
+.updated-num{
+  position: relative;
+  top: 5px;
+
 }

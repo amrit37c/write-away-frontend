@@ -371,6 +371,7 @@ a.forget-password {
   border: none;
   border-bottom: 1px solid #E72692;
   color: lightgray;
+  cursor: pointer;
 }
 
 /* Registration */
@@ -428,29 +429,24 @@ background-color: white !important;
 float: right !important;
 }
 ::ng-deep .modelWidth{
-  float: right;
+  margin-top: 180px;
   margin-right: 300px;
-  margin-top: 81px;
 
-  width: 50% !important;
 
 }
   @media only screen and (min-width:1024px) and (max-width:1025px){
   ::ng-deep .modelWidth{
-   float: right;
-    margin-right: 98px;
-     margin-top: 81px; 
-     width: 42% !important; 
+    margin-right: 174px;
+    margin-top: 161px;
+    width: 31% !important;
   
    } 
  }
  
  @media only screen and (min-width:1440px) and (max-width:1441px){
   ::ng-deep .modelWidth{
-   float: right;
-    margin-right: 215px;
-     margin-top: 81px; 
-     width: 42% !important; 
+    margin-top: 146px;
+    width: 30% !important;
   
    } 
  }
@@ -470,9 +466,36 @@ float: right !important;
 
 
 ::ng-deep .modal-content{
-  width: 115%;
+  width: 148%;
 
 }
 .sign-up-pop-col{
-color: #e051b7;
+  color: #e051b7;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 15px;
+
 }
+.closepop-btn{
+  padding: 3px;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -3px;
+    margin-bottom: -2px;
+}
+.left{
+  text-align: left;
+}
+.update-birthdate{
+  width: 69%;
+
+}
+.caret-icons{
+  position: relative;
+  right: 8px;
+  color: lightgray;
+}
+
