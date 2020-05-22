@@ -13,6 +13,23 @@ export class BlogsComponent implements OnInit {
   recentBlogs: Array<any> = [];
   recentBlog = {};
   archievedBlogs: Array<any> = [];
+  months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  monthsArchievedData = {};
+  objectKeys = Object.keys;
 
   constructor(private route: ActivatedRoute, private service: BlogService) {}
 
@@ -40,10 +57,24 @@ export class BlogsComponent implements OnInit {
       } else {
         this.archievedBlogs = _response.body.data;
       }
-      debugger;
+
       if (!this.recentBlogs.length) {
         this.recentBlogs = this.archievedBlogs.splice(0, 4);
       }
+
+      this.archievedBlogs.forEach((el) => {
+        var dt =
+          this.months[new Date(el.createdAt).getMonth()] +
+          "-" +
+          new Date(el.createdAt).getFullYear();
+
+        if (this.monthsArchievedData[dt]) {
+          this.monthsArchievedData[dt].push(el);
+        } else {
+          this.monthsArchievedData[dt] = [el];
+        }
+      });
+      console.log(this.monthsArchievedData);
     });
   }
 

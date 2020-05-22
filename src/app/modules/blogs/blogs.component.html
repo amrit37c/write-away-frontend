@@ -124,7 +124,27 @@
       <div class="archive-section col-md-12">
         <p class="archive-font"><span class="recenter">Ar</span>chives</p>
         <div class="archive-date">
-          <p>June 2019</p>
+          <p *ngFor="let data of objectKeys(monthsArchievedData)">{{ data }}</p>
+          <div class="row">
+
+            <div class="col-md-3 recent-blog-blk" *ngFor="let blog of monthsArchievedData[data]">
+              <div class="date-recent"> <span> {{ blog.createdAt | date : 'MMM dd,yyyy'   }}</span> </div>
+              <div class="rcbb">
+                <div class="recent-blog-img">
+                  <img src="http://localhost:3000/images/{{blog.media}}">
+                </div>
+                <div class="comm-font">
+                  <p>{{blog.title}}</p>
+                </div>
+                <div class="recent-text-font">
+                  <p [innerHTML]="blog.content"></p>
+                </div>
+                <span class="read-more">
+                  <p (click)="addToRecent(blog._id)"> Read More </p>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
