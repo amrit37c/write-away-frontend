@@ -6,6 +6,10 @@
 
 .background-light-blue {
   background-color: #EFFDFE !important;
+  
+}
+.imgleft{
+  display: unset;
 }
 
 .left-bar-writeAway img {
@@ -71,11 +75,13 @@
 
 .align-reads {
   margin-left: 6px;
+  position: relative;
+  top: 9px;
 }
 
 .left-bar-icn {
   position: relative;
-  /* left: 35px; */
+  left: 35px;
   top: 2px;
   font-size: 13px;
 }
@@ -134,4 +140,81 @@
 p,
 span {
   outline: none;
+}
+.star-icon {
+  color: gold;
+  font-size: 10px !important;
+  margin-top: 6px;
+}
+.rating-left {
+  font-size: 13px;
+  color: black !important;
+  padding-bottom: 20px;
+  border-bottom: 3px solid white;
+}
+.share-icon-left {
+  color: #1CA9C9;
+  font-size: 11px !important;
+  position: relative;
+  left: -7px;
+  top: 2px;
+}
+.user-icon {
+  font-size: 18px !important;
+}
+.center{
+text-align: center;
+}
+.updated-shares{
+  position: absolute;
+    margin-left: 58px;
+    margin-top: 17px;
+
+} 
+ .align-icon-small {
+  position: relative;
+  left: 21px;
+  top: 6px;
+}
+.share-icon-left-bar {
+  color: white;
+  background-color: #1CA9C9;
+  padding: 3px;
+  border-radius: 12px;
+  /* position: absolute;
+  top: -6px; */
+  left: 15px;
+}
+.progress-left {
+  width: 75% !important;
+   height: 17px !important;
+ 
+  margin-bottom: 10px !important;
+}
+.bar-length {
+  width: 75% !important;
+  margin-left: 0px !important;
+  background-color: #337ABA;
+
+}
+.edit-icon-left {
+  margin-left: 16px;
+  color: blue;
+}
+.updated-progress{
+  width: 54% !important;
+  margin-left: 14px !important;
+}
+@media only screen and (min-width:1024px) and (max-width:1025px){
+  .left-bar-icn{
+    position: relative;
+    left: 17px;
+    top: 2px;
+    font-size: 13px;
+  }
+  .align-icon-small {
+    position: relative;
+    left: 9px ;
+    top: 6px;
+}
 }
