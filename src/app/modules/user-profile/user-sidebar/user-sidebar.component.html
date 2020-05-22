@@ -1,7 +1,7 @@
 <div class="left-bar-writeAway background-light-blue" *ngIf="show">
-  <img src="/assets/images/publisher.svg"> <span>Daniel</span>
+  <img src="/assets/images/publisher.svg" class="imgleft"> <span>Daniel</span>
   <p>
-    Profile Completion <span class="progress progress-left">
+    Profile Completion <span class="progress updated-progress progress-left">
       <span class="progress-bar bar-length" style="color:white !important
             ;border-radius: 13px !important;
             font-size: 8px !important;
@@ -27,14 +27,15 @@
 
 
     </div>
-    <div class="col-md-6 center">
+    <div class="col-md-6 center " >
       <div class="text-center">
         <i class="fa fa-user user-icon"></i>
         <i class="fa fa-share-alt share-icon-left"></i>
-
+       
       </div>
-      <p>Share Profile</p>
-
+      <div class="" >
+      <p style="display: unset !important;">Share Profile</p>
+    </div>
     </div>
 
   </div>
@@ -45,7 +46,7 @@
     <div class="row ">
       <div class="col-6 left-bar-size center">
         <div class="align-bookimg"><i class="fa left-bar-icn fa-user-plus clr1"></i></div>
-        <div class="align-center">450</div>
+        <div class="align-center align-reads">450</div>
         <div><span class="left-icons-multiple left-bar-size">Following</span></div>
       </div>
       <div class="col-6 left-bar-size center">
@@ -65,7 +66,7 @@
     <div class="row ">
       <div class="col-6 left-bar-size center">
         <div class="align-bookimg"><i class="fa left-bar-icn fa-bookmark-o col-red col-red"></i></div>
-        <div class="align-center">450</div>
+        <div class="align-center align-reads">450</div>
         <div><span class="left-icons-multiple left-bar-size" routerLink="/user-profile/my-bookmarks">Bookmarks</span>
         </div>
       </div>
@@ -97,8 +98,8 @@
           My Submissions: <span>500</span>
         </p>
       </div>
-      <div class="col-md-5 right">
-        <div class="align-bookimg reverts-share"><i class="fa  fa-lg  fa-share col-blue"></i></div>
+      <div class="col-md-5 text-right">
+        <div class="align-bookimg updated-shares reverts-share"><i class="fa  fa-lg  fa-share col-blue"></i></div>
         <div class="align-reads">450</div>
         <div><span class="left-icons-multiple ">Reverts</span></div>
 
@@ -112,7 +113,7 @@
 
     <div class="row left-smale-cons">
       <div class="col-3 left-bar-size center">
-        <div class="align-bookimg"><i class="fa align-icon-small fa-lg  fa-bookmark-o col-red col-red"></i></div>
+        <div class="align-bookimg"><i class="fa align-icon-small fa-lg  fa-bookmark-o col-red "></i></div>
         <div class="align-reads">450</div>
         <div><span class="left-icons-multiple left-bar-size-1">Reads</span></div>
       </div>
@@ -139,12 +140,12 @@
       My Social Media:
     </p>
     <div class=" ">
-      <i class="fa  fa-facebook   left-bar-btmss"></i>
-      <i class="fa  fa-instagram  left-bar-btmss"></i>
-      <i class="fa  fa-twitter   left-bar-btmss"></i>
-      <i class="fa  fa-linkedin  left-bar-btmss"></i>
+      <i class="fa fa-lg fa-facebook   left-bar-btmss"></i>
+      <i class="fa  fa-lg fa-instagram  left-bar-btmss"></i>
+      <i class="fa  fa-lg fa-twitter   left-bar-btmss"></i>
+      <i class="fa  fa-lg fa-linkedin  left-bar-btmss"></i>
 
-      <i class="fa  fa-google-plus  left-bar-btmss"></i>
+      <i class="fa  fa-lg fa-google-plus  left-bar-btmss"></i>
     </div>
     <p></p>
 
