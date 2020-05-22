@@ -296,12 +296,16 @@
                     (click)="data['userPublication'] && data['userPublication'][0].publicationType=='bookmark' ? updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(data['userPublication'][0]._id, 'add') "
                     [ngClass]="{'fa-bookmark':data['userPublication'] && data['userPublication'][0].publicationType=='bookmark', 'fa-bookmark-o': data['userPublication'] && data['userPublication'][0].publicationType!='bookmark'}"></i> -->
                   <p class="book_mark_link" (click)="addToFollowing(openPublications[openPublicationIndex].id)">
-                    <!-- <i class="fa fa-bookmark-o"></i>
-                    <span>Bookmark</span> -->
+                     <i class="fa fa-bookmark-o"></i> 
                     <!-- {{openPublications[openPublicationIndex]['userPublication'] | json}} -->
-                    <i class="fa col-redss"
-                      (click)="openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark' ? updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(openPublications[openPublicationIndex]['userPublication'][0]._id, 'add') "
-                      [ngClass]="{'fa-bookmark':openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark', 'fa-bookmark-o': openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]['userPublication'][0].publicationType!='bookmark'}"></i>
+                    <!-- <i class="fa col-redss"
+                      (click)="openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark' ?
+                       updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(openPublications[openPublicationIndex]
+                       ['userPublication'][0]._id, 'add') "
+                      [ngClass]="{'fa-bookmark':openPublications[openPublicationIndex]['userPublication'] 
+                      && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark', 
+                      'fa-bookmark-o': openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]
+                      ['userPublication'][0].publicationType!='bookmark'}"></i> -->
                     <span>Bookmarks</span>
 
                   </p>

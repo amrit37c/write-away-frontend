@@ -212,7 +212,7 @@
 }
 
 .back-image {
-  background-image: url(/assets/images/main-banner45.svg);
+  /* background-image: url(/assets/images/main-banner45.svg); */
   height: 87%;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -375,8 +375,11 @@ a.forget-password {
 
 /* Registration */
 /* Modal */
-:host ::ng-deep .modal-dialog {
-  max-width: 100% !important;
+::ng-deep .modal-dialog {
+  float: right;
+  margin-right: 273px;
+  opacity: 0.8;
+
 }
 
 /* Modal */
@@ -417,4 +420,59 @@ font-weight: 700;
   height: 239px;
   padding-top: 27px;
 
+}
+.login-modalss{
+position: absolute !important;
+right: 0px !important;
+background-color: white !important;
+float: right !important;
+}
+::ng-deep .modelWidth{
+  float: right;
+  margin-right: 300px;
+  margin-top: 81px;
+
+  width: 50% !important;
+
+}
+  @media only screen and (min-width:1024px) and (max-width:1025px){
+  ::ng-deep .modelWidth{
+   float: right;
+    margin-right: 98px;
+     margin-top: 81px; 
+     width: 42% !important; 
+  
+   } 
+ }
+ 
+ @media only screen and (min-width:1440px) and (max-width:1441px){
+  ::ng-deep .modelWidth{
+   float: right;
+    margin-right: 215px;
+     margin-top: 81px; 
+     width: 42% !important; 
+  
+   } 
+ }
+ @media only screen and (min-width:768px) and (max-width:769px){
+  ::ng-deep .modelWidth{
+
+    margin-top: 389px;
+    width: 100% ;
+  
+   } 
+   ::ng-deep .modal-content{
+ 
+    width: 160% !important;
+  
+   } 
+ }
+
+
+::ng-deep .modal-content{
+  width: 115%;
+
+}
+.sign-up-pop-col{
+color: #e051b7;
 }
