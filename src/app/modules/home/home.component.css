@@ -1043,10 +1043,10 @@ ul li {
 
 .share-icons {
   background: #007bffc9;
-    color: white;
-    padding: 3px;
-    font-size: 13px;
-    border-radius: 18px;
+  color: white;
+  padding: 3px;
+  font-size: 13px;
+  border-radius: 18px;
 }
 
 .win-coming-soon {
@@ -1118,6 +1118,7 @@ ul li {
 }
 .reads-updated{
   border-top: 1px solid;
+  /* color: lightgray; */
   /* position: relative;
   left: 12px;
   top: -5px; */
@@ -1133,5 +1134,9 @@ ul li {
 .updated-num{
   position: relative;
   top: 5px;
+
+}
+.col-greys{
+  /* color: lightgray; */
 
 }

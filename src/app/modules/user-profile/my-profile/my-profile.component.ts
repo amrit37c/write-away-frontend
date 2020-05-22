@@ -9,6 +9,7 @@ import * as jwt_decode from "jwt-decode";
   styleUrls: ["./my-profile.component.css"],
 })
 export class MyProfileComponent implements OnInit {
+  count: number = 0;
   editForm: FormGroup;
   userId;
   constructor(private formBuilder: FormBuilder, private service: UserService) {}
@@ -57,8 +58,6 @@ export class MyProfileComponent implements OnInit {
   }
 
   getUserInfo() {
-    this.service.getOne(this.userId).subscribe((_response) => {
-      console.log(_response);
-    });
+    this.service.getOne(this.userId).subscribe((_response) => {});
   }
 }

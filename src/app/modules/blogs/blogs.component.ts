@@ -26,8 +26,9 @@ export class BlogsComponent implements OnInit {
   }
 
   getBlogDetails(id) {
-    this.service.getOne(this.id || id).subscribe((_response) => {
-      this.blog = _response.body.data[0];
+    this.service.getOneBlog(this.id || id).subscribe((_response) => {
+      this.blog = _response.body.data;
+      console.log("this", this.blog);
     });
   }
 
@@ -37,7 +38,11 @@ export class BlogsComponent implements OnInit {
       if (type == "recent") {
         this.recentBlogs = _response.body.data;
       } else {
-        const data = _response.body.data;
+        this.archievedBlogs = _response.body.data;
+      }
+      // debugger;
+      if (!this.recentBlogs.length) {
+        this.recentBlogs = this.archievedBlogs.splice(0, 4);
       }
     });
   }

@@ -6,6 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./my-bookmarks.component.css"],
 })
 export class MyBookmarksComponent implements OnInit {
+  count: number = 0;
   constructor() {}
 
   ngOnInit() {}

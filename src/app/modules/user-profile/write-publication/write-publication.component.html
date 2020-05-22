@@ -213,27 +213,27 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="col-md-8 right-pink-head">
-            <p class="novelists-approach">{{data.title}}</p>
-            <p class="novelists-approach">{{ data.publishedBy | titlecase }}</p>
+            <p class="novelists-approach">{{data['title']}}</p>
+            <p class="novelists-approach">{{ data['publishedBy'] | titlecase }}</p>
           </div>
         </div>
 
         <div class="row back-light-blue description-container">
           <div class="col-md-4 write-away-img">
-            <img src="http://localhost:3000/images/{{data.mediaCover}}">
+            <img src="http://localhost:3000/images/{{data['mediaCover']}}">
 
             <div class="text-center">
               <div class="left-sec-name">
                 <img class="prof-imgss" src="./assets/images/publisher.svg">
-                <p class="publisher-name">{{ data && data.publishedBy}}</p>
+                <p class="publisher-name">{{ data && data['publishedBy']}}</p>
                 <p class="publisher-name">Age Groups <span
-                    class="col-grey">{{data && data.ageGroup && data.ageGroup.ageRange.join('-')}}
+                    class="col-grey">{{data && data['ageGroup'] && data['ageGroup']['ageRange'].join('-')}}
                     years</span></p>
                 <p class="publisher-name">Word Count<span
-                    class="col-grey">{{data && data.wordCount && data.wordCount.join('-')}}
+                    class="col-grey">{{data && data['wordCount'] && data['wordCount'].join('-')}}
                     words</span></p>
                 <p class="publisher-name">Closing Date<span
-                    class="col-grey">{{ data && data.closingDate | date : 'MMM dd, yyyy'}}</span></p>
+                    class="col-grey">{{ data && data['closingDate'] | date : 'MMM dd, yyyy'}}</span></p>
               </div>
               <div class="row names-icons">
                 <div class="col-6 ">
@@ -241,8 +241,8 @@
                 </div>
                 <div class="col-6">
                   <i class="fa col-redss"
-                    (click)="data['userPublication'] && data['userPublication'][0].publicationType=='bookmark' ? updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(data['userPublication'][0]._id, 'add') "
-                    [ngClass]="{'fa-bookmark':data['userPublication'] && data['userPublication'][0].publicationType=='bookmark', 'fa-bookmark-o': data['userPublication'] && data['userPublication'][0].publicationType!='bookmark'}"></i>
+                    (click)="data['userPublication'] && data['userPublication'][0]['publicationType']=='bookmark' ? updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(data['userPublication'][0]._id, 'add') "
+                    [ngClass]="{'fa-bookmark':data['userPublication'] && data['userPublication'][0]['publicationType']=='bookmark', 'fa-bookmark-o': data['userPublication'] && data['userPublication'][0]['publicationType']!='bookmark'}"></i>
                   <span>Bookmarks</span>
                 </div>
               </div>
@@ -250,7 +250,7 @@
           </div>
           <div class="col-md-8">
             <p class="description-p">
-              {{data.brief}}
+              {{data['brief']}}
             </p>
             <div class="row buttons-editor">
               <div class="col-6"><button>Kick Starter</button></div>
@@ -258,7 +258,7 @@
 
             </div>
             <div class="notes">
-              {{data.kickbookDesc}}
+              {{data['kickbookDesc']}}
             </div>
           </div>
         </div>
@@ -392,7 +392,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <div class="text-center mb-3" *ngFor="let row of data.genres && data.genres.topicMedia">
+    <div class="text-center mb-3" *ngFor="let row of data['genres'] && data['genres']['topicMedia']">
       <img style="float: left;" class="img-responsive img-fluid mb-2" src="http://localhost:3000/images/{{row}}" />
       <button class="btn btn-primary" (click)="addToMedia(row)">
         {{ mediaAvailable.includes(row) ? 'Selected': 'Select this Genre Image' }} </button>

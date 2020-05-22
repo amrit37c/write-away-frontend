@@ -383,6 +383,7 @@ a.forget-password {
 
 }
 
+
 /* Modal */
 .btn-signup {
   color: white;
@@ -403,21 +404,24 @@ a.forget-password {
 .logo img:focus {
   outline: none;
 }
+
 /* }
 forget-pass */
 
-.forget-cancl{
+.forget-cancl {
   margin-top: 10px;
   border: 1px solid;
   padding: 6px 20px 5px 20px;
   border-radius: 5px;
-font-weight: 700;
+  font-weight: 700;
 }
-.forget-popup{
+
+.forget-popup {
   padding-bottom: 56px;
 
 }
-.forget-heght{
+
+.forget-heght {
   height: 239px;
   padding-top: 27px;
 

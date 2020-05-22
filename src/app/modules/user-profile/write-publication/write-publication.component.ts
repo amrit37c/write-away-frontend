@@ -14,6 +14,7 @@ export class WritePublicationComponent implements OnInit {
   itemsPerSlide = 3;
   singleSlideOffset = false;
   noWrap = false;
+  count: number = 0;
 
   slidesChangeMessage = "";
   slides = [
@@ -86,7 +87,6 @@ export class WritePublicationComponent implements OnInit {
         this.mediaAvailable = this.data["userPublication"][0]["mediaAvailable"];
         // this.editorData = this.data["userPublication"][0]["content"];
         this.getContent(this.data["userPublication"][0]["content"]);
-        console.log("editor con", this.submissionId);
       }
     });
   }
@@ -103,7 +103,6 @@ export class WritePublicationComponent implements OnInit {
   getAllPublication() {
     this.service.get().subscribe((_response) => {
       this.suggestedPublication = _response.body.data;
-      console.log(".", this.suggestedPublication);
     });
   }
 
@@ -128,13 +127,9 @@ export class WritePublicationComponent implements OnInit {
     if (this.editAble) {
       this.service
         .updateUserPublishing(this.submissionId, json)
-        .subscribe((_response) => {
-          console.log("response", _response);
-        });
+        .subscribe((_response) => {});
     } else {
-      this.service.saveUserPublishing(json).subscribe((_response) => {
-        console.log("response", _response);
-      });
+      this.service.saveUserPublishing(json).subscribe((_response) => {});
     }
     this.getAllPublication();
   }
@@ -148,14 +143,11 @@ export class WritePublicationComponent implements OnInit {
   }
 
   updateBookmark(submissionId, type) {
-    console.log("called");
-
     this.service
       .updateUserPublishing(submissionId, {
         publicationType: type === "add" ? "bookmark" : "",
       })
       .subscribe((_response) => {
-        console.log("response", _response);
         this.getPublication(this.id);
       });
   }

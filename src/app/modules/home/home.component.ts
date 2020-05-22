@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  blogPublishSlider(type: String) {
+  blogPublishSlider(type: String, blog) {
     if (type === "-") {
       if (this.blogIndex < 1) {
         this.blogIndex = this.blogs.length - 1;
@@ -154,6 +154,14 @@ export class HomeComponent implements OnInit {
       "/user-profile/write-publication/" +
         this.openPublications[this.openPublicationIndex]._id
     );
+  }
+  readBlog(id) {
+    if (!this.userId) {
+      this.openLogin();
+      return;
+    }
+    this.router.navigateByUrl("/blogs/" + id);
+    // routerLink="/blogs/{{blogs[0]._id}}"
   }
   openLogin() {
     let element: HTMLElement = document.getElementsByClassName("btn_img")[0]

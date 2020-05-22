@@ -56,7 +56,6 @@ export class HeaderComponent implements OnInit {
     private userService: UserService
   ) {
     this.router.events.subscribe((evt) => {
-      console.log("this", this.router.url);
       if (!(evt instanceof NavigationEnd)) {
         if (
           this.router.url == "/home" ||
@@ -129,10 +128,8 @@ export class HeaderComponent implements OnInit {
       return;
     }
     let json = this.registerForm.value;
-    console.log("json", json);
 
     this.userService.register(json).subscribe((_response) => {
-      console.log(_response);
       alert("user registered");
       this.decline();
       this.registerForm.reset();
@@ -144,7 +141,6 @@ export class HeaderComponent implements OnInit {
       return;
     }
     let json = this.loginForm.value;
-    console.log("json", json);
 
     this.userService.login(json).subscribe((_response) => {
       if (_response.status == 200) {
@@ -156,6 +152,7 @@ export class HeaderComponent implements OnInit {
       alert(_response.body.message);
       this.decline();
       this.loginForm.reset();
+      this.router.navigateByUrl("/home");
     });
   }
 
@@ -213,7 +210,6 @@ export class HeaderComponent implements OnInit {
   }
 
   enableGuardianForm() {
-    console.log("guardian form");
     const age = this.calculateAge();
     age < 18
       ? (this.enableEditGuardianInfo = true)

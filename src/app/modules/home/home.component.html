@@ -189,9 +189,10 @@
                 <div class="col-6">
                   <div class="row">
                     <div class="col-2">
-                    <span class="updated-map"><i class="fa fa-map"></i></span>
+                    <span class="updated-map"><img src="/assets/images/boki.svg" class="img-updated" alt="dff">
+                    </span>
                   </div>
-                  <div class="col-10">
+                  <div class="col-10 col-greys">
 
                     <span class="updated-num">1500</span>
                     <p><span class="reads-updated">Reads</span></p>
@@ -236,7 +237,7 @@
                     </div> -->
                   </div>
                   <div class="social_read responsive-a">
-                    <a routerLink="/blogs/{{blogs[0]._id}}" *ngIf="blogs.length">Read More</a>
+                    <a (click)="readBlog(blogs[0]._id)" *ngIf="blogs.length">Read More</a>
                   </div>
                 </div>
               </div>

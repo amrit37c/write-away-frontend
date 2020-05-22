@@ -160,8 +160,8 @@
 
                   <div class="col-md-4 Right">
 
-                    <a (click)="openModal(template_forgot_pass)" >
-                      <h6 class="headings-input-fields forget-pass-login-modal " > Forgot Password</h6>
+                    <a (click)="openModal(template_forgot_pass)">
+                      <h6 class="headings-input-fields forget-pass-login-modal "> Forgot Password</h6>
                     </a>
 
                   </div>
@@ -356,7 +356,7 @@
                 </div>
                 <div class="center">
                   <button class="btn-signup" type="button " (click)="onSubmit()" class="btn "
-                    [ngClass]="{ btn_disable: registerForm.invalid }" [disabled]="registerForminvalid"
+                    [ngClass]="{ btn_disable: registerForm.invalid }" [disabled]="registerForm.invalid"
                     *ngIf="enableEditGuardianInfo">Sign
                     Up</button>
                   <button type="button " (click)="adultUser ? onSubmit() : enableGuardianForm()" class="btn btn-signup"
@@ -377,68 +377,68 @@
 <!-- Signup Modal -->
 
 <!-- <forgot-pass Modal -->
-  <ng-template #template_forgot_pass>
-    <div class="modal-header">
-      <!-- <h4 class="modal-title pull-left">Signup Modal</h4><br /> -->
-      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body ">
-      <div class="container-fluid">
-        <div>
-          
+<ng-template #template_forgot_pass>
+  <div class="modal-header">
+    <!-- <h4 class="modal-title pull-left">Signup Modal</h4><br /> -->
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body ">
+    <div class="container-fluid">
+      <div>
+
+      </div>
+      <!-- <head -->
+      <div class="row create-acc-head">
+        <div class="col-md-12">
+          <h4>Forgot your Password? No Issues!</h4>
         </div>
-        <!-- <head -->
-        <div class="row create-acc-head">
-            <div class="col-md-12">
-                <h4>Forgot your Password? No Issues!</h4>
-            </div>
-           
-        </div>
-    
-        <!-- body -->
-    
-    
-        <div class="back-image">
-           
-    
-            <!-- form -->
-    
-            <div class="row">
-    
-    
-                <div class="col-md-12 forget-popup">
-                    <div class="form-details forget-heght">
-                        <h6 class="">Enter your Email ID as registered in the box below</h6>
-    
-                                <label class="input-names">Enter your registered Email ID</label>
-                                <input type="text" class="input-fields">
-    
-                                <label class="input-names">A link to reset Password shall be sent to the  Email ID</label>                         
-    
-                  
-                        <div class="row">
-                            <div class="col-md-6 right">
-                                <button class=" forget-cancl">Cancel</button>
-    
-                            </div>
-                            <div class="col-md-6">
-                                <a href="reset-password.html"><button class="btn-signup">Send</button></a>
-    
-                            </div>
-    
-    
-                        </div>
-                    </div>
+
+      </div>
+
+      <!-- body -->
+
+
+      <div class="back-image">
+
+
+        <!-- form -->
+
+        <div class="row">
+
+
+          <div class="col-md-12 forget-popup">
+            <div class="form-details forget-heght">
+              <h6 class="">Enter your Email ID as registered in the box below</h6>
+
+              <label class="input-names">Enter your registered Email ID</label>
+              <input type="text" class="input-fields">
+
+              <label class="input-names">A link to reset Password shall be sent to the Email ID</label>
+
+
+              <div class="row">
+                <div class="col-md-6 right">
+                  <button class=" forget-cancl">Cancel</button>
+
                 </div>
-    
-    
+                <div class="col-md-6">
+                  <a href="reset-password.html"><button class="btn-signup">Send</button></a>
+
+                </div>
+
+
+              </div>
             </div>
-    
+          </div>
+
+
         </div>
+
+      </div>
     </div>
-    </div>
-  
+  </div>
+
 </ng-template>
 <!-- <end-forgot-pass Modal -->

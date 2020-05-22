@@ -4,9 +4,7 @@ import { Observable, throwError } from "rxjs";
 import { Router } from "@angular/router";
 import { catchError, map } from "rxjs/operators";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
-@Injectable({
-  providedIn: "root",
-})
+
 export class BaseService {
   url: string;
   router: Router;
@@ -143,7 +141,7 @@ export class BaseService {
   handleError(err) {
     let message;
     if (err.status === 401) {
-      alert(err.message);
+      this.router.navigateByUrl("/home");
       // if (err.error.err) {
       // } else {
       //   if (this.type == "admin") {
