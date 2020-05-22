@@ -14,6 +14,7 @@ export class WritePublicationComponent implements OnInit {
   itemsPerSlide = 3;
   singleSlideOffset = false;
   noWrap = false;
+  count: number = 0;
 
   slidesChangeMessage = "";
   slides = [

@@ -375,9 +375,11 @@ a.forget-password {
 
 /* Registration */
 /* Modal */
-:host ::ng-deep .modal-dialog {
+::ng-deep .modal-dialog {
   max-width: 100% !important;
+  float: right !important;
 }
+
 
 /* Modal */
 .btn-signup {
@@ -398,4 +400,26 @@ a.forget-password {
 
 .logo img:focus {
   outline: none;
+}
+
+/* }
+forget-pass */
+
+.forget-cancl {
+  margin-top: 10px;
+  border: 1px solid;
+  padding: 6px 20px 5px 20px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.forget-popup {
+  padding-bottom: 56px;
+
+}
+
+.forget-heght {
+  height: 239px;
+  padding-top: 27px;
+
 }

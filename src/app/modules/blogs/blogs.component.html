@@ -135,7 +135,7 @@
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-          <img src="http://localhost:3000/images/{{recentBlog.media}}" *ngIf="recentBlog && recentBlog.media"
+          <img src="http://localhost:3000/images/{{recentBlog['media']}}" *ngIf="recentBlog && recentBlog['media']"
             class="hunt-img">
         </div>
         <div class="col-md-3"></div>
@@ -145,18 +145,18 @@
         <div class="col-md-8 center">
           <div class="row">
             <div class="col-lg-2">
-              <span class="date" *ngIf="recentBlog && recentBlog.content">
-                {{recentBlog.createdAt | date: 'MMM dd, yyyy'}} </span>
+              <span class="date" *ngIf="recentBlog && recentBlog['content']">
+                {{recentBlog['createdAt'] | date: 'MMM dd, yyyy'}} </span>
             </div>
             <div class="col-lg-10">
-              <h3 class="blog-title" *ngIf="recentBlog && recentBlog.title">{{recentBlog.title}}</h3>
+              <h3 class="blog-title" *ngIf="recentBlog && recentBlog['title']">{{recentBlog['title']}}</h3>
             </div>
           </div>
 
 
           <div class="text-style">
 
-            <p [innerHTML]="recentBlog.content" *ngIf="recentBlog && recentBlog.content">
+            <p [innerHTML]="recentBlog['content']" *ngIf="recentBlog && recentBlog['content']">
 
             </p>
           </div>
@@ -178,8 +178,8 @@
 
 
                   <i class="fa fa-lg new-icons-blog  fa-heart-o clr2" aria-hidden="true"></i>
-                  <span class="pricing" *ngIf="recentBlog.likeCount">{{recentBlog.likeCount || 0}}</span>
-                  <div>
+                  <span class="pricing" *ngIf="recentBlog['likeCount']">{{recentBlog['likeCount'] || 0}}</span>
+                  <div (click)="like()">
                     <span class="info-icon blog-icons">Likes</span>
                   </div>
 
@@ -190,7 +190,7 @@
                   <i class="fa  new-icons-blog fa-share share-eco  ">
                   </i>
 
-                  <span class="pricing" *ngIf="recentBlog.shareCount">{{recentBlog.shareCount || 0}}</span>
+                  <span class="pricing" *ngIf="recentBlog['shareCount']">{{recentBlog['shareCount'] || 0}}</span>
                   <div>
                     <span class="info-icon blog-icons">Shares</span>
                   </div>

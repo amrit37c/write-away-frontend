@@ -6,6 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./my-submissions.component.css"],
 })
 export class MySubmissionsComponent implements OnInit {
+  count: number = 0;
   constructor() {}
 
   ngOnInit() {}

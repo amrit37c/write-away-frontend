@@ -9,6 +9,7 @@ import * as jwt_decode from "jwt-decode";
   styleUrls: ["./my-profile.component.css"],
 })
 export class MyProfileComponent implements OnInit {
+  count: number = 0;
   editForm: FormGroup;
   userId;
   constructor(private formBuilder: FormBuilder, private service: UserService) {}

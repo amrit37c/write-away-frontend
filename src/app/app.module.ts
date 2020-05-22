@@ -20,6 +20,7 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { ForgetPassComponent } from './modules/forget-pass/forget-pass.component';
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 
@@ -30,6 +31,7 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
     LoginComponent,
     SignupComponent,
     FooterComponent,
+    ForgetPassComponent,
   ],
   imports: [
     BrowserModule,

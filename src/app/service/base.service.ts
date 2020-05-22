@@ -4,9 +4,7 @@ import { Observable, throwError } from "rxjs";
 import { Router } from "@angular/router";
 import { catchError, map } from "rxjs/operators";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
-@Injectable({
-  providedIn: "root",
-})
+
 export class BaseService {
   url: string;
   router: Router;

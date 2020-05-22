@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  blogPublishSlider(type: String) {
+  blogPublishSlider(type: String, blog) {
     if (type === "-") {
       if (this.blogIndex < 1) {
         this.blogIndex = this.blogs.length - 1;
