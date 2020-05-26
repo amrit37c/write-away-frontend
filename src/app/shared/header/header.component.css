@@ -482,16 +482,16 @@ float: right !important;
 }
 .closepop-btn{
   padding: 3px;
-    -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
     padding-bottom: 0px;
     padding-top: 0px;
-    margin-top: -3px;
+    margin-top: -13px;
     margin-bottom: -2px;
+    background-color: white;
+
 }
 .left{
-  text-align: left;
+  float: left;
 }
 .update-birthdate{
   width: 69%;
@@ -501,5 +501,9 @@ float: right !important;
   position: relative;
   right: 8px;
   color: lightgray;
+}
+.right{
+  text-align: right !important;
+  color: #309FD8 !important;
 }
 

@@ -92,23 +92,21 @@
 <!-- Login Modal -->
 <ng-template #template>
   <div class="fff">
-    <div class="modal-header">
-      <div class="left">
-
-        <button type="button" class="close closepop-btn" aria-label="Close" (click)="modalRef.hide()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    </div>
+   
     <div class="modal-body">
+     
       <div class="container-fluid">
-        <!-- <div>
-        <button class="close-btn"><i class="fa fa-close"></i>
-        </button>
-      </div> -->
+        
         <!-- <head -->
         <div class="row create-acc-head">
+         
           <div class="col-md-4">
+            <div class="left">
+
+              <button type="button" class="close closepop-btn" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
             <h4>Sign In</h4>
           </div>
           <div class="col-md-2 right mobile-res">
@@ -159,7 +157,7 @@
 
                     </div>
 
-                    <div class="col-md-4 Right">
+                    <div class="col-md-4 right">
 
                       <a (click)="decline();openModal(template_forgot_pass)">
                         <h6 class="headings-input-fields forget-pass-login-modal "> Forgot Password</h6>
@@ -186,12 +184,7 @@
 <ng-template #templateSignup>
   <div class="modal-header">
     <!-- <h4 class="modal-title pull-left">Signup Modal</h4><br /> -->
-    <div class="left">
-      <button type="button" class="close closepop-btn" aria-label="Close"
-        (click)="modalRef.hide();enableEditUserInfo = false;">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
+   
   </div>
   <div class="modal-body ">
     <div class="container-fluid">
@@ -201,7 +194,14 @@
       </div> -->
       <!-- <head -->
       <div class="row create-acc-head ">
+        
         <div class="col-md-6 ">
+          <div class="left">
+            <button type="button" class="close closepop-btn" aria-label="Close"
+              (click)="modalRef.hide();enableEditUserInfo = false;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
           <h5>Create an Account</h5>
         </div>
         <div class="col-md-6 right mobile-res">

@@ -1137,3 +1137,30 @@ ul li {
   /* color: lightgray; */
 
 }
+.updated-conts{
+  padding-top: 30px;
+
+}
+.updated-coming{
+  background-color: #76D3B7;
+}
+.updated-coming img{
+  width: 100%;
+    padding-top: 87px;
+}
+@media only screen and (min-width:1024px) and (max-width:1025px)
+{
+  /* .updated-coming img{
+    width: 100%;
+    padding-top: 88px;
+} */
+
+
+}
+.cmng-back-color{
+  background-color: #7998ff;
+}
+.updated-bold{
+  font-size: 30px;
+
+}

@@ -120,6 +120,16 @@
   font-weight: 600;
 
 }
+.added-footer p{
+  padding-bottom: 8px;
+
+}
+.added-footer img {
+  display: inline-block;
+    width: 13%;
+    margin-left: -3px;
+
+}
 
 .added-icons i {
   color: #D43299;
@@ -145,4 +155,19 @@
 
 .input-footer-head span {
   color: white;
+}
+.book-img-conts{
+  margin: 0 !important;
+}
+@media only screen and (min-width:1024px )
+and (max-width:1025px){
+.email-btn{
+  width: 33% !important;
+}
+}
+@media only screen and (max-width:1440px)
+and (max-width:1441px){
+.email-btn{
+  width: 24%;
+}
 }
