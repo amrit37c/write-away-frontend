@@ -1080,8 +1080,15 @@ ul li {
 
 .updated-content h4 {
   line-height: 39px;
+  color: #3D3872;
 
 }
+.updated-content h3 {
+  line-height: 39px;
+  color: #3D3872;
+
+}
+
 
 .updated-alignment {
   padding: 0px 44px 0px 72px;
@@ -1138,7 +1145,12 @@ ul li {
 
 }
 .updated-conts{
-  padding-top: 30px;
+  margin-bottom: 15px;
+  font-weight: 500 !important;
+  line-height: 1.4;
+  font-size: 16px;
+  text-align: justify;
+  margin-top: 10px;
 
 }
 .updated-coming{
@@ -1162,12 +1174,14 @@ ul li {
 }
 .updated-bold{
   font-size: 30px;
+  margin-top: 6px;
+
 
 }@media only screen and (min-width:1024px) and (max-width:1025px)
 {
   .responsive-pencil{
  position: absolute;
- bottom: 89px !important;
+ bottom: 65px !important;
 } 
 .read-awayresponsive{
   position: absolute;

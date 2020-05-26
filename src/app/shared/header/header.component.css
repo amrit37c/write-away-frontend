@@ -491,6 +491,11 @@ float: right !important;
     background-color: white;
 
 }
+.remmm{
+  font-size: 15px;
+    color: #333333;
+    font-weight: 700;
+}
 .left{
   float: left;
 }
