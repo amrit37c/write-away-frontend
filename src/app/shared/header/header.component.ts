@@ -48,6 +48,7 @@ export class HeaderComponent implements OnInit {
   registerForm: FormGroup;
   loginForm: FormGroup;
   userLogin: boolean = false;
+  username: string = "";
 
   constructor(
     private router: Router,
@@ -118,6 +119,8 @@ export class HeaderComponent implements OnInit {
     const token = localStorage.getItem("token");
     if (token) {
       this.userLogin = true;
+      const { firstName } = jwt_decode(token);
+      this.username = firstName;
     } else {
       this.userLogin = false;
     }
@@ -146,7 +149,8 @@ export class HeaderComponent implements OnInit {
       if (_response.status == 200) {
         this.userLogin = true;
         const token = _response.body.data.token;
-
+        const { firstName } = jwt_decode(token);
+        this.username = firstName;
         localStorage.setItem("token", _response.body.data.token);
       }
       alert(_response.body.message);

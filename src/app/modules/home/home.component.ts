@@ -156,6 +156,10 @@ export class HomeComponent implements OnInit {
       this.openLogin();
       return;
     }
+
+    this.blogService.updateRead(id, {}).subscribe((_respone) => {
+      console.log("read status changed");
+    });
     this.router.navigateByUrl("/blogs/" + id);
     // routerLink="/blogs/{{blogs[0]._id}}"
   }
@@ -286,5 +290,9 @@ export class HomeComponent implements OnInit {
       .subscribe((_response) => {
         this.getBlogs();
       });
+  }
+
+  blogShareLink(id) {
+    const link = "http://";
   }
 }

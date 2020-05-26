@@ -426,80 +426,92 @@ forget-pass */
   padding-top: 27px;
 
 }
-.login-modalss{
-position: absolute !important;
-right: 0px !important;
-background-color: white !important;
-float: right !important;
+
+.login-modalss {
+  position: absolute !important;
+  right: 0px !important;
+  background-color: white !important;
+  float: right !important;
 }
-::ng-deep .modelWidth{
+
+::ng-deep .modelWidth {
   margin-top: 180px;
   margin-right: 300px;
 
 
 }
-  @media only screen and (min-width:1024px) and (max-width:1025px){
-  ::ng-deep .modelWidth{
+
+@media only screen and (min-width:1024px) and (max-width:1025px) {
+  ::ng-deep .modelWidth {
     margin-right: 174px;
     margin-top: 161px;
     width: 31% !important;
-  
-   } 
- }
- 
- @media only screen and (min-width:1440px) and (max-width:1441px){
-  ::ng-deep .modelWidth{
+
+  }
+}
+
+@media only screen and (min-width:1440px) and (max-width:1441px) {
+  ::ng-deep .modelWidth {
     margin-top: 146px;
     width: 30% !important;
-  
-   } 
- }
- @media only screen and (min-width:768px) and (max-width:769px){
-  ::ng-deep .modelWidth{
+
+  }
+}
+
+@media only screen and (min-width:768px) and (max-width:769px) {
+  ::ng-deep .modelWidth {
 
     margin-top: 389px;
-    width: 100% ;
-  
-   } 
-   ::ng-deep .modal-content{
- 
+    width: 100%;
+
+  }
+
+  ::ng-deep .modal-content {
+
     width: 160% !important;
-  
-   } 
- }
+
+  }
+}
 
 
-::ng-deep .modal-content{
+::ng-deep .modal-content {
   width: 148%;
 
 }
-.sign-up-pop-col{
+
+.sign-up-pop-col {
   color: #e051b7;
   background-color: transparent;
   font-weight: 700;
   font-size: 15px;
 
 }
-.closepop-btn{
+
+.closepop-btn {
   padding: 3px;
-    -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
-    padding-bottom: 0px;
-    padding-top: 0px;
-    margin-top: -3px;
-    margin-bottom: -2px;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  padding-bottom: 0px;
+  padding-top: 0px;
+  margin-top: -3px;
+  margin-bottom: -2px;
 }
-.left{
+
+.left {
   text-align: left;
 }
-.update-birthdate{
-  width: 69%;
 
+.update-birthdate {
+  width: 69%;
 }
-.caret-icons{
+
+.caret-icons {
   position: relative;
   right: 8px;
   color: lightgray;
 }
 
+#button-basic {
+  text-transform: capitalize;
+}

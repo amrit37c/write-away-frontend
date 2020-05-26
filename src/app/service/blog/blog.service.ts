@@ -131,4 +131,22 @@ export class BlogService extends BaseService {
         })
       );
   }
+
+  /*** update on the server **/
+  updateRead(id, payload): Observable<any> {
+    return this.http
+      .put<any>(`${this.url}/${environment.apis.blogRead}/${id}`, payload, {
+        headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
 }

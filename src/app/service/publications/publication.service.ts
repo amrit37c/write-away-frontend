@@ -104,6 +104,45 @@ export class PublicationService extends BaseService {
   }
 
   /*** Post to the server **/
+  saveUserPublishing(payload): Observable<any> {
+    const url = environment.baseUrl + environment.apis.userPublication;
+
+    return this.http
+      .post<any>(url, payload, {
+        headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  /*** put on the server **/
+  updateUserPublishing(id, payload): Observable<any> {
+    const url = environment.baseUrl + environment.apis.userPublication;
+    return this.http
+      .put<any>(`${url}/${id}`, payload, {
+        headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  /*** Post to the server **/
   postBookMark(payload): Observable<any> {
     return this.http
       .post<any>(

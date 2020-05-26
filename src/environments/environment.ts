@@ -12,10 +12,11 @@ export const environment = {
     blogs: "blog",
     publications: "publication",
     userPublication: "publication/user-content",
-    blogBookMark: "/blog-bookmark",
-    publicationBookMark: "/publication-bookmark",
-    blogLike: "/blog-like",
-    publicationLike: "/publication-like",
+    blogBookMark: "blog-bookmark",
+    publicationBookMark: "publication-bookmark",
+    blogLike: "blog-like",
+    publicationLike: "publication-like",
+    blogRead: "blog-read",
   },
 };
 
