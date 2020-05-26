@@ -100,14 +100,14 @@
         <!-- <head -->
         <div class="row create-acc-head">
          
-          <div class="col-md-4">
+          <div class="col-md-4 left">
             <div class="left">
 
               <button type="button" class="close closepop-btn" aria-label="Close" (click)="modalRef.hide()">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <h4>Sign In</h4>
+            <h4 class="sign-updateds">Sign In</h4>
           </div>
           <div class="col-md-2 right mobile-res">
 
@@ -182,10 +182,7 @@
 <!-- Login Modal -->
 <!-- Signup Modal -->
 <ng-template #templateSignup>
-  <div class="modal-header">
-    <!-- <h4 class="modal-title pull-left">Signup Modal</h4><br /> -->
-   
-  </div>
+  
   <div class="modal-body ">
     <div class="container-fluid">
       <!-- <div>
@@ -202,7 +199,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <h5>Create an Account</h5>
+          <h4 class="sign-updateds">Create an Account</h4>
         </div>
         <div class="col-md-6 right mobile-res">
           <span class="alred-reg not-reg-modal">Already Registered?</span>
@@ -224,11 +221,11 @@
                 <div class="col-1"></div>
 
                 <div class="col-5 right">
-                  <span class="input-names"> Please select</span>
+                  <span class="input-names updated-signupmod"> Please select</span>
                 </div>
                 <div class="col-5 left">
 
-                  <h6 class="display">Date of Birth</h6>
+                  <h6 class="display birth-updated">Date of Birth</h6>
 
                 </div>
                 <div class="col-1"></div>
@@ -238,7 +235,7 @@
 
               <div class="">
                 <div class="row select-dates caret-icons">
-                  <div class="col-6 right">
+                  <div class="col-5 right">
                     <select class="birthdate" [(ngModel)]="selectedMonth" (change)="getDates()">
                       <option *ngFor="let month of months">{{month}}</option>
                     </select><i class="fa fa-caret-down" aria-hidden="true"></i>

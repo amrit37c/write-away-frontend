@@ -113,7 +113,8 @@
 }
 
 .services .col_bg_aqua {
-  background-color: #d9f2fa;
+   background-color: #ECFDFF;
+  
 }
 
 .services .service_left_img {
@@ -834,13 +835,29 @@ ul li {
   border-radius: 4px;
   text-align: center;
   border: 1px solid #ececec;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.2);
-  margin-right: 15px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.05);  margin-right: 15px;
   margin-left: 15px;
   margin-bottom: 50px;
   margin-top: 29px;
 }
-
+.itilicks{
+  font-style: italic;
+  font-family: muli !important;
+}
+.font-updated{
+  font-family: Perpetua !important;
+  padding-top: 21px;
+font-size: 18px;
+}
+.font-abc{
+  font-family: muli !important;
+  font-size: 17px !important;
+}
+.updated-leftss{
+  padding-left: 50px !important;
+  padding-right: 34px;
+  text-align: justify;
+}
 .slider-cont div:first-child {
   text-align: center;
   caption-side: 50px;
@@ -937,7 +954,8 @@ ul li {
 }
 
 .book_store_text p {
-  font-size: 10px;
+  font-size: 14px;
+  text-align: justify;
 }
 
 .book-img-cont {
@@ -1193,4 +1211,9 @@ ul li {
 }
 .body-updatedss{
   font-size: 14px !important;
+}
+.win-coming-soon{
+  width: 75%;
+  position: relative;
+    top: -11px;
 }
