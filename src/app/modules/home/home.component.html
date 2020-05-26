@@ -177,7 +177,7 @@
                 <div class="col-6">
                   <div class="row">
                     <div class="col-2">
-                      <span class="updated-map"><img src="/assets/images/boki.svg" class="img-updated" alt="dff">
+                      <span class="updated-map"><img src="/assets/images/book.svg" class="img-updated" alt="dff">
                       </span>
                     </div>
                     <div class="col-10 col-greys">
@@ -189,9 +189,11 @@
                   </div>
                 </div>
                 <div class="col-6 right updated-icons">
-                  <i class="fa fa-heart-o col-red"></i>
-                  <i class="fa fa-share  share-icons share-updated"></i>
-                  <i class="fa fa-bookmark-o col-yel  "></i>
+                  <i class="fa col-red" [ngClass]="blogLikeStatus()"
+                    (click)="blogs.length && blogs[0] && blogs[0].like ? updateBlogLike(blogs[0]) : saveBlogLike(blogs[0]) "></i>
+                  <i class="fa fa-share share-icons share-updated"></i>
+                  <i class="fa col-yel" [ngClass]="blogBookMarkStatus()"
+                    (click)="blogs.length && blogs[0] && blogs[0].bookmark ? updateBlogBookMark(blogs[0]) : saveBlogBookMark(blogs[0]) "></i>
                 </div>
               </div>
             </div>
@@ -199,7 +201,7 @@
               <div class="service_right_desc">
                 <div class="service_top_head">
                   <h3 class="text-uppercase" *ngIf="blogs.length">{{blogs[0].title}}</h3>
-                  <span *ngIf="blogs.length">{{blogs[0].createdAt | date: 'MMM dd,yyyy'}}</span>
+                  <span *ngIf="blogs.length">{{blogs[0].createdAt | date: 'MMM dd, yyyy'}}</span>
                 </div>
                 <div class="service_top_span">
                   <span class="text-uppercase">{{ blogs[0] && blogs[0].author || 'elizabeth george'}}</span>
@@ -307,8 +309,10 @@
                   <!-- <i class="fa col-redss"
                     (click)="data['userPublication'] && data['userPublication'][0].publicationType=='bookmark' ? updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(data['userPublication'][0]._id, 'add') "
                     [ngClass]="{'fa-bookmark':data['userPublication'] && data['userPublication'][0].publicationType=='bookmark', 'fa-bookmark-o': data['userPublication'] && data['userPublication'][0].publicationType!='bookmark'}"></i> -->
-                  <p class="book_mark_link" (click)="addToFollowing(openPublications[openPublicationIndex].id)">
-                    <i class="fa fa-bookmark-o"></i>
+                  <!-- (click)="addToFollowing(openPublications[openPublicationIndex].id)" -->
+                  <p class="book_mark_link"
+                    (click)="openPublications.length && openPublications[openPublicationIndex] && openPublications[openPublicationIndex].bookmark ? updatePublicationBookMark(openPublications[openPublicationIndex]) : savePublicationBookMark(openPublications[openPublicationIndex]) ">
+                    <i class="fa" [ngClass]="publicationBookMarkStatus(openPublications[openPublicationIndex])"></i>
                     <!-- {{openPublications[openPublicationIndex]['userPublication'] | json}} -->
                     <!-- <i class="fa col-redss"
                       (click)="openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark' ?

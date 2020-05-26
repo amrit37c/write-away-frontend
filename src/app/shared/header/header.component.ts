@@ -152,7 +152,11 @@ export class HeaderComponent implements OnInit {
       alert(_response.body.message);
       this.decline();
       this.loginForm.reset();
-      this.router.navigateByUrl("/home");
+      // debugger;
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = "reload";
+      this.router.navigate(["/home"]);
+      // this.router.navigateByUrl("/home");
     });
   }
 

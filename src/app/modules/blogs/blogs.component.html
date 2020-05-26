@@ -130,7 +130,7 @@
             <div class="col-md-3 recent-blog-blk" *ngFor="let blog of archieveMonthArr">
               <div class="date-recent">
 
-                <span> {{ blog.createdAt }}</span>
+                <span> {{ blog.createdAt | date:'MMM dd, yyyy' }}</span>
               </div>
               <div class="rcbb">
                 <div class="recent-blog-img">

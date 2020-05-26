@@ -14,6 +14,8 @@ export const environment = {
     userPublication: "publication/user-content",
     blogBookMark: "/blog-bookmark",
     publicationBookMark: "/publication-bookmark",
+    blogLike: "/blog-like",
+    publicationLike: "/publication-like",
   },
 };
 

@@ -10,6 +10,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class PublicationService extends BaseService {
+  baseUrl = `${environment.baseUrl}${environment.apis.publications}`;
   constructor(public http: HttpClient, public router: Router) {
     super(environment.baseUrl + environment.apis.publications, http, router);
   }
@@ -28,7 +29,7 @@ export class PublicationService extends BaseService {
     }
     return this.http
       .get<any>(this.url, {
-        // headers: this.token(),
+        headers: this.token(),
         params: httpParams,
         responseType: "json",
         observe: "response",
@@ -56,7 +57,7 @@ export class PublicationService extends BaseService {
 
     return this.http
       .get<any>(id ? `${this.url}/${id}` : `${this.url}`, {
-        // headers: this.token(),
+        headers: this.token(),
         observe: "response",
         responseType: "json",
       })
@@ -103,15 +104,17 @@ export class PublicationService extends BaseService {
   }
 
   /*** Post to the server **/
-  saveUserPublishing(payload): Observable<any> {
-    const url = environment.baseUrl + environment.apis.userPublication;
-
+  postBookMark(payload): Observable<any> {
     return this.http
-      .post<any>(url, payload, {
-        headers: this.token(),
-        responseType: "json",
-        observe: "response",
-      })
+      .post<any>(
+        `${this.url}/${environment.apis.publicationBookMark}`,
+        payload,
+        {
+          headers: this.token(),
+          responseType: "json",
+          observe: "response",
+        }
+      )
       .pipe(
         map((data) => {
           return data;
@@ -123,14 +126,17 @@ export class PublicationService extends BaseService {
   }
 
   /*** put on the server **/
-  updateUserPublishing(id, payload): Observable<any> {
-    const url = environment.baseUrl + environment.apis.userPublication;
+  putBookMark(id, payload): Observable<any> {
     return this.http
-      .put<any>(`${url}/${id}`, payload, {
-        headers: this.token(),
-        responseType: "json",
-        observe: "response",
-      })
+      .put<any>(
+        `${this.url}/${environment.apis.publicationBookMark}/${id}`,
+        payload,
+        {
+          headers: this.token(),
+          responseType: "json",
+          observe: "response",
+        }
+      )
       .pipe(
         map((data) => {
           return data;
