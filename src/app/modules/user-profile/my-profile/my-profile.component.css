@@ -1,6 +1,6 @@
 /* logo button */
 .logo-btn {
-  background-color: #D43299;
+  background-color: #d43299;
   color: white;
   border: 0;
   width: 100%;
@@ -9,18 +9,27 @@
 }
 
 /* logo button */
+.pad-zero-profile {
+  padding: 0% !important;
+}
+.mar-zero {
+  margin: 0 !important;
+}
 
 .my-desk-heading {
-  padding: 1px;
-  margin-top: 2px;
   padding-left: 14px;
-  padding-top: 9px;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 22px;
   display: flex;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.my-desk-heading-name {
+  color: black;
 }
 
 .color-pink {
-  color: #D43299 !important;
+  color: #d43299 !important;
 }
 
 .col-blue {
@@ -28,7 +37,7 @@
 }
 
 .table-header {
-  background-color: #3B9BF1;
+  background-color: #3b9bf1;
   color: white;
   padding-top: 14px;
 }
@@ -40,15 +49,15 @@
 }
 
 .background-light-blue {
-  background-color: #EFFDFE !important;
+  background-color: #effdfe !important;
 }
 
 .background-light-pink {
-  background-color: #FDF7FB !important;
+  background-color: #fdf7fb !important;
 }
 
 .color-blues {
-  color: #3B9BF1;
+  color: #3b9bf1;
   text-decoration: underline !important;
 }
 
@@ -93,7 +102,7 @@
 }
 
 .open-btn {
-  background-color: #D43299;
+  background-color: #d43299;
   border: 0;
   color: white;
   padding: 4px;
@@ -103,19 +112,18 @@
 }
 
 .color-blue {
-  background-color: #3B9BF1;
+  background-color: #3b9bf1;
 }
 
 .parts {
-  font-weight: 600;
-  padding: 6px;
-  font-size: 11px;
-  padding-left: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  padding-left: 15px;
 }
 
 .col-gray-part {
-  color: gray;
-  font-weight: 100 !important;
+  color: black;
+  font-weight: 400;
   font-style: italic;
 }
 
@@ -125,16 +133,16 @@
 }
 
 .background-light-pink {
-  background-color: #FDF7FB !important;
+  background-color: #fdf7fb !important;
 }
 
 .field-size span {
   font-size: 9px;
   position: relative;
-  top: 7px;
+  top: 12px;
   left: 11px;
   background-color: white;
-  color: #219AD3;
+  color: #219ad3;
   font-weight: 600;
 }
 
@@ -143,16 +151,15 @@
   padding-left: 4px;
   display: flex;
   width: 100%;
-  padding: 10px;
+  padding: 7px;
   font-weight: 600;
   border-radius: 5px;
-  border: 1px solid #219AD3;
+  border: 1px solid #219ad3;
+  font-size: 12px;
 }
 
-.dsplay-this {
-  font-style: italic;
-  padding-top: 13px;
-  color: darkgray;
+.select-one {
+  width: 100%;
 }
 
 .field-size label {
@@ -173,20 +180,26 @@
   padding: 10px;
   font-weight: 600;
   border-radius: 5px;
-  border: 1px solid #219AD3;
+  border: 1px solid #219ad3;
 }
 
 .update-edit {
-  background-color: #219AD3;
+  background-color: #219ad3;
   color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 10px;
+  padding: 5px 25px 5px 25px !important;
 }
 
 .cancl-btn-edit {
+  background-color: #f0f7ff;
   padding: 7px 14px 7px 14px;
   border: none;
   border-radius: 4px;
   font-size: 10px;
   font-weight: 600;
+  color: #707174;
 }
 
 .field-size select {
@@ -197,13 +210,13 @@
   padding: 10px;
   font-weight: 600;
   border-radius: 5px;
-  border: 1px solid #219AD3;
+  border: 1px solid #219ad3;
 }
 
 .left-bar-btmss {
   display: inline-block;
   padding: 5px;
-  color: #219AD3 !important;
+  color: #219ad3 !important;
 }
 
 .add-social {
@@ -212,4 +225,60 @@
   color: lightgray;
   margin-top: 7px !important;
   padding-left: 40px;
+  font-weight: 300;
+  font-size: 14px;
+  padding-left: 160px;
+}
+.display-this {
+  font-style: italic;
+  padding-top: 38px;
+  font-weight: 300;
+  font-size: 12px;
+  color: black !important;
+}
+.radio-cont {
+  width: 50%;
+  padding-left: 20px;
+}
+.first-rad {
+  float: left;
+}
+.first-rad label {
+  padding-top: 28px;
+  padding-left: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.profile-radio {
+  width: 10px !important;
+  margin: 0 !important;
+  float: left;
+  margin-top: 39px !important;
+}
+.second-rad {
+  padding-left: 120px;
+}
+.second-rad label {
+  padding-top: 28px;
+  padding-left: 10px;
+  font-weight: 700;
+  font-size: 11px;
+}
+.about-me-textarea {
+  padding-bottom: 30px !important;
+}
+.parent-g-detail {
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: black !important;
+}
+.parent-g-detail p {
+  color: black !important;
+}
+.so-icons p {
+  color: black !important;
+  font-size: 20px;
+}
+.address-2 {
+  margin-top: 8px;
 }

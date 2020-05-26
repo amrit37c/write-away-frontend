@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid pad-zero-profile">
   <!-- header -->
 
   <div class="row pad-zero">
@@ -7,63 +7,118 @@
     </div>
 
     <div class="col-md-9 right right-header pull-right">
-      <div class="my-desk-heading background-light-pink">
-        <p>
-          <span class="color-pink">He</span>llo! Ricky
+      <div class="background-light-pink my-desk-heading">
+        <p class="my-desk-heading-name">
+          <span class="color-pink">He</span>llo! Ricky Pointing
           <span class="col-blue">{{ count || 0 }}</span>
         </p>
       </div>
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid pad-zero-profile">
   <div class="row">
     <div class="col-md-3">
       <app-user-sidebar></app-user-sidebar>
     </div>
     <div class="col-md-9">
-      <div class="container-fluid list-view-my-desk">
-        <div class="parts">Part A:<span class="col-gray-part">(25%)</span></div>
+      <div class="container-fluid pad-zero-profile list-view-my-desk">
+        <div class="parts">
+          Part A:<span class="col-gray-part clr-blk"> (25%)</span>
+        </div>
         <form role="form" [formGroup]="editForm">
           <div class="edit-form-align background-light-pink">
             <div class="row field-size">
               <div class="col-5">
                 <span>First/Middle Name</span>
-                <input type="text" value="Ricky" formControlName="firstName" />
+                <input type="text" formControlName="firstName" value="Ricky" />
               </div>
               <div class="col-5">
                 <span>Last Name</span>
-                <input type="text" placeholder="Pointing" formControlName="lastName" />
+                <input
+                  type="text"
+                  placeholder="Pointing"
+                  formControlName="lastName"
+                />
               </div>
               <div class="col-2"></div>
+              <div class="clearfix"></div>
               <div class="col-3">
                 <span>a.k.a</span>
-                <input type="text" class="select-one" placeholder="... ... ... ..." formControlName="lastName" />
-              </div>
-              <div class="col-2">
-                <h6 class="dsplay-this">Display this</h6>
+                <input
+                  type="text"
+                  class="select-one"
+                  placeholder="... ... ... ..."
+                  formControlName="lastName"
+                />
               </div>
 
-              <div class="col-1 pad-20">
-                <input type="radio" class="radioss" id="aka" formControlName="selectDisplayName" value="aka" />
+              <div class="col-9 row mar-zero">
+                <div>
+                  <h6 class="display-this">Display this</h6>
+                </div>
+
+                <div class="radio-cont">
+                  <div class="first-rad">
+                    <input
+                      type="radio"
+                      class="profile-radio"
+                      id="aka"
+                      formControlName="selectDisplayName"
+                      value="aka"
+                    />
+                    <label>a.k.a</label>
+                  </div>
+
+                  <div class="second-rad">
+                    <input
+                      type="radio"
+                      class="profile-radio"
+                      id="firstname"
+                      formControlName="selectDisplayName"
+                      value="firstname"
+                    />
+                    <label>First/Middle Name</label>
+                  </div>
+                </div>
+
+                <!-- <div class="radio-cont">
+                  <input
+                    type="radio"
+                    class="radioss"
+                    id="aka"
+                    formControlName="selectDisplayName"
+                    value="aka"
+                  />
+                </div>
+                <div>
+                  <label for="aka">aka</label>
+                </div>
+                <div class="radio-cont">
+                  <input
+                    type="radio"
+                    id="firstname"
+                    formControlName="selectDisplayName"
+                    value="firstname"
+                  />
+                </div>
+                <div>
+                  <label for="aka">First/Middle Name</label>
+                </div> -->
               </div>
-              <div class="col-1 pad-20">
-                <label for="aka">aka</label>
-              </div>
-              <div class="col-1 pad-20">
-                <input type="radio" id="firstname" formControlName="selectDisplayName" value="firstname" />
-              </div>
-              <div class="col-2 pad-20">
-                <label for="aka">First/Middle Name</label>
-              </div>
-              <div class="col-1"></div>
+
+              <div class="clearfix"></div>
 
               <div class="col-md-10">
                 <span>About me:</span>
-                <textarea formControlName="aboutInfo"
-                  placeholder="Let everyone Know a little bit about yourself"></textarea>
+                <textarea
+                  formControlName="aboutInfo"
+                  class="about-me-textarea"
+                  placeholder="Let everyone Know a little bit about yourself"
+                ></textarea>
               </div>
               <div class="col-md-2"></div>
+              <div class="clearfix"></div>
             </div>
           </div>
 
@@ -71,7 +126,12 @@
             <div class="row field-size">
               <div class="col-5">
                 <span>DOB:</span>
-                <input type="date" formControlName="dob" />
+                <input
+                  type="date"
+                  formControlName="dob"
+                  placeholder="&#xf073;"
+                  style="font-family: Arial, FontAwesome;"
+                />
                 <span>Gender:</span>
                 <select formControlName="gender">
                   <option value="Male">Male</option>
@@ -80,7 +140,11 @@
               </div>
               <div class="col-5">
                 <span>Email ID:</span>
-                <input type="text" placeholder="Pointing" formControlName="email" />
+                <input
+                  type="text"
+                  placeholder="Pointing"
+                  formControlName="email"
+                />
               </div>
               <div class="col-2"></div>
               <div class="col-5">
@@ -95,7 +159,7 @@
             </div>
           </div>
 
-          <div class="my-desk-heading background-light-pink">
+          <div class="my-desk-heading background-light-pink parent-g-detail">
             <p><span class="color-pink">Pa</span>rent/Guardian Details:</p>
           </div>
 
@@ -113,7 +177,11 @@
 
               <div class="col-5">
                 <span>First Name:</span>
-                <input type="text" formControlName="guardianFirstName" />
+                <input
+                  type="text"
+                  value="Ricky"
+                  formControlName="guardianFirstName"
+                />
                 <span>DOB:</span>
                 <input type="date" formControlName="guardianDob" />
                 <span>Mobile No:</span>
@@ -121,11 +189,23 @@
               </div>
               <div class="col-5">
                 <span>Last Name:</span>
-                <input type="text" placeholder="Pointing" formControlName="guardianLastName" />
+                <input
+                  type="text"
+                  placeholder="Pointing"
+                  formControlName="guardianLastName"
+                />
                 <span>Email ID:</span>
-                <input type="text" placeholder="... ... ..." formControlName="guardianEmail" />
+                <input
+                  type="text"
+                  placeholder="... ... ..."
+                  formControlName="guardianEmail"
+                />
                 <span>LandLine:</span>
-                <input type="text" placeholder="... ... ..." formControlName="guardianLandline" />
+                <input
+                  type="text"
+                  placeholder="... ... ..."
+                  formControlName="guardianLandline"
+                />
               </div>
               <div class="col-2"></div>
             </div>
@@ -138,18 +218,26 @@
             <div class="row field-size">
               <div class="col-10">
                 <span>School:</span>
-                <select formControlName="school">
+                <select formControlName="school" placeholder="select">
                   <option value=""></option>
                 </select>
               </div>
               <div class="col-md-2"></div>
               <div class="col-5">
                 <span>Class:</span>
-                <input type="text" placeholder="... ... ... ..." formControlName="class" />
+                <input
+                  type="text"
+                  placeholder="... ... ... ..."
+                  formControlName="class"
+                />
               </div>
               <div class="col-5">
                 <span>Section:</span>
-                <input type="text" placeholder="... ... ... ..." formControlName="section" />
+                <input
+                  type="text"
+                  placeholder="... ... ... ..."
+                  formControlName="section"
+                />
               </div>
               <div class="col-md-2"></div>
             </div>
@@ -159,7 +247,7 @@
             Part C:<span class="col-gray-part">(25%)</span>
           </div>
 
-          <div class="my-desk-heading background-light-pink">
+          <div class="my-desk-heading background-light-pink so-icons">
             <p>
               <span class="color-pink">So</span>cial Media Links:
               <i class="fa fa-facebook left-bar-btmss"></i>
@@ -180,10 +268,35 @@
             <div class="row field-size">
               <div class="col-10">
                 <span>Address:</span>
-                <input type="text" placeholder="... ... ... ..." formControlName="address" />
+                <input
+                  type="text"
+                  placeholder="... ... ... ..."
+                  formControlName="address"
+                />
+              </div>
+              <div class="col-md-2"></div>
+
+              <div class="col-10">
+                <input
+                  type="text"
+                  placeholder="... ... ... ..."
+                  formControlName="address2"
+                  class="address-2"
+                />
               </div>
 
               <div class="col-md-2"></div>
+
+              <div class="col-6">
+                <span>Landmark</span>
+                <input
+                  type="text"
+                  placeholder="... ... ... ..."
+                  formControlName="address"
+                />
+              </div>
+
+              <div class="col-md-6"></div>
 
               <div class="col-5">
                 <span>Country::</span>
@@ -216,10 +329,17 @@
           <div class="edit-form-align">
             <div class="row field-size">
               <div class="col-5 text-right">
-                <button class="cancl-btn-edit" routerLink="/user-profile/my-desk">Cancel</button>
+                <button
+                  class="cancl-btn-edit"
+                  routerLink="/user-profile/my-desk"
+                >
+                  Cancel
+                </button>
               </div>
               <div class="col-5">
-                <button class="cancl-btn-edit update-edit" (click)="onSubmit()">Update</button>
+                <button class="update-edit" (click)="onSubmit()">
+                  Update
+                </button>
               </div>
               <div class="col-md-2"></div>
             </div>
