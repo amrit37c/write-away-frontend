@@ -1163,4 +1163,20 @@ ul li {
 .updated-bold{
   font-size: 30px;
 
+}@media only screen and (min-width:1024px) and (max-width:1025px)
+{
+  .responsive-pencil{
+ position: absolute;
+ bottom: 89px !important;
+} 
+.read-awayresponsive{
+  position: absolute;
+  top: -46px;
+
+}
+
+
+}
+.body-updatedss{
+  font-size: 14px !important;
 }
