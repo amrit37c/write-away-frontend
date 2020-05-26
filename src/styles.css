@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
@@ -474,4 +474,26 @@ input:-webkit-autofill:focus {
   padding: 3px;
   border-radius: 13px;
   color: white !important;
+}
+
+.service_right_desc,
+.social_read.responsive-a a,
+.email-btn,
+.follow_links,
+.publisher_desc,
+.hero-area,
+.testi-updated,
+.added-footer,
+.about-content,
+.out-of-hero-area,
+.hero-area .left_sidebar p,
+.hero-area .slider_top_text ul li span,
+.hero-area .left_sidebar h3,
+.right-header,
+.modal-body,
+.my-footer,
+.list-view-my-desk,
+.font-apply {
+  font-family: Montserrat;
+
 }

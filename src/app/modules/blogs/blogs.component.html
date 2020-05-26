@@ -124,11 +124,14 @@
       <div class="archive-section col-md-12">
         <p class="archive-font"><span class="recenter">Ar</span>chives</p>
         <div class="archive-date">
-          <p *ngFor="let data of objectKeys(monthsArchievedData)">{{ data }}</p>
+          <p *ngFor="let data of monthsArchievedData | keyvalue" (click)="archieveBlogShow(data.value)">{{ data.key }}
+          </p>
           <div class="row">
+            <div class="col-md-3 recent-blog-blk" *ngFor="let blog of archieveMonthArr">
+              <div class="date-recent">
 
-            <div class="col-md-3 recent-blog-blk" *ngFor="let blog of monthsArchievedData[data]">
-              <div class="date-recent"> <span> {{ blog.createdAt | date : 'MMM dd,yyyy'   }}</span> </div>
+                <span> {{ blog.createdAt }}</span>
+              </div>
               <div class="rcbb">
                 <div class="recent-blog-img">
                   <img src="http://localhost:3000/images/{{blog.media}}">
@@ -139,9 +142,9 @@
                 <div class="recent-text-font">
                   <p [innerHTML]="blog.content"></p>
                 </div>
-                <span class="read-more">
+                <!-- <span class="read-more">
                   <p (click)="addToRecent(blog._id)"> Read More </p>
-                </span>
+                </span> -->
               </div>
             </div>
           </div>

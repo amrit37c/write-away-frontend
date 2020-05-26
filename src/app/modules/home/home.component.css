@@ -3,14 +3,11 @@
   padding: 6rem 0;
 }
 
-.about-content {
-  font-family: "Montserrat";
-}
 
 .about-us .about-content span.short_heading {
   font-size: 4.3rem;
   color: #000;
-  font-family: "Montserrat";
+
   font-weight: 500;
   font-style: normal;
 }
@@ -21,7 +18,7 @@
   text-transform: capitalize;
   line-height: 30px;
   color: #000;
-  font-family: "Montserrat";
+
   font-weight: 600;
   margin-top: 18px;
 }
@@ -351,7 +348,7 @@
   color: #666;
   font-weight: 600;
   font-size: 13px;
-  font-family: Montserrat;
+
 }
 
 .hero-area .slider_top_text ul li span a {
@@ -425,7 +422,7 @@ ul li {
   margin-top: 15px;
   margin-bottom: 10px;
   font-weight: 600;
-  font-family: Montserrat;
+
   font-style: normal;
 }
 
@@ -435,7 +432,7 @@ ul li {
   margin-bottom: 12px;
   padding-right: 10px;
   color: #7e7e7e;
-  font-family: Montserrat;
+
   font-weight: 500;
   padding: 6px 0;
 
@@ -809,7 +806,7 @@ ul li {
   font-weight: 500;
   word-spacing: 5px;
   font-size: 22px;
-  font-family: Montserrat;
+
   padding-top: 2rem;
 }
 
@@ -1066,18 +1063,7 @@ ul li {
 
 
 /* 01/05 */
-.service_right_desc,
-.social_read.responsive-a a,
-.email-btn,
-.follow_links,
-.publisher_desc,
-.hero-area,
-.testi-updated,
-.added-footer
- {
-  font-family: Montserrat;
 
-}
 
 /* 08-05 */
 /* slider of  */
@@ -1088,35 +1074,43 @@ ul li {
 
 /* 22-05 */
 
-.testi-updated{
+.testi-updated {
   color: #3b9bf1;
 }
-.updated-content h4{
+
+.updated-content h4 {
   line-height: 39px;
 
 }
-.updated-alignment{
+
+.updated-alignment {
   padding: 0px 44px 0px 72px;
 
 }
-.right{
+
+.right {
   text-align: right;
 }
-.col-yel{
+
+.col-yel {
   color: #ffcc57;
   font-size: 21px;
 }
-.updated-icons{
+
+.updated-icons {
   margin-top: 10px;
 }
-.updated-icons i{
- margin-left: 13px;
+
+.updated-icons i {
+  margin-left: 13px;
 }
-.share-updated{
+
+.share-updated {
   position: relative;
   top: -4px;
 }
-.reads-updated{
+
+.reads-updated {
   border-top: 1px solid;
   /* color: lightgray; */
   /* position: relative;
@@ -1124,19 +1118,22 @@ ul li {
   top: -5px; */
 
 }
-.updated-map{
+
+.updated-map {
   position: relative;
   top: 15px;
   left: 9px;
   font-size: 16px;
   color: #7aced8;
 }
-.updated-num{
+
+.updated-num {
   position: relative;
   top: 5px;
 
 }
-.col-greys{
+
+.col-greys {
   /* color: lightgray; */
 
 }

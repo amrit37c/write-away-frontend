@@ -25,7 +25,7 @@ export class WritePublicationComponent implements OnInit {
     { image: "assets/images/write.svg" },
   ];
 
-  editorData = "<p></p>";
+  editorData = "<p>t</p>";
   topic: string = "";
   mediaAvailable = []; // available genres select by user
   id; // publication id
@@ -85,8 +85,9 @@ export class WritePublicationComponent implements OnInit {
         this.submissionId = this.data["userPublication"][0]["_id"];
         this.submissionForm.patchValue(this.data["userPublication"][0]);
         this.mediaAvailable = this.data["userPublication"][0]["mediaAvailable"];
-        // this.editorData = this.data["userPublication"][0]["content"];
-        this.getContent(this.data["userPublication"][0]["content"]);
+        this.editorData = this.data["userPublication"][0]["content"];
+        console.log("publication data", this.editorData);
+        // this.getContent(this.data["userPublication"][0]["content"]);
       }
     });
   }

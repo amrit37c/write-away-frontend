@@ -69,8 +69,6 @@ export class HomeComponent implements OnInit {
       this.closedPublications = this.publications.filter(
         (el) => el.publicationStatus == 3
       );
-
-      console.log("this", this.openPublications);
     });
   }
 
@@ -125,7 +123,6 @@ export class HomeComponent implements OnInit {
   }
 
   addToFollowing(id) {
-    console.log("publication  id", this.userId);
     if (!this.userId) {
       this.openLogin();
     }
@@ -135,9 +132,7 @@ export class HomeComponent implements OnInit {
         publicationId: id,
         publishedBy: this.userId,
       })
-      .subscribe((_response) => {
-        console.log(">>>>", _response);
-      });
+      .subscribe((_response) => {});
   }
 
   sharePublication(link) {

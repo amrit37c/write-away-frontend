@@ -28,7 +28,7 @@ export class PublicationService extends BaseService {
     }
     return this.http
       .get<any>(this.url, {
-        headers: this.token(),
+        // headers: this.token(),
         params: httpParams,
         responseType: "json",
         observe: "response",
@@ -56,7 +56,7 @@ export class PublicationService extends BaseService {
 
     return this.http
       .get<any>(id ? `${this.url}/${id}` : `${this.url}`, {
-        headers: this.token(),
+        // headers: this.token(),
         observe: "response",
         responseType: "json",
       })

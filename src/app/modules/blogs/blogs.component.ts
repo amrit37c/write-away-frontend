@@ -30,6 +30,7 @@ export class BlogsComponent implements OnInit {
 
   monthsArchievedData = {};
   objectKeys = Object.keys;
+  archieveMonthArr = [];
 
   constructor(private route: ActivatedRoute, private service: BlogService) {}
 
@@ -45,7 +46,6 @@ export class BlogsComponent implements OnInit {
   getBlogDetails(id) {
     this.service.getOneBlog(this.id || id).subscribe((_response) => {
       this.blog = _response.body.data;
-      console.log("this", this.blog);
     });
   }
 
@@ -80,5 +80,12 @@ export class BlogsComponent implements OnInit {
   addToRecent(id) {
     const blog = this.recentBlogs.filter((blog) => blog._id == id);
     this.recentBlog = blog[0];
+  }
+
+  archieveBlogShow(blogs: []) {
+    console.log("sow", blogs);
+    this.archieveMonthArr = [];
+    this.archieveMonthArr = blogs;
+    console.log("this", this.archieveMonthArr);
   }
 }

@@ -80,7 +80,7 @@
 
 .email-btn {
   border: 0px;
-  background-color: #D43299;
+  background-color: #ff01a2;
   color: white;
   height: 35px;
   width: 25%;
@@ -94,7 +94,7 @@
 }
 
 .footer-list ul li {
-  font-family: Montserrat;
+
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -106,7 +106,7 @@
   font-size: 16px;
   margin-top: 16px;
   color: #292A2C;
-  font-family: Montserrat;
+
 }
 
 .footer-list li:before {
@@ -116,28 +116,33 @@
 }
 
 /* Footer area */
-.added-footer{
+.added-footer {
   font-weight: 600;
 
 }
-.added-icons i{
+
+.added-icons i {
   color: #D43299;
 
 }
+
 .added-icons {
   color: #219AD3;
-  
+
 }
-.quote-footer{
+
+.quote-footer {
   font-size: 8px;
   border: 2px solid #D43299;
   padding: 3px;
   border-radius: 9px;
 }
-.input-footer-head{
+
+.input-footer-head {
   padding-top: 20px;
   font-weight: 600;
 }
+
 .input-footer-head span {
   color: white;
 }
