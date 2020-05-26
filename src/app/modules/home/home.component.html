@@ -195,7 +195,7 @@
                     </div>
                     <div class="col-10 col-greys">
                       <span class="updated-num">{{
-                        blogs[0].readCount.length || "0"
+                        (blogs.length && blogs[0].readCount.length) || "0"
                       }}</span>
                       <p><span class="reads-updated">Reads</span></p>
                     </div>
