@@ -10,7 +10,7 @@
       <div class="background-light-pink my-desk-heading">
         <p class="my-desk-heading-name">
           <span class="color-pink">He</span>llo! Ricky Pointing
-          <span class="col-blue">{{ count || 0 }}</span>
+          <span class="col-blue">{{ count || '' }}</span>
         </p>
       </div>
     </div>
@@ -35,22 +35,13 @@
               </div>
               <div class="col-5">
                 <span>Last Name</span>
-                <input
-                  type="text"
-                  placeholder="Pointing"
-                  formControlName="lastName"
-                />
+                <input type="text" placeholder="Pointing" formControlName="lastName" />
               </div>
               <div class="col-2"></div>
               <div class="clearfix"></div>
               <div class="col-3">
                 <span>a.k.a</span>
-                <input
-                  type="text"
-                  class="select-one"
-                  placeholder="... ... ... ..."
-                  formControlName="lastName"
-                />
+                <input type="text" class="select-one" placeholder="... ... ... ..." formControlName="lastName" />
               </div>
 
               <div class="col-9 row mar-zero">
@@ -60,24 +51,14 @@
 
                 <div class="radio-cont">
                   <div class="first-rad">
-                    <input
-                      type="radio"
-                      class="profile-radio"
-                      id="aka"
-                      formControlName="selectDisplayName"
-                      value="aka"
-                    />
+                    <input type="radio" class="profile-radio" id="aka" formControlName="selectDisplayName"
+                      value="aka" />
                     <label>a.k.a</label>
                   </div>
 
                   <div class="second-rad">
-                    <input
-                      type="radio"
-                      class="profile-radio"
-                      id="firstname"
-                      formControlName="selectDisplayName"
-                      value="firstname"
-                    />
+                    <input type="radio" class="profile-radio" id="firstname" formControlName="selectDisplayName"
+                      value="firstname" />
                     <label>First/Middle Name</label>
                   </div>
                 </div>
@@ -111,11 +92,8 @@
 
               <div class="col-md-10">
                 <span>About me:</span>
-                <textarea
-                  formControlName="aboutInfo"
-                  class="about-me-textarea"
-                  placeholder="Let everyone Know a little bit about yourself"
-                ></textarea>
+                <textarea formControlName="aboutInfo" class="about-me-textarea"
+                  placeholder="Let everyone Know a little bit about yourself"></textarea>
               </div>
               <div class="col-md-2"></div>
               <div class="clearfix"></div>
@@ -126,12 +104,8 @@
             <div class="row field-size">
               <div class="col-5">
                 <span>DOB:</span>
-                <input
-                  type="date"
-                  formControlName="dob"
-                  placeholder="&#xf073;"
-                  style="font-family: Arial, FontAwesome;"
-                />
+                <input type="date" formControlName="dob" placeholder="&#xf073;"
+                  style="font-family: Arial, FontAwesome;" />
                 <span>Gender:</span>
                 <select formControlName="gender">
                   <option value="Male">Male</option>
@@ -140,11 +114,7 @@
               </div>
               <div class="col-5">
                 <span>Email ID:</span>
-                <input
-                  type="text"
-                  placeholder="Pointing"
-                  formControlName="email"
-                />
+                <input type="text" placeholder="Pointing" formControlName="email" />
               </div>
               <div class="col-2"></div>
               <div class="col-5">
@@ -177,11 +147,7 @@
 
               <div class="col-5">
                 <span>First Name:</span>
-                <input
-                  type="text"
-                  value="Ricky"
-                  formControlName="guardianFirstName"
-                />
+                <input type="text" value="Ricky" formControlName="guardianFirstName" />
                 <span>DOB:</span>
                 <input type="date" formControlName="guardianDob" />
                 <span>Mobile No:</span>
@@ -189,23 +155,11 @@
               </div>
               <div class="col-5">
                 <span>Last Name:</span>
-                <input
-                  type="text"
-                  placeholder="Pointing"
-                  formControlName="guardianLastName"
-                />
+                <input type="text" placeholder="Pointing" formControlName="guardianLastName" />
                 <span>Email ID:</span>
-                <input
-                  type="text"
-                  placeholder="... ... ..."
-                  formControlName="guardianEmail"
-                />
+                <input type="text" placeholder="... ... ..." formControlName="guardianEmail" />
                 <span>LandLine:</span>
-                <input
-                  type="text"
-                  placeholder="... ... ..."
-                  formControlName="guardianLandline"
-                />
+                <input type="text" placeholder="... ... ..." formControlName="guardianLandline" />
               </div>
               <div class="col-2"></div>
             </div>
@@ -225,19 +179,11 @@
               <div class="col-md-2"></div>
               <div class="col-5">
                 <span>Class:</span>
-                <input
-                  type="text"
-                  placeholder="... ... ... ..."
-                  formControlName="class"
-                />
+                <input type="text" placeholder="... ... ... ..." formControlName="class" />
               </div>
               <div class="col-5">
                 <span>Section:</span>
-                <input
-                  type="text"
-                  placeholder="... ... ... ..."
-                  formControlName="section"
-                />
+                <input type="text" placeholder="... ... ... ..." formControlName="section" />
               </div>
               <div class="col-md-2"></div>
             </div>
@@ -268,32 +214,19 @@
             <div class="row field-size">
               <div class="col-10">
                 <span>Address:</span>
-                <input
-                  type="text"
-                  placeholder="... ... ... ..."
-                  formControlName="address"
-                />
+                <input type="text" placeholder="... ... ... ..." formControlName="address" />
               </div>
               <div class="col-md-2"></div>
 
               <div class="col-10">
-                <input
-                  type="text"
-                  placeholder="... ... ... ..."
-                  formControlName="address2"
-                  class="address-2"
-                />
+                <input type="text" placeholder="... ... ... ..." formControlName="address2" class="address-2" />
               </div>
 
               <div class="col-md-2"></div>
 
               <div class="col-6">
                 <span>Landmark</span>
-                <input
-                  type="text"
-                  placeholder="... ... ... ..."
-                  formControlName="address"
-                />
+                <input type="text" placeholder="... ... ... ..." formControlName="address" />
               </div>
 
               <div class="col-md-6"></div>
@@ -329,10 +262,7 @@
           <div class="edit-form-align pad-top-btns">
             <div class="row field-size">
               <div class="col-5 text-right">
-                <button
-                  class="cancl-btn-edit"
-                  routerLink="/user-profile/my-desk"
-                >
+                <button class="cancl-btn-edit" routerLink="/user-profile/my-desk">
                   Cancel
                 </button>
               </div>

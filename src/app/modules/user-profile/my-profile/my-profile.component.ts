@@ -37,6 +37,7 @@ export class MyProfileComponent implements OnInit {
       class: [""],
       section: [""],
       address: [""],
+      address2: [""],
       country: [""],
       state: [""],
       city: [""],
@@ -58,6 +59,9 @@ export class MyProfileComponent implements OnInit {
   }
 
   getUserInfo() {
-    this.service.getOne(this.userId).subscribe((_response) => {});
+    this.service.get().subscribe((_response) => {
+      console.log("_response", _response);
+      this.editForm.patchValue(_response.body.data[0]);
+    });
   }
 }

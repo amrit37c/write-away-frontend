@@ -137,9 +137,15 @@ export class HomeComponent implements OnInit {
   }
 
   sharePublication(link) {
-    if (!this.userId) {
-      this.openLogin();
-    }
+    var text = "/publication-read/" + link;
+    navigator.clipboard.writeText(text).then(
+      function () {
+        console.log("Async: Copying to clipboard was successful!");
+      },
+      function (err) {
+        console.error("Async: Could not copy text: ", err);
+      }
+    );
   }
   writePublication(id) {
     if (!this.userId) {

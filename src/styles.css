@@ -493,7 +493,8 @@ input:-webkit-autofill:focus {
 .modal-body,
 .my-footer,
 .list-view-my-desk,
-.font-apply {
+.font-apply,
+.modal-content {
   font-family: Montserrat;
 
 }
