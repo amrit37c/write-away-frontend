@@ -1191,8 +1191,9 @@ font-size: 18px;
   background-color: #7998ff;
 }
 .updated-bold{
-  font-size: 30px;
-  margin-top: 6px;
+  font-size: 40px;
+  margin-top: 11px;
+  margin-bottom: 20px;
 
 
 }@media only screen and (min-width:1024px) and (max-width:1025px)
@@ -1216,4 +1217,12 @@ font-size: 18px;
   width: 75%;
   position: relative;
     top: -11px;
+}
+.write-hedsd{
+  font-size: 30px;
+}
+.write-moress{
+  font-size: 35px;
+  margin-top: 7px;
+
 }
