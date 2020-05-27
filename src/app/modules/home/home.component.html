@@ -278,6 +278,309 @@
 </section>
 <!--/ End Services -->
 
+<!-- Hero area static -->
+<section class="hero-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-12">
+        <div class="slider_top_text">
+          <h3><span class="pink_text">We'</span>re Publishing!</h3>
+          <ul class="other_text">
+            <li class="text_titles">
+              <span>Titles <a href="#" target="_blank">5 </a></span>
+            </li>
+            <li class="text_titles">
+              <span
+                >Genres
+                <a href="#" target="_blank">
+                  0
+                </a></span
+              >
+            </li>
+            <li class="text_titles">
+              <span
+                ><a routerLink="/publish"
+                  >View All <i class="fa fa-long-arrow-right"></i></a
+              ></span>
+            </li>
+          </ul>
+        </div>
+        <div class="left_sidebar">
+          <div class="row">
+            <div class="col-lg-5 col-12">
+              <div class="left_sidebar_img">
+                <img src="/assets/images/write.svg" alt="" />
+              </div>
+              <div class="publisher_desc">
+                <span>Publisher:</span>
+                <div class="publisher_name">
+                  <div>
+                    <img src="./assets/images/publisher.svg" alt="" />
+                    <span class="name">Daniel</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 mobile-view col-12">
+              <h3 class="text-uppercase">
+                ONE Novelist's Approach Elizabeth George
+              </h3>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                p
+              </p>
+              <div class="classic_details">
+                <div class="classic_post">
+                  <p>
+                    Genres:
+                    <span> Classic</span>
+                  </p>
+                  <p>
+                    Languages:
+                    <span>English</span>
+                  </p>
+                  <p>
+                    Age Group:
+                    <span>10-20</span>
+                  </p>
+                  <p>
+                    Closing Date:
+                    <span>May 10, 2020</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-12">
+              <div class="follow_details top-fix">
+                <div class="follow_links">
+                  <p
+                    (click)="
+                      sharePublication(
+                        openPublications[openPublicationIndex].id
+                      )
+                    "
+                  >
+                    <i class="fa fa-share col-blue share-icons"></i>
+                    <span class="span_top_likes">
+                      Share
+                    </span>
+                  </p>
+                  <p
+                    class="book_mark_link"
+                    (click)="
+                      openPublications.length &&
+                      openPublications[openPublicationIndex] &&
+                      openPublications[openPublicationIndex].bookmark
+                        ? updatePublicationBookMark(
+                            openPublications[openPublicationIndex]
+                          )
+                        : savePublicationBookMark(
+                            openPublications[openPublicationIndex]
+                          )
+                    "
+                  >
+                    <i
+                      class="fa"
+                      [ngClass]="
+                        publicationBookMarkStatus(
+                          openPublications[openPublicationIndex]
+                        )
+                      "
+                    ></i>
+
+                    <span>Bookmarks</span>
+                  </p>
+                </div>
+                <div class="follow_btn">
+                  <button
+                    class="write-on-btn"
+                    (click)="
+                      writePublication(
+                        openPublications[openPublicationIndex]._id
+                      )
+                    "
+                  >
+                    Write
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="out-of-hero-area">
+          <p>
+            <span
+              (click)="publishCationSlider('-', 'open')"
+              class="fa fa-angle-left slider-direction-icon"
+            ></span>
+            <span class="sp-sp">
+              <span class="clr-pink"> {{ openPublicationIndex + 1 }}</span
+              >/{{ openPublications && openPublications.length }}
+            </span>
+            <span
+              (click)="publishCationSlider('+', 'open')"
+              class="fa fa-angle-right slider-direction-icon"
+            ></span>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-12">
+        <div class="slider_top_text">
+          <h3><span class="pink_text">Re</span>ading Room!</h3>
+          <ul class="other_text">
+            <li class="text_titles">
+              <span>Titles <a href="#" target="_blank"> 300 </a></span>
+            </li>
+            <li class="text_titles">
+              <span>Genres <a href="#" target="_blank">300</a></span>
+            </li>
+            <li class="text_titles">
+              <span
+                >Topics <a href="#" target="_blank">{{ "0" }}</a></span
+              >
+            </li>
+            <li class="text_titles">
+              <span>View All <i class="fa fa-long-arrow-right"></i></span>
+            </li>
+          </ul>
+        </div>
+        <div class="left_sidebar">
+          <div class="row">
+            <div class="col-lg-5 col-12">
+              <div class="left_sidebar_img">
+                <img src="/assets/images/read-away-publish.jpg" alt="" />
+              </div>
+              <span class="video_tag">May 10, 2020</span>
+              <div class="publisher_desc">
+                <span>Publisher:</span>
+                <div class="publisher_name">
+                  <div>
+                    <img src="./assets/images/publisher.svg" alt="" />
+                    <span class="name">Daniel</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-lg-7 mobile-view col-12"
+              *ngIf="closedPublications.length"
+            >
+              <h3 class="text-uppercase">
+                Writing Prompts for Grades Arnold Cheyney
+              </h3>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                p
+              </p>
+              <div class="classic_details">
+                <div class="classic_post">
+                  <p>
+                    Genres:
+                    <span>200</span>
+                  </p>
+                  <p>
+                    Languages:
+                    <span>Hindi</span>
+                  </p>
+                  <p>
+                    Age Group:
+                    <span>10-20</span>
+                  </p>
+                  <p>
+                    Closing Date:
+                    <span>May 10, 2020</span>
+                  </p>
+                </div>
+                <div
+                  class="social_likes justify-content-between d-flex size-set"
+                >
+                  <div class="social_likes_1 d-flex justify-content-between">
+                    <span class="span_top_likes"
+                      ><i class="fa fa-map"></i
+                    ></span>
+                    <p><span>0</span> <span>Reads</span></p>
+                  </div>
+                  <div class="social_likes_1 d-flex justify-content-between">
+                    <span class="span_top_likes"
+                      ><i class="fa fa-heart-o col-red"></i
+                    ></span>
+                    <p><span>0</span> <span>Likes</span></p>
+                  </div>
+                  <div class="social_likes_1 d-flex justify-content-between">
+                    <span class="span_top_likes"
+                      ><i class="fa fa-share col-blue share-icons"></i
+                    ></span>
+                    <p><span>0</span> <span>shares</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-12">
+              <div class="follow_details follow_details_2">
+                <div class="follow_links">
+                  <div class="taing_data">
+                    <span>Ratings</span>
+                    <ul>
+                      <li><i class="fa fa-star"></i></li>
+                      <li><i class="fa fa-star"></i></li>
+                      <li><i class="fa fa-star"></i></li>
+                      <li><i class="fa fa-star"></i></li>
+                      <li><i class="fa fa-star"></i></li>
+                    </ul>
+                  </div>
+                  <p class="book_mark_link">
+                    <i class="fa fa-bookmark-o"></i>
+                    <span>Bookmark</span>
+                  </p>
+                </div>
+                <div class="follow_btn">
+                  <button
+                    class="write-on-btn"
+                    routerLink="/user-profile/read-publication"
+                  >
+                    Read
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="out-of-hero-area">
+          <p>
+            <span
+              (click)="blogPublishSlider('-', 'closed')"
+              class="fa fa-angle-left slider-direction-icon"
+            ></span>
+            <span class="sp-sp">
+              <span class="clr-pink"> {{ closedPublicationIndex + 1 }}</span
+              >/{{ closedPublications.length }}
+            </span>
+            <span
+              (click)="blogPublishSlider('+', 'closed')"
+              class="fa fa-angle-right slider-direction-icon"
+            ></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Hero area static -->
+
 <!-- Hero Area Start -->
 <section class="hero-area">
   <div class="container">
@@ -392,10 +695,6 @@
                       Share
                     </span>
                   </p>
-                  <!-- <i class="fa col-redss"
-                    (click)="data['userPublication'] && data['userPublication'][0].publicationType=='bookmark' ? updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(data['userPublication'][0]._id, 'add') "
-                    [ngClass]="{'fa-bookmark':data['userPublication'] && data['userPublication'][0].publicationType=='bookmark', 'fa-bookmark-o': data['userPublication'] && data['userPublication'][0].publicationType!='bookmark'}"></i> -->
-                  <!-- (click)="addToFollowing(openPublications[openPublicationIndex].id)" -->
                   <p
                     class="book_mark_link"
                     (click)="
@@ -418,15 +717,7 @@
                         )
                       "
                     ></i>
-                    <!-- {{openPublications[openPublicationIndex]['userPublication'] | json}} -->
-                    <!-- <i class="fa col-redss"
-                      (click)="openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark' ?
-                       updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(openPublications[openPublicationIndex]
-                       ['userPublication'][0]._id, 'add') "
-                      [ngClass]="{'fa-bookmark':openPublications[openPublicationIndex]['userPublication'] 
-                      && openPublications[openPublicationIndex]['userPublication'][0].publicationType=='bookmark', 
-                      'fa-bookmark-o': openPublications[openPublicationIndex]['userPublication'] && openPublications[openPublicationIndex]
-                      ['userPublication'][0].publicationType!='bookmark'}"></i> -->
+
                     <span>Bookmarks</span>
                   </p>
                 </div>
@@ -604,7 +895,6 @@
                   </p>
                 </div>
                 <div class="follow_btn">
-                  <!-- <a href="#" target="_blank">Read</a> -->
                   <button
                     class="write-on-btn"
                     routerLink="/user-profile/read-publication"
