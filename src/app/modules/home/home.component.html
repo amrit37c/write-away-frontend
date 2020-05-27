@@ -155,7 +155,7 @@
           <div class="row">
             <div class="col-lg-5 col-12">
               <div class="service_left_img">
-                <!-- <img src="/assets/images/gallery-4.jpg" alt="Blog image" /> -->
+                <img src="/assets/images/no-image.svg" alt="Blog image" *ngIf="!blogs.length" />
                 <img src="http://localhost:3000/images/{{ blogs[0].media }}" *ngIf="blogs.length" alt="Blog image" />
               </div>
               <div class="row">
@@ -166,7 +166,7 @@
                       </span>
                     </div>
                     <div class="col-9 col-greys updated-rigtimgs">
-                      <span class="updated-num"> (blogs.length && blogs[0].readCount.length) || "0"</span>
+                      <span class="updated-num"> {{blogs.length && blogs[0].readCount.length || "0" }}</span>
                       <p><span class="reads-updated">Reads</span></p>
                     </div>
                   </div>
@@ -242,12 +242,19 @@
           <h3 class="cil-updatedsss"> We're Publishing!</h3>
           <ul class="other_text">
             <li class="text_titles">
-              <span>Titles <a href="#" target="_blank" class="cil-updatedsss">5 </a></span>
+              <span *ngIf="openPublications.length">Titles
+
+                <a href="#" target="_blank" class="cil-updatedsss"> {{
+                  openPublications[openPublicationIndex].title.length || '0'
+                }} </a></span>
             </li>
             <li class="text_titles">
-              <span>Genres
+              <span *ngIf="openPublications.length"> Genres
                 <a href="#" target="_blank" class="cil-updatedsss">
-                  0
+                  {{
+                    openPublications[openPublicationIndex].genres.title.length ||
+                      0
+                  }}
                 </a></span>
             </li>
             <li class="text_titles">
@@ -260,7 +267,12 @@
           <div class="row">
             <div class="col-lg-5 col-12">
               <div class="left_sidebar_img">
-                <img src="/assets/images/write.svg" alt="" />
+                <img src="http://localhost:3000/images/{{
+                  openPublications[openPublicationIndex]['mediaCover']
+                }}" alt="" *ngIf="
+                  openPublications.length &&
+                  openPublications[openPublicationIndex].mediaCover
+                " />
               </div>
               <div class="text-right">
                 <i class="fa fa-share col-blue share-icons" (click)="
@@ -295,10 +307,10 @@
               </div>
             </div>
             <div class="col-lg-7 mobile-view col-12">
-              <h3 class="text-uppercase">
-                ONE Novelist's Approach Elizabeth George
+              <h3 class="text-uppercase" *ngIf="openPublications.length">
+                {{ openPublications[openPublicationIndex].title }}
               </h3>
-              <p class="para-updated">
+              <p [innerHTML]="openPublications[openPublicationIndex].brief" *ngIf="openPublications.length">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -311,21 +323,33 @@
               </p>
               <div class="classic_details details-updated">
                 <div class="classic_post">
-                  <p>
+                  <p *ngIf="openPublications.length">
                     Genres:
-                    <span> Classic</span>
+                    <span> {{
+                      openPublications[openPublicationIndex].genres.title
+                    }}</span>
                   </p>
-                  <p>
+                  <p *ngIf="openPublications.length">
                     Languages:
-                    <span>English</span>
+                    <span>{{
+                      openPublications[openPublicationIndex].language
+                        | titlecase
+                    }}</span>
                   </p>
-                  <p>
+                  <p *ngIf="openPublications.length">
                     Age Group:
-                    <span>10-20</span>
+                    <span>{{
+                      openPublications[
+                        openPublicationIndex
+                      ].ageGroup.ageRange.join("-")
+                    }}</span>
                   </p>
-                  <p>
+                  <p *ngIf="openPublications.length">
                     Closing Date:
-                    <span>May 10, 2020</span>
+                    <span>{{
+                      openPublications[openPublicationIndex].closingDate
+                        | date: "MMM dd, yyyy"
+                    }}</span>
                   </p>
                 </div>
               </div>
@@ -784,7 +808,7 @@
 </section> -->
 
 <!-- Hero area static -->
-<section class="hero-area">
+<!-- <section class="hero-area">
   <div class="container-fluid">
     <div class="row sssss">
       <div class="col-lg-6 col-md-6 col-12">
@@ -956,14 +980,7 @@
                   <i class="fa fa-bookmark-o col-yel bokyy"></i>
                 </div>
               </div>
-              <!-- <div class="text-right">
-               
-              <i class="fa fa-heart-o  col-red heart-shape"></i>
-
-                <i class="fa fa-share col-blue share-icons"></i>
-                <i class="fa fa-bookmark-o col-yel bokyy"></i>
-              </div>
-<img src="/assets/images/boki.svg" class="bokyyy-imgn"> -->
+              
 
               <div class="publisher_desc fix-updated">
                 <div class="publisher_name ">
@@ -1049,7 +1066,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- Hero area static -->
 <!--/ End Hero Area -->
 <!-- Testimonials -->
