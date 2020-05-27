@@ -1015,6 +1015,8 @@ font-size: 18px;
   padding: 6px;
   padding-left: 50px;
   padding-right: 50px;
+  margin-bottom: 12px;
+
 }
 
 @media only screen and (min-width:320px) and (max-width:440px) {
@@ -1284,4 +1286,26 @@ font-size: 18px;
   position: relative;
   right: 27px;
 }
+.para-updated{
+  padding-right: 69px !important;
 
+}
+.details-updated{
+  padding-top: 50px;
+
+}
+@media only screen and (min-width:1440px) and (max-width:1441px){
+
+
+.img-updates{
+  width: 63%;
+}
+.updated-rigtimgs{
+  position: relative;
+  left: -22px;
+
+}
+}
+.col-whiteee{
+  color: white !important;
+}
