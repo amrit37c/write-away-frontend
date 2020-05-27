@@ -397,8 +397,11 @@
 }
 
 .hero-area .left_sidebar .publisher_desc .publisher_name img {
-  width: 75px;
+  width: 55px;
   border-radius: 50px;
+  position: relative;
+  top: 11px;
+  margin-right: 5px;
 }
 
 .hero-area .left_sidebar .publisher_desc .publisher_name span {
@@ -1235,3 +1238,46 @@ font-size: 18px;
     bottom: 18px;
     right: 26px;
 }
+.cil-updatedsss{
+  color: #3b9bf1 !important;
+}
+.col-blacky{
+  color: black !important;
+}
+.bokyy{
+  margin-left: 10px;
+  position: relative;
+    top: 3px;
+}
+.heart-shape{
+  position: relative;
+  top: 5px;
+  right: 9px;
+
+}
+.bokyyy-imgn{
+  position: relative;
+  top: -9px;
+  width: 78%;
+}
+.updated-postin{
+  position: relative;
+  top: -8px;
+}
+.pad-left{
+  padding-left: 40px;
+  
+}
+.pad-left i{
+  font-size: 20px !important;
+  
+}
+.fix-updated{
+  padding-top: 0px !important;
+
+}
+.margin-updated{
+  margin-top: 10px;
+
+}
+
