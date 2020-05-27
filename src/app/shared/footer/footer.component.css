@@ -41,17 +41,20 @@
   padding: 9px 11px 9px 11px;
   color: #219AD3;
   margin-right: 3px;
+  font-size: 16px;
+cursor: pointer;
 }
 
-.footer-icon-two {
-  margin-left: 30px;
+.footer-list ul{
+  line-height: 19px;
+
 }
 
 .left-icon-head {
   font-size: 12px;
   color: #9F9F9F;
   margin-top: 11px;
-  margin-bottom: 2px;
+  margin-bottom: 8px;
 }
 
 .circle {
@@ -87,10 +90,12 @@
   font-size: 13px;
   border-radius: 0px 3px 3px 0px;
 }
-
-.footer-list {
-  font-weight: 700 !important;
-  font-size: 13px;
+@media only screen and (max-width:768px)
+and (max-width:769px){
+  .footer-list {
+line-height: 18px;
+  }
+  
 }
 
 .footer-list ul li {
@@ -120,6 +125,15 @@
   font-weight: 600;
 
 }
+.added-footer p{
+  padding-bottom: 8px;
+
+}
+.added-footer img {
+  display: inline-block;
+    width: 13%;
+
+}
 
 .added-icons i {
   color: #D43299;
@@ -128,7 +142,15 @@
 
 .added-icons {
   color: #219AD3;
+  font-weight: 500;
 
+
+}
+@media only screen and (min-width:768px )
+and (max-width:1px){
+.added-icons {
+font-size: 10px;
+}
 }
 
 .quote-footer {
@@ -136,13 +158,33 @@
   border: 2px solid #D43299;
   padding: 3px;
   border-radius: 9px;
+
 }
 
 .input-footer-head {
-  padding-top: 20px;
+  padding-top: 17px;
   font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 9px;
+
 }
 
 .input-footer-head span {
   color: white;
+}
+.book-img-conts{
+  margin-left: -9PX;
+
+}
+@media only screen and (min-width:1024px )
+and (max-width:1025px){
+.email-btn{
+  width: 33% !important;
+}
+}
+@media only screen and (max-width:1440px)
+and (max-width:1441px){
+.email-btn{
+  width: 24%;
+}
 }

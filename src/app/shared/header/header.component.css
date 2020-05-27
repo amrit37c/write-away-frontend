@@ -234,9 +234,9 @@
   margin-top: 20px;
   padding: 3px 20px;
   border-radius: 4px;
-  -webkit-box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 13px -6px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.16);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
   border: 1px solid lightgray;
 
 }
@@ -354,9 +354,9 @@ a.forget-password {
   text-align: center;
   background-color: white !important;
   padding-bottom: 8px;
-  -webkit-box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
-  -moz-box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
-  box-shadow: -1px 8px 11px -8px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.16);
+  -moz-box-shadow: 0px 3px 7px 0px rgba(0,0,0,0.16);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
   padding-top: 17px;
   padding-bottom: 23px;
 }
@@ -446,6 +446,7 @@ forget-pass */
     margin-right: 174px;
     margin-top: 161px;
     width: 31% !important;
+<<<<<<< HEAD
 
   }
 }
@@ -460,6 +461,22 @@ forget-pass */
 
 @media only screen and (min-width:768px) and (max-width:769px) {
   ::ng-deep .modelWidth {
+=======
+  
+   } 
+ }
+ 
+ @media only screen and (min-width:1440px) and (max-width:1441px){
+  ::ng-deep .modelWidth{
+    margin-top: 186px;
+    width: 31% !important;
+    margin-right: 264px;
+  
+   } 
+ }
+ @media only screen and (min-width:768px) and (max-width:769px){
+  ::ng-deep .modelWidth{
+>>>>>>> 91cd63c2ae1a54fea05e86467d9bc72d3693b5ae
 
     margin-top: 389px;
     width: 100%;
@@ -489,6 +506,7 @@ forget-pass */
 
 .closepop-btn {
   padding: 3px;
+<<<<<<< HEAD
   -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
@@ -500,6 +518,38 @@ forget-pass */
 
 .left {
   text-align: left;
+=======
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: -13px;
+    margin-bottom: -2px;
+    background-color: white;
+    position: relative;
+    left: -33px;
+    top: -4px;  
+}
+.sign-updateds{
+  position: relative;
+    left: -26px;
+}
+.updated-signupmod{
+  position: relative;
+  left: 28px;
+}
+.birth-updated{
+  position: relative;
+  left: -12px;
+}
+
+.remmm{
+  font-size: 15px;
+    color: #333333;
+    font-weight: 700;
+}
+.left{
+  float: left;
+>>>>>>> 91cd63c2ae1a54fea05e86467d9bc72d3693b5ae
 }
 
 .update-birthdate {
@@ -510,6 +560,10 @@ forget-pass */
   position: relative;
   right: 8px;
   color: lightgray;
+}
+.right{
+  text-align: right !important;
+  color: #309FD8 !important;
 }
 
 #button-basic {
