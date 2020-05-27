@@ -144,6 +144,8 @@
   background-color: white;
   color: #219ad3;
   font-weight: 600;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .field-size input {
@@ -182,22 +184,26 @@
   border-radius: 5px;
   border: 1px solid #219ad3;
 }
+.pad-top-btns {
+  padding-top: 40px;
+}
 
 .update-edit {
   background-color: #219ad3;
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 10px;
-  padding: 5px 25px 5px 25px !important;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 9px 30px 9px 30px !important;
 }
 
 .cancl-btn-edit {
   background-color: #f0f7ff;
-  padding: 7px 14px 7px 14px;
+  padding: 9px 22px 9px 22px;
   border: none;
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   color: #707174;
 }
@@ -247,7 +253,7 @@
   padding-top: 28px;
   padding-left: 10px;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .profile-radio {
   width: 10px !important;
@@ -261,7 +267,7 @@
 .second-rad label {
   padding-top: 28px;
   padding-left: 10px;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 11px;
 }
 .about-me-textarea {
