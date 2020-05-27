@@ -1258,14 +1258,14 @@ font-size: 18px;
 .bokyyy-imgn{
   position: relative;
   top: -9px;
-  width: 78%;
+  width: 57%;
 }
 .updated-postin{
   position: relative;
   top: -8px;
 }
 .pad-left{
-  padding-left: 40px;
+  padding-left: 74px;
   
 }
 .pad-left i{
@@ -1279,5 +1279,9 @@ font-size: 18px;
 .margin-updated{
   margin-top: 10px;
 
+}
+.publi{
+  position: relative;
+  right: 27px;
 }
 
