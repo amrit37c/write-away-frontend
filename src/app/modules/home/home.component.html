@@ -312,7 +312,7 @@
               <h3 class="text-uppercase" *ngIf="openPublications.length">
                 {{ openPublications[openPublicationIndex].title }}
               </h3>
-              <p [innerHTML]="openPublications[openPublicationIndex].brief" *ngIf="openPublications.length">
+              <p [innerHTML]="getBrief()" *ngIf="openPublications.length">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley

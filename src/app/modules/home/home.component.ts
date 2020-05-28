@@ -301,4 +301,11 @@ export class HomeComponent implements OnInit {
   blogShareLink(id) {
     const link = "http://";
   }
+
+  getBrief() {
+    return this.openPublications[this.openPublicationIndex].brief.substr(
+      0,
+      500
+    );
+  }
 }
