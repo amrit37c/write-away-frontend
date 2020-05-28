@@ -19,6 +19,8 @@
   padding: 9px 11px 9px 11px;
   color: #219AD3;
   margin-right: 3px;
+  margin-bottom: 8px;
+
 }
 
 .my-footer {
@@ -123,6 +125,7 @@ line-height: 18px;
 /* Footer area */
 .added-footer {
   font-weight: 600;
+  padding-left: 52px;
 
 }
 .added-footer p{
@@ -139,12 +142,22 @@ line-height: 18px;
   color: #D43299;
 
 }
+.updated-footer-list ul{
+  position: relative;
+  top: -25px;
+}
 
 .added-icons {
   color: #219AD3;
   font-weight: 500;
 
 
+}
+@media only screen and (min-width:360px) and (max-width:470px) {
+ 
+.footer-list ul {
+  margin-top: 22px !important;
+}
 }
 @media only screen and (min-width:768px )
 and (max-width:1px){
@@ -185,6 +198,23 @@ and (max-width:1025px){
 @media only screen and (max-width:1440px)
 and (max-width:1441px){
 .email-btn{
-  width: 24%;
+  width: 40%;
 }
+}
+@media only screen and (min-width:360px)
+and (max-width:441px){
+  .responsive-footer{
+    flex: 0 0 99.666667%;
+    max-width: 99.666667%;
+    font-size: 12px;
+
+  }
+  .none-col-ss{
+    display: none;
+  }
+}
+
+.updated-align-fot{
+padding-left: 51px;
+
 }

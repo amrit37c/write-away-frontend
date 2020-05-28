@@ -69,6 +69,23 @@
   margin-left: 40px;
 }
 
+@media only screen and (min-width:360px) and (max-width:470px) {
+  .updated-responsivess {
+    width: 82px !important;
+    margin-left: 11px !important;
+  }
+}
+
+@media only screen and (min-width:320px) and (max-width:321px) {
+  .updated-responsivess {
+    width: 64px !important;
+    margin-left: -8px !important;
+    margin-top: 8px;
+    position: relative;
+    left: 11px;
+
+  }
+}
 
 .align {
   position: relative;
@@ -441,6 +458,15 @@ forget-pass */
 
 }
 
+/* @media only screen and (min-width:360px) and (max-width:520px) {
+  ::ng-deep .modelWidth {
+    position: fixed;
+    background-color: white;
+    left: 23px;
+    right: 24px;
+  } */
+
+
 @media only screen and (min-width:1024px) and (max-width:1025px) {
   ::ng-deep .modelWidth {
     margin-right: 174px;
@@ -467,12 +493,25 @@ forget-pass */
 
   }
 
-  ::ng-deep .modal-content {
-
-    width: 160% !important;
+  @media only screen and (min-width:768px) and (max-width:769px) {
+    ::ng-deep .modelWidth {
+      position: fixed;
+      background-color: white;
+      left: 23px;
+      right: 24px;
+    }
 
   }
+
+  ::ng-deep .modal-content {
+    width: 139% !important;
+    position: relative;
+    left: 65px;
+
+  }
+
 }
+
 
 
 ::ng-deep .modal-content {
@@ -528,6 +567,7 @@ forget-pass */
 
 .update-birthdate {
   width: 69%;
+
 }
 
 .caret-icons {
@@ -539,8 +579,4 @@ forget-pass */
 .right {
   text-align: right !important;
   color: #309FD8 !important;
-}
-
-#button-basic {
-  text-transform: capitalize;
 }
