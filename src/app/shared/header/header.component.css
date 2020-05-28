@@ -629,10 +629,17 @@ input[type=text] {
   background-repeat: no-repeat;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
+  cursor: pointer;
 }
 
 input[type=text]:focus {
-  width: 100%;
+  width: 400% !important;
   border: 2px solid #1ca9c9 !important;
 
+}
+img, input {
+  max-width: 120% !important;
+  display: block;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
