@@ -463,7 +463,17 @@ forget-pass */
     left: 23px;
     right: 24px;
   } */
+  @media only screen and (min-width:360px)
+  and (max-width:560px){
+    .fff{
+      position: fixed;
+      background-color: white;
+      left: 45px;
+      right: 43px;
+      top: 48px;
 
+    }
+  }
 
 @media only screen and (min-width:1024px) and (max-width:1025px) {
   ::ng-deep .modelWidth {
