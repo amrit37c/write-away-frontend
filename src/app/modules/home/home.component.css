@@ -1,6 +1,8 @@
 /* About Section */
 .about-us.section {
   padding: 6rem 0;
+  padding-bottom: 0px;
+
 }
 
 
@@ -258,7 +260,7 @@
   color: #fff;
   font-weight: 600;
   font-size: 2rem;
-  margin-top: 10px;
+  
 
 }
 
@@ -273,12 +275,12 @@
 .know_more .book_store .book_store_desc .book_store_text .book_know_btn a {
   color: #fff;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
 .know_more .book_store {
-  height: 230px;
-  margin-bottom: 26px;
+  height: 203px;
+
 
 }
 
@@ -312,12 +314,12 @@
 
 .know_more .book_store .book_store_desc {
   padding-left: 15px;
-  padding-top: 15px;
+  padding-top: 6px;
 }
 
 .mb-4,
 .my-4 {
-  margin-bottom: 3rem !important;
+  margin-bottom: 2rem !important;
 }
 
 /* Know More Section end */
@@ -348,7 +350,9 @@
 .hero-area .slider_top_text ul li span {
   color: #666;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
+  position: relative;
+  top: 6px;
 
 }
 
@@ -847,9 +851,11 @@ ul li {
 }
 
 .itilicks {
-  font-style: italic;
-  font-family: muli !important;
   font-size: 17px;
+  font-family: inherit;
+  font-size: 17px;
+  color: #4b4b4b;
+ 
 
 }
 
@@ -968,7 +974,7 @@ ul li {
 
 .book_store_text p {
   font-size: 14px;
-  text-align: justify;
+ 
 }
 
 .book-img-cont {
@@ -1110,6 +1116,7 @@ ul li {
 .testi-updated {
   color: #3b9bf1;
   font-size: 30px;
+  font-weight: 600;
 
 }
 
@@ -1187,9 +1194,9 @@ ul li {
   font-weight: 600 !important;
   line-height: 1.4;
   font-size: 19px;
-  text-align: justify;
+  
   margin-top: 39px;
-  padding-right: 37px;
+  padding-right: 213px;
 
 
 }
@@ -1207,7 +1214,7 @@ ul li {
 
 .updated-coming img {
   width: 100%;
-  padding-top: 87px;
+  padding-top: 70px;
 }
 
 @media only screen and (min-width:1024px) and (max-width:1025px) {
@@ -1225,8 +1232,9 @@ ul li {
 
 .updated-bold {
   font-size: 40px;
-  margin-top: 11px;
+  margin-top: 14px;
   margin-bottom: 20px;
+  font-weight: 700;
 
 
 }
@@ -1248,9 +1256,18 @@ ul li {
 @media only screen and (min-width:360px) and (max-width:470px) {
   .responsive-pencil {
     position: absolute !important;
-    top: -81px !important;
+    top: -77px !important;
   }
+  .main-img-res{
+    position: relative !important; 
+     top: 0px !important;
+}
+  .updated-conts {
 
+    padding-right: 0px !important;
+  
+  
+  }
   .updated-left-side {
     height: auto;
 
@@ -1278,7 +1295,7 @@ ul li {
   .hero-area .slider_top_text ul li span {
     color: #666;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .modal-dialog {
@@ -1354,10 +1371,13 @@ ul li {
     padding-right: 0px;
     text-align: justify;
   }
-
+  .know_more .book_store {
+    height: 226px;
+    margin-bottom: 26px;
+}
   .books-index {
     position: absolute !important;
-    bottom: 77px !important;
+    bottom: 69px !important;
   }
 
   /* .circle-group{
@@ -1414,12 +1434,15 @@ ul li {
 }
 
 .write-hedsd {
-  font-size: 30px;
+  font-size: 32px;
+  font-weight: 600;
+
 }
 
 .write-moress {
-  font-size: 35px;
+  font-size: 37px;
   margin-top: 9px;
+  font-weight: 600;
 
 }
 
@@ -1435,8 +1458,12 @@ ul li {
 
 .cil-updatedsss {
   color: #3b9bf1 !important;
-}
+  font-weight: 600;
 
+}
+.updated-icons-homesss{
+  padding-top: 7px;
+}
 .col-blacky {
   color: black !important;
 }
@@ -1444,7 +1471,11 @@ ul li {
 .bokyy {
   margin-left: 10px;
   position: relative;
-  top: 3px;
+  top: 5px;
+}
+.updated-right-ecosss{
+  position: relative;
+  top: 2px;
 }
 
 .heart-shape {
@@ -1456,15 +1487,23 @@ ul li {
 
 .bokyyy-imgn {
   position: relative;
-  top: -9px;
+  top: 0px;
   width: 51%;
 }
 
 .updated-postin {
   position: relative;
-  top: -8px;
+  top: -13px;
   left: -25px;
 
+}
+.sssssssare{
+  position: relative;
+  top: 2px;
+  }
+
+.updt-homessssss{
+  padding-top: 6px;
 }
 
 .pad-left {
@@ -1534,10 +1573,36 @@ ul li {
 
   }
 }
+@media only screen and (min-width:1024px) and (max-width:1025px) {
+  .updated-bold {
+    font-size: 39px !important;
+    margin-top: 14px;
+    margin-bottom: 20px;
 
-@media only screen and (min-width:768px) and (max-width:1024px) {
-
+  }
+  .main-img-res {
+    position: relative !important;
+    top: 0px !important;
+}
+  .updated-conts {
   
+     padding-right: 0px ; 
+}
+.updated-left-side{
+height: auto !important;
+}
+.hero-area .left_sidebar .publisher_desc .publisher_name img {
+ 
+   margin-right: 29px; 
+}
+}
+
+@media only screen and (min-width:768px) and (max-width:1023px) {
+
+  .main-img-res {
+    position: relative !important;
+     top: 0px !important;
+}
   .updated-left-side {
     height: auto !important;
   }
@@ -1558,4 +1623,18 @@ top: -29px;
 left: 79px;
 
   }
+}
+.updated-width{
+  
+}
+.updated-clr-pink{
+  margin-right: 5px;
+  
+}
+.updated-clr-pink-2{
+  margin-right: 2px;
+}
+.main-img-res{
+  position: relative;
+  top: -41px;
 }

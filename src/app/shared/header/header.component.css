@@ -471,8 +471,13 @@ forget-pass */
       left: 45px;
       right: 43px;
       top: 48px;
+      opacity: 1 !important;
 
     }
+    .modal-dialog {
+     
+      opacity: 1 !important;
+  }
   }
 
 @media only screen and (min-width:1024px) and (max-width:1025px) {
@@ -482,11 +487,12 @@ forget-pass */
     width: 31% !important;
 
   }
+ 
 }
 
 @media only screen and (min-width:1440px) and (max-width:1441px) {
   ::ng-deep .modelWidth {
-    margin-top: 186px;
+    margin-top: 144px;
     width: 31% !important;
     margin-right: 264px;
 
@@ -506,14 +512,15 @@ forget-pass */
       position: fixed;
       background-color: white;
       left: 23px;
-      right: 24px;
+      
     }
 
 }
   ::ng-deep .modal-content {
     width: 139% !important;
     position: relative;
-    left: 65px;
+    margin-top: -200px;
+
     
 }
 
