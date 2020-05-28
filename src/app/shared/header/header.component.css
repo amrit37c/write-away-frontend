@@ -594,3 +594,45 @@ forget-pass */
   text-align: right !important;
   color: #309FD8 !important;
 }
+.box{
+  position: relative;
+  width: 220px;
+}
+
+.search {    
+  width: 200px;
+  padding: 5px;
+    -webkit-transition: all .500s ease;
+  -moz-transition: all .500s ease;
+  transition: all .500s ease;
+  float: left;
+  display: none;
+}
+
+
+.icon{
+  width: 20px;
+  height: 20px;
+  background: red; 
+  position: absolute; 
+  right: 0;
+}
+input[type=text] {
+  width: 0px;
+ border-color: transparent !important;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white !important;
+  color: #1ca9c9;
+   /* background-image: url('searchicon.png');  */
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+  border: 2px solid #1ca9c9 !important;
+
+}

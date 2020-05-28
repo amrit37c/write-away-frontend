@@ -34,9 +34,14 @@
         <!-- <div class="col-lg-3"></div> -->
         <div class="col-lg-3 col-md-3 col-sm-6 col-12" *ngIf="!currentPage">
           <div class="btn_area" *ngIf="!userLogin">
+            <form>
+              <input type="text" autocomplete="off" name="search" >
+            </form>
             <div class="search_btn">
+              
               <i class="fa fa-search"></i>
             </div>
+            
             <div class="btn_img updated-responsivess">
               <a (click)="openModal(template)"><img  src="./assets/images/LOGIN.png" /></a>
 

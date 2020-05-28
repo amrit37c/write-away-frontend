@@ -86,6 +86,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     this.registerForm = this.formBuilder.group(
       {
         guardian: [""],

@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getBlogs(); //get blogs
     this.getPublications(); //get blogs
-
+    
     // check user is login
     const token = localStorage.getItem("token");
     const { id } = jwt_decode(token);
