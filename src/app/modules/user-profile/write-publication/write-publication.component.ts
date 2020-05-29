@@ -130,7 +130,12 @@ export class WritePublicationComponent implements OnInit {
         .updateUserPublishing(this.submissionId, json)
         .subscribe((_response) => {});
     } else {
-      this.service.saveUserPublishing(json).subscribe((_response) => {});
+      this.service.saveUserPublishing(json).subscribe((_response) => {
+        let message = "Publish Content Saved";
+        if (type) {
+          message = "Publish Content Updated";
+        }
+      });
     }
     this.getAllPublication();
   }
@@ -151,5 +156,40 @@ export class WritePublicationComponent implements OnInit {
       .subscribe((_response) => {
         this.getPublication(this.id);
       });
+  }
+
+  publicationBookMarkStatus(publication) {
+    console.log(publication);
+    return publication &&
+      publication.bookmark &&
+      publication.bookmark.bookMarkStatus === "1"
+      ? " fa-bookmark"
+      : "fa-bookmark-o";
+  }
+
+  savePublicationBookMark(publication) {
+    this.service
+      .postBookMark({
+        bookMarkStatus: 1,
+        publicationId: publication._id,
+      })
+      .subscribe((_response) => {
+        this.getPublication(this.id); //get single publication
+      });
+  }
+
+  updatePublicationBookMark(publication) {
+    this.service
+      .putBookMark(publication.bookmark._id, {
+        bookMarkStatus: publication.bookmark.bookMarkStatus === "0" ? 1 : 0,
+        publicationId: publication._id,
+      })
+      .subscribe((_response) => {
+        this.getPublication(this.id); //get single publication
+      });
+  }
+
+  getBrief(brief) {
+    return brief.substr(0, 100);
   }
 }

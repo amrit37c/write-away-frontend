@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getBlogs(); //get blogs
-    this.getPublications(); //get blogs
+    this.getPublications(); //get publication
 
     // check user is login
     const token = localStorage.getItem("token");
