@@ -46,9 +46,9 @@
         <!-- <div class="col-lg-3"></div> -->
         <div class="col-lg-3 col-md-3 col-sm-6 col-12" *ngIf="!currentPage">
           <div class="btn_area" *ngIf="!userLogin">
-            <form>
+            <!-- <form>
               <input type="text" autocomplete="off" name="search" />
-            </form>
+            </form> -->
             <div class="search_btn">
               <i class="fa fa-search"></i>
             </div>
@@ -529,13 +529,16 @@
 
         <div class="row">
           <div class="col-md-12 forget-popup">
-            <div class="form-details forget-heght">
+            <div
+              class="form-details forget-heght"
+              *ngIf="!emailSend && !enablePassword"
+            >
               <h6 class="">
                 Enter your Email ID as registered in the box below
               </h6>
-
+              <div></div>
               <label class="input-names">Enter your registered Email ID</label>
-              <input type="text" class="input-fields" />
+              <input type="text" class="input-fields" [(ngModel)]="email" />
 
               <label class="input-names"
                 >A link to reset Password shall be sent to the Email ID</label
@@ -543,11 +546,71 @@
 
               <div class="row">
                 <div class="col-md-6 right">
-                  <button class="forget-cancl">Cancel</button>
+                  <button class="forget-cancl" (click)="decline()">
+                    Cancel
+                  </button>
                 </div>
                 <div class="col-md-6">
-                  <a href="reset-password.html"
-                    ><button class="btn-signup">Send</button></a
+                  <a
+                    ><button class="btn-signup" (click)="sendEmail()">
+                      Send
+                    </button></a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- After email send -->
+            <div
+              class="form-details forget-heght"
+              *ngIf="emailSend && !enablePassword"
+            >
+              <h6 class="">
+                Enter OTP
+              </h6>
+              <div></div>
+              <label class="input-names">Enter OTP</label>
+              <input type="text" class="input-fields" [(ngModel)]="otp" />
+
+              <!-- <label class="input-names">Enter Confirm</label>
+              <input type="text" class="input-fields" [(ngModel)]="otp" /> -->
+
+              <div class="row">
+                <div class="col-md-6 right">
+                  <button class="forget-cancl" (click)="decline()">
+                    Cancel
+                  </button>
+                </div>
+                <div class="col-md-6">
+                  <a
+                    ><button class="btn-signup" (click)="verifyOTP()">
+                      Verify
+                    </button></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="form-details forget-heght"
+              *ngIf="emailSend && enablePassword"
+            >
+              <h6 class="">
+                Enter Password
+              </h6>
+              <div></div>
+              <label class="input-names">Enter Password</label>
+              <input type="text" class="input-fields" [(ngModel)]="password" />
+
+              <div class="row">
+                <div class="col-md-6 right">
+                  <button class="forget-cancl" (click)="decline()">
+                    Cancel
+                  </button>
+                </div>
+                <div class="col-md-6">
+                  <a
+                    ><button class="btn-signup" (click)="updatePassword()">
+                      Update
+                    </button></a
                   >
                 </div>
               </div>

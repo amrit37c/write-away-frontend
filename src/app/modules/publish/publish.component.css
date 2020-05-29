@@ -382,6 +382,8 @@ button {
 .hero-area .left_sidebar {
   margin-top: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  height: 578px;
+
 }
 
 .hero-area .left_sidebar .publisher_desc {

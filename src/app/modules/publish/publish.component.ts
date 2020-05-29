@@ -43,4 +43,7 @@ export class PublishComponent implements OnInit {
       this.blogs = _response.body.data;
     });
   }
+  getBrief(content) {
+    return content.substr(0, 500);
+  }
 }

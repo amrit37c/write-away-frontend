@@ -14,7 +14,6 @@ export class BaseService {
   constructor(apiUrl, public http: HttpClient, router) {
     this.url = apiUrl;
     this.router = router;
-    console.log("Base ", this.url);
   }
 
   /***

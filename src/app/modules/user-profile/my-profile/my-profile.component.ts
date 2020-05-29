@@ -53,14 +53,11 @@ export class MyProfileComponent implements OnInit {
 
   onSubmit() {
     const json = this.editForm.value;
-    this.service.put(this.userId, json).subscribe((_response) => {
-      console.log(_response);
-    });
+    this.service.put(this.userId, json).subscribe((_response) => {});
   }
 
   getUserInfo() {
     this.service.get().subscribe((_response) => {
-      console.log("_response", _response);
       this.editForm.patchValue(_response.body.data[0]);
     });
   }

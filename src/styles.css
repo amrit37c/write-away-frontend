@@ -37,14 +37,12 @@ body {
 
 /* Font-Family */
 
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-
   font-weight: 700;
   margin: 0;
 }
@@ -70,7 +68,6 @@ input {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
-
 }
 
 button,
@@ -443,7 +440,7 @@ input:-webkit-autofill:focus {
   font-family: sans-serif;
   transform: rotate(181deg);
   display: inline-block;
-  color: #D43299 !important;
+  color: #d43299 !important;
 }
 
 .commas-sec {
@@ -470,7 +467,7 @@ input:-webkit-autofill:focus {
 
 .share-eco {
   font-size: 15px;
-  background-color: #219AD3;
+  background-color: #219ad3;
   padding: 3px;
   border-radius: 13px;
   color: white !important;
@@ -494,7 +491,8 @@ input:-webkit-autofill:focus {
 .my-footer,
 .list-view-my-desk,
 .font-apply,
-.modal-content {
+.modal-content,
+.reads-updated,
+.main-item-p {
   font-family: Montserrat;
-
 }

@@ -86,8 +86,6 @@ export class WritePublicationComponent implements OnInit {
         this.submissionForm.patchValue(this.data["userPublication"][0]);
         this.mediaAvailable = this.data["userPublication"][0]["mediaAvailable"];
         this.editorData = this.data["userPublication"][0]["content"];
-        console.log("publication data", this.editorData);
-        // this.getContent(this.data["userPublication"][0]["content"]);
       }
     });
   }
@@ -159,7 +157,6 @@ export class WritePublicationComponent implements OnInit {
   }
 
   publicationBookMarkStatus(publication) {
-    console.log(publication);
     return publication &&
       publication.bookmark &&
       publication.bookmark.bookMarkStatus === "1"

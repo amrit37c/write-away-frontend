@@ -73,7 +73,6 @@ export class BlogsComponent implements OnInit {
           this.monthsArchievedData[dt] = [el];
         }
       });
-      console.log(this.monthsArchievedData);
     });
   }
 
@@ -83,9 +82,7 @@ export class BlogsComponent implements OnInit {
   }
 
   archieveBlogShow(blogs: []) {
-    console.log("sow", blogs);
     this.archieveMonthArr = [];
     this.archieveMonthArr = blogs;
-    console.log("this", this.archieveMonthArr);
   }
 }

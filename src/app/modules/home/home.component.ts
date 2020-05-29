@@ -137,10 +137,10 @@ export class HomeComponent implements OnInit {
   }
 
   sharePublication(link) {
-    var text = "/publication-read/" + link;
+    var text = "http://demo.writeawayy.com/publication-read/" + link._id;
     navigator.clipboard.writeText(text).then(
       function () {
-        console.log("Async: Copying to clipboard was successful!");
+        alert("Link copied to clipboard");
       },
       function (err) {
         console.error("Async: Could not copy text: ", err);
@@ -163,9 +163,7 @@ export class HomeComponent implements OnInit {
       return;
     }
 
-    this.blogService.updateRead(id, {}).subscribe((_respone) => {
-      console.log("read status changed");
-    });
+    this.blogService.updateRead(id, {}).subscribe((_respone) => {});
     this.router.navigateByUrl("/blogs/" + id);
     // routerLink="/blogs/{{blogs[0]._id}}"
   }
@@ -185,7 +183,6 @@ export class HomeComponent implements OnInit {
   }
 
   blogLikeStatus() {
-    console.log("this", this.blogs[0]);
     return this.blogs.length &&
       this.blogs[0].like &&
       this.blogs[0].like.likeStatus === "1"
@@ -194,7 +191,6 @@ export class HomeComponent implements OnInit {
   }
 
   publicationBookMarkStatus(publication) {
-    console.log(publication);
     return publication &&
       publication.bookmark &&
       publication.bookmark.bookMarkStatus === "1"
@@ -299,7 +295,16 @@ export class HomeComponent implements OnInit {
   }
 
   blogShareLink(id) {
-    const link = "http://";
+    var text = "http://demo.writeawayy.com/blogs/" + id;
+    navigator.clipboard.writeText(text).then(
+      function () {
+        console.log("Async: Copying to clipboard was successful!");
+        alert("Link copied to clipboard");
+      },
+      function (err) {
+        console.error("Async: Could not copy text: ", err);
+      }
+    );
   }
 
   getBrief() {
@@ -307,5 +312,8 @@ export class HomeComponent implements OnInit {
       0,
       500
     );
+  }
+  getBlogContent(content) {
+    return content.substr(0, 1750);
   }
 }

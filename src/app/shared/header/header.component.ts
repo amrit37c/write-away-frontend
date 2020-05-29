@@ -49,6 +49,11 @@ export class HeaderComponent implements OnInit {
   loginForm: FormGroup;
   userLogin: boolean = false;
   username: string = "";
+  email: string;
+  emailSend: boolean = false;
+  enablePassword: boolean = false;
+  otp: string;
+  password: string;
 
   constructor(
     private router: Router,
@@ -87,7 +92,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    
     this.registerForm = this.formBuilder.group(
       {
         guardian: [""],
@@ -227,6 +231,8 @@ export class HeaderComponent implements OnInit {
   decline(): void {
     this.enableEditGuardianInfo = false;
     this.enableEditUserInfo = false;
+    this.enablePassword = false;
+    this.emailSend = false;
     this.adultUser = false;
     this.modalRef.hide();
   }
@@ -235,5 +241,35 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem("token");
     this.userLogin = false;
     this.router.navigateByUrl("/home");
+  }
+
+  sendEmail() {
+    const data = { email: this.email };
+    this.userService.sendEmail(data).subscribe((_response) => {
+      alert(_response.body.message);
+      this.emailSend = true;
+    });
+  }
+  verifyOTP() {
+    const data = { email: this.email, otp: this.otp };
+    this.userService.verifyOTP(data).subscribe((_response) => {
+      debugger;
+      if (_response.body.status === "Failure") {
+      } else {
+        this.enablePassword = true;
+      }
+      alert(_response.body.message);
+    });
+  }
+  updatePassword() {
+    const data = { email: this.email, password: this.password };
+    this.userService.updatePassword(data).subscribe((_response) => {
+      alert(_response.body.message);
+      this.decline();
+      this.emailSend = false;
+      this.email = "";
+      this.password = "";
+      this.otp = "";
+    });
   }
 }

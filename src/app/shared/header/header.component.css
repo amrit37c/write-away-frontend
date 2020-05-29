@@ -1,5 +1,5 @@
 .header {
-  height: 80px;
+  /* height: 80px; */
 }
 
 .login-modal {
@@ -404,7 +404,6 @@ a.forget-password {
 }
 
 .right-header img {
-  width: 32%;
 }
 
 .logo img:focus {
