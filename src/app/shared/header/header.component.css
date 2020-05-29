@@ -23,7 +23,6 @@
 
 .select-dates {
   padding-top: 10px;
-
 }
 
 .cursor {
@@ -41,7 +40,6 @@
 .logo {
   width: 100%;
 }
-
 
 .header .logo a {
   color: #fff;
@@ -69,21 +67,20 @@
   margin-left: 40px;
 }
 
-@media only screen and (min-width:360px) and (max-width:470px) {
+@media only screen and (min-width: 360px) and (max-width: 470px) {
   .updated-responsivess {
     width: 82px !important;
     margin-left: 11px !important;
   }
 }
 
-@media only screen and (min-width:320px) and (max-width:321px) {
+@media only screen and (min-width: 320px) and (max-width: 321px) {
   .updated-responsivess {
     width: 64px !important;
     margin-left: -8px !important;
     margin-top: 8px;
     position: relative;
     left: 11px;
-
   }
 }
 
@@ -210,21 +207,21 @@
 
 .right-header select {
   width: 55%;
-  border: 1px solid #D43299;
+  border: 1px solid #d43299;
   border-radius: 6px;
   font-size: 11px;
   padding: 5px;
 }
 
 .search-icon {
-  color: #3494C0;
+  color: #3494c0;
   margin-right: 5%;
 }
 
 /* Login */
 .create-acc-head {
-  background-color: #EFFDFF;
-  color: #309FD8;
+  background-color: #effdff;
+  color: #309fd8;
   padding: 7px;
 }
 
@@ -255,7 +252,6 @@
   -moz-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
   border: 1px solid lightgray;
-
 }
 
 .input-names {
@@ -281,7 +277,7 @@
 .input-fields {
   display: block;
   border: none;
-  border-bottom: 1px solid #E72692;
+  border-bottom: 1px solid #e72692;
   color: lightgray;
   width: 100%;
   color: black;
@@ -291,7 +287,6 @@
 
 .log-details {
   padding-top: 16px;
-
 }
 
 .radio-btns {
@@ -299,7 +294,6 @@
   margin-left: 10px;
   position: relative;
   top: 3px;
-
 }
 
 /* .footer-updates chekbox{} */
@@ -311,7 +305,7 @@
 }
 
 .col-yel {
-  color: #FFB300;
+  color: #ffb300;
 }
 
 /* .radio-btns :checked{
@@ -321,12 +315,10 @@
 } */
 .right-alig {
   text-align: right !important;
-
 }
 
 .left-alig {
   text-align: left !important;
-
 }
 
 .center {
@@ -339,7 +331,6 @@
 }
 
 .input-fields:focus {
-
   background-color: white;
 }
 
@@ -350,7 +341,7 @@
 .btn-signup {
   color: white;
   border: none;
-  background-color: #309FD8;
+  background-color: #309fd8;
   font-weight: 700;
   padding: 7px 29px 7px 29px;
   border-radius: 5px;
@@ -362,7 +353,7 @@
 a.forget-password {
   text-decoration: none;
   background-color: transparent;
-  color: #309FD8;
+  color: #309fd8;
 }
 
 /* Login */
@@ -386,7 +377,7 @@ a.forget-password {
   display: inline-block;
   display: inline-block;
   border: none;
-  border-bottom: 1px solid #E72692;
+  border-bottom: 1px solid #e72692;
   color: lightgray;
   cursor: pointer;
 }
@@ -397,15 +388,13 @@ a.forget-password {
   float: right;
   margin-right: 273px;
   opacity: 0.8;
-
 }
-
 
 /* Modal */
 .btn-signup {
   color: white;
   border: none;
-  background-color: #309FD8;
+  background-color: #309fd8;
   font-weight: 700;
   padding: 7px 29px 7px 29px;
   border-radius: 5px;
@@ -435,13 +424,11 @@ forget-pass */
 
 .forget-popup {
   padding-bottom: 56px;
-
 }
 
 .forget-heght {
   height: 239px;
   padding-top: 27px;
-
 }
 
 .login-modalss {
@@ -454,8 +441,6 @@ forget-pass */
 ::ng-deep .modelWidth {
   margin-top: 180px;
   margin-right: 300px;
-
-
 }
 
 /* @media only screen and (min-width:360px) and (max-width:520px) {
@@ -465,58 +450,59 @@ forget-pass */
     left: 23px;
     right: 24px;
   } */
+@media only screen and (min-width: 360px) and (max-width: 560px) {
+  .fff {
+    position: fixed;
+    background-color: white;
+    left: 45px;
+    right: 43px;
+    top: 48px;
+    opacity: 1 !important;
+  }
+  .modal-dialog {
+    opacity: 1 !important;
+  }
+}
 
-
-@media only screen and (min-width:1024px) and (max-width:1025px) {
+@media only screen and (min-width: 1024px) and (max-width: 1025px) {
   ::ng-deep .modelWidth {
     margin-right: 174px;
     margin-top: 161px;
     width: 31% !important;
-
   }
 }
 
-@media only screen and (min-width:1440px) and (max-width:1441px) {
+@media only screen and (min-width: 1440px) and (max-width: 1441px) {
   ::ng-deep .modelWidth {
-    margin-top: 186px;
+    margin-top: 144px;
     width: 31% !important;
     margin-right: 264px;
-
   }
 }
 
-@media only screen and (min-width:768px) and (max-width:769px) {
+@media only screen and (min-width: 768px) and (max-width: 769px) {
   ::ng-deep .modelWidth {
-
     margin-top: 389px;
     width: 100%;
-
   }
 
-  @media only screen and (min-width:768px) and (max-width:769px) {
+  @media only screen and (min-width: 768px) and (max-width: 769px) {
     ::ng-deep .modelWidth {
       position: fixed;
       background-color: white;
       left: 23px;
-      right: 24px;
     }
-
   }
 
   ::ng-deep .modal-content {
     width: 139% !important;
     position: relative;
-    left: 65px;
-
+    margin-top: -200px;
   }
-
 }
-
-
 
 ::ng-deep .modal-content {
   width: 148%;
-
 }
 
 .sign-up-pop-col {
@@ -524,7 +510,6 @@ forget-pass */
   background-color: transparent;
   font-weight: 700;
   font-size: 15px;
-
 }
 
 .closepop-btn {
@@ -567,7 +552,6 @@ forget-pass */
 
 .update-birthdate {
   width: 69%;
-
 }
 
 .caret-icons {
@@ -578,5 +562,50 @@ forget-pass */
 
 .right {
   text-align: right !important;
-  color: #309FD8 !important;
+  color: #309fd8 !important;
+}
+.box {
+  position: relative;
+  width: 220px;
+}
+
+.search {
+  width: 200px;
+  padding: 5px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  float: left;
+  display: none;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  background: red;
+  position: absolute;
+  right: 0;
+}
+input[type="text"] {
+  font-size: 16px;
+  background-color: white !important;
+  color: #1ca9c9;
+  /* background-image: url('searchicon.png');  */
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+input[type="text"]:focus {
+  width: 100% !important;
+  border: 2px solid #1ca9c9 !important;
+}
+img,
+input {
+  max-width: 120% !important;
+  display: block;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }

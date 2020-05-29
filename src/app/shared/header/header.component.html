@@ -6,14 +6,26 @@
         <!-- Header for main page -->
         <div class="col-lg-4 col-md-4 col-12" *ngIf="!currentPage">
           <div class="logo">
-            <a><img src="assets/images/{{ logo }}" routerLink="/home" alt="logo" style="width: 100%;" /></a>
+            <a
+              ><img
+                src="assets/images/{{ logo }}"
+                routerLink="/home"
+                alt="logo"
+                style="width: 100%;"
+            /></a>
           </div>
         </div>
         <!-- Header for main page -->
         <!-- Header for other page -->
         <div class="col-lg-3 col-md-3" *ngIf="currentPage">
           <div class="logo">
-            <a><img src="assets/images/{{ logo }}" routerLink="/home" alt="logo" style="width: 100%;" /></a>
+            <a
+              ><img
+                src="assets/images/{{ logo }}"
+                routerLink="/home"
+                alt="logo"
+                style="width: 100%;"
+            /></a>
           </div>
         </div>
         <!-- Header for other page -->
@@ -34,14 +46,21 @@
         <!-- <div class="col-lg-3"></div> -->
         <div class="col-lg-3 col-md-3 col-sm-6 col-12" *ngIf="!currentPage">
           <div class="btn_area" *ngIf="!userLogin">
+            <form>
+              <input type="text" autocomplete="off" name="search" />
+            </form>
             <div class="search_btn">
               <i class="fa fa-search"></i>
             </div>
+
             <div class="btn_img updated-responsivess">
-              <a (click)="openModal(template)"><img  src="./assets/images/LOGIN.png" /></a>
+              <a (click)="openModal(template)"
+                ><img src="./assets/images/LOGIN.png"
+              /></a>
 
               <a (click)="openModal(templateSignup)" class="cursor">
-                <img src="./assets/images/REG.png" class="align" /></a>
+                <img src="./assets/images/REG.png" class="align"
+              /></a>
             </div>
           </div>
           <div class="right-header" style="float: right;" *ngIf="userLogin">
@@ -57,16 +76,33 @@
 
             </div> -->
             <div class="btn-group" dropdown>
-              <button id="button-basic" dropdownToggle type="button" class="dropdown-toggle"
-                aria-controls="dropdown-basic">
+              <button
+                id="button-basic"
+                dropdownToggle
+                type="button"
+                class="dropdown-toggle"
+                aria-controls="dropdown-basic"
+              >
                 {{ username }}
               </button>
-              <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+              <ul
+                id="dropdown-basic"
+                *dropdownMenu
+                class="dropdown-menu"
+                role="menu"
+                aria-labelledby="button-basic"
+              >
                 <li role="menuitem">
-                  <a class="dropdown-item" routerLink="/user-profile/my-desk">My Desk</a>
+                  <a class="dropdown-item" routerLink="/user-profile/my-desk"
+                    >My Desk</a
+                  >
                 </li>
                 <li role="menuitem">
-                  <a class="dropdown-item" routerLink="user-profile/edit-profile">Edit Profile</a>
+                  <a
+                    class="dropdown-item"
+                    routerLink="user-profile/edit-profile"
+                    >Edit Profile</a
+                  >
                 </li>
                 <li role="menuitem">
                   <a class="dropdown-item" href="#">Change Password</a>
@@ -79,7 +115,10 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-12 text-right right-header" *ngIf="currentPage">
+        <div
+          class="col-lg-4 col-md-4 col-sm-6 col-12 text-right right-header"
+          *ngIf="currentPage"
+        >
           <i class="fa fa-lg fa-search search-icon" aria-hidden="true"></i>
           <select>
             <option>View Options</option>
@@ -97,18 +136,18 @@
 <!-- Login Modal -->
 <ng-template #template>
   <div class="fff">
-
     <div class="modal-body">
-
       <div class="container-fluid">
-
         <!-- <head -->
         <div class="row create-acc-head">
-
           <div class="col-md-4 left">
             <div class="left">
-
-              <button type="button" class="close closepop-btn" aria-label="Close" (click)="modalRef.hide()">
+              <button
+                type="button"
+                class="close closepop-btn"
+                aria-label="Close"
+                (click)="modalRef.hide()"
+              >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -121,7 +160,8 @@
             <a (click)="decline(); openModal(templateSignup)">
               <button class="sign-signup-btn sign-up-pop-col">
                 Sign Up
-              </button></a>
+              </button></a
+            >
           </div>
         </div>
 
@@ -137,31 +177,50 @@
                 <h6 class="headings-input-fields">Username</h6>
                 <form role="form" [formGroup]="loginForm">
                   <label class="input-names">Enter Your Email ID</label>
-                  <input type="text" class="input-fields" formControlName="email" />
+                  <input
+                    type="text"
+                    class="input-fields"
+                    formControlName="email"
+                  />
 
                   <h6 class="headings-input-fields">Password</h6>
 
                   <label class="input-names">Enter Your Password</label>
-                  <input type="password" class="input-fields" formControlName="password" />
+                  <input
+                    type="password"
+                    class="input-fields"
+                    formControlName="password"
+                  />
 
                   <div class="row">
                     <div class="col-md-4 left">
                       <p class="remeber-section">
-                        <span> <input type="checkbox" class="modal-check"></span>
-                        <span class="headings-input-fields remmm">Remember Me</span>
+                        <span>
+                          <input type="checkbox" class="modal-check"
+                        /></span>
+                        <span class="headings-input-fields remmm"
+                          >Remember Me</span
+                        >
                       </p>
                     </div>
                     <div class="col-md-4 center">
                       <!-- <button class="btn-signup">Submit</button> -->
-                      <button type="button " (click)="onSubmitLogin()" class="btn btn-signup">
+                      <button
+                        type="button "
+                        (click)="onSubmitLogin()"
+                        class="btn btn-signup"
+                      >
                         Sign In
                       </button>
                     </div>
 
                     <div class="col-md-4 right">
-
-                      <a (click)="decline();openModal(template_forgot_pass)">
-                        <h6 class="headings-input-fields forget-pass-login-modal "> Forgot Password</h6>
+                      <a (click)="decline(); openModal(template_forgot_pass)">
+                        <h6
+                          class="headings-input-fields forget-pass-login-modal"
+                        >
+                          Forgot Password
+                        </h6>
                       </a>
                     </div>
                   </div>
@@ -177,79 +236,94 @@
 <!-- Login Modal -->
 <!-- Signup Modal -->
 <ng-template #templateSignup>
-
-  <div class="modal-body ">
-    <div class="container-fluid">
-      <!-- <div>
-        <button class="close-btn" (click)="modalRef.hide()"><i class="fa fa-close"></i>
-        </button>
-      </div> -->
-      <!-- <head -->
-      <div class="row create-acc-head ">
-
-        <div class="col-md-6 ">
-          <div class="left">
-            <button type="button" class="close closepop-btn" aria-label="Close"
-              (click)="modalRef.hide();enableEditUserInfo = false;">
-              <span aria-hidden="true">&times;</span>
-            </button>
+  <div class="fff">
+    <div class="modal-body">
+      <div class="container-fluid">
+        <!-- <head -->
+        <div class="row create-acc-head">
+          <div class="col-md-6">
+            <div class="left">
+              <button
+                type="button"
+                class="close closepop-btn"
+                aria-label="Close"
+                (click)="modalRef.hide(); enableEditUserInfo = false"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <h4 class="sign-updateds">Create an Account</h4>
           </div>
-          <h4 class="sign-updateds">Create an Account</h4>
+          <div class="col-md-6 right mobile-res">
+            <span class="alred-reg not-reg-modal">Already Registered?</span>
+            <a (click)="decline(); openModal(template)"
+              ><button class="sign-signup-btn sign-up-pop-col">
+                Sign In
+              </button></a
+            >
+          </div>
         </div>
-        <div class="col-md-6 right mobile-res">
-          <span class="alred-reg not-reg-modal">Already Registered?</span>
-          <a (click)="decline(); openModal(template)"><button class="sign-signup-btn sign-up-pop-col">Sign
-              In</button></a>
-        </div>
-      </div>
 
-      <!-- body -->
+        <!-- body -->
 
-      <div class="back-image">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8">
-            <div class="date-picker">
-              <div class="row">
-                <div class="col-1"></div>
+        <div class="back-image">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <div class="date-picker">
+                <div class="row">
+                  <div class="col-1"></div>
 
-                <div class="col-5 right">
-                  <span class="input-names updated-signupmod"> Please select</span>
-                </div>
-                <div class="col-5 left">
-
-                  <h6 class="display birth-updated">Date of Birth</h6>
-
-                </div>
-                <div class="col-1"></div>
-              </div>
-
-              <div class="">
-                <div class="row select-dates caret-icons">
                   <div class="col-5 right">
-                    <select class="birthdate" [(ngModel)]="selectedMonth" (change)="getDates()">
-                      <option *ngFor="let month of months">{{month}}</option>
-                    </select><i class="fa fa-caret-down" aria-hidden="true"></i>
+                    <span class="input-names updated-signupmod">
+                      Please select</span
+                    >
                   </div>
+                  <div class="col-5 left">
+                    <h6 class="display birth-updated">Date of Birth</h6>
+                  </div>
+                  <div class="col-1"></div>
+                </div>
 
-                  <div class="col-3 left">
-                    <select class="birthdate update-birthdate" [(ngModel)]="selectedDate">
-                      <option *ngFor="let item of getDates()">{{
-                        item
-                      }}</option>
-                    </select>
-                    <i class="fa fa-caret-down" aria-hidden="true"></i>
-                  </div>
-                  <div class="col-3 left">
-                    <select class="birthdate update-birthdate" [(ngModel)]="selectedYear" (change)="calculateAge()">
-                      <option *ngFor="let item of getYears()">{{
-                        item
-                      }}</option>
-                    </select><i class="fa fa-caret-down" aria-hidden="true"></i>
+                <div class="">
+                  <div class="row select-dates caret-icons">
+                    <div class="col-5 right">
+                      <select
+                        class="birthdate"
+                        [(ngModel)]="selectedMonth"
+                        (change)="getDates()"
+                      >
+                        <option *ngFor="let month of months">{{
+                          month
+                        }}</option> </select
+                      ><i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="col-3 left">
+                      <select
+                        class="birthdate update-birthdate"
+                        [(ngModel)]="selectedDate"
+                      >
+                        <option *ngFor="let item of getDates()">{{
+                          item
+                        }}</option>
+                      </select>
+                      <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-3 left">
+                      <select
+                        class="birthdate update-birthdate"
+                        [(ngModel)]="selectedYear"
+                        (change)="calculateAge()"
+                      >
+                        <option *ngFor="let item of getYears()">{{
+                          item
+                        }}</option> </select
+                      ><i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <!-- <select class="birthdate" [(ngModel)]="selectedMonth" (change)="getDates()">
+                <!-- <select class="birthdate" [(ngModel)]="selectedMonth" (change)="getDates()">
                   <option *ngFor="let month of months">{{month}}</option>
                 </select>
                 <select class="birthdate" [(ngModel)]="selectedDate">
@@ -258,100 +332,167 @@
                 <select class="birthdate" [(ngModel)]="selectedYear" (change)="calculateAge()">
                   <option *ngFor="let item of getYears();">{{item}}</option>
                 </select> -->
+              </div>
             </div>
+            <div class="col-md-2"></div>
           </div>
-          <div class="col-md-2"></div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-12" *ngIf="enableEditUserInfo">
-            <form role="form" [formGroup]="registerForm">
-              <div class="form-details" *ngIf="enableEditGuardianInfo && enableEditUserInfo">
-                <h6 class="">Parent/Guardian details:</h6>
+          <div class="row">
+            <div class="col-md-12" *ngIf="enableEditUserInfo">
+              <form role="form" [formGroup]="registerForm">
+                <div
+                  class="form-details"
+                  *ngIf="enableEditGuardianInfo && enableEditUserInfo"
+                >
+                  <h6 class="">Parent/Guardian details:</h6>
 
-                <div class="row">
-                  <div class="col-md-6">
-                    <select class="birthdate select-guardian" formControlName="guardian">
-                      <option>Father</option>
-                      <option>Mother</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="input-names">First/Middle Name</label>
-                    <input required type="text" class="input-fields" formControlName="guardianFirstName" />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="input-names">Last Name</label>
-                    <input required type="text" class="input-fields" formControlName="guardianLastName" />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="input-names">Email ID</label>
-                    <input required type="text" class="input-fields" formControlName="guardianEmail" />
-                  </div>
-                  <div class="col-md-6">
-                    <div class="center">
-                      <button class="btn-signup" (click)="onSubmit()">
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- form-second -->
-
-              <div class="form-details log-details" *ngIf="enableEditUserInfo && !enableEditGuardianInfo">
-                <h6 class="">Login Details:</h6>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <label class="input-names">First/Middle Name</label>
-                    <input type="text" class="input-fields" formControlName="firstName" />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="input-names">Last Name</label>
-                    <input type="text" class="input-fields" formControlName="lastName" />
-                  </div>
-                </div>
-
-                <label class="input-names">Email ID</label>
-                <input type="text" class="input-fields" formControlName="email" />
-
-                <label class="input-names">Password</label>
-                <input type="password" class="input-fields" formControlName="password" />
-
-                <label class="input-names">Reconfirm Password</label>
-                <input type="password" class="input-fields" formControlName="confirmPassword" />
-
-                <div class="center footer-updates">
-                  <span>Keep me posted with offers/updates etc</span>
-                  <input type="radio" class="radio-btns" id="yes" name="select" />
-                  <span> Yes</span>
-                  <input type="radio" class="radio-btns" id="no" name="select" />
-                  <span> No</span>
                   <div class="row">
-                    <div class="col-2 right-alig">
-                      <input type="checkbox" class="check-btms" />
+                    <div class="col-md-6">
+                      <select
+                        class="birthdate select-guardian"
+                        formControlName="guardian"
+                      >
+                        <option>Father</option>
+                        <option>Mother</option>
+                      </select>
                     </div>
-                    <div class="col-10 left-alig">
-                      <span>I accept the </span>
-                      <span class="col-yel">Terms of Use &amp; Legal Policies</span>
+                    <div class="col-md-6">
+                      <label class="input-names">First/Middle Name</label>
+                      <input
+                        required
+                        type="text"
+                        class="input-fields"
+                        formControlName="guardianFirstName"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="input-names">Last Name</label>
+                      <input
+                        required
+                        type="text"
+                        class="input-fields"
+                        formControlName="guardianLastName"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="input-names">Email ID</label>
+                      <input
+                        required
+                        type="text"
+                        class="input-fields"
+                        formControlName="guardianEmail"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <div class="center">
+                        <button class="btn-signup" (click)="onSubmit()">
+                          Submit
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="center">
-                  <button class="btn-signup" type="button " (click)="onSubmit()" class="btn"
-                    [ngClass]="{ btn_disable: registerForm.invalid }" [disabled]="registerForm.invalid"
-                    *ngIf="enableEditGuardianInfo">
-                    Sign Up
-                  </button>
-                  <button type="button " (click)="adultUser ? onSubmit() : enableGuardianForm()" class="btn btn-signup"
-                    [ngClass]="{ btn_disable: registerForm.invalid }">
-                    {{ adultUser ? "Sign Up" : "Next" }}
-                  </button>
+
+                <!-- form-second -->
+
+                <div
+                  class="form-details log-details"
+                  *ngIf="enableEditUserInfo && !enableEditGuardianInfo"
+                >
+                  <h6 class="">Login Details:</h6>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label class="input-names">First/Middle Name</label>
+                      <input
+                        type="text"
+                        class="input-fields"
+                        formControlName="firstName"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="input-names">Last Name</label>
+                      <input
+                        type="text"
+                        class="input-fields"
+                        formControlName="lastName"
+                      />
+                    </div>
+                  </div>
+
+                  <label class="input-names">Email ID</label>
+                  <input
+                    type="text"
+                    class="input-fields"
+                    formControlName="email"
+                  />
+
+                  <label class="input-names">Password</label>
+                  <input
+                    type="password"
+                    class="input-fields"
+                    formControlName="password"
+                  />
+
+                  <label class="input-names">Reconfirm Password</label>
+                  <input
+                    type="password"
+                    class="input-fields"
+                    formControlName="confirmPassword"
+                  />
+
+                  <div class="center footer-updates">
+                    <span>Keep me posted with offers/updates etc</span>
+                    <input
+                      type="radio"
+                      class="radio-btns"
+                      id="yes"
+                      name="select"
+                    />
+                    <span> Yes</span>
+                    <input
+                      type="radio"
+                      class="radio-btns"
+                      id="no"
+                      name="select"
+                    />
+                    <span> No</span>
+                    <div class="row">
+                      <div class="col-2 right-alig">
+                        <input type="checkbox" class="check-btms" />
+                      </div>
+                      <div class="col-10 left-alig">
+                        <span>I accept the </span>
+                        <span class="col-yel"
+                          >Terms of Use &amp; Legal Policies</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="center">
+                    <button
+                      class="btn-signup"
+                      type="button "
+                      (click)="onSubmit()"
+                      class="btn"
+                      [ngClass]="{ btn_disable: registerForm.invalid }"
+                      [disabled]="registerForm.invalid"
+                      *ngIf="enableEditGuardianInfo"
+                    >
+                      Sign Up
+                    </button>
+                    <button
+                      type="button "
+                      (click)="adultUser ? onSubmit() : enableGuardianForm()"
+                      class="btn btn-signup"
+                      [ngClass]="{ btn_disable: registerForm.invalid }"
+                    >
+                      {{ adultUser ? "Sign Up" : "Next" }}
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -362,19 +503,22 @@
 
 <!-- <forgot-pass Modal -->
 <ng-template #template_forgot_pass>
-  <div class="modal-header">
-    <!-- <h4 class="modal-title pull-left">Signup Modal</h4><br /> -->
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
   <div class="modal-body">
     <div class="container-fluid">
-      <div></div>
       <!-- <head -->
       <div class="row create-acc-head">
         <div class="col-md-12">
-          <h4>Forgot your Password? No Issues!</h4>
+          <div class="left">
+            <button
+              type="button"
+              class="close closepop-btn"
+              aria-label="Close"
+              (click)="modalRef.hide(); enableEditUserInfo = false"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <h4 class="sign-updateds">Forgot your Password? No Issues!</h4>
         </div>
       </div>
 
@@ -393,14 +537,18 @@
               <label class="input-names">Enter your registered Email ID</label>
               <input type="text" class="input-fields" />
 
-              <label class="input-names">A link to reset Password shall be sent to the Email ID</label>
+              <label class="input-names"
+                >A link to reset Password shall be sent to the Email ID</label
+              >
 
               <div class="row">
                 <div class="col-md-6 right">
                   <button class="forget-cancl">Cancel</button>
                 </div>
                 <div class="col-md-6">
-                  <a href="reset-password.html"><button class="btn-signup">Send</button></a>
+                  <a href="reset-password.html"
+                    ><button class="btn-signup">Send</button></a
+                  >
                 </div>
               </div>
             </div>
