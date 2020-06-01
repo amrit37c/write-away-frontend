@@ -1418,7 +1418,7 @@ ul li {
 
 .cil-updatedsss {
   color: #3b9bf1 !important;
-  font-weight: 600;
+  font-weight: 500;
 }
 .updated-icons-homesss {
   padding-top: 7px;
@@ -1494,7 +1494,7 @@ ul li {
 
 @media only screen and (min-width: 1440px) and (max-width: 1441px) {
   .img-updates {
-    width: 63%;
+    width: 57%;
   }
 
   .updated-rigtimgs {
