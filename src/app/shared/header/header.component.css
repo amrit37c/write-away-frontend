@@ -403,8 +403,7 @@ a.forget-password {
   font-size: 12px;
 }
 
-.right-header img {
-}
+.right-header img {}
 
 .logo img:focus {
   outline: none;
@@ -438,8 +437,8 @@ forget-pass */
 }
 
 ::ng-deep .modelWidth {
-  margin-top: 180px;
-  margin-right: 300px;
+  margin-top: 147px;
+  margin-right: 280px;
 }
 
 /* @media only screen and (min-width:360px) and (max-width:520px) {
@@ -458,6 +457,7 @@ forget-pass */
     top: 48px;
     opacity: 1 !important;
   }
+
   .modal-dialog {
     opacity: 1 !important;
   }
@@ -501,7 +501,8 @@ forget-pass */
 }
 
 ::ng-deep .modal-content {
-  width: 148%;
+  width: 146%;
+  height: 454px;
 }
 
 .sign-up-pop-col {
@@ -563,6 +564,7 @@ forget-pass */
   text-align: right !important;
   color: #309fd8 !important;
 }
+
 .box {
   position: relative;
   width: 220px;
@@ -585,6 +587,7 @@ forget-pass */
   position: absolute;
   right: 0;
 }
+
 input[type="text"] {
   font-size: 16px;
   background-color: white !important;
@@ -601,6 +604,7 @@ input[type="text"]:focus {
   width: 100% !important;
   border: 2px solid #1ca9c9 !important;
 }
+
 img,
 input {
   max-width: 120% !important;
