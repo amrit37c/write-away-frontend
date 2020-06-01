@@ -1,0 +1,18 @@
+<svg id="Icons" xmlns="http://www.w3.org/2000/svg" width="18.315" height="14.413" viewBox="0 0 18.315 14.413">
+  <g id="Group_577" data-name="Group 577" transform="translate(0 0)">
+    <path id="Path_1652" data-name="Path 1652" d="M14.8,22.977l.017.022,1.755,2.423a.223.223,0,0,0,.3-.011L18.634,23l.022-.028h6.573a.647.647,0,0,0,.646-.646V11.708a.647.647,0,0,0-.646-.646H8.206a.647.647,0,0,0-.646.646V22.331a.647.647,0,0,0,.646.646Z" transform="translate(-7.56 -11.062)" fill="#ee5162"/>
+    <g id="Group_574" data-name="Group 574" transform="translate(3.414 3.072)">
+      <ellipse id="Ellipse_101" data-name="Ellipse 101" cx="1.723" cy="1.723" rx="1.723" ry="1.723" transform="translate(1.232)" fill="#fff"/>
+      <path id="Path_1653" data-name="Path 1653" d="M19.6,25.559a1.682,1.682,0,0,0-1.677-1.677H15.367a1.682,1.682,0,0,0-1.677,1.677v.192H19.6Z" transform="translate(-13.69 -19.813)" fill="#fff"/>
+    </g>
+    <g id="Group_575" data-name="Group 575" transform="translate(3.414 3.072)">
+      <ellipse id="Ellipse_102" data-name="Ellipse 102" cx="1.723" cy="1.723" rx="1.723" ry="1.723" transform="translate(1.232)" fill="none"/>
+      <path id="Path_1654" data-name="Path 1654" d="M13.69,25.559a1.682,1.682,0,0,1,1.677-1.677h2.555A1.682,1.682,0,0,1,19.6,25.559" transform="translate(-13.69 -19.813)" fill="none"/>
+    </g>
+    <path id="Path_1655" data-name="Path 1655" d="M17.966,17.843a1.031,1.031,0,0,0-.675.732" transform="translate(-11.871 -14.066)" fill="none"/>
+    <g id="Group_576" data-name="Group 576" transform="translate(12.251 4.016)">
+      <path id="Path_1656" data-name="Path 1656" d="M30.436,18.82h-.013l-.755.407-.113-.448.948-.508H31v4.342h-.568Z" transform="translate(-29.554 -18.272)" fill="#fff"/>
+    </g>
+    <path id="Path_1657" data-name="Path 1657" d="M14.8,22.977l.017.022,1.755,2.423a.223.223,0,0,0,.3-.011L18.634,23l.022-.028h6.573a.647.647,0,0,0,.646-.646V11.708a.647.647,0,0,0-.646-.646H8.206a.647.647,0,0,0-.646.646V22.331a.647.647,0,0,0,.646.646Z" transform="translate(-7.56 -11.062)" fill="none"/>
+  </g>
+</svg>

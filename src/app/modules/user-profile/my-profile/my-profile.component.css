@@ -12,6 +12,7 @@
 .pad-zero-profile {
   padding: 0% !important;
 }
+
 .mar-zero {
   margin: 0 !important;
 }
@@ -24,6 +25,7 @@
   padding-top: 7px;
   padding-bottom: 7px;
 }
+
 .my-desk-heading-name {
   color: black;
 }
@@ -184,6 +186,7 @@
   border-radius: 5px;
   border: 1px solid #219ad3;
 }
+
 .pad-top-btns {
   padding-top: 40px;
 }
@@ -235,6 +238,7 @@
   font-size: 14px;
   padding-left: 160px;
 }
+
 .display-this {
   font-style: italic;
   padding-top: 38px;
@@ -242,64 +246,81 @@
   font-size: 12px;
   color: black !important;
 }
+
 .radio-cont {
   padding-left: 20px;
 }
+
 .first-rad {
   float: left;
 }
+
 .first-rad label {
   padding-top: 28px;
   padding-left: 10px;
   font-size: 12px;
   font-weight: 600;
 }
+
 .profile-radio {
   width: 10px !important;
   margin: 0 !important;
   float: left;
   margin-top: 39px !important;
 }
+
 .second-rad {
   padding-left: 120px;
 }
+
 .second-rad label {
   padding-top: 28px;
   padding-left: 10px;
   font-weight: 600;
   font-size: 11px;
 }
+
 .about-me-textarea {
   padding-bottom: 30px !important;
 }
+
 .parent-g-detail {
   margin-bottom: 5px;
   font-size: 20px;
   color: black !important;
 }
+
 .parent-g-detail p {
   color: black !important;
 }
+
 .so-icons p {
   color: black !important;
   font-size: 20px;
 }
+
 .address-2 {
   margin-top: 8px;
 }
+
+/* media query  */
 @media screen and (max-width: 767px) {
   .radio-cont {
     padding: 0% !important;
   }
+
   .display-this {
     padding-top: 27px;
   }
+
   .first-rad label {
     padding-top: 0;
   }
+
   .second-rad label {
     padding-top: 0;
   }
+
   .profile-radio {
     margin-top: 10px !important;
   }

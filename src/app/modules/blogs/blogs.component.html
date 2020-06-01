@@ -48,9 +48,9 @@
             <div class="col-md-6">
               <div class="row blog-body-icons">
                 <div class="col-md-4 icons-res updated-img">
-                  <img src="/assets/images/boki.svg" class="img-updated" alt="dff">
+                  <img src="/assets/images/book.svg" class="img-updated" alt="dff">
                   <!-- <i class="fa fa-book new-icons-blog fa-lg  clr1"></i> -->
-                  <span class="pricing" *ngIf="blog && blog.readCount">{{blog.readCount}}</span>
+                  <span class="pricing" *ngIf="blog && blog.readCount">{{blog.readCount.length || '0'}}</span>
                   <div>
                     <span class="info-icon blog-icons">Reads</span>
                   </div>
@@ -61,7 +61,7 @@
 
 
                   <i class="fa fa-lg new-icons-blog  fa-heart-o clr2" aria-hidden="true"></i>
-                  <span class="pricing" *ngIf="blog && blog.likeCount">{{blog.likeCount}}</span>
+                  <span class="pricing" *ngIf="blog && blog.likeCount">{{blog.likeCount|| '0'}}</span>
                   <div>
                     <span class="info-icon blog-icons">Likes</span>
                   </div>
@@ -73,7 +73,7 @@
                   <i class="fa  new-icons-blog fa-share share-eco  ">
                   </i>
 
-                  <span class="pricing" *ngIf="blog && blog.shareCount">{{blog.shareCount}}</span>
+                  <span class="pricing" *ngIf="blog && blog.shareCount">{{blog.shareCount || '0'}}</span>
                   <div>
                     <span class="info-icon blog-icons">Shares</span>
                   </div>
@@ -130,7 +130,7 @@
             <div class="col-md-3 recent-blog-blk" *ngFor="let blog of archieveMonthArr">
               <div class="date-recent">
 
-                <span> {{ blog.createdAt }}</span>
+                <span> {{ blog.createdAt | date:'MMM dd, yyyy' }}</span>
               </div>
               <div class="rcbb">
                 <div class="recent-blog-img">
@@ -190,7 +190,7 @@
                 <div class="col-md-4 icons-res">
 
                   <i class="fa fa-book new-icons-blog fa-lg  clr1"></i>
-                  <span class="pricing">{{blog.readCount}}</span>
+                  <span class="pricing">{{blog.readCount.length || '0'}}</span>
                   <div>
                     <span class="info-icon blog-icons">Reads</span>
                   </div>

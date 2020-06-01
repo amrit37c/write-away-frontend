@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: "http://127.0.0.1:3000/api/v1/",
+  // baseUrl: "http://demo.writeawayy.com:3000/api/v1/",
   apis: {
     user: "user",
     register: "user/register",
@@ -12,8 +13,13 @@ export const environment = {
     blogs: "blog",
     publications: "publication",
     userPublication: "publication/user-content",
-    blogBookMark: "/blog-bookmark",
-    publicationBookMark: "/publication-bookmark",
+    blogBookMark: "blog-bookmark",
+    publicationBookMark: "publication-bookmark",
+    blogLike: "blog-like",
+    publicationLike: "publication-like",
+    blogRead: "blog-read",
+    forgetEmail: "send-forget-email",
+    verifyOTP: "verify-otp",
   },
 };
 

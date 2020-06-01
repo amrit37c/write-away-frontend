@@ -59,4 +59,94 @@ export class BlogService extends BaseService {
         })
       );
   }
+
+  /*** Post BookMark to the server **/
+  postBookMark(payload): Observable<any> {
+    return this.http
+      .post<any>(`${this.url}/${environment.apis.blogBookMark}`, payload, {
+        headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  /*** put Bookmark on the server **/
+  putBookMark(id, payload): Observable<any> {
+    return this.http
+      .put<any>(`${this.url}/${environment.apis.blogBookMark}/${id}`, payload, {
+        headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  /*** Post BookMark to the server **/
+  postLike(payload): Observable<any> {
+    return this.http
+      .post<any>(`${this.url}/${environment.apis.blogLike}`, payload, {
+        headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  /*** put Bookmark on the server **/
+  putLike(id, payload): Observable<any> {
+    return this.http
+      .put<any>(`${this.url}/${environment.apis.blogLike}/${id}`, payload, {
+        headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  /*** update on the server **/
+  updateRead(id, payload): Observable<any> {
+    return this.http
+      .put<any>(`${this.url}/${environment.apis.blogRead}/${id}`, payload, {
+        headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
 }

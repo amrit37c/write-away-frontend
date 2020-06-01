@@ -42,7 +42,7 @@
               </div>
               <div class="col-lg-7 col-12">
                 <h3 class="text-uppercase">{{blog.title}}</h3>
-                <p [innerHTML]="blog.content">
+                <p [innerHTML]="getBrief(blog.content)">
 
                 </p>
                 <div class="classic_details">
@@ -343,7 +343,7 @@
               <p class="option-heading">
                 {{blog.title}}
               </p>
-              <p class="option-description" [innerHTML]="blog.content"></p>
+              <p class="option-description" [innerHTML]="blog.content.substr(0,100)"></p>
             </div>
           </div>
         </div>

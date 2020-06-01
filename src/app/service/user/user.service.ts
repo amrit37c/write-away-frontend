@@ -50,4 +50,58 @@ export class UserService extends BaseService {
         })
       );
   }
+
+  sendEmail(payload): Observable<any> {
+    const url = `${environment.baseUrl}${environment.apis.user}/${environment.apis.forgetEmail}`;
+    return this.http
+      .post<any>(url, payload, {
+        // headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  verifyOTP(payload): Observable<any> {
+    const url = `${environment.baseUrl}${environment.apis.user}/${environment.apis.verifyOTP}`;
+    return this.http
+      .post<any>(url, payload, {
+        // headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  updatePassword(payload): Observable<any> {
+    const url = `${environment.baseUrl}${environment.apis.user}/update-password`;
+    return this.http
+      .put<any>(`${url}`, payload, {
+        headers: this.token(),
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
 }

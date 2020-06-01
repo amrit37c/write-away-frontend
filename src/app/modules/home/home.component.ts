@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getBlogs(); //get blogs
-    this.getPublications(); //get blogs
+    this.getPublications(); //get publication
 
     // check user is login
     const token = localStorage.getItem("token");
@@ -122,23 +122,30 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  // unused
   addToFollowing(id) {
     if (!this.userId) {
       this.openLogin();
     }
-    this.publicationService
-      .saveUserPublishing({
-        publicationType: "bookmark",
-        publicationId: id,
-        publishedBy: this.userId,
-      })
-      .subscribe((_response) => {});
+    // this.publicationService
+    //   .saveUserPublishing({
+    //     publicationType: "bookmark",
+    //     publicationId: id,
+    //     publishedBy: this.userId,
+    //   })
+    //   .subscribe((_response) => {});
   }
 
   sharePublication(link) {
-    if (!this.userId) {
-      this.openLogin();
-    }
+    var text = "http://demo.writeawayy.com/publication-read/" + link._id;
+    navigator.clipboard.writeText(text).then(
+      function () {
+        alert("Link copied to clipboard");
+      },
+      function (err) {
+        console.error("Async: Could not copy text: ", err);
+      }
+    );
   }
   writePublication(id) {
     if (!this.userId) {
@@ -155,6 +162,8 @@ export class HomeComponent implements OnInit {
       this.openLogin();
       return;
     }
+
+    this.blogService.updateRead(id, {}).subscribe((_respone) => {});
     this.router.navigateByUrl("/blogs/" + id);
     // routerLink="/blogs/{{blogs[0]._id}}"
   }
@@ -163,5 +172,148 @@ export class HomeComponent implements OnInit {
       .firstElementChild as HTMLElement;
     element.click();
     return;
+  }
+
+  blogBookMarkStatus() {
+    return this.blogs.length &&
+      this.blogs[0].bookmark &&
+      this.blogs[0].bookmark.bookMarkStatus === "1"
+      ? " fa-bookmark"
+      : "fa-bookmark-o";
+  }
+
+  blogLikeStatus() {
+    return this.blogs.length &&
+      this.blogs[0].like &&
+      this.blogs[0].like.likeStatus === "1"
+      ? "fa-heart"
+      : "fa-heart-o";
+  }
+
+  publicationBookMarkStatus(publication) {
+    return publication &&
+      publication.bookmark &&
+      publication.bookmark.bookMarkStatus === "1"
+      ? " fa-bookmark"
+      : "fa-bookmark-o";
+  }
+
+  saveBlogBookMark(blog) {
+    if (!this.userId) {
+      this.openLogin();
+      return;
+    }
+
+    this.blogService
+      .postBookMark({
+        bookMarkStatus: 1,
+        blogId: blog._id,
+      })
+      .subscribe((_response) => {
+        this.getBlogs();
+      });
+  }
+
+  updateBlogBookMark(blog) {
+    if (!this.userId) {
+      this.openLogin();
+      return;
+    }
+
+    this.blogService
+      .putBookMark(blog.bookmark._id, {
+        bookMarkStatus: blog.bookmark.bookMarkStatus === "0" ? 1 : 0,
+        blogId: blog._id,
+      })
+      .subscribe((_response) => {
+        this.getBlogs();
+      });
+  }
+
+  savePublicationBookMark(publication) {
+    if (!this.userId) {
+      this.openLogin();
+      return;
+    }
+
+    this.publicationService
+      .postBookMark({
+        bookMarkStatus: 1,
+        publicationId: publication._id,
+      })
+      .subscribe((_response) => {
+        this.getPublications();
+      });
+  }
+
+  updatePublicationBookMark(publication) {
+    if (!this.userId) {
+      this.openLogin();
+      return;
+    }
+
+    this.publicationService
+      .putBookMark(publication.bookmark._id, {
+        bookMarkStatus: publication.bookmark.bookMarkStatus === "0" ? 1 : 0,
+        publicationId: publication._id,
+      })
+      .subscribe((_response) => {
+        this.getPublications();
+      });
+  }
+
+  saveBlogLike(blog) {
+    if (!this.userId) {
+      this.openLogin();
+      return;
+    }
+
+    this.blogService
+      .postLike({
+        likeStatus: 1,
+        blogId: blog._id,
+      })
+      .subscribe((_response) => {
+        this.getBlogs();
+      });
+  }
+
+  updateBlogLike(blog) {
+    if (!this.userId) {
+      this.openLogin();
+      return;
+    }
+
+    this.blogService
+      .putLike(blog.like._id, {
+        likeStatus: blog.like.likeStatus === "0" ? 1 : 0,
+        blogId: blog._id,
+      })
+      .subscribe((_response) => {
+        this.getBlogs();
+      });
+  }
+
+  blogShareLink(id) {
+    var text = "http://demo.writeawayy.com/blogs/" + id;
+    navigator.clipboard.writeText(text).then(
+      function () {
+        console.log("Async: Copying to clipboard was successful!");
+        alert("Link copied to clipboard");
+      },
+      function (err) {
+        console.error("Async: Could not copy text: ", err);
+      }
+    );
+  }
+
+  getBrief() {
+    return this.openPublications[this.openPublicationIndex].brief.substr(
+      0,
+      500
+    );
+  }
+  getBlogContent(content) {
+    return content.substr(0, 1750);
   }
 }

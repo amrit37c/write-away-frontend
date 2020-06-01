@@ -106,7 +106,7 @@
 
         <!-- Sliders -->
         <div class="container">
-          <h4 class="load-more">Load More...</h4>
+          <!-- <h4 class="load-more">Load More...</h4> -->
           <div class="carousel-cont">
             <div class="carousel-headings text-center">
               <p> <span class="color-pink">Su</span>ggested Publishing</p>
@@ -155,8 +155,6 @@
                 </div>
 
                 <div class="carousel-caption">
-                  <!-- <p>- John Doe</p>
-                    <span class="firm_name">ABC Company</span> -->
                 </div>
               </slide>
             </carousel>
@@ -235,17 +233,29 @@
                 <p class="publisher-name">Closing Date<span
                     class="col-grey">{{ data && data['closingDate'] | date : 'MMM dd, yyyy'}}</span></p>
               </div>
-              <div class="row names-icons">
+              <!-- <div class="row names-icons">
                 <div class="col-6 ">
                   <i class="fa fa-share share-eco-editor"></i> <span>Shares</span>
                 </div>
                 <div class="col-6">
-                  <i class="fa col-redss"
-                    (click)="data['userPublication'] && data['userPublication'][0]['publicationType']=='bookmark' ? updateBookmark(data['userPublication'][0]._id, 'remove') : updateBookmark(data['userPublication'][0]._id, 'add') "
-                    [ngClass]="{'fa-bookmark':data['userPublication'] && data['userPublication'][0]['publicationType']=='bookmark', 'fa-bookmark-o': data['userPublication'] && data['userPublication'][0]['publicationType']!='bookmark'}"></i>
+                  <i class="fa col-redss" [ngClass]="
+                  publicationBookMarkStatus(
+                    data.id
+                  )
+                " (click)="
+                  openPublications.length &&
+                  openPublications[openPublicationIndex] &&
+                  openPublications[openPublicationIndex].bookmark
+                    ? updatePublicationBookMark(
+                        data
+                      )
+                    : savePublicationBookMark(
+                        data
+                      )
+                "></i>
                   <span>Bookmarks</span>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="col-md-8">
@@ -298,9 +308,10 @@
     </div>
   </div>
 </div>
+
 <!-- Sliders -->
 <div class="container">
-  <h4 class="load-more">Load More...</h4>
+  <!-- <h4 class="load-more">Load More...</h4> -->
   <div class="carousel-cont" *ngIf="suggestedPublication.length>0">
     <div class="carousel-headings text-center">
       <p> <span class="color-pink">Su</span>ggested Publishing</p>
@@ -314,7 +325,7 @@
           </div>
           <div class="col-md-8 text-justify">
             <h6 class="novel-title">{{ slide.title }}</h6>
-            <p class="text-justify"> {{ slide.brief }}
+            <p class="text-justify" [innerHTML]="getBrief(slide.brief)"> {{ slide.brief }}
             </p>
           </div>
 

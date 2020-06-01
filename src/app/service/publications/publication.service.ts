@@ -10,6 +10,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class PublicationService extends BaseService {
+  baseUrl = `${environment.baseUrl}${environment.apis.publications}`;
   constructor(public http: HttpClient, public router: Router) {
     super(environment.baseUrl + environment.apis.publications, http, router);
   }
@@ -28,7 +29,7 @@ export class PublicationService extends BaseService {
     }
     return this.http
       .get<any>(this.url, {
-        // headers: this.token(),
+        headers: this.token(),
         params: httpParams,
         responseType: "json",
         observe: "response",
@@ -56,7 +57,7 @@ export class PublicationService extends BaseService {
 
     return this.http
       .get<any>(id ? `${this.url}/${id}` : `${this.url}`, {
-        // headers: this.token(),
+        headers: this.token(),
         observe: "response",
         responseType: "json",
       })
@@ -131,6 +132,50 @@ export class PublicationService extends BaseService {
         responseType: "json",
         observe: "response",
       })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  /*** Post to the server **/
+  postBookMark(payload): Observable<any> {
+    return this.http
+      .post<any>(
+        `${this.url}/${environment.apis.publicationBookMark}`,
+        payload,
+        {
+          headers: this.token(),
+          responseType: "json",
+          observe: "response",
+        }
+      )
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  /*** put on the server **/
+  putBookMark(id, payload): Observable<any> {
+    return this.http
+      .put<any>(
+        `${this.url}/${environment.apis.publicationBookMark}/${id}`,
+        payload,
+        {
+          headers: this.token(),
+          responseType: "json",
+          observe: "response",
+        }
+      )
       .pipe(
         map((data) => {
           return data;
