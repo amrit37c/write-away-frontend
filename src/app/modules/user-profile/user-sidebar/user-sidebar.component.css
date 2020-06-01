@@ -1086,3 +1086,15 @@ hr {
 }
 
 /* My Desk */
+
+img.updated-bkmrk.below-icons-left,
+.below-icons-left {
+  display: inline-block;
+}
+
+.align-bookimg {
+  position: absolute;
+  margin-left: -21px;
+
+  margin-top: 11px;
+}

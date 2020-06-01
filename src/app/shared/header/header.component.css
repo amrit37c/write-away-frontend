@@ -367,6 +367,7 @@ a.forget-password {
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
   padding-top: 17px;
   padding-bottom: 23px;
+  margin-top: 30%;
 }
 
 .display {
@@ -502,7 +503,7 @@ forget-pass */
 
 ::ng-deep .modal-content {
   width: 146%;
-  height: 454px;
+  height: 470px;
 }
 
 .sign-up-pop-col {
