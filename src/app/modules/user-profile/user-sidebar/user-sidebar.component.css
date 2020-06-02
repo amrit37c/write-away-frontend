@@ -329,9 +329,13 @@ text-align: center;
   padding-top: 10px;
 }
 
+i.fa.fa-facebook.fa-lg.left-bar-btmss:first-child {
+  padding: 0px 10px 0px 0px;
+}
+
 .left-bar-btmss {
   display: inline-block;
-  padding: 5px;
+  padding: 10px 12px;
   color: #219AD3 !important;
 }
 
@@ -776,7 +780,7 @@ hr {
 }
 
 .updated-left-icons-bottom i {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .updated-small div {
