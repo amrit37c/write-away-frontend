@@ -1197,6 +1197,7 @@ ul li {
   .book_store_text p {
     font-size: 12px;
 }
+
 .know_more .book_store .book_store_desc .book_store_text p {
     color: #fff;
     line-height: 1.3;
@@ -1516,6 +1517,9 @@ ul li {
   .img-updates {
     width: 57%;
   }
+  .newimg-blog {
+    height: 425px !important ;
+  }
 
   .updated-rigtimgs {
     position: relative;
@@ -1565,6 +1569,22 @@ ul li {
     position: relative !important;
     top: 0px !important;
   }
+  .newimg-blog {
+    height: 325px !important;
+}
+.res-tab{
+  margin-left: 177px;
+
+}
+.res-tab2{
+  margin-left: -150px;
+
+}
+.ddddd {
+  width: 54% !important;
+  margin-left: 190px;
+}
+
   .responsive-section{
     margin-bottom: 34px !important;
   }
@@ -1633,5 +1653,6 @@ ul li {
   height: 300px;
 }
 .ddddd{
-  
+  width: 100%;
+
 }

@@ -161,14 +161,14 @@
               </div>
               <div class="row">
                 <div class="col-6">
-                  <div class="row">
+                  <div class="row res-tab">
                     <div class="col-3">
                       <span class="updated-map">
                         <img src="/assets/images/book.svg" class="img-updates" alt="dff" />
                       </span>
                     </div>
                     <div class="col-9 col-greys updated-rigtimgs">
-                      <span class="updated-num">
+                      <span class="updated-num ">
                         {{
                           (blogs.length && blogs[0].readCount.length) || "0"
                         }}</span>
@@ -176,7 +176,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-6 right updated-icons">
+                <div class="col-6 res-tab2 right updated-icons">
                   <i class="fa col-red" [ngClass]="blogLikeStatus()" (click)="
                       blogs.length && blogs[0] && blogs[0].like
                         ? updateBlogLike(blogs[0])
