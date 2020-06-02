@@ -1162,8 +1162,9 @@ ul li {
 
 .updated-num {
   position: relative;
+  display: block;
   top: 5px;
-  left: 15px;
+  width: 44px;
 }
 
 .col-greys {
@@ -1611,6 +1612,9 @@ ul li {
 }
 .book-icon-n {
   width: 79%;
+}
+.center {
+  text-align: center !important;
 }
 @media screen and (max-width: 767px) {
   .book-icon-n {
