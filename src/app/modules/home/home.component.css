@@ -1602,3 +1602,18 @@ ul li {
 }
 .updated-rigtimgs {
 }
+.pad-zero {
+  padding: 0;
+}
+.new-pad {
+  padding: 0;
+  padding-left: 15px;
+}
+.book-icon-n {
+  width: 79%;
+}
+@media screen and (max-width: 767px) {
+  .book-icon-n {
+    width: 100%;
+  }
+}
