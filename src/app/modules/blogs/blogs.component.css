@@ -190,14 +190,16 @@
   font-weight: 500;
   color: #9F9F9F;
 }
-.share-icons{
+
+.share-icons {
   background: #007bff;
-    color: white;
-    padding: 3px;
-    border-radius: 10px;
-    font-size: 10px;
+  color: white;
+  padding: 3px;
+  border-radius: 10px;
+  font-size: 10px;
 }
-.img-updated{
+
+.img-updated {
   display: flex;
   position: relative;
   top: 11px;
@@ -205,7 +207,8 @@
 
   width: 13%;
 }
-.updated-img{
-  margin-top: 9px;
+
+.updated-img {
+  margin-top: -3px;
 
 }

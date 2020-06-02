@@ -219,9 +219,14 @@
         <div class="row back-light-blue description-container">
           <div class="col-md-4 write-away-img">
             <img src="http://localhost:3000/images/{{data['mediaCover']}}">
+            <div class="text-right">
+              <i class="fa fa-share col-blue share-icons"></i>
+              <i class="fa col-yel bokyy book_mark_link fa-bookmark-o"></i>
+            </div>
 
             <div class="text-center">
               <div class="left-sec-name">
+                <p class="publisher-name">Publisher:</p>
                 <img class="prof-imgss" src="./assets/images/publisher.svg">
                 <p class="publisher-name">{{ data && data['publishedBy']}}</p>
                 <p class="publisher-name">Age Groups <span
@@ -233,7 +238,7 @@
                 <p class="publisher-name">Closing Date<span
                     class="col-grey">{{ data && data['closingDate'] | date : 'MMM dd, yyyy'}}</span></p>
               </div>
-              <!-- <div class="row names-icons">
+              <div class="row names-icons" style="display: none;">
                 <div class="col-6 ">
                   <i class="fa fa-share share-eco-editor"></i> <span>Shares</span>
                 </div>
@@ -255,7 +260,7 @@
                 "></i>
                   <span>Bookmarks</span>
                 </div>
-              </div> -->
+              </div>
             </div>
           </div>
           <div class="col-md-8">

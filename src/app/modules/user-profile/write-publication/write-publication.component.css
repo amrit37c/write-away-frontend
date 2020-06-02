@@ -46,11 +46,14 @@
   margin-top: 17px !important;
   width: 20% !important;
   border: none !important;
+  display: inline-block;
 }
 
 .publisher-name {
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #000102;
 }
 
 .left-sec-name span {
@@ -729,13 +732,13 @@ button {
   font-weight: 500;
 }
 
-.share-icons {
+/* .share-icons {
   background: #007bff;
   color: white;
   padding: 3px;
   font-size: 21px;
   border-radius: 18px;
-}
+} */
 
 .span_top_likes,
 .book_mark_link span,
@@ -788,3 +791,21 @@ button {
   width: 100%;
 }
 
+.share-icons {
+  background: #007bffc9;
+  color: white;
+  padding: 3px;
+  font-size: 13px;
+  border-radius: 18px;
+}
+
+.bokyy {
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
+}
+
+.col-yel {
+  color: #ffaa00;
+  font-size: 21px;
+}
