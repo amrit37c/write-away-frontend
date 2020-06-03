@@ -140,7 +140,7 @@
                   <p>{{blog.title}}</p>
                 </div>
                 <div class="recent-text-font">
-                  <p [innerHTML]="blog.content"></p>
+                  <p [innerHTML]="blog.content.substr(0,140)"></p>
                 </div>
                 <!-- <span class="read-more">
                   <p (click)="addToRecent(blog._id)"> Read More </p>

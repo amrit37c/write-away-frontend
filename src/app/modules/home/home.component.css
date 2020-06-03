@@ -1604,7 +1604,7 @@ ul li {
 }
 
 .follow_details.fix-updated.top-fix {
-  top: 25px;
+  top: 0px;
 }
 
 .pad-zero {
@@ -1649,4 +1649,10 @@ ul li {
 .share-img-blog {
   width: 11%;
   display: inline-block
+}
+
+.left_sidebar_img img {
+  width: 291px;
+  height: 358px;
+
 }
