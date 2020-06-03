@@ -556,20 +556,11 @@ ul li {
   display: flex;
 }
 
-.hero_area_2
-  .right_sidebar_area_2
-  .general_parts_show
-  ul.part_first_general
-  li {
+.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_first_general li {
   margin-bottom: 5px;
 }
 
-.hero_area_2
-  .right_sidebar_area_2
-  .general_parts_show
-  ul.part_first_general
-  li
-  a {
+.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_first_general li a {
   color: #000;
   font-size: 14px;
   font-weight: 600;
@@ -579,20 +570,11 @@ ul li {
   padding-left: 30px;
 }
 
-.hero_area_2
-  .right_sidebar_area_2
-  .general_parts_show
-  ul.part_first_general
-  li {
+.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_first_general li {
   margin-bottom: 5px;
 }
 
-.hero_area_2
-  .right_sidebar_area_2
-  .general_parts_show
-  ul.part_second_general
-  li
-  a {
+.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_second_general li a {
   color: #666;
   font-weight: 500;
 }
@@ -1011,7 +993,6 @@ ul li {
 
 .col-red {
   color: #ff0000 !important;
-  font-size: 21px !important;
 }
 
 .text-index-page {
@@ -1132,7 +1113,8 @@ ul li {
 }
 
 .updated-icons {
-  margin-top: 10px;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 .updated-icons i {
@@ -1229,13 +1211,16 @@ ul li {
     position: absolute !important;
     top: -77px !important;
   }
+
   .main-img-res {
     position: relative !important;
     top: 0px !important;
   }
+
   .updated-conts {
     padding-right: 0px !important;
   }
+
   .updated-left-side {
     height: auto;
   }
@@ -1337,10 +1322,12 @@ ul li {
     padding-right: 0px;
     text-align: justify;
   }
+
   .know_more .book_store {
     height: 226px;
     margin-bottom: 26px;
   }
+
   .books-index {
     position: absolute !important;
     bottom: 69px !important;
@@ -1421,9 +1408,11 @@ ul li {
   color: #3b9bf1 !important;
   font-weight: 500;
 }
+
 .updated-icons-homesss {
   padding-top: 7px;
 }
+
 .col-blacky {
   color: black !important;
 }
@@ -1433,6 +1422,7 @@ ul li {
   position: relative;
   top: 5px;
 }
+
 .updated-right-ecosss {
   position: relative;
   top: 2px;
@@ -1455,6 +1445,7 @@ ul li {
 
   left: -25px;
 }
+
 .sssssssare {
   position: relative;
   top: 2px;
@@ -1520,22 +1511,27 @@ ul li {
     margin-bottom: 20px;
   }
 }
+
 @media only screen and (min-width: 1024px) and (max-width: 1025px) {
   .updated-bold {
     font-size: 39px !important;
     margin-top: 14px;
     margin-bottom: 20px;
   }
+
   .main-img-res {
     position: relative !important;
     top: 0px !important;
   }
+
   .updated-conts {
     padding-right: 0px;
   }
+
   .updated-left-side {
     height: auto !important;
   }
+
   .hero-area .left_sidebar .publisher_desc .publisher_name img {
     margin-right: 29px;
   }
@@ -1546,6 +1542,7 @@ ul li {
     position: relative !important;
     top: 0px !important;
   }
+
   .updated-left-side {
     height: auto !important;
   }
@@ -1566,31 +1563,38 @@ ul li {
     left: 79px;
   }
 }
-.updated-width {
-}
+
+.updated-width {}
+
 .updated-clr-pink {
   margin-right: 5px;
 }
+
 .updated-clr-pink-2 {
   margin-right: 2px;
 }
+
 .main-img-res {
   position: relative;
   top: -41px;
 }
+
 .sp-sp {
   font-size: 18px;
   font-weight: 600;
   position: relative;
   top: -1px;
 }
+
 .follow_links {
   padding: 20px;
 }
+
 .taing_data ul li {
   display: inline-block;
   color: #ffcc57;
 }
+
 .publisher_desc.read-author {
   padding-top: 0px !important;
 }
@@ -1598,26 +1602,51 @@ ul li {
 .follow_details.follow_details_2 {
   padding: 13px 23px;
 }
+
 .follow_details.fix-updated.top-fix {
   top: 25px;
 }
-.updated-rigtimgs {
-}
+
 .pad-zero {
   padding: 0;
 }
+
 .new-pad {
   padding: 0;
   padding-left: 15px;
 }
+
 .book-icon-n {
   width: 79%;
 }
+
 .center {
   text-align: center !important;
 }
+
 @media screen and (max-width: 767px) {
   .book-icon-n {
     width: 100%;
   }
+}
+
+.read-room-book {
+  margin-left: 12px;
+}
+
+.heart-shape,
+.share-icons,
+.bokyy {
+  margin-top: 12px;
+  font-size: 28px;
+}
+
+.updated-images-left {
+  width: 24%;
+  display: inline !important;
+}
+
+.share-img-blog {
+  width: 11%;
+  display: inline-block
 }

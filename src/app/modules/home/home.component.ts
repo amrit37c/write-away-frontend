@@ -55,21 +55,23 @@ export class HomeComponent implements OnInit {
   }
 
   getBlogs() {
-    this.blogService.get().subscribe((_response) => {
+    this.blogService.get({ isPublished: true }).subscribe((_response) => {
       this.blogs = _response.body.data;
     });
   }
   getPublications() {
-    this.publicationService.get().subscribe((_response) => {
-      this.publications = _response.body.data;
+    this.publicationService
+      .get({ isPublished: false })
+      .subscribe((_response) => {
+        this.publications = _response.body.data;
 
-      this.openPublications = this.publications.filter(
-        (el) => el.publicationStatus == 2
-      );
-      this.closedPublications = this.publications.filter(
-        (el) => el.publicationStatus == 3
-      );
-    });
+        this.openPublications = this.publications.filter(
+          (el) => el.publicationStatus == 2
+        );
+        this.closedPublications = this.publications.filter(
+          (el) => el.publicationStatus == 3
+        );
+      });
   }
 
   blogPublishSlider(type: String, blog) {
@@ -305,6 +307,9 @@ export class HomeComponent implements OnInit {
         console.error("Async: Could not copy text: ", err);
       }
     );
+
+    this.blogService.updateShare(id, {}).subscribe((_respone) => {});
+    this.router.navigateByUrl("/blogs/" + id);
   }
 
   getBrief() {
