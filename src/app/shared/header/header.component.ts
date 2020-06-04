@@ -100,10 +100,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
       {
-        guardian: ["", Validators.required],
-        guardianFirstName: ["", Validators.required],
-        guardianLastName: ["", Validators.required],
-        guardianEmail: ["", Validators.required],
+        guardian: [""],
+        guardianFirstName: [""],
+        guardianLastName: [""],
+        guardianEmail: [""],
         firstName: ["", Validators.required],
         lastName: ["", Validators.required],
         email: ["", Validators.required],
