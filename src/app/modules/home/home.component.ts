@@ -309,7 +309,7 @@ export class HomeComponent implements OnInit {
     );
 
     this.blogService.updateShare(id, {}).subscribe((_respone) => {});
-    this.router.navigateByUrl("/blogs/" + id);
+    // this.router.navigateByUrl("/blogs/" + id);
   }
 
   getBrief() {

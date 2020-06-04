@@ -53,12 +53,15 @@ export class BlogsComponent implements OnInit {
     // httpParams = new HttpParams().set("isPublished", "today");
     this.service.get(filter).subscribe((_response) => {
       if (type == "recent") {
+        this.recentBlogs = [];
         this.recentBlogs = _response.body.data;
+        this.recentBlogs = this.recentBlogs.splice(0, 2);
       } else {
+        this.archievedBlogs = [];
         this.archievedBlogs = _response.body.data;
       }
       if (!this.recentBlogs.length) {
-        this.recentBlogs = this.archievedBlogs.splice(0, 4);
+        this.recentBlogs = this.archievedBlogs.splice(0, 2);
       }
 
       this.archievedBlogs.forEach((el) => {
@@ -84,5 +87,48 @@ export class BlogsComponent implements OnInit {
   archieveBlogShow(blogs: []) {
     this.archieveMonthArr = [];
     this.archieveMonthArr = blogs;
+  }
+
+  saveBlogLike(blog) {
+    this.service
+      .postLike({
+        likeStatus: 1,
+        blogId: blog._id,
+      })
+      .subscribe((_response) => {
+        this.getBlogDetails(this.id);
+        this.getBlogs("recent", { isPublished: "today" });
+        this.getBlogs("archieved", { isPublished: "yesterday" });
+      });
+  }
+
+  updateBlogLike(blog) {
+    this.service
+      .putLike(blog.like._id, {
+        likeStatus: blog.like.likeStatus === "0" ? 1 : 0,
+        blogId: blog._id,
+      })
+      .subscribe((_response) => {
+        this.getBlogDetails(this.id);
+        this.getBlogs("recent", { isPublished: "today" });
+        this.getBlogs("archieved", { isPublished: "yesterday" });
+      });
+  }
+
+  blogShareLink(id) {
+    debugger;
+    var text = "http://demo.writeawayy.com/blogs/" + id;
+    navigator.clipboard.writeText(text).then(
+      function () {
+        console.log("Async: Copying to clipboard was successful!");
+        alert("Link copied to clipboard");
+      },
+      function (err) {
+        console.error("Async: Could not copy text: ", err);
+      }
+    );
+
+    this.service.updateShare(id, {}).subscribe((_respone) => {});
+    // this.router.navigateByUrl("/blogs/" + id);
   }
 }

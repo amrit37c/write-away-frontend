@@ -1,10 +1,10 @@
 <!-- Start Header -->
-<header id="header" [ngClass]="{ header: !currentPage }">
+<header id="header">
   <div class="middle-bar">
     <div class="container-fluid">
       <div class="row">
         <!-- Header for main page -->
-        <div class="col-lg-4 col-md-4 col-12" *ngIf="!currentPage">
+        <div class="col-lg-3 col-md-4 col-12" *ngIf="!currentPage">
           <div class="logo">
             <a><img src="assets/images/{{ logo }}" routerLink="/home" alt="logo" style="width: 100%;" /></a>
           </div>
@@ -17,11 +17,11 @@
           </div>
         </div>
         <!-- Header for other page -->
-        <div class="col-lg-5 col-md-5 col-sm-6 col-12">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
           <div class="col-12">
             <div class="col_form_area">
               <div class="form-group">
-                <select name="subject" *ngIf="blogRoute">
+                <select name="subject" class="header-age-selecter" *ngIf="blogRoute">
                   <option class="option" value="1">For Age 10-12 Years</option>
                   <option class="option" value="1">For Age 10-14 Years</option>
                   <option class="option" value="1">For Age 10-16 Years</option>
@@ -223,7 +223,9 @@
                 <div class="">
                   <div class="row select-dates caret-icons">
                     <div class="col-5 right">
+
                       <select class="birthdate" [(ngModel)]="selectedMonth" (change)="getDates()">
+                        <option value="" [selected]="true">Month</option>
                         <option *ngFor="let month of months">{{
                           month
                         }}</option>
@@ -232,6 +234,7 @@
 
                     <div class="col-3 left">
                       <select class="birthdate update-birthdate" [(ngModel)]="selectedDate">
+                        <option value="" selected>Date</option>
                         <option *ngFor="let item of getDates()">{{
                           item
                         }}</option>
@@ -240,6 +243,7 @@
                     </div>
                     <div class="col-3 left">
                       <select class="birthdate update-birthdate" [(ngModel)]="selectedYear" (change)="calculateAge()">
+                        <option value="" selected>Year</option>
                         <option *ngFor="let item of getYears()">{{
                           item
                         }}</option>
@@ -267,25 +271,38 @@
                 <div class="form-details" *ngIf="enableEditGuardianInfo && enableEditUserInfo">
                   <h6 class="">Parent/Guardian details:</h6>
                   <div class="row">
-                    <div class="col-md-6">
-                      <select class="birthdate select-guardian" formControlName="guardian">
+                    <div class="col-md-12">
+                      <select class="birthdate select-guardian" formControlName="guardian"
+                        [ngClass]="{ 'is-invalid': submitted && f.guardian.errors }">
                         <option>Father</option>
                         <option>Mother</option>
                       </select>
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                      </div>
                     </div>
                     <div class="col-md-6">
                       <label class="input-names">First/Middle Name</label>
                       <input required type="text" class="input-fields" formControlName="guardianFirstName" />
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                      </div>
                     </div>
                     <div class="col-md-6">
                       <label class="input-names">Last Name</label>
                       <input required type="text" class="input-fields" formControlName="guardianLastName" />
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                      </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <label class="input-names">Email ID</label>
                       <input required type="text" class="input-fields" formControlName="guardianEmail" />
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                      </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12 text-center">
                       <div class="center">
                         <button class="btn-signup" (click)="onSubmit()">
                           Submit
@@ -303,48 +320,83 @@
                   <div class="row">
                     <div class="col-md-6">
                       <label class="input-names">First/Middle Name</label>
-                      <input type="text" class="input-fields" formControlName="firstName" />
+                      <input type="text" class="input-fields" formControlName="firstName"
+                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                      </div>
                     </div>
                     <div class="col-md-6">
                       <label class="input-names">Last Name</label>
-                      <input type="text" class="input-fields" formControlName="lastName" />
+                      <input type="text" class="input-fields" formControlName="lastName"
+                        [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                      <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                      </div>
                     </div>
                   </div>
 
                   <label class="input-names">Email ID</label>
-                  <input type="text" class="input-fields" formControlName="email" />
+                  <input type="text" class="input-fields" formControlName="email"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email is required</div>
+                  </div>
 
                   <label class="input-names">Password</label>
-                  <input type="password" class="input-fields" formControlName="password" />
+                  <input type="password" class="input-fields" formControlName="password"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                  </div>
 
                   <label class="input-names">Reconfirm Password</label>
-                  <input type="password" class="input-fields" formControlName="confirmPassword" />
+                  <input type="password" class="input-fields" formControlName="confirmPassword"
+                    [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+
+                  <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                    <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                    <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+
+                  </div>
 
                   <div class="center footer-updates">
                     <span>Keep me posted with offers/updates etc</span>
-                    <input type="radio" class="radio-btns" id="yes" name="select" />
+                    <input type="radio" class="radio-btns" id="yes" value="1" formControlName="acceptOffer"
+                      [ngClass]="{ 'is-invalid': submitted && f.acceptOffer.errors }" />
                     <span> Yes</span>
-                    <input type="radio" class="radio-btns" id="no" name="select" />
+                    <input type="radio" class="radio-btns" id="no" value="0" formControlName="acceptOffer"
+                      [ngClass]="{ 'is-invalid': submitted && f.acceptOffer.errors }" />
                     <span> No</span>
+                    <div *ngIf="submitted && f.acceptOffer.errors" class="invalid-feedback">
+                      <div *ngIf="f.acceptOffer.errors.required">Please tick the offers</div>
+                    </div>
                     <div class="row">
                       <div class="col-2 right-alig">
-                        <input type="checkbox" class="check-btms" />
+                        <!-- <pre>{{registerForm | json}}</pre> -->
+                        <input type="checkbox" class="check-btms" formControlName="acceptTerms"
+                          [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                        <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">
+                          <div *ngIf="f.acceptTerms.errors">Please tick the offers</div>
+                        </div>
                       </div>
                       <div class="col-10 left-alig">
                         <span>I accept the </span>
                         <span class="col-yel">Terms of Use &amp; Legal Policies</span>
                       </div>
+
+
                     </div>
                   </div>
                   <div class="center">
                     <button class="btn-signup" type="button " (click)="onSubmit()" class="btn"
                       [ngClass]="{ btn_disable: registerForm.invalid }" [disabled]="registerForm.invalid"
                       *ngIf="enableEditGuardianInfo">
-                      Sign Up
+                      Sign Up1
                     </button>
                     <button type="button " (click)="adultUser ? onSubmit() : enableGuardianForm()"
-                      class="btn btn-signup" [ngClass]="{ btn_disable: registerForm.invalid }">
-                      {{ adultUser ? "Sign Up" : "Next" }}
+                      class="btn btn-signup">
+                      {{ adultUser ? "Sign Up2" : "Next" }}
                     </button>
                   </div>
                 </div>
