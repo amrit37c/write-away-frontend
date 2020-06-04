@@ -508,6 +508,7 @@ forget-pass */
 
 ::ng-deep .modal-content {
   width: 146%;
+  min-height: 391px;
 }
 
 .sign-up-pop-col {
