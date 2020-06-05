@@ -18,12 +18,23 @@ export class BlogService extends BaseService {
 
   get(json?: Object, page?, sort?): Observable<any> {
     let httpParams;
+    console.log("json", json);
     if (json) {
       httpParams = new HttpParams().set(
         Object.keys(json)[0],
         Object.values(json)[0]
       );
     }
+    //   if (json["activeBlog"] == "false") {
+    //     httpParams.append("activeBlog", false);
+    //   }
+    // }
+
+    // let httpParams = new HttpParams();
+    // Object.keys(json).forEach(function (key) {
+    //   httpParams = httpParams.append(key, json[key]);
+    // });
+
     return this.http
       .get<any>(this.url, {
         headers: this.token(),

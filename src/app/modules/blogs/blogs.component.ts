@@ -45,8 +45,8 @@ export class BlogsComponent implements OnInit {
     this.route.params.subscribe((_response) => {
       this.id = _response.id;
       this.getBlogDetails(this.id);
-      this.getBlogs("recent", { isPublished: "today" });
-      this.getBlogs("archieved", { isPublished: "yesterday" });
+      this.getBlogs("recent", { isPublished: "today", activeBlog: "false" });
+      // this.getBlogs("archieved", { isPublished: "yesterday" });
     });
   }
 
@@ -57,19 +57,35 @@ export class BlogsComponent implements OnInit {
   }
 
   getBlogs(type, filter) {
-    // httpParams = new HttpParams().set("isPublished", "today");
+    console.log("types", filter);
     this.service.get(filter).subscribe((_response) => {
-      if (type == "recent") {
-        this.recentBlogs = [];
-        this.recentBlogs = _response.body.data;
-        this.recentBlogs = this.recentBlogs.splice(0, 2);
-      } else {
-        this.archievedBlogs = [];
-        this.archievedBlogs = _response.body.data;
-      }
-      if (!this.recentBlogs.length) {
-        this.recentBlogs = this.archievedBlogs.splice(0, 2);
-      }
+      const { data } = _response.body;
+
+      const filter = data.filter((el) => el._id != this.id);
+
+      this.archievedBlogs = [];
+      const allBlogs = [].concat(filter);
+      this.archievedBlogs = [].concat(filter);
+      this.recentBlogs = allBlogs.slice(0, 2);
+
+      // this.recentBlogs = _response.body.data;
+      console.log(">>>RECENT>", this.recentBlog);
+      console.log(">>>ARchiev BEFORE>", this.archievedBlogs);
+      console.log(">>>ARchiev After>", this.archievedBlogs);
+      this.archievedBlogs.splice(0, 2);
+      // console.log('>>>RECENT>', this.recentBlog);
+      // if (type == "recent") {
+
+      //   this.recentBlogs = [];
+      //   this.recentBlogs = _response.body.data;
+      //   this.recentBlogs = this.recentBlogs.splice(0, 2);
+      // } else {
+      //   this.archievedBlogs = [];
+      //   this.archievedBlogs = _response.body.data;
+      // }
+      // if (!this.recentBlogs.length) {
+      //   this.recentBlogs = this.archievedBlogs.splice(0, 2);
+      // }
 
       this.archievedBlogs.forEach((el) => {
         var dt =
