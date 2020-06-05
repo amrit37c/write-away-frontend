@@ -1174,10 +1174,10 @@ ul li {
   margin-bottom: 15px;
   font-weight: 600 !important;
   line-height: 1.4;
-  font-size: 19px;
+  font-size: 20px;
 
   margin-top: 39px;
-  padding-right: 213px;
+  padding-right: 188px;
 }
 
 .updated-left-side {
@@ -1655,4 +1655,7 @@ ul li {
 .ddddd{
   width: 100%;
 
+}
+.desk-view{
+  height: 500px;
 }
