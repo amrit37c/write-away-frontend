@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, TemplateRef } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { BlogService } from "src/app/service/blog/blog.service";
+import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 
 @Component({
   selector: "app-blogs",
@@ -27,12 +28,18 @@ export class BlogsComponent implements OnInit {
     "November",
     "December",
   ];
+  blogOpenId;
 
   monthsArchievedData = {};
   objectKeys = Object.keys;
   archieveMonthArr = [];
+  modalRef: BsModalRef;
 
-  constructor(private route: ActivatedRoute, private service: BlogService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private service: BlogService,
+    private modalService: BsModalService
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe((_response) => {
@@ -115,8 +122,8 @@ export class BlogsComponent implements OnInit {
       });
   }
 
-  blogShareLink(id) {
-    debugger;
+  blogShareLink(id?) {
+    id = id ? id : this.id;
     var text = "http://demo.writeawayy.com/blogs/" + id;
     navigator.clipboard.writeText(text).then(
       function () {
@@ -130,5 +137,9 @@ export class BlogsComponent implements OnInit {
 
     this.service.updateShare(id, {}).subscribe((_respone) => {});
     // this.router.navigateByUrl("/blogs/" + id);
+  }
+  openShareModal(template: TemplateRef<any>, id) {
+    this.blogOpenId = id;
+    this.modalRef = this.modalService.show(template);
   }
 }
