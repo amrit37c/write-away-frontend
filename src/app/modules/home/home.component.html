@@ -155,6 +155,7 @@
         <div class="col-lg-11 col-12 col_bg_aqua">
           <div class="row">
             <div class="col-lg-5 col-12">
+<<<<<<< HEAD
               <div class="service_left_img newimg-blog">
                 <img src="/assets/images/no-image.svg" alt="Blog image" *ngIf="!blogs.length" class="ddddd" />
                 <img src="http://localhost:3000/images/{{ blogs[0].media }}" *ngIf="blogs.length"  alt="Blog image" />
@@ -163,12 +164,28 @@
                 <div class="col-6">
                   <div class="row res-tab">
                     <div class="col-3">
+=======
+              <div class="service_left_img">
+                <img src="/assets/images/no-image.svg" alt="Blog image" *ngIf="!blogs.length" />
+                <img src="http://localhost:3000/images/{{ blogs[0].media }}" *ngIf="blogs.length" alt="Blog image"
+                  class="blog-img" onerror="javascript:this.src='/assets/images/no-image.svg'" />
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-2 new-pad">
+>>>>>>> 999c9bff2b6048eba8d14a58882312265483ba56
                       <span class="updated-map">
-                        <img src="/assets/images/book.svg" class="img-updates" alt="dff" />
+                        <img src="/assets/images/book.svg" class="img-updates book-icon-n" alt="dff" />
                       </span>
                     </div>
+<<<<<<< HEAD
                     <div class="col-9 col-greys updated-rigtimgs">
                       <span class="updated-num ">
+=======
+                    <div class="col-10 col-greys pad-zero">
+                      <span class="updated-num center">
+>>>>>>> 999c9bff2b6048eba8d14a58882312265483ba56
                         {{
                           (blogs.length && blogs[0].readCount.length) || "0"
                         }}</span>
@@ -176,14 +193,22 @@
                     </div>
                   </div>
                 </div>
+<<<<<<< HEAD
                 <div class="col-6 res-tab2 right updated-icons">
                   <i class="fa col-red" [ngClass]="blogLikeStatus()" (click)="
+=======
+                <div class="col-6 right updated-icons">
+                  <i class="fa col-red heart-shape" [ngClass]="blogLikeStatus()" (click)="
+>>>>>>> 999c9bff2b6048eba8d14a58882312265483ba56
                       blogs.length && blogs[0] && blogs[0].like
                         ? updateBlogLike(blogs[0])
                         : saveBlogLike(blogs[0])
                     "></i>
-                  <i class="fa fa-share share-icons share-updated" (click)="blogShareLink(blogs[0]._id)"></i>
-                  <i class="fa col-yel" [ngClass]="blogBookMarkStatus()" (click)="
+                  <img alt="" class="share-img-blog" src="assets/images/Group 561.svg"
+                    (click)="blogShareLink(blogs[0]._id)">
+                  <!-- <i class="fa fa-share share-icons share-updated" (click)="blogShareLink(blogs[0]._id)"></i> -->
+
+                  <i class="fa col-yel bokyy" [ngClass]="blogBookMarkStatus()" (click)="
                       blogs.length && blogs[0] && blogs[0].bookmark
                         ? updateBlogBookMark(blogs[0])
                         : saveBlogBookMark(blogs[0])
@@ -198,7 +223,7 @@
                     {{ blogs[0].title }}
                   </h3>
                   <span *ngIf="blogs.length">{{
-                    blogs[0].createdAt | date: "MMM dd,yyyy"
+                    blogs[0].createdAt | date: "MMM dd, yyyy"
                   }}</span>
                 </div>
                 <div class="service_top_span">
@@ -210,8 +235,7 @@
                   <p [innerHTML]="getBlogContent(blogs[0].content)" *ngIf="blogs.length"></p>
                 </div>
                 <div class="service_icon_details d-flex justify-content-between">
-                  <div class="social_likes justify-content-between d-flex">
-                  </div>
+                  <div class="social_likes justify-content-between d-flex"></div>
                   <div class="social_read responsive-a updated-radmore">
                     <a (click)="readBlog(blogs[0]._id)" *ngIf="blogs.length">Read More</a>
                   </div>
@@ -239,7 +263,9 @@
 
                 <a href="#" target="_blank" class="cil-updatedsss">
                   {{
-                    openPublications.length && openPublications[openPublicationIndex].title.length || "0"
+                    (openPublications.length &&
+                      openPublications[openPublicationIndex].title.length) ||
+                      "0"
                   }}
                 </a></span>
             </li>
@@ -248,8 +274,10 @@
                 Genres
                 <a href="#" target="_blank" class="cil-updatedsss">
                   {{
-                    openPublications.length && openPublications[openPublicationIndex].genres.title
-                      .length || 0
+                    (openPublications.length &&
+                      openPublications[openPublicationIndex].genres.title
+                        .length) ||
+                      0
                   }}
                 </a></span>
             </li>
@@ -265,15 +293,18 @@
               <div class="left_sidebar_img">
                 <img src="http://localhost:3000/images/{{
                     openPublications[openPublicationIndex]['mediaCover']
-                  }}" alt="" *ngIf="
+                  }}" onerror="javascript:this.src='/assets/images/dummy291.png'" alt="" *ngIf="
                     openPublications.length &&
                     openPublications[openPublicationIndex].mediaCover
                   " />
               </div>
               <div class="text-right">
-                <i class="fa fa-share col-blue share-icons" (click)="
+                <!-- <i class="fa fa-share col-blue share-icons" (click)="
                     sharePublication(openPublications[openPublicationIndex])
-                  "></i>
+                  "></i> -->
+                <img alt="" class="share-img-blog" src="assets/images/Group 561.svg"
+                  (click)="sharePublication(openPublications[openPublicationIndex])">
+
                 <i class="fa col-yel bokyy book_mark_link" [ngClass]="
                     publicationBookMarkStatus(
                       openPublications[openPublicationIndex]
@@ -425,17 +456,19 @@
           <div class="row" *ngIf="openPublications.length">
             <div class="col-lg-5 col-12">
               <div class="left_sidebar_img">
-                <img src="/assets/images/read-away-publish.jpg" alt="" />
+                <img src="/assets/images/read-away-publish.jpg"
+                  onerror="javascript:this.src='/assets/images/dummy291.png'" alt="" />
               </div>
               <div class="row">
                 <div class="col-6">
                   <div class="row">
-                    <div class="col-6">
-                      <span class="updated-map"><img src="/assets/images/book.svg" class="bokyyy-imgn" alt="dff" />
+                    <div class="col-4 new-pad read-room-book">
+                      <span class="updated-map">
+                        <img alt="dff" class="img-updates book-icon-n" src="/assets/images/book.svg">
                       </span>
                     </div>
-                    <div class="col-6 updated-postin col-greys">
-                      <span class="updated-num">1500</span>
+                    <div class="col-6 col-greys pad-zero">
+                      <span class="updated-num center"> 1</span>
                       <p><span class="reads-updated">Reads</span></p>
                     </div>
                   </div>
@@ -443,7 +476,7 @@
                 <div class="col-6 right">
                   <i class="fa fa-heart-o col-red heart-shape"></i>
 
-                  <i class="fa fa-share col-blue share-icons"></i>
+                  <img alt="" class="updated-images-left" src="assets/images/Group 561.svg">
                   <i class="fa fa-bookmark-o col-yel bokyy"></i>
                 </div>
               </div>
@@ -458,7 +491,7 @@
               </div>
             </div>
             <div class="clearfix"></div>
-            <div class="col-lg-7 mobile-view col-12" *ngIf="closedPublications.length">
+            <div class="col-lg-7 mobile-view col-12">
               <h3 class="text-uppercase">
                 Writing Prompts for Grades Arnold Cheyney
               </h3>
@@ -1092,8 +1125,7 @@
               <span class="firm_name font-abc">ABC Company</span>
             </div>
             <div class="carousel-caption">
-              <!-- <p>- John Doe</p>
-              <span class="firm_name">ABC Company</span> -->
+
             </div>
           </slide>
         </carousel>

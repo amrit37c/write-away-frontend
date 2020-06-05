@@ -1,5 +1,5 @@
-<div class="container-fluid">
-  <!-- header -->
+<!-- <div class="container-fluid">
+
 
   <div class="row pad-zero">
 
@@ -13,7 +13,7 @@
 
   </div>
 
-  <!-- ---------------body --------------->
+
 
   <div class="">
     <div class="container-fluid center blog-body">
@@ -49,7 +49,6 @@
               <div class="row blog-body-icons">
                 <div class="col-md-4 icons-res updated-img">
                   <img src="/assets/images/book.svg" class="img-updated" alt="dff">
-                  <!-- <i class="fa fa-book new-icons-blog fa-lg  clr1"></i> -->
                   <span class="pricing" *ngIf="blog && blog.readCount">{{blog.readCount.length || '0'}}</span>
                   <div>
                     <span class="info-icon blog-icons">Reads</span>
@@ -140,11 +139,8 @@
                   <p>{{blog.title}}</p>
                 </div>
                 <div class="recent-text-font">
-                  <p [innerHTML]="blog.content"></p>
+                  <p [innerHTML]="blog.content.substr(0,140)"></p>
                 </div>
-                <!-- <span class="read-more">
-                  <p (click)="addToRecent(blog._id)"> Read More </p>
-                </span> -->
               </div>
             </div>
           </div>
@@ -153,7 +149,7 @@
     </div>
 
 
-    <!-- Recent BLOG READ MORE VIEW -->
+
     <div class="container-fluid center blog-body" *ngIf="(recentBlog | json)  != ({} | json)">
       <div class="row">
         <div class="col-md-3"></div>
@@ -233,7 +229,398 @@
 
       </div>
     </div>
-    <!-- Recent BLOG READ MORE VIEW -->
+
+  </div>
+</div> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <button href="#" type="button" class="logo-btn" style="box-shadow:0px 0px 23px 1px #dbd8d8;">Blog</button>
+    </div>
+  </div>
+
+
+</div>
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <img src="http://localhost:3000/images/{{blog.media}}" *ngIf="blog && blog.media" class="hunt-img">
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+<div class="container-fluid center blog-body">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 center">
+
+      <div class="date-blg" style="width: 100%;float: left;">
+        <span class="date" *ngIf="blog && blog.content"> {{blog.createdAt | date: 'MMM dd, yyyy'}}</span>
+      </div>
+
+      <h3 class="rsp-hd"
+        style="font-size: 34px;font-weight: 900;color: black; /*! width: 94%; */margin-top: -31px;width: 100%;float: left;">
+        <strong>{{blog?.title}}</strong></h3>
+
+
+
+      <div class="text-style" style="margin-top: 65px;">
+        <p [innerHTML]="blog.content" *ngIf="blog && blog.content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+          nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum.
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row left-barSeprate" style="padding: 20px 0 40px 0;">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+      <div class="row blog-body-icons">
+        <div class="icons-res">
+
+          <span class="icon-3">
+            <img src="assets/images/blog-book.svg">
+          </span>
+
+
+          <div class="icon-txt">
+            <span style="float: left;text-align: center;width: 25%;">{{blog?.readCount.length || '0'}}</span><br>
+            <span class="info-icon" style="float: left;border-top: 1px solid;">Reads</span>
+          </div>
+        </div>
+
+        <div class="icons-res">
+
+          <span class="icon-3" (click)="
+          blog?.like?.likeStatus=='0' || blog?.like?.likeStatus=='1' 
+            ? updateBlogLike(blog)
+            : saveBlogLike(blog)
+        ">
+            <!-- <img src="assets/images/blog-heart.svg" style="width: 90%;"> -->
+            <i class="fa col-red heart-shape"
+              [ngClass]="{'fa-heart-o' : !blog?.like || blog?.like?.likeStatus=='0',  'fa-heart' : blog?.like?.likeStatus=='1'  }"></i>
+          </span>
+
+          <div class="icon-txt">
+            <span style="float: left;text-align: center;width: 100%;">{{blog?.likeCount || '0'}}</span><br>
+            <span class="info-icon" style="float: left;border-top: 1px solid;">Likes</span>
+          </div>
+
+        </div>
+
+        <div id="myBtn" class="icons-res">
+          <span class="icon-3" (click)="blogShareLink(blog?.id)">
+            <img src="assets/images/blogp-share.svg" style="width: 74%;">
+          </span>
+
+          <div class="icon-txt">
+            <span style="float: left;text-align: center;width: 100%;">{{blog?.shareCount.length || '0'}}</span><br>
+            <span class="info-icon" style="float: left;border-top: 1px solid;">Sharess</span>
+          </div>
+
+
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-body">
+                <span class="close">×</span>
+                <div class="icon5" style="margin-bottom: 32px;">
+                  <h6 style="text-align: left;font-size: 11px;font-weight: 500;color: #777575;">Share On social media
+                  </h6>
+                  <a href="#"><i class="fa  fa-facebook circle5 "></i></a>
+                  <a href="#"><i class="fa  fa-instagram circle5"></i></a>
+                  <a href="#"><i class="fa  fa-linkedin circle5 "></i></a>
+                  <a href="#"><i class="fa  fa-google-plus circle5"></i></a>
+                  <a href="#"><i class="fa  fa-youtube circle5 "></i></a>
+                  <a href="#"><i class="fa  fa-twitter circle5" style="margin-top: -6px;"></i></a>
+                </div>
+
+                <div style="width: 100%; float: left;">
+                  <h6 style="text-align: left;font-size: 11px;font-weight: 500;color: #777575;">Copy Link</h6>
+                  <input type="text" value="https://writeanyway.com/blog" id="myInput"
+                    style="width: 80%;float: left;background: #effdfe;border: none;border-radius: 18px;">
+                  <button (click)="myFunction()"
+                    style="width: 20%;float: left;background: #effdfe;border: none;border-radius: 18px;box-shadow: none;border: none;"><img
+                      src="assets/images/link.png"></button>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-2">
+
+    </div>
+
+  </div>
+
+
+
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 style="text-align: center;font-size: 28px;font-weight: 500;margin-bottom: 40px;"><span
+          style="color: #d43299;">Re</span>cent from Blogs</h1>
+    </div>
+
+    <div class="col-md-2 rspnsv-nn"></div>
+    <div class="col-lg-4 col-sm-6 recent-blog-blk" *ngFor="let blog of recentBlogs">
+      <div class="rcbb ">
+        <div class="recent-blog-img">
+          <img src="http://localhost:3000/images/{{blog.media}}" class="img-fluid clsImg">
+          <span class="date2"
+            style="position: relative;margin-top: -202px;float: left;margin-left: 237px;background: #fff;padding: 6px 10px;">
+            <p style="margin: 0;font-size: 12px;font-weight: 500;color: #0149a5;">
+              {{ blog.createdAt | date : 'MMM dd, yyyy'   }}</p>
+          </span>
+        </div>
+        <div class="comm-font">
+          <p>{{blog.title}}</p>
+        </div>
+        <div class="recent-text-font">
+          <p [innerHTML]="blog.content.substr(0,150)"></p>
+        </div>
+        <span class="read-more">
+          <a (click)="addToRecent(blog._id)">Read More </a>
+        </span>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-md-2 rspnsv-nn"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="archive-section col-md-12" style="padding: 20px 10px 0 10px;margin-top: 80px;">
+      <h1 style="text-align: center;font-size: 20px;font-weight: 500;margin-bottom: 40px;"><span
+          style="color: #d43299;">Ar</span>chives</h1>
+
+      <div class="archive-date">
+        <p *ngFor="let data of monthsArchievedData | keyvalue" (click)="archieveBlogShow(data.value)">{{ data.key }}</p>
+        <div class="row">
+          <div class="col-md-3 recent-archieved-blk" *ngFor="let blog of archieveMonthArr">
+            <div class="date-recent">
+
+              <span> {{ blog.createdAt | date:'MMM dd, yyyy' }}</span>
+            </div>
+            <div class="rcbb">
+              <div class="recent-blog-img">
+                <img src="http://localhost:3000/images/{{blog.media}}">
+              </div>
+              <div class="comm-font">
+                <p>{{blog.title}}</p>
+              </div>
+              <div class="recent-text-font">
+                <p [innerHTML]="blog.content.substr(0,140)"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid center" *ngIf="(recentBlog | json)  != ({} | json)">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <img src="http://localhost:3000/images/{{recentBlog['media']}}" *ngIf="recentBlog && recentBlog['media']"
+        class="hunt-img">
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 center">
+      <div class="row">
+        <div class="col-lg-2">
+          <span class="date" *ngIf="recentBlog && recentBlog['content']">
+            {{recentBlog['createdAt'] | date: 'MMM dd, yyyy'}} </span>
+        </div>
+        <div class="col-lg-10">
+          <h3 class="blog-title" *ngIf="recentBlog && recentBlog['title']">{{recentBlog['title']}}</h3>
+        </div>
+      </div>
+
+
+      <div class="text-style">
+
+        <p [innerHTML]="recentBlog['content']" *ngIf="recentBlog && recentBlog['content']">
+
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+
+          <div class="row blog-body-icons">
+            <div class="icons-res">
+
+              <span class="icon-3">
+                <img src="assets/images/blog-book.svg">
+              </span>
+
+
+              <div class="icon-txt">
+                <span
+                  style="float: left;text-align: center;width: 25%;">{{recentBlog.readCount.length || '0'}}</span><br>
+                <span class="info-icon" style="float: left;border-top: 1px solid;">Reads</span>
+              </div>
+            </div>
+
+            <div class="icons-res">
+
+              <!-- <span class="icon-3">
+                <img src="assets/images/blog-heart.svg" style="width: 90%;">
+              </span>
+
+              <div class="icon-txt">
+                <span style="float: left;text-align: center;width: 100%;">{{blog.likeCount || '0'}}</span><br>
+                <span class="info-icon" style="float: left;border-top: 1px solid;">Likes</span>
+              </div> -->
+              <!-- <pre>
+                {{recentBlog | json}}
+              </pre> -->
+              <span class="icon-3" (click)="
+              recentBlog?.like?.likeStatus=='0' || recentBlog?.like?.likeStatus=='1' 
+                  ? updateBlogLike(recentBlog)
+                  : saveBlogLike(recentBlog)
+              ">
+                <!-- <img src="assets/images/blog-heart.svg" style="width: 90%;"> -->
+                <i class="fa col-red heart-shape"
+                  [ngClass]="{'fa-heart-o' : !recentBlog?.like || recentBlog?.like?.likeStatus=='0',  'fa-heart' : recentBlog?.like?.likeStatus=='1'  }"></i>
+              </span>
+
+              <div class="icon-txt">
+                <span style="float: left;text-align: center;width: 100%;">{{recentBlog.likeCount || '0'}}</span><br>
+                <span class="info-icon" style="float: left;border-top: 1px solid;">Likes</span>
+              </div>
+
+
+            </div>
+
+            <div id="myBtn" class="icons-res">
+              <span class="icon-3">
+                <img src="assets/images/blogp-share.svg" style="width: 74%;">
+              </span>
+
+              <div class="icon-txt">
+                <span
+                  style="float: left;text-align: center;width: 100%;">{{recentBlog.shareCount.length || '0'}}</span><br>
+                <span class="info-icon" style="float: left;border-top: 1px solid;">Shares</span>
+              </div>
+
+
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <span class="close">×</span>
+                    <div class="icon5" style="margin-bottom: 32px;">
+                      <h6 style="text-align: left;font-size: 11px;font-weight: 500;color: #777575;">Share On social
+                        media
+                      </h6>
+                      <a href="#"><i class="fa  fa-facebook circle5 "></i></a>
+                      <a href="#"><i class="fa  fa-instagram circle5"></i></a>
+                      <a href="#"><i class="fa  fa-linkedin circle5 "></i></a>
+                      <a href="#"><i class="fa  fa-google-plus circle5"></i></a>
+                      <a href="#"><i class="fa  fa-youtube circle5 "></i></a>
+                      <a href="#"><i class="fa  fa-twitter circle5" style="margin-top: -6px;"></i></a>
+                    </div>
+
+                    <div style="width: 100%; float: left;">
+                      <h6 style="text-align: left;font-size: 11px;font-weight: 500;color: #777575;">Copy Link</h6>
+                      <input type="text" value="https://writeanyway.com/blog" id="myInput"
+                        style="width: 80%;float: left;background: #effdfe;border: none;border-radius: 18px;">
+                      <button onclick="myFunction()"
+                        style="width: 20%;float: left;background: #effdfe;border: none;border-radius: 18px;box-shadow: none;border: none;"><img
+                          src="assets/images/link.png"></button>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <!-- <div class="row blog-body-icons">
+            <div class="col-md-4 icons-res">
+
+              <i class="fa fa-book new-icons-blog fa-lg  clr1"></i>
+              <span class="pricing">{{blog.readCount.length || '0'}}</span>
+              <div>
+                <span class="info-icon blog-icons">Reads</span>
+              </div>
+
+            </div>
+
+            <div class="col-md-4 icons-res">
+
+
+              <i class="fa fa-lg new-icons-blog  fa-heart-o clr2" aria-hidden="true"></i>
+              <span class="pricing" *ngIf="recentBlog['likeCount']">{{recentBlog['likeCount'] || 0}}</span>
+              <div (click)="like()">
+                <span class="info-icon blog-icons">Likes</span>
+              </div>
+
+
+            </div>
+
+            <div class="col-md-4 icons-res">
+              <i class="fa  new-icons-blog fa-share share-eco  ">
+              </i>
+
+              <span class="pricing" *ngIf="recentBlog['shareCount']">{{recentBlog['shareCount'] || 0}}</span>
+              <div>
+                <span class="info-icon blog-icons">Shares</span>
+              </div>
+
+            </div>
+
+          </div> -->
+        </div>
+
+        <div class="col-md-6"></div>
+
+      </div>
+
+
+
+    </div>
 
   </div>
 </div>

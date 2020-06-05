@@ -20,6 +20,7 @@ export const environment = {
     blogRead: "blog-read",
     forgetEmail: "send-forget-email",
     verifyOTP: "verify-otp",
+    blogShare: "blog-share",
   },
 };
 

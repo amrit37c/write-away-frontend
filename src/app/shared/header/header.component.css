@@ -205,6 +205,10 @@
   padding-right: 30px !important;
 }
 
+.terms-fix-pad {
+  padding-left: 130px;
+}
+
 .right-header select {
   width: 55%;
   border: 1px solid #d43299;
@@ -376,7 +380,7 @@ a.forget-password {
 
 .birthdate {
   display: inline-block;
-  display: inline-block;
+  width: 40%;
   border: none;
   border-bottom: 1px solid #e72692;
   color: lightgray;
@@ -404,7 +408,8 @@ a.forget-password {
   font-size: 12px;
 }
 
-.right-header img {}
+.right-header img {
+}
 
 .logo img:focus {
   outline: none;
@@ -503,7 +508,8 @@ forget-pass */
 
 ::ng-deep .modal-content {
   width: 146%;
-  height: 470px;
+
+  min-height: 501px;
 }
 
 .sign-up-pop-col {
@@ -612,4 +618,32 @@ input {
   display: block;
   transition: all 0.3s ease;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .right-header {
+    text-align: center !important;
+    padding-bottom: 15px;
+  }
+
+  .col_form_area {
+    padding-top: unset;
+  }
+}
+
+.header-age-selecter {
+  height: 30px;
+  border-radius: 50px;
+  color: #1ca9c9;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #ea7ac1;
+  padding: 0 10px;
+  font-family: "montserratregular" !important;
+}
+.chk-fix-22 {
+  left: 82px;
+}
+.errors-chk-fix {
+  width: 148px;
 }

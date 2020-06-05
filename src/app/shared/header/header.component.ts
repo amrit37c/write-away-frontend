@@ -1,9 +1,16 @@
 import { Component, OnInit, TemplateRef } from "@angular/core";
 import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
 import { BsModalService, BsModalRef, ModalOptions } from "ngx-bootstrap/modal";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  ValidatorFn,
+  AbstractControl,
+} from "@angular/forms";
 import { UserService } from "src/app/service/user/user.service";
 import * as jwt_decode from "jwt-decode";
+import { MustMatch } from "src/app/helpers/must-match.validator";
 
 @Component({
   selector: "app-header",
@@ -23,8 +30,8 @@ export class HeaderComponent implements OnInit {
   };
   calendarStartYear: number = 1960;
   calendarCurrentYear: number = new Date().getFullYear();
-  selectedYear: number = 1960;
-  selectedDate: number = 1;
+  selectedYear: number = new Date().getFullYear();
+  selectedDate: number = new Date().getDate();
   selectedMonth: string = new Date().toLocaleString("default", {
     month: "long",
   });
@@ -54,6 +61,7 @@ export class HeaderComponent implements OnInit {
   enablePassword: boolean = false;
   otp: string;
   password: string;
+  submitted = false;
 
   constructor(
     private router: Router,
@@ -63,6 +71,7 @@ export class HeaderComponent implements OnInit {
   ) {
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
+        console.log(">>>", this.router.url);
         if (
           this.router.url == "/home" ||
           this.router.url == "/user-profile/my-reading" ||
@@ -78,7 +87,10 @@ export class HeaderComponent implements OnInit {
           this.blogRoute = false;
           return;
         } else {
-          if (this.router.url == "/blogs") {
+          const blogPage = this.router.url.split("/");
+
+          if (blogPage[1] == "blogs") {
+            this.logo = "logo.svg";
             this.blogRoute = true;
             this.currentPage = false;
           } else {
@@ -102,11 +114,15 @@ export class HeaderComponent implements OnInit {
         lastName: ["", Validators.required],
         email: ["", Validators.required],
         password: ["", Validators.required],
-        confirmPassword: [""],
+        confirmPassword: ["", Validators.required],
         adultUser: [""],
         dob: [""],
+        acceptOffer: ["", Validators.required],
+        acceptTerms: [false, Validators.pattern("true")],
       },
-      { validator: this.checkPassword }
+      {
+        validator: MustMatch("password", "confirmPassword"),
+      }
     );
 
     this.loginForm = this.formBuilder.group({
@@ -119,6 +135,7 @@ export class HeaderComponent implements OnInit {
       dob: new Date(
         `${this.selectedYear}/${this.selectedMonth}/${this.selectedDate}`
       ),
+      acceptOffer: "1",
     });
 
     const token = localStorage.getItem("token");
@@ -131,16 +148,94 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  // convenience getter for easy access to form fields
+  get f() {
+    return this.registerForm.controls;
+  }
+
+  guradianValidation() {
+    if (this.enableEditGuardianInfo) {
+      console.log("trye");
+      this.registerForm = this.formBuilder.group(
+        {
+          guardian: [
+            "",
+            this.conditionalValidator(
+              () => this.enableEditGuardianInfo === true,
+              Validators.required
+            ),
+          ],
+          guardianFirstName: [
+            "",
+            this.conditionalValidator(
+              () => this.enableEditGuardianInfo === true,
+              Validators.required
+            ),
+          ],
+          guardianLastName: [
+            "",
+            this.conditionalValidator(
+              () => this.enableEditGuardianInfo === true,
+              Validators.required
+            ),
+          ],
+          guardianEmail: [
+            "",
+            this.conditionalValidator(
+              () => this.enableEditGuardianInfo === true,
+              Validators.required
+            ),
+          ],
+          firstName: ["", Validators.required],
+          lastName: ["", Validators.required],
+          // email: ["", [Validators.required, Validators.email]],
+          email: ["", [Validators.required, Validators.email]],
+          password: ["", Validators.required],
+          confirmPassword: ["", Validators.required],
+          adultUser: [""],
+          dob: [""],
+          acceptOffer: ["", Validators.required],
+          acceptTerms: [false, Validators.pattern("true")],
+        },
+        {
+          validator: MustMatch("password", "confirmPassword"),
+        }
+      );
+    } else {
+      this.registerForm.get("guardianFirstName").clearValidators();
+    }
+  }
+  ngDoCheck() {
+    console.log("called");
+    // this.guradianValidation();
+  }
+  conditionalValidator(
+    condition: () => boolean,
+    validator: ValidatorFn
+  ): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } => {
+      if (!condition()) {
+        return null;
+      }
+      return validator(control);
+    };
+  }
+
   onSubmit(): void {
+    this.submitted = true;
     if (this.registerForm.invalid) {
       return;
     }
     let json = this.registerForm.value;
 
     this.userService.register(json).subscribe((_response) => {
-      alert("user registered");
-      this.decline();
-      this.registerForm.reset();
+      if (_response.body.status == "Success") {
+        alert("user registered");
+        this.decline();
+        this.registerForm.reset();
+      } else {
+        alert("Email Already Register");
+      }
     });
   }
 
@@ -223,6 +318,10 @@ export class HeaderComponent implements OnInit {
   }
 
   enableGuardianForm() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
     const age = this.calculateAge();
     age < 18
       ? (this.enableEditGuardianInfo = true)
@@ -235,6 +334,7 @@ export class HeaderComponent implements OnInit {
     this.emailSend = false;
     this.adultUser = false;
     this.modalRef.hide();
+    this.submitted = false;
   }
 
   logout() {
@@ -246,8 +346,11 @@ export class HeaderComponent implements OnInit {
   sendEmail() {
     const data = { email: this.email };
     this.userService.sendEmail(data).subscribe((_response) => {
+      if (_response.body.status == "Failure") {
+      } else {
+        this.emailSend = true;
+      }
       alert(_response.body.message);
-      this.emailSend = true;
     });
   }
   verifyOTP() {
@@ -271,5 +374,16 @@ export class HeaderComponent implements OnInit {
       this.password = "";
       this.otp = "";
     });
+  }
+
+  emailConditionallyRequiredValidator(formGroup: FormGroup) {
+    if (formGroup.value.myCheckbox) {
+      return Validators.required(formGroup.get("myEmailField"))
+        ? {
+            myEmailFieldConditionallyRequired: true,
+          }
+        : null;
+    }
+    return null;
   }
 }
