@@ -246,7 +246,7 @@ export class HeaderComponent implements OnInit {
     let json = this.loginForm.value;
 
     this.userService.login(json).subscribe((_response) => {
-      if (_response.status == 200) {
+      if (_response.status == 200 && _response.body.status == "Success") {
         this.userLogin = true;
         const token = _response.body.data.token;
         const { firstName } = jwt_decode(token);

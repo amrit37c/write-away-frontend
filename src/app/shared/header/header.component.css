@@ -408,8 +408,7 @@ a.forget-password {
   font-size: 12px;
 }
 
-.right-header img {
-}
+.right-header img {}
 
 .logo img:focus {
   outline: none;
@@ -641,9 +640,11 @@ input {
   padding: 0 10px;
   font-family: "montserratregular" !important;
 }
+
 .chk-fix-22 {
   left: 82px;
 }
+
 .errors-chk-fix {
   width: 148px;
 }

@@ -1117,3 +1117,15 @@ p,
 }
 
 /* media query-kar */
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.icon5 a {
+  width: 14.66666667%;
+  float: left;
+}

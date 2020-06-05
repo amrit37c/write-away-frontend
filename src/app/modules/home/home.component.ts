@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, TemplateRef } from "@angular/core";
 import { BlogService } from "src/app/service/blog/blog.service";
 import { PublicationService } from "src/app/service/publications/publication.service";
 import * as jwt_decode from "jwt-decode";
 import { Router } from "@angular/router";
+import { BsModalRef, BsModalService } from "ngx-bootstrap/modal";
 
 @Component({
   selector: "app-home",
@@ -32,11 +33,19 @@ export class HomeComponent implements OnInit {
   openPublications: Array<any> = [];
   closedPublications: Array<any> = [];
   userId;
+  modalRef: BsModalRef;
+  blogOpenId;
+  Modalconfig = {
+    backdrop: true,
+    ignoreBackdropClick: true,
+    class: "modelWidth",
+  };
 
   constructor(
     private blogService: BlogService,
     private publicationService: PublicationService,
-    private router: Router
+    private router: Router,
+    private modalService: BsModalService
   ) {}
 
   ngOnInit() {
@@ -296,7 +305,9 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  blogShareLink(id) {
+  blogShareLink(id?) {
+    // this.modalRef = this.modalService.show(template);
+    id = id ? id : this.blogOpenId;
     var text = "http://demo.writeawayy.com/blogs/" + id;
     navigator.clipboard.writeText(text).then(
       function () {
@@ -307,11 +318,21 @@ export class HomeComponent implements OnInit {
         console.error("Async: Could not copy text: ", err);
       }
     );
+    this.decline();
 
     this.blogService.updateShare(id, {}).subscribe((_respone) => {});
-    // this.router.navigateByUrl("/blogs/" + id);
+    this.router.navigateByUrl("/blogs/" + id);
   }
 
+  openShareModal(template: TemplateRef<any>, id) {
+    this.blogOpenId = id;
+    this.modalRef = this.modalService.show(template);
+  }
+
+  decline(): void {
+    this.modalRef.hide();
+    this.blogOpenId = "";
+  }
   getBrief() {
     return this.openPublications[this.openPublicationIndex].brief.substr(
       0,

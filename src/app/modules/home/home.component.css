@@ -1681,7 +1681,20 @@ ul li {
 
 .blog-img {
   width: 593px;
-  height: 481px
+  height: 481px;
+  background-color: #fff;
+}
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.icon5 a {
+  width: 14.66666667%;
+  float: left;
 }
 .newimg-blog{
   height: 300px;
