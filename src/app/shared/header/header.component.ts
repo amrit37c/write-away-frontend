@@ -1,7 +1,13 @@
 import { Component, OnInit, TemplateRef } from "@angular/core";
 import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
 import { BsModalService, BsModalRef, ModalOptions } from "ngx-bootstrap/modal";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  ValidatorFn,
+  AbstractControl,
+} from "@angular/forms";
 import { UserService } from "src/app/service/user/user.service";
 import * as jwt_decode from "jwt-decode";
 import { MustMatch } from "src/app/helpers/must-match.validator";
@@ -147,6 +153,74 @@ export class HeaderComponent implements OnInit {
     return this.registerForm.controls;
   }
 
+  guradianValidation() {
+    if (this.enableEditGuardianInfo) {
+      console.log("trye");
+      this.registerForm = this.formBuilder.group(
+        {
+          guardian: [
+            "",
+            this.conditionalValidator(
+              () => this.enableEditGuardianInfo === true,
+              Validators.required
+            ),
+          ],
+          guardianFirstName: [
+            "",
+            this.conditionalValidator(
+              () => this.enableEditGuardianInfo === true,
+              Validators.required
+            ),
+          ],
+          guardianLastName: [
+            "",
+            this.conditionalValidator(
+              () => this.enableEditGuardianInfo === true,
+              Validators.required
+            ),
+          ],
+          guardianEmail: [
+            "",
+            this.conditionalValidator(
+              () => this.enableEditGuardianInfo === true,
+              Validators.required
+            ),
+          ],
+          firstName: ["", Validators.required],
+          lastName: ["", Validators.required],
+          // email: ["", [Validators.required, Validators.email]],
+          email: ["", [Validators.required, Validators.email]],
+          password: ["", Validators.required],
+          confirmPassword: ["", Validators.required],
+          adultUser: [""],
+          dob: [""],
+          acceptOffer: ["", Validators.required],
+          acceptTerms: [false, Validators.pattern("true")],
+        },
+        {
+          validator: MustMatch("password", "confirmPassword"),
+        }
+      );
+    } else {
+      this.registerForm.get("guardianFirstName").clearValidators();
+    }
+  }
+  ngDoCheck() {
+    console.log("called");
+    // this.guradianValidation();
+  }
+  conditionalValidator(
+    condition: () => boolean,
+    validator: ValidatorFn
+  ): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } => {
+      if (!condition()) {
+        return null;
+      }
+      return validator(control);
+    };
+  }
+
   onSubmit(): void {
     this.submitted = true;
     if (this.registerForm.invalid) {
@@ -155,9 +229,13 @@ export class HeaderComponent implements OnInit {
     let json = this.registerForm.value;
 
     this.userService.register(json).subscribe((_response) => {
-      alert("user registered");
-      this.decline();
-      this.registerForm.reset();
+      if (_response.body.status == "Success") {
+        alert("user registered");
+        this.decline();
+        this.registerForm.reset();
+      } else {
+        alert("Email Already Register");
+      }
     });
   }
 
@@ -268,8 +346,11 @@ export class HeaderComponent implements OnInit {
   sendEmail() {
     const data = { email: this.email };
     this.userService.sendEmail(data).subscribe((_response) => {
+      if (_response.body.status == "Failure") {
+      } else {
+        this.emailSend = true;
+      }
       alert(_response.body.message);
-      this.emailSend = true;
     });
   }
   verifyOTP() {
@@ -293,5 +374,16 @@ export class HeaderComponent implements OnInit {
       this.password = "";
       this.otp = "";
     });
+  }
+
+  emailConditionallyRequiredValidator(formGroup: FormGroup) {
+    if (formGroup.value.myCheckbox) {
+      return Validators.required(formGroup.get("myEmailField"))
+        ? {
+            myEmailFieldConditionallyRequired: true,
+          }
+        : null;
+    }
+    return null;
   }
 }

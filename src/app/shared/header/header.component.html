@@ -365,10 +365,10 @@
                         <option>Mother</option>
                       </select>
                       <div
-                        *ngIf="submitted && f.lastName.errors"
+                        *ngIf="submitted && f.guardian.errors"
                         class="invalid-feedback"
                       >
-                        <div *ngIf="f.lastName.errors.required">
+                        <div *ngIf="f.guardian.errors.required">
                           Last Name is required
                         </div>
                       </div>
@@ -380,13 +380,16 @@
                         type="text"
                         class="input-fields"
                         formControlName="guardianFirstName"
+                        [ngClass]="{
+                          'is-invalid': submitted && f.guardianFirstName.errors
+                        }"
                       />
                       <div
-                        *ngIf="submitted && f.lastName.errors"
+                        *ngIf="submitted && f.guardianFirstName.errors"
                         class="invalid-feedback"
                       >
-                        <div *ngIf="f.lastName.errors.required">
-                          Last Name is required
+                        <div *ngIf="f.guardianFirstName.errors.required">
+                          Guardian First Name is required
                         </div>
                       </div>
                     </div>
@@ -397,13 +400,16 @@
                         type="text"
                         class="input-fields"
                         formControlName="guardianLastName"
+                        [ngClass]="{
+                          'is-invalid': submitted && f.guardianLastName.errors
+                        }"
                       />
                       <div
-                        *ngIf="submitted && f.lastName.errors"
+                        *ngIf="submitted && f.guardianLastName.errors"
                         class="invalid-feedback"
                       >
-                        <div *ngIf="f.lastName.errors.required">
-                          Last Name is required
+                        <div *ngIf="f.guardianLastName.errors.required">
+                          Guardian Last Name is required
                         </div>
                       </div>
                     </div>
@@ -414,13 +420,16 @@
                         type="text"
                         class="input-fields"
                         formControlName="guardianEmail"
+                        [ngClass]="{
+                          'is-invalid': submitted && f.guardianEmail.errors
+                        }"
                       />
                       <div
-                        *ngIf="submitted && f.lastName.errors"
+                        *ngIf="submitted && f.guardianEmail.errors"
                         class="invalid-feedback"
                       >
-                        <div *ngIf="f.lastName.errors.required">
-                          Last Name is required
+                        <div *ngIf="f.guardianEmail.errors.required">
+                          Guardian Email is required
                         </div>
                       </div>
                     </div>
@@ -495,6 +504,9 @@
                     class="invalid-feedback"
                   >
                     <div *ngIf="f.email.errors.required">Email is required</div>
+                    <div *ngIf="f.email.errors.email">
+                      Email must be a valid email address
+                    </div>
                   </div>
 
                   <label class="input-names">Password</label>
@@ -694,10 +706,11 @@
               </h6>
               <div></div>
               <label class="input-names">Enter OTP</label>
-              <input type="text" class="input-fields" [(ngModel)]="otp" />
+              <input type="text" class="input-fields" [(ngModel)]="otp" /><br />
 
               <!-- <label class="input-names">Enter Confirm</label>
               <input type="text" class="input-fields" [(ngModel)]="otp" /> -->
+              <a (click)="sendEmail()">Resend</a>
 
               <div class="row">
                 <div class="col-md-6 right">
