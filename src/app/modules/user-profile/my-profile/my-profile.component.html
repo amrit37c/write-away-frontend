@@ -41,7 +41,7 @@
               <div class="clearfix"></div>
               <div class="col-md-3">
                 <span>a.k.a</span>
-                <input type="text" class="select-one" placeholder="... ... ... ..." formControlName="lastName" />
+                <input type="text" class="select-one" placeholder="... ... ... ..." formControlName="displayName" />
               </div>
 
               <div class="col-md-9 row mar-zero">
@@ -51,14 +51,15 @@
 
                 <div class="radio-cont">
                   <div class="first-rad">
-                    <input type="radio" class="profile-radio" id="aka" formControlName="selectDisplayName"
-                      value="aka" />
+                    <input type="radio" class="profile-radio" id="aka" value="true"
+                      formControlName="selectDisplayName" />
                     <label>a.k.a</label>
+
                   </div>
 
                   <div class="second-rad">
-                    <input type="radio" class="profile-radio" id="firstname" formControlName="selectDisplayName"
-                      value="firstname" />
+                    <input type="radio" class="profile-radio" id="firstname" value="false"
+                      formControlName="selectDisplayName" />
                     <label>First/Middle Name</label>
                   </div>
                 </div>

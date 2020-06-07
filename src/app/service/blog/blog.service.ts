@@ -17,13 +17,17 @@ export class BlogService extends BaseService {
   }
 
   get(json?: Object, page?, sort?): Observable<any> {
-    let httpParams;
-    console.log("json", json);
-    if (json) {
-      httpParams = new HttpParams().set(
-        Object.keys(json)[0],
-        Object.values(json)[0]
-      );
+    let httpParams = new HttpParams();
+
+    if (json["isPublished"]) {
+      // httpParams = new HttpParams().set(
+      //   Object.keys(json)[0],
+      //   Object.values(json)[0]
+      // );
+      httpParams = httpParams.append("isPublished", json["isPublished"]);
+    }
+    if (json["activeBlog"] === false || json["activeBlog"] === true) {
+      httpParams = httpParams.append("activeBlog", json["activeBlog"]);
     }
     //   if (json["activeBlog"] == "false") {
     //     httpParams.append("activeBlog", false);

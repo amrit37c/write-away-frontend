@@ -71,7 +71,6 @@ export class HeaderComponent implements OnInit {
   ) {
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
-        console.log(">>>", this.router.url);
         if (
           this.router.url == "/home" ||
           this.router.url == "/user-profile/my-reading" ||
@@ -110,6 +109,8 @@ export class HeaderComponent implements OnInit {
         guardianFirstName: [""],
         guardianLastName: [""],
         guardianEmail: [""],
+        guardianPassword: [""],
+        guardianConfirmPassword: [""],
         firstName: ["", Validators.required],
         lastName: ["", Validators.required],
         email: ["", Validators.required],
@@ -141,13 +142,18 @@ export class HeaderComponent implements OnInit {
     const token = localStorage.getItem("token");
     if (token) {
       this.userLogin = true;
-      const { firstName } = jwt_decode(token);
-      this.username = firstName;
+      if (this.userLogin) {
+        this.getUserName();
+      }
     } else {
       this.userLogin = false;
     }
   }
 
+  ngDoCheck() {
+    console.log("called");
+    // this.getUserName();
+  }
   // convenience getter for easy access to form fields
   get f() {
     return this.registerForm.controls;
@@ -155,7 +161,6 @@ export class HeaderComponent implements OnInit {
 
   guradianValidation() {
     if (this.enableEditGuardianInfo) {
-      console.log("trye");
       this.registerForm = this.formBuilder.group(
         {
           guardian: [
@@ -186,6 +191,20 @@ export class HeaderComponent implements OnInit {
               Validators.required
             ),
           ],
+          guardianPassword: [
+            "",
+            this.conditionalValidator(
+              () => this.enableEditGuardianInfo === true,
+              Validators.required
+            ),
+          ],
+          guardianConfirmPassword: [
+            "",
+            this.conditionalValidator(
+              () => this.enableEditGuardianInfo === true,
+              Validators.required
+            ),
+          ],
           firstName: ["", Validators.required],
           lastName: ["", Validators.required],
           // email: ["", [Validators.required, Validators.email]],
@@ -198,17 +217,17 @@ export class HeaderComponent implements OnInit {
           acceptTerms: [false, Validators.pattern("true")],
         },
         {
-          validator: MustMatch("password", "confirmPassword"),
+          validator: [
+            MustMatch("password", "confirmPassword"),
+            MustMatch("guardianPassword", "guardianConfirmPassword"),
+          ],
         }
       );
     } else {
       this.registerForm.get("guardianFirstName").clearValidators();
     }
   }
-  ngDoCheck() {
-    console.log("called");
-    // this.guradianValidation();
-  }
+
   conditionalValidator(
     condition: () => boolean,
     validator: ValidatorFn
@@ -226,7 +245,21 @@ export class HeaderComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
+    // const dob = this.registerForm.value.dob;
+    // const formatDate = new Date(dob)
+    //   .toJSON()
+    //   .slice(0, 10)
+    //   .split("-")
+    //   .reverse()
+    //   .join("/");
+
+    this.registerForm.patchValue({
+      dob: new Date(
+        `${this.selectedYear}/${this.selectedMonth}/${this.selectedDate}`
+      ),
+    });
     let json = this.registerForm.value;
+    // json.dob = formatDate;
 
     this.userService.register(json).subscribe((_response) => {
       if (_response.body.status == "Success") {
@@ -273,6 +306,11 @@ export class HeaderComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>) {
+    this.selectedYear = new Date().getFullYear();
+    this.selectedDate = new Date().getDate();
+    this.selectedMonth = new Date().toLocaleString("default", {
+      month: "long",
+    });
     this.modalRef = this.modalService.show(template, this.ModelConfig);
   }
 
@@ -340,7 +378,10 @@ export class HeaderComponent implements OnInit {
   logout() {
     localStorage.removeItem("token");
     this.userLogin = false;
-    this.router.navigateByUrl("/home");
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = "reload";
+    this.router.navigate(["/home"]);
+    // this.router.navigateByUrl("/home");
   }
 
   sendEmail() {
@@ -376,14 +417,15 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  emailConditionallyRequiredValidator(formGroup: FormGroup) {
-    if (formGroup.value.myCheckbox) {
-      return Validators.required(formGroup.get("myEmailField"))
-        ? {
-            myEmailFieldConditionallyRequired: true,
-          }
-        : null;
-    }
-    return null;
+  getUserName() {
+    this.userService
+      .get()
+      .subscribe((_response) => this.changeName(_response.body.data[0]));
+  }
+  private changeName(data): void {
+    this.username =
+      data.selectDisplayName === true
+        ? data.displayName
+        : `${data.firstName} ${data.lastName} `;
   }
 }

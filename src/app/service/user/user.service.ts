@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, EventEmitter, Output } from "@angular/core";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { environment } from "../../../environments/environment";
 import { Router } from "@angular/router";
@@ -11,6 +11,7 @@ import { BaseService } from "../base.service";
 })
 export class UserService extends BaseService {
   baseUrl = environment.baseUrl;
+  @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
 
   constructor(public http: HttpClient, public router: Router) {
     super(environment.baseUrl + environment.apis.user, http, router);
@@ -29,7 +30,7 @@ export class UserService extends BaseService {
           return data;
         }),
         catchError((error: any) => {
-          return throwError(error);
+          return this.handleError(error);
         })
       );
   }

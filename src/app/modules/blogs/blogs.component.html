@@ -296,7 +296,7 @@
 
 
           <div class="icon-txt">
-            <span style="float: left;text-align: center;width: 25%;">{{blog?.readCount.length || '0'}}</span><br>
+            <span style="float: left;text-align: center;width: 25%;">{{blog?.readCount?.length || '0'}}</span><br>
             <span class="info-icon" style="float: left;border-top: 1px solid;">Reads</span>
           </div>
         </div>
@@ -314,7 +314,7 @@
           </span>
 
           <div class="icon-txt">
-            <span style="float: left;text-align: center;width: 100%;">{{blog?.likeCount || '0'}}</span><br>
+            <span style="float: left;text-align: center;width: 100%;">{{blog?.likeCount?.length || '0'}}</span><br>
             <span class="info-icon" style="float: left;border-top: 1px solid;">Likes</span>
           </div>
 
@@ -326,7 +326,7 @@
           </span>
 
           <div class="icon-txt">
-            <span style="float: left;text-align: center;width: 100%;">{{blog?.shareCount.length || '0'}}</span><br>
+            <span style="float: left;text-align: center;width: 100%;">{{blog?.shareCount?.length || '0'}}</span><br>
             <span class="info-icon" style="float: left;border-top: 1px solid;">Sharess</span>
           </div>
 
@@ -519,7 +519,8 @@
               </span>
 
               <div class="icon-txt">
-                <span style="float: left;text-align: center;width: 100%;">{{recentBlog.likeCount || '0'}}</span><br>
+                <span
+                  style="float: left;text-align: center;width: 100%;">{{recentBlog?.likeCount?.length || '0'}}</span><br>
                 <span class="info-icon" style="float: left;border-top: 1px solid;">Likes</span>
               </div>
 

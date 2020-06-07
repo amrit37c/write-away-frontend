@@ -139,43 +139,34 @@ export class BaseService {
   // handle error
   handleError(err) {
     let message;
+    debugger;
     if (err.status === 401) {
+      message = err.error.message;
+      alert(message);
       this.router.navigateByUrl("/home");
-      // if (err.error.err) {
-      // } else {
-      //   if (this.type == "admin") {
-      //     localStorage.removeItem("token");
-      //     this.router.navigateByUrl("/admin/login");
-      //   }
-      // }
     } else if (err.status === 500) {
-      // this.spinner.hide();
       return throwError(err);
     } else if (err.status === 403) {
       message = err.error.body.error.description;
-      // this.spinner.hide();
       return throwError(err);
     } else if (err.status === 409) {
       message = err.error.body.error.description;
-      // this.spinner.hide();
       return throwError(err);
     } else if (err.status === 301) {
       message = err.error.body.error.description;
-      // this.spinner.hide();
       return throwError(err);
     } else if (err.status === 400) {
       message = err.error.message;
+      alert(message);
       return throwError(err);
     } else if (err.status === 404) {
       message = err.error.message;
-      // this.spinner.hide();
       return throwError(err);
     } else if (err.status === 0) {
       message = "You are offline";
       return throwError(err);
     } else if (err.error.body.error.code === "305") {
       message = err.error.body.error.description;
-      // this.spinner.hide();
       return throwError(err);
     } else {
       return throwError(err);

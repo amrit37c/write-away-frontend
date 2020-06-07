@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
   }
 
   getBlogs() {
-    this.blogService.get({ isPublished: true }).subscribe((_response) => {
+    this.blogService.get({ activeBlog: true }).subscribe((_response) => {
       this.blogs = _response.body.data;
     });
   }
@@ -175,7 +175,7 @@ export class HomeComponent implements OnInit {
     }
 
     this.blogService.updateRead(id, {}).subscribe((_respone) => {});
-    this.router.navigateByUrl("/blogs/" + id);
+    this.router.navigateByUrl("/blogs");
     // routerLink="/blogs/{{blogs[0]._id}}"
   }
   openLogin() {

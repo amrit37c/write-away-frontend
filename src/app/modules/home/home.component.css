@@ -1152,6 +1152,7 @@ ul li {
 .col-greys {
   /* color: lightgray; */
 }
+
 .updated-conts {
   margin-bottom: 15px;
   font-weight: 600 !important;
@@ -1671,4 +1672,10 @@ ul li {
 .icon5 a {
   width: 14.66666667%;
   float: left;
+}
+
+.heart-shape,
+.bokyy,
+.social_read {
+  cursor: pointer;
 }

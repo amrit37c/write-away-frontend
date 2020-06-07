@@ -12,6 +12,7 @@ export class MyProfileComponent implements OnInit {
   count: number = 0;
   editForm: FormGroup;
   userId;
+  selectedName: boolean = true;
   constructor(private formBuilder: FormBuilder, private service: UserService) {}
 
   ngOnInit() {
@@ -19,7 +20,7 @@ export class MyProfileComponent implements OnInit {
       firstName: [""],
       lastName: [""],
       displayName: [""],
-      selectDisplayName: [false],
+      selectDisplayName: ["false"],
       aboutInfo: [""],
       dob: [""],
       gender: [""],
@@ -53,12 +54,20 @@ export class MyProfileComponent implements OnInit {
 
   onSubmit() {
     const json = this.editForm.value;
+
     this.service.put(this.userId, json).subscribe((_response) => {});
   }
 
   getUserInfo() {
     this.service.get().subscribe((_response) => {
       this.editForm.patchValue(_response.body.data[0]);
+      _response.body.data[0].selectDisplayName === true
+        ? this.editForm.patchValue({
+            selectDisplayName: "true",
+          })
+        : this.editForm.patchValue({
+            selectDisplayName: "false",
+          });
     });
   }
 }

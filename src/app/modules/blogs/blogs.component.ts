@@ -45,19 +45,22 @@ export class BlogsComponent implements OnInit {
     this.route.params.subscribe((_response) => {
       this.id = _response.id;
       this.getBlogDetails(this.id);
-      this.getBlogs("recent", { isPublished: "today", activeBlog: "false" });
+      this.getBlogs("recent", { isPublished: "today", activeBlog: false });
       // this.getBlogs("archieved", { isPublished: "yesterday" });
     });
   }
 
-  getBlogDetails(id) {
-    this.service.getOneBlog(this.id || id).subscribe((_response) => {
-      this.blog = _response.body.data;
+  getBlogDetails(id?) {
+    // this.service.getOneBlog(this.id || id).subscribe((_response) => {
+    //   this.blog = _response.body.data;
+    // });
+    this.service.get({ activeBlog: true }).subscribe((_response) => {
+      this.blog = _response.body.data[0];
+      this.id = _response.body.data[0].id;
     });
   }
 
   getBlogs(type, filter) {
-    console.log("types", filter);
     this.service.get(filter).subscribe((_response) => {
       const { data } = _response.body;
 
@@ -66,26 +69,14 @@ export class BlogsComponent implements OnInit {
       this.archievedBlogs = [];
       const allBlogs = [].concat(filter);
       this.archievedBlogs = [].concat(filter);
+      this.recentBlogs = [];
       this.recentBlogs = allBlogs.slice(0, 2);
 
       // this.recentBlogs = _response.body.data;
-      console.log(">>>RECENT>", this.recentBlog);
-      console.log(">>>ARchiev BEFORE>", this.archievedBlogs);
-      console.log(">>>ARchiev After>", this.archievedBlogs);
-      this.archievedBlogs.splice(0, 2);
-      // console.log('>>>RECENT>', this.recentBlog);
-      // if (type == "recent") {
 
-      //   this.recentBlogs = [];
-      //   this.recentBlogs = _response.body.data;
-      //   this.recentBlogs = this.recentBlogs.splice(0, 2);
-      // } else {
-      //   this.archievedBlogs = [];
-      //   this.archievedBlogs = _response.body.data;
-      // }
-      // if (!this.recentBlogs.length) {
-      //   this.recentBlogs = this.archievedBlogs.splice(0, 2);
-      // }
+      this.archievedBlogs.splice(0, 2);
+
+      this.monthsArchievedData = [];
 
       this.archievedBlogs.forEach((el) => {
         var dt =
@@ -120,8 +111,11 @@ export class BlogsComponent implements OnInit {
       })
       .subscribe((_response) => {
         this.getBlogDetails(this.id);
-        this.getBlogs("recent", { isPublished: "today" });
-        this.getBlogs("archieved", { isPublished: "yesterday" });
+        this.getBlogs("recent", { isPublished: "today", activeBlog: "false" });
+        // this.getBlogs("recent", { isPublished: "today" });
+        // this.getBlogs("archieved", { isPublished: "yesterday" });
+        // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        // this.router.onSameUrlNavigation = "reload";
       });
   }
 
@@ -133,8 +127,9 @@ export class BlogsComponent implements OnInit {
       })
       .subscribe((_response) => {
         this.getBlogDetails(this.id);
-        this.getBlogs("recent", { isPublished: "today" });
-        this.getBlogs("archieved", { isPublished: "yesterday" });
+        // this.getBlogs("recent", { isPublished: "today" });
+        // this.getBlogs("archieved", { isPublished: "yesterday" });
+        this.getBlogs("recent", { isPublished: "today", activeBlog: "false" });
       });
   }
 
