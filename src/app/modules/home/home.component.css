@@ -214,6 +214,14 @@
 
 /* Service Section end */
 
+
+.modelWidth {
+    margin-top: 126px !important;
+    margin-right: 249px !important;
+}
+
+
+
 /* Know More Section */
 .know_more {
   padding: 75px 0;
@@ -391,7 +399,7 @@
 
 .hero-area .left_sidebar .publisher_desc .publisher_name {
   margin-top: 15px;
-  margin-left: 15px;
+  margin-left: 35px;
 }
 
 .hero-area .left_sidebar .publisher_desc .publisher_name {
@@ -430,7 +438,7 @@ ul li {
 }
 
 .hero-area .left_sidebar h3 {
-  font-size: 20px;
+  font-size: 15px;
   margin-top: 15px;
   margin-bottom: 10px;
   font-weight: 600;
@@ -438,13 +446,14 @@ ul li {
   font-style: normal;
 }
 
-.hero-area .left_sidebar p {
+.hero-area .left_sidebar p
+{
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 12px;
   padding-right: 10px;
   color: #7e7e7e;
-
+  
   font-weight: 500;
   padding: 6px 0;
 }
@@ -456,10 +465,11 @@ ul li {
 }
 
 .hero-area .left_sidebar p {
-  font-weight: 600;
+  font-weight: normal;
   line-height: 1.4;
   margin-bottom: 12px;
   padding-right: 10px;
+	font-size: 14px;
 }
 
 .hero-area .left_sidebar .follow_details {
@@ -1509,7 +1519,7 @@ padding-right: 75px;
 }
 
 .details-updated {
-  padding-top: 50px;
+  padding-top: 0px;
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 1441px) {
