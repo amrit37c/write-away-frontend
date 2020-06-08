@@ -1679,3 +1679,7 @@ ul li {
 .social_read {
   cursor: pointer;
 }
+
+.fa.circle5 {
+  color: #1579f6;
+}

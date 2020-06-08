@@ -150,10 +150,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  ngDoCheck() {
-    console.log("called");
-    // this.getUserName();
-  }
   // convenience getter for easy access to form fields
   get f() {
     return this.registerForm.controls;

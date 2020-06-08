@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
     ignoreBackdropClick: true,
     class: "modelWidth",
   };
+  copiedLink: string = "";
 
   constructor(
     private blogService: BlogService,
@@ -305,11 +306,12 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  blogShareLink(id?) {
+  blogShareLink(platform, id?) {
     // this.modalRef = this.modalService.show(template);
     id = id ? id : this.blogOpenId;
-    var text = "http://demo.writeawayy.com/blogs/" + id;
-    navigator.clipboard.writeText(text).then(
+    this.copiedLink = "http://demo.writeawayy.com/blogs/" + id;
+    console.log("copied", this.copiedLink);
+    navigator.clipboard.writeText(this.copiedLink).then(
       function () {
         console.log("Async: Copying to clipboard was successful!");
         alert("Link copied to clipboard");
@@ -318,20 +320,33 @@ export class HomeComponent implements OnInit {
         console.error("Async: Could not copy text: ", err);
       }
     );
-    this.decline();
+    // this.decline();
 
-    this.blogService.updateShare(id, {}).subscribe((_respone) => {});
-    this.router.navigateByUrl("/blogs/" + id);
+    this.blogService
+      .updateShare(id, { platform: platform })
+      .subscribe((_respone) => {});
+    // this.router.navigateByUrl("/blogs/" + id);
+  }
+
+  copyBlogLink(id?) {
+    id = id ? id : this.blogOpenId;
+    this.copiedLink = "http://demo.writeawayy.com/blogs/" + id;
   }
 
   openShareModal(template: TemplateRef<any>, id) {
+    if (!this.userId) {
+      this.openLogin();
+      return;
+    }
     this.blogOpenId = id;
+    this.copyBlogLink(id);
     this.modalRef = this.modalService.show(template);
   }
 
   decline(): void {
     this.modalRef.hide();
     this.blogOpenId = "";
+    this.copiedLink = "";
   }
   getBrief() {
     return this.openPublications[this.openPublicationIndex].brief.substr(

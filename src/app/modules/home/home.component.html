@@ -582,19 +582,19 @@
     <span class="close">×</span>
     <div class="icon5" style="margin-bottom: 32px;">
       <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Share On social media</h6>
-      <a href="#"><i class="fa  fa-facebook circle5 "></i></a>
-      <a href="#"><i class="fa  fa-instagram circle5"></i></a>
-      <a href="#"><i class="fa  fa-linkedin circle5 "></i></a>
-      <a href="#"><i class="fa  fa-google-plus circle5"></i></a>
-      <a href="#"><i class="fa  fa-youtube circle5 "></i></a>
-      <a href="#"><i class="fa  fa-twitter circle5" style="margin-top: -6px;"></i></a>
+      <a (click)="blogShareLink('facebook')"><i class="fa  fa-facebook circle5"></i></a>
+      <a (click)="blogShareLink('instagram')"><i class="fa  fa-instagram circle5"></i></a>
+      <a (click)="blogShareLink('linkedin')"><i class="fa  fa-linkedin circle5 "></i></a>
+      <a (click)="blogShareLink('google+')"><i class="fa  fa-google-plus circle5"></i></a>
+      <a (click)="blogShareLink('youtube')"><i class="fa  fa-youtube circle5 "></i></a>
+      <a (click)="blogShareLink('twitter')"><i class="fa  fa-twitter circle5" style="margin-top: -6px;"></i></a>
     </div>
 
     <div style="width: 100%; float: left;">
       <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Copy Link</h6>
-      <input type="text" value="https://writeanyway.com/blog" id="myInput"
+      <input type="text" [(ngModel)]="copiedLink" id="myInput"
         style="width: 80%;float: left;background: #effdfe;border: none;border-radius: 18px;">
-      <button (click)="blogShareLink()"
+      <button (click)="blogShareLink('site')"
         style="width: 20%;float: left;background: #effdfe;border: none;border-radius: 18px;box-shadow: none;border: none;"><img
           src="/assets/images/link.png"></button>
     </div>

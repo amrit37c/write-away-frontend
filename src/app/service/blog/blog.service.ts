@@ -168,7 +168,7 @@ export class BlogService extends BaseService {
   /*** update share on the server **/
   updateShare(id, payload): Observable<any> {
     return this.http
-      .put<any>(`${this.url}/${environment.apis.blogShare}/${id}`, payload, {
+      .post<any>(`${this.url}/${environment.apis.blogShare}/${id}`, payload, {
         headers: this.token(),
         responseType: "json",
         observe: "response",
