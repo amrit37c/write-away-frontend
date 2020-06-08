@@ -34,6 +34,7 @@ export class BlogsComponent implements OnInit {
   objectKeys = Object.keys;
   archieveMonthArr = [];
   modalRef: BsModalRef;
+  copiedLink: string = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -133,10 +134,10 @@ export class BlogsComponent implements OnInit {
       });
   }
 
-  blogShareLink(id?) {
-    id = id ? id : this.id;
-    var text = "http://demo.writeawayy.com/blogs/" + id;
-    navigator.clipboard.writeText(text).then(
+  blogShareLink(platform, id?) {
+    id = id ? id : this.blogOpenId;
+    this.copiedLink = "http://demo.writeawayy.com/blogs/" + id;
+    navigator.clipboard.writeText(this.copiedLink).then(
       function () {
         console.log("Async: Copying to clipboard was successful!");
         alert("Link copied to clipboard");
@@ -146,11 +147,18 @@ export class BlogsComponent implements OnInit {
       }
     );
 
-    this.service.updateShare(id, {}).subscribe((_respone) => {});
+    this.service
+      .updateShare(id, { platform: platform })
+      .subscribe((_respone) => {});
     // this.router.navigateByUrl("/blogs/" + id);
   }
   openShareModal(template: TemplateRef<any>, id) {
     this.blogOpenId = id;
+    this.copyBlogLink(id);
     this.modalRef = this.modalService.show(template);
+  }
+  copyBlogLink(id?) {
+    id = id ? id : this.blogOpenId;
+    this.copiedLink = "http://demo.writeawayy.com/blogs/" + id;
   }
 }

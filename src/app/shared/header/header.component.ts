@@ -393,7 +393,6 @@ export class HeaderComponent implements OnInit {
   verifyOTP() {
     const data = { email: this.email, otp: this.otp };
     this.userService.verifyOTP(data).subscribe((_response) => {
-      debugger;
       if (_response.body.status === "Failure") {
       } else {
         this.enablePassword = true;

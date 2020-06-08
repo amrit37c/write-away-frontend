@@ -321,6 +321,8 @@
         </div>
 
         <div id="myBtn" class="icons-res">
+
+
           <span class="icon-3" (click)="openShareModal(socialMedia,blog?._id)">
             <img src="assets/images/blogp-share.svg" style="width: 74%;">
           </span>
@@ -339,7 +341,7 @@
               <div class="modal-body">
                 <span class="close">×</span>
                 <div class="icon5" style="margin-bottom: 32px;">
-                  <h6 style="text-align: left;font-size: 11px;font-weight: 500;color: #777575;">Share On social media
+                  <h6 style="text-align: left;font-size: 11px;font-weight: 500;color: #777575;">Share On social media1
                   </h6>
                   <a href="#"><i class="fa  fa-facebook circle5 "></i></a>
                   <a href="#"><i class="fa  fa-instagram circle5"></i></a>
@@ -351,7 +353,7 @@
 
                 <div style="width: 100%; float: left;">
                   <h6 style="text-align: left;font-size: 11px;font-weight: 500;color: #777575;">Copy Link</h6>
-                  <input type="text" value="https://writeanyway.com/blog" id="myInput"
+                  <input type="text" [(ngModel)]="copiedLink" id="myInput"
                     style="width: 80%;float: left;background: #effdfe;border: none;border-radius: 18px;">
                   <button (click)="myFunction()"
                     style="width: 20%;float: left;background: #effdfe;border: none;border-radius: 18px;box-shadow: none;border: none;"><img
@@ -451,7 +453,7 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-      <img src="http://localhost:3000/images/{{recentBlog['media']}}" *ngIf="recentBlog && recentBlog['media']"
+      <img src="http://localhost:3000/images/{{recentBlog['media690']}}" *ngIf="recentBlog && recentBlog['media']"
         class="hunt-img">
     </div>
     <div class="col-md-3"></div>
@@ -496,24 +498,11 @@
             </div>
 
             <div class="icons-res">
-
-              <!-- <span class="icon-3">
-                <img src="assets/images/blog-heart.svg" style="width: 90%;">
-              </span>
-
-              <div class="icon-txt">
-                <span style="float: left;text-align: center;width: 100%;">{{blog.likeCount || '0'}}</span><br>
-                <span class="info-icon" style="float: left;border-top: 1px solid;">Likes</span>
-              </div> -->
-              <!-- <pre>
-                {{recentBlog | json}}
-              </pre> -->
               <span class="icon-3" (click)="
               recentBlog?.like?.likeStatus=='0' || recentBlog?.like?.likeStatus=='1' 
                   ? updateBlogLike(recentBlog)
                   : saveBlogLike(recentBlog)
               ">
-                <!-- <img src="assets/images/blog-heart.svg" style="width: 90%;"> -->
                 <i class="fa col-red heart-shape"
                   [ngClass]="{'fa-heart-o' : !recentBlog?.like || recentBlog?.like?.likeStatus=='0',  'fa-heart' : recentBlog?.like?.likeStatus=='1'  }"></i>
               </span>
@@ -539,39 +528,6 @@
               </div>
 
 
-              <!-- The Modal -->
-              <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                  <div class="modal-body">
-                    <span class="close">×</span>
-                    <div class="icon5" style="margin-bottom: 32px;">
-                      <h6 style="text-align: left;font-size: 11px;font-weight: 500;color: #777575;">Share On social
-                        media
-                      </h6>
-                      <a href="#"><i class="fa  fa-facebook circle5 "></i></a>
-                      <a href="#"><i class="fa  fa-instagram circle5"></i></a>
-                      <a href="#"><i class="fa  fa-linkedin circle5 "></i></a>
-                      <a href="#"><i class="fa  fa-google-plus circle5"></i></a>
-                      <a href="#"><i class="fa  fa-youtube circle5 "></i></a>
-                      <a href="#"><i class="fa  fa-twitter circle5" style="margin-top: -6px;"></i></a>
-                    </div>
-
-                    <div style="width: 100%; float: left;">
-                      <h6 style="text-align: left;font-size: 11px;font-weight: 500;color: #777575;">Copy Link</h6>
-                      <input type="text" value="https://writeanyway.com/blog" id="myInput"
-                        style="width: 80%;float: left;background: #effdfe;border: none;border-radius: 18px;">
-                      <button onclick="myFunction()"
-                        style="width: 20%;float: left;background: #effdfe;border: none;border-radius: 18px;box-shadow: none;border: none;"><img
-                          src="assets/images/link.png"></button>
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
 
 
             </div>
@@ -630,22 +586,22 @@
   <div class="modal-body">
     <span class="close">×</span>
     <div class="icon5" style="margin-bottom: 32px;">
-      <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Share On social media</h6>
-      <a href="#"><i class="fa  fa-facebook circle5 "></i></a>
-      <a href="#"><i class="fa  fa-instagram circle5"></i></a>
-      <a href="#"><i class="fa  fa-linkedin circle5 "></i></a>
-      <a href="#"><i class="fa  fa-google-plus circle5"></i></a>
-      <a href="#"><i class="fa  fa-youtube circle5 "></i></a>
-      <a href="#"><i class="fa  fa-twitter circle5" style="margin-top: -6px;"></i></a>
+      <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Share On social media3</h6>
+      <a (click)="blogShareLink('facebook')"><i class="fa  fa-facebook circle5 "></i></a>
+      <a (click)="blogShareLink('instagram')"><i class="fa  fa-instagram circle5"></i></a>
+      <a (click)="blogShareLink('linkedin')"><i class="fa  fa-linkedin circle5 "></i></a>
+      <a (click)="blogShareLink('google+')"><i class="fa  fa-google-plus circle5"></i></a>
+      <a (click)="blogShareLink('youtube')"><i class="fa  fa-youtube circle5 "></i></a>
+      <a (click)="blogShareLink('twitter')"><i class="fa  fa-twitter circle5" style="margin-top: -6px;"></i></a>
     </div>
 
     <div style="width: 100%; float: left;">
       <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Copy Link</h6>
-      <input type="text" value="https://writeanyway.com/blog" id="myInput"
+      <input type="text" [(ngModel)]="copiedLink" id="myInput"
         style="width: 80%;float: left;background: #effdfe;border: none;border-radius: 18px;">
-      <button (click)="blogShareLink()"
+      <button (click)="blogShareLink('site')"
         style="width: 20%;float: left;background: #effdfe;border: none;border-radius: 18px;box-shadow: none;border: none;"><img
-          src="/assets/images/link.png"></button>
+          src="assets/images/link.png"></button>
     </div>
 
   </div>
