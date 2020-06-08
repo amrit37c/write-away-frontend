@@ -1,6 +1,6 @@
 /* About Section */
 .about-us.section {
-  padding: 6rem 0;
+  padding:0;
   padding-bottom: 0px;
 }
 
@@ -106,6 +106,11 @@
 /* About Section end */
 
 /* Service Section */
+
+.btn_area[_ngcontent-ghn-c1] {
+    width: 60% !important;
+}
+
 .services {
   background-color: #007bff;
   padding: 0;
@@ -114,10 +119,12 @@
 
 .services .col_bg_aqua {
   background-color: #ecfdff;
+	padding-bottom: 20px;
 }
 
 .services .service_left_img {
   margin-top: -35px;
+	width: 85%;
 }
 
 .services .service_right_desc {
@@ -209,7 +216,7 @@
 
 /* Know More Section */
 .know_more {
-  padding: 50px 0;
+  padding: 75px 0;
 }
 
 .know_more .book_store {
@@ -274,7 +281,7 @@
 }
 
 .know_more .book_store {
-  height: 206px;
+  height: 250px;
 }
 
 .know_more .book_store_pink {
@@ -319,7 +326,7 @@
 /* hero star */
 .hero-area {
   padding-bottom: 40px;
-  padding-top: 50px;
+  padding-top: 90px !important;
 }
 
 .hero-area .slider_top_text {
@@ -417,6 +424,11 @@ ul li {
   list-style: none;
 }
 
+.modal-content5 {
+    width: 146%;
+    min-height: inherit !important;
+}
+
 .hero-area .left_sidebar h3 {
   font-size: 20px;
   margin-top: 15px;
@@ -487,6 +499,18 @@ ul li {
 
 .social_likes .social_likes_1 .span_top_likes {
   padding-top: 12px;
+}
+
+.hd_mrg{
+	margin-top:20px;
+}
+
+.parah_chk{
+	padding-right: 18px;
+}
+
+.parah_mr{
+	margin-top: 40px;
 }
 
 .hero-area .left_sidebar .follow_details_2 {
@@ -818,6 +842,7 @@ ul li {
   text-align: center !important;
 }
 
+
 /* carousel */
 .slider-cont {
   order: 0;
@@ -856,9 +881,9 @@ ul li {
 .updated-leftss {
   padding-left: 16px !important;
   padding-right: 65px !important;
-
   padding-right: 34px;
-  text-align: justify;
+	margin-top: 25px;
+	padding-right: 40px;
 }
 
 .slider-cont div:first-child {
@@ -1114,11 +1139,11 @@ ul li {
 
 .updated-icons {
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .updated-icons i {
-  margin-left: 13px;
+  margin-left: 18px;
 }
 
 .share-updated {
@@ -1153,13 +1178,17 @@ ul li {
   /* color: lightgray; */
 }
 
+.about-content {
+	margin-top: 83px;
+}
+
 .updated-conts {
   margin-bottom: 15px;
   font-weight: 600 !important;
-  line-height: 1.4;
-  font-size: 20px;
-  margin-top: 39px;
-  padding-right: 188px;
+line-height: 1.4;
+font-size: 18px;
+margin-top: 39px;
+padding-right: 75px;
 }
 
 .updated-left-side {
@@ -1575,7 +1604,6 @@ ul li {
 
 .main-img-res {
   position: relative;
-  top: -41px;
 }
 
 .sp-sp {
@@ -1637,7 +1665,7 @@ ul li {
 .share-icons,
 .bokyy {
   margin-top: 12px;
-  font-size: 28px;
+  font-size: 25px;
 }
 
 .updated-images-left {
@@ -1647,7 +1675,8 @@ ul li {
 
 .share-img-blog {
   width: 11%;
-  display: inline-block
+  display: inline-block;
+ margin-top: -6px;
 }
 
 .left_sidebar_img img {

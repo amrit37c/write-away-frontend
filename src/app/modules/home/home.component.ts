@@ -324,7 +324,7 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl("/blogs/" + id);
   }
 
-  openShareModal(template: TemplateRef<any>, id) {
+  openShareModal(template: TemplateRef<any>, id?) {
     this.blogOpenId = id;
     this.modalRef = this.modalService.show(template);
   }

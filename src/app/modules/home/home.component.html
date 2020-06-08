@@ -2,7 +2,7 @@
 <section class="about-us section">
   <div class="container-fluid">
     <div class="row updated-alignment">
-      <div class="col-lg-6 wows fadeInRight" data-wow-delay="0.6s">
+      <div class="col-lg-5 wows fadeInRight" data-wow-delay="0.6s">
         <div class="about-content updated-content">
           <!-- <span class="short_heading">Start</span> -->
           <h3 class="write-hedsd">Write.</h3>
@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.8s">
+      <div class="col-lg-7 wow fadeInLeft" data-wow-delay="0.8s">
         <div class="about-video">
           <div class="single-video overlay">
             <img src="./assets/images//main-banner77.svg" class="main-img-res" alt="#" />
@@ -33,7 +33,7 @@
 <section class="know_more section">
   <div class="container-fluid">
     <div class="row updated-alignment mb-4">
-      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.6s">
+      <div class="col-lg-7 wow fadeIn" data-wow-delay="0.6s">
         <div class="book_store book_store_blue d-flex">
           <div class="row">
             <div class="col-md-5 book_store_img">
@@ -67,10 +67,10 @@
             <div class="col-md-7 book_store_desc book_store_desc_two">
               <div class="title_books_store d-flex justify-content-between"></div>
               <div class="book_store_heading">
-                <h3>Read Awayy!</h3>
+                <h3 class="hd_mrg">Read Awayy!</h3>
               </div>
               <div class="book_store_text responsive-updated">
-                <p class="responsive-updated">
+                <p class="responsive-updated parah_chk">
                   Read the published stories; your own, and those written by
                   others. If you’ve got to write better, you’ve got to read
                   better!
@@ -84,7 +84,6 @@
           </div>
         </div>
       </div>
-      <div class="col-md-1"></div>
       <!-- share away -->
     </div>
     <div class="row updated-alignment">
@@ -115,7 +114,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.6s">
+      <div class="col-lg-7 wow fadeIn" data-wow-delay="0.6s">
         <div class="book_store cmng-back-color d-flex">
           <div class="container">
             <div class="row book-img-cont">
@@ -125,10 +124,10 @@
               <div class="col-6 book_store_desc responsive-coming">
                 <div class="title_books_store justify-content-between"></div>
                 <div class="book_store_heading">
-                  <h3>Coming Soon!</h3>
+                  <h3 class="hd_mrg">Coming Soon!</h3>
                 </div>
                 <div class="book_store_text body-updatedss">
-                  <p class="responsive-updated">
+                  <p class="responsive-updated parah_mr">
                     Watch this space for more!
                   </p>
 
@@ -142,7 +141,6 @@
         </div>
       </div>
 
-      <div class="col-md-1"></div>
     </div>
   </div>
 </section>
@@ -184,8 +182,8 @@
                         ? updateBlogLike(blogs[0])
                         : saveBlogLike(blogs[0])
                     "></i>
-                  <img alt="" class="share-img-blog" src="assets/images/Group 561.svg"
-                    (click)="openShareModal(socialMedia,blogs[0]._id)">
+				   <i class="heart-shape"><img alt="" class="share-img-blog" src="assets/images/Group 561.svg"
+                    (click)="openShareModal(socialMedia,blogs[0]._id)"></i>
                   <!-- <i class="fa fa-share share-icons share-updated" (click)="blogShareLink(blogs[0]._id)"></i> -->
 
                   <i class="fa col-yel bokyy" [ngClass]="blogBookMarkStatus()" (click)="
