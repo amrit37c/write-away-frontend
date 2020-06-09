@@ -59,9 +59,12 @@ export class HeaderComponent implements OnInit {
   email: string;
   emailSend: boolean = false;
   enablePassword: boolean = false;
+  enableUserForm: boolean = false;
   otp: string;
   password: string;
   submitted = false;
+  enableSignOTP = false;
+  enableSignInOTP = false;
 
   constructor(
     private router: Router,
@@ -105,12 +108,38 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
       {
-        guardian: [""],
-        guardianFirstName: [""],
-        guardianLastName: [""],
-        guardianEmail: [""],
-        guardianPassword: [""],
-        guardianConfirmPassword: [""],
+        guardian: [
+          "",
+
+          this.conditionalValidator(
+            () => this.enableEditGuardianInfo === true,
+            Validators.required
+          ),
+        ],
+        guardianFirstName: [
+          "",
+
+          this.conditionalValidator(
+            () => this.enableEditGuardianInfo === true,
+            Validators.required
+          ),
+        ],
+        guardianLastName: [
+          "",
+
+          this.conditionalValidator(
+            () => this.enableEditGuardianInfo === true,
+            Validators.required
+          ),
+        ],
+        guardianEmail: [
+          "",
+
+          this.conditionalValidator(
+            () => this.enableEditGuardianInfo === true,
+            Validators.required
+          ),
+        ],
         firstName: ["", Validators.required],
         lastName: ["", Validators.required],
         email: ["", Validators.required],
@@ -156,72 +185,54 @@ export class HeaderComponent implements OnInit {
   }
 
   guradianValidation() {
-    if (this.enableEditGuardianInfo) {
-      this.registerForm = this.formBuilder.group(
-        {
-          guardian: [
-            "",
-            this.conditionalValidator(
-              () => this.enableEditGuardianInfo === true,
-              Validators.required
-            ),
-          ],
-          guardianFirstName: [
-            "",
-            this.conditionalValidator(
-              () => this.enableEditGuardianInfo === true,
-              Validators.required
-            ),
-          ],
-          guardianLastName: [
-            "",
-            this.conditionalValidator(
-              () => this.enableEditGuardianInfo === true,
-              Validators.required
-            ),
-          ],
-          guardianEmail: [
-            "",
-            this.conditionalValidator(
-              () => this.enableEditGuardianInfo === true,
-              Validators.required
-            ),
-          ],
-          guardianPassword: [
-            "",
-            this.conditionalValidator(
-              () => this.enableEditGuardianInfo === true,
-              Validators.required
-            ),
-          ],
-          guardianConfirmPassword: [
-            "",
-            this.conditionalValidator(
-              () => this.enableEditGuardianInfo === true,
-              Validators.required
-            ),
-          ],
-          firstName: ["", Validators.required],
-          lastName: ["", Validators.required],
-          // email: ["", [Validators.required, Validators.email]],
-          email: ["", [Validators.required, Validators.email]],
-          password: ["", Validators.required],
-          confirmPassword: ["", Validators.required],
-          adultUser: [""],
-          dob: [""],
-          acceptOffer: ["", Validators.required],
-          acceptTerms: [false, Validators.pattern("true")],
-        },
-        {
-          validator: [
-            MustMatch("password", "confirmPassword"),
-            MustMatch("guardianPassword", "guardianConfirmPassword"),
-          ],
-        }
-      );
-    } else {
-      this.registerForm.get("guardianFirstName").clearValidators();
-    }
+    console.log("validation applied");
+    this.registerForm = this.formBuilder.group(
+      {
+        guardian: [
+          "",
+          this.conditionalValidator(
+            () => this.enableEditGuardianInfo === true,
+            Validators.required
+          ),
+        ],
+        guardianFirstName: [
+          "",
+          this.conditionalValidator(
+            () => this.enableEditGuardianInfo === true,
+            Validators.required
+          ),
+        ],
+        guardianLastName: [
+          "",
+          this.conditionalValidator(
+            () => this.enableEditGuardianInfo === true,
+            Validators.required
+          ),
+        ],
+        guardianEmail: [
+          "",
+          this.conditionalValidator(
+            () => this.enableEditGuardianInfo === true,
+            Validators.required
+          ),
+        ],
+        firstName: ["", Validators.required],
+        lastName: ["", Validators.required],
+        email: ["", [Validators.required, Validators.email]],
+        password: ["", Validators.required],
+        confirmPassword: ["", Validators.required],
+        adultUser: [""],
+        dob: [""],
+        acceptOffer: ["", Validators.required],
+        acceptTerms: [false, Validators.pattern("true")],
+      },
+      {
+        validator: [
+          MustMatch("password", "confirmPassword"),
+          MustMatch("guardianPassword", "guardianConfirmPassword"),
+        ],
+      }
+    );
   }
 
   conditionalValidator(
@@ -248,15 +259,26 @@ export class HeaderComponent implements OnInit {
       ),
     });
     let json = this.registerForm.value;
+    this.email = json.email;
     // json.dob = formatDate;
 
     this.userService.register(json).subscribe((_response) => {
+      if (_response.body.message === "User already exist!") {
+        this.enableSignOTP = true;
+        this.enableUserForm = false;
+      }
+      if (_response.body.message === "Please verify account first") {
+        this.enableSignOTP = true;
+        this.enableUserForm = false;
+      }
       if (_response.body.status == "Success") {
-        alert("user registered");
-        this.decline();
+        alert(_response.body.message);
+        // this.decline();
         this.registerForm.reset();
+        this.enableUserForm = false;
+        this.enableSignOTP = true;
       } else {
-        alert("Email Already Register");
+        alert(_response.body.message);
       }
     });
   }
@@ -266,22 +288,27 @@ export class HeaderComponent implements OnInit {
       return;
     }
     let json = this.loginForm.value;
+    this.email = json.email;
 
     this.userService.login(json).subscribe((_response) => {
+      debugger;
       if (_response.status == 200 && _response.body.status == "Success") {
         this.userLogin = true;
         const token = _response.body.data.token;
         const { firstName } = jwt_decode(token);
         this.username = firstName;
         localStorage.setItem("token", _response.body.data.token);
-      }
-      alert(_response.body.message);
-      this.decline();
-      this.loginForm.reset();
+        alert(_response.body.message);
+        this.decline();
+        this.loginForm.reset();
 
-      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-      this.router.onSameUrlNavigation = "reload";
-      this.router.navigate(["/home"]);
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        this.router.onSameUrlNavigation = "reload";
+        this.router.navigate(["/home"]);
+      }
+      if (_response.body.message === "Please verify account first") {
+        this.enableSignInOTP = true;
+      }
     });
   }
 
@@ -341,22 +368,36 @@ export class HeaderComponent implements OnInit {
     }
     this.enableEditUserInfo = true;
     if (age >= 18) {
+      this.enableUserForm = true;
       this.adultUser = true;
+      this.enableEditGuardianInfo = false;
     } else {
       this.adultUser = false;
+      this.enableEditGuardianInfo = true;
     }
     return age;
   }
 
-  enableGuardianForm() {
+  showUserForm() {
     this.submitted = true;
+    if (
+      this.registerForm.controls["guardian"].valid &&
+      this.registerForm.controls["guardianFirstName"].valid &&
+      this.registerForm.controls["guardianLastName"].valid &&
+      this.registerForm.controls["guardianEmail"].valid
+    ) {
+      console.log("Valid!");
+      this.enableUserForm = true;
+      this.enableEditGuardianInfo = false;
+    }
+
+    // this.enableUserForm = true;
+
     if (this.registerForm.invalid) {
       return;
     }
-    const age = this.calculateAge();
-    age < 18
-      ? (this.enableEditGuardianInfo = true)
-      : (this.enableEditGuardianInfo = false);
+    // const age = this.calculateAge();
+    // age < 18 ? (this.enableUserForm = false) : (this.enableUserForm = true);
   }
   decline(): void {
     this.enableEditGuardianInfo = false;
@@ -366,6 +407,10 @@ export class HeaderComponent implements OnInit {
     this.adultUser = false;
     this.modalRef.hide();
     this.submitted = false;
+    this.enableSignOTP = false;
+    this.enableSignInOTP = false;
+    this.otp = "";
+    this.email = "";
   }
 
   logout() {
@@ -377,22 +422,50 @@ export class HeaderComponent implements OnInit {
     // this.router.navigateByUrl("/home");
   }
 
-  sendEmail() {
+  sendEmail(resent, type?) {
     const data = { email: this.email };
-    this.userService.sendEmail(data).subscribe((_response) => {
-      if (_response.body.status == "Failure") {
-      } else {
-        this.emailSend = true;
-      }
-      alert(_response.body.message);
-    });
+    if (type == "signup") {
+      this.userService.reSendOTP(data).subscribe((_response) => {
+        if (_response.body.status == "Failure") {
+        } else {
+          this.emailSend = true;
+        }
+        if (resent) {
+          alert("Mail Send done, Please check your inbox!");
+        } else {
+          alert(_response.body.message);
+        }
+      });
+    } else {
+      this.userService.sendEmail(data).subscribe((_response) => {
+        if (_response.body.status == "Failure") {
+        } else {
+          this.emailSend = true;
+        }
+        if (resent) {
+          alert("Mail Send done, Please check your inbox!");
+        } else {
+          alert(_response.body.message);
+        }
+      });
+    }
   }
-  verifyOTP() {
+  verifyForgetOTP() {
     const data = { email: this.email, otp: this.otp };
     this.userService.verifyOTP(data).subscribe((_response) => {
       if (_response.body.status === "Failure") {
       } else {
         this.enablePassword = true;
+      }
+      alert(_response.body.message);
+    });
+  }
+  verifySignUpOTP() {
+    const data = { email: this.email, otp: this.otp };
+    this.userService.verifySignupOTP(data).subscribe((_response) => {
+      if (_response.body.status === "Failure") {
+      } else {
+        this.decline();
       }
       alert(_response.body.message);
     });

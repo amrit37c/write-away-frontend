@@ -1,6 +1,6 @@
 /* About Section */
 .about-us.section {
-  padding:0;
+  padding: 0;
   padding-bottom: 0px;
 }
 
@@ -108,7 +108,7 @@
 /* Service Section */
 
 .btn_area[_ngcontent-ghn-c1] {
-    width: 60% !important;
+  width: 60% !important;
 }
 
 .services {
@@ -119,12 +119,12 @@
 
 .services .col_bg_aqua {
   background-color: #ecfdff;
-	padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .services .service_left_img {
   margin-top: -35px;
-	width: 85%;
+  width: 85%;
 }
 
 .services .service_right_desc {
@@ -216,8 +216,8 @@
 
 
 .modelWidth {
-    margin-top: 126px !important;
-    margin-right: 249px !important;
+  margin-top: 126px !important;
+  margin-right: 249px !important;
 }
 
 
@@ -433,8 +433,8 @@ ul li {
 }
 
 .modal-content5 {
-    width: 146%;
-    min-height: inherit !important;
+  width: 146%;
+  min-height: inherit !important;
 }
 
 .hero-area .left_sidebar h3 {
@@ -446,14 +446,13 @@ ul li {
   font-style: normal;
 }
 
-.hero-area .left_sidebar p
-{
+.hero-area .left_sidebar p {
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 12px;
   padding-right: 10px;
   color: #7e7e7e;
-  
+
   font-weight: 500;
   padding: 6px 0;
 }
@@ -469,7 +468,7 @@ ul li {
   line-height: 1.4;
   margin-bottom: 12px;
   padding-right: 10px;
-	font-size: 14px;
+  font-size: 14px;
 }
 
 .hero-area .left_sidebar .follow_details {
@@ -511,16 +510,16 @@ ul li {
   padding-top: 12px;
 }
 
-.hd_mrg{
-	margin-top:20px;
+.hd_mrg {
+  margin-top: 20px;
 }
 
-.parah_chk{
-	padding-right: 18px;
+.parah_chk {
+  padding-right: 18px;
 }
 
-.parah_mr{
-	margin-top: 40px;
+.parah_mr {
+  margin-top: 40px;
 }
 
 .hero-area .left_sidebar .follow_details_2 {
@@ -892,8 +891,8 @@ ul li {
   padding-left: 16px !important;
   padding-right: 65px !important;
   padding-right: 34px;
-	margin-top: 25px;
-	padding-right: 40px;
+  margin-top: 25px;
+  padding-right: 40px;
 }
 
 .slider-cont div:first-child {
@@ -951,6 +950,7 @@ ul li {
 :host ::ng-deep .carousel.slide:focus {
   outline: none !important;
 }
+
 
 /* carousel */
 
@@ -1189,16 +1189,16 @@ ul li {
 }
 
 .about-content {
-	margin-top: 83px;
+  margin-top: 83px;
 }
 
 .updated-conts {
   margin-bottom: 15px;
   font-weight: 600 !important;
-line-height: 1.4;
-font-size: 18px;
-margin-top: 39px;
-padding-right: 75px;
+  line-height: 1.4;
+  font-size: 18px;
+  margin-top: 39px;
+  padding-right: 75px;
 }
 
 .updated-left-side {
@@ -1686,7 +1686,7 @@ padding-right: 75px;
 .share-img-blog {
   width: 11%;
   display: inline-block;
- margin-top: -6px;
+  margin-top: -6px;
 }
 
 .left_sidebar_img img {

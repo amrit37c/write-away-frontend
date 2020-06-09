@@ -392,7 +392,8 @@
     <div class="col-lg-4 col-sm-6 recent-blog-blk" *ngFor="let blog of recentBlogs">
       <div class="rcbb ">
         <div class="recent-blog-img">
-          <img src="http://localhost:3000/images/{{blog.media}}" class="img-fluid clsImg">
+          <img src="http://localhost:3000/images/{{blog.media}}"
+            onerror="javascript:this.src='/assets/images/no-image-873.png'" class="img-fluid clsImg">
           <span class="date2"
             style="position: relative;margin-top: -202px;float: left;margin-left: 237px;background: #fff;padding: 6px 10px;">
             <p style="margin: 0;font-size: 12px;font-weight: 500;color: #0149a5;">

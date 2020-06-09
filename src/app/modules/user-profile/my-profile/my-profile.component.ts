@@ -62,11 +62,6 @@ export class MyProfileComponent implements OnInit {
 
     this.service.put(this.userId, json).subscribe((_response) => {
       if (json.selectDisplayName === "true") {
-        // debugger;/
-        // this.hc.setUserName("hhjhdjshjhdjh");
-        // const token = _response.body.data.token;
-        // const { firstName } = jwt_decode(token);
-        // localStorage.setItem("token", _response.body.data.token);
       }
     });
   }
@@ -81,6 +76,15 @@ export class MyProfileComponent implements OnInit {
         : this.editForm.patchValue({
             selectDisplayName: "false",
           });
+
+      const date = new Date(_response.body.data[0].dob)
+        .toJSON()
+        .slice(0, 10)
+        .replace(/-/g, "-");
+
+      this.editForm.patchValue({
+        dob: date,
+      });
     });
   }
 }

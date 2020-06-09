@@ -167,6 +167,28 @@
                     </div>
                   </div>
                 </form>
+                <div class="form-details forget-heght" *ngIf="enableSignInOTP ">
+                  <h6 class="">
+                    Enter OTP
+                  </h6>
+                  <div></div>
+                  <label class="input-names">Enter OTP</label>
+                  <input type="text" class="input-fields" [(ngModel)]="otp" /><br />
+                  <a (click)="sendEmail('resent', 'signup')">Resend</a>
+
+                  <div class="row">
+                    <div class="col-md-6 right">
+                      <button class="forget-cancl" (click)="decline()">
+                        Cancel
+                      </button>
+                    </div>
+                    <div class="col-md-6">
+                      <a><button class="btn-signup" (click)="verifySignUpOTP()">
+                          Verify
+                        </button></a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -258,7 +280,7 @@
           <div class="row" *ngIf="enableEditUserInfo">
             <div class="col-md-12">
               <form role="form" [formGroup]="registerForm">
-                <div class="form-details" *ngIf="enableEditGuardianInfo && enableEditUserInfo">
+                <div class="form-details" *ngIf="enableEditGuardianInfo">
                   <h6 class="">Parent/Guardian details:</h6>
                   <div class="row">
                     <div class="col-md-12">
@@ -271,7 +293,7 @@
                       </select>
                       <div *ngIf="submitted && f.guardian.errors" class="invalid-feedback">
                         <div *ngIf="f.guardian.errors.required">
-                          Guardian is required
+                          Parent/Guardian is required
                         </div>
                       </div>
                     </div>
@@ -282,7 +304,7 @@
                         }" />
                       <div *ngIf="submitted && f.guardianFirstName.errors" class="invalid-feedback">
                         <div *ngIf="f.guardianFirstName.errors.required">
-                          Guardian First Name is required
+                          Parent/Guardian First Name is required
                         </div>
                       </div>
                     </div>
@@ -293,7 +315,7 @@
                         }" />
                       <div *ngIf="submitted && f.guardianLastName.errors" class="invalid-feedback">
                         <div *ngIf="f.guardianLastName.errors.required">
-                          Guardian Last Name is required
+                          Parent/Guardian Last Name is required
                         </div>
                       </div>
                     </div>
@@ -304,40 +326,22 @@
                         }" />
                       <div *ngIf="submitted && f.guardianEmail.errors" class="invalid-feedback">
                         <div *ngIf="f.guardianEmail.errors.required">
-                          Guardian Email is required
+                          Parent/Guardian Email is required
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <label class="input-names">Guardian Password</label>
-                      <input required type="password" class="input-fields" formControlName="guardianPassword" [ngClass]="{
-                          'is-invalid': submitted && f.guardianPassword.errors
-                        }" />
-                      <div *ngIf="submitted && f.guardianPassword.errors" class="invalid-feedback">
-                        <div *ngIf="f.guardianPassword.errors.required">
-                          Guardian Password is required
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <label class="input-names">Guardian Confirm Password</label>
-                      <input required type="password" class="input-fields" formControlName="guardianConfirmPassword"
-                        [ngClass]="{
-                          'is-invalid': submitted && f.guardianConfirmPassword.errors
-                        }" />
-                      <div *ngIf="submitted && f.guardianConfirmPassword.errors" class="invalid-feedback">
-                        <div *ngIf="f.guardianConfirmPassword.errors.required">
-                          Guardian Confirm Password is required
-                        </div>
-                        <div *ngIf="f.guardianConfirmPassword.errors.mustMatch">
-                          Guardian Password and confirm password must match
-                        </div>
-                      </div>
-                    </div>
+
                     <div class="col-md-12 text-center">
                       <div class="center">
-                        <button class="btn-signup" (click)="onSubmit()">
-                          Submit
+
+
+                        <!-- <button class="btn-signup" type="button " (click)="onSubmit()" class="btn"
+                          [ngClass]="{ btn_disable: registerForm.invalid }" [disabled]="registerForm.invalid"
+                          *ngIf="enableEditGuardianInfo">
+                          Sign Up1
+                        </button> -->
+                        <button type="button " (click)="showUserForm()" class="btn btn-signup">
+                          {{"Next"}}
                         </button>
                       </div>
                     </div>
@@ -346,7 +350,7 @@
 
                 <!-- form-second -->
 
-                <div class="form-details log-details" *ngIf="enableEditUserInfo && !enableEditGuardianInfo">
+                <div class="form-details log-details" *ngIf="enableUserForm && !enableEditGuardianInfo">
                   <h6 class="">Login Details:</h6>
 
                   <div class="row">
@@ -441,7 +445,7 @@
                     </div>
                   </div>
                   <div class="center">
-                    <button class="btn-signup" type="button " (click)="onSubmit()" class="btn"
+                    <!-- <button class="btn-signup" type="button " (click)="onSubmit()" class="btn"
                       [ngClass]="{ btn_disable: registerForm.invalid }" [disabled]="registerForm.invalid"
                       *ngIf="enableEditGuardianInfo">
                       Sign Up1
@@ -449,10 +453,35 @@
                     <button type="button " (click)="adultUser ? onSubmit() : enableGuardianForm()"
                       class="btn btn-signup">
                       {{ adultUser ? "Sign Up2" : "Next" }}
+                    </button> -->
+                    <button class="btn-signup" (click)="onSubmit()">
+                      Submit
                     </button>
                   </div>
                 </div>
               </form>
+              <div class="form-details forget-heght" *ngIf="enableSignOTP ">
+                <h6 class="">
+                  Enter OTP
+                </h6>
+                <div></div>
+                <label class="input-names">Enter OTP</label>
+                <input type="text" class="input-fields" [(ngModel)]="otp" /><br />
+                <a (click)="sendEmail('resent', 'signup')">Resend</a>
+
+                <div class="row">
+                  <div class="col-md-6 right">
+                    <button class="forget-cancl" (click)="decline()">
+                      Cancel
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <a><button class="btn-signup" (click)="verifySignUpOTP()">
+                        Verify
+                      </button></a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -517,10 +546,7 @@
               <div></div>
               <label class="input-names">Enter OTP</label>
               <input type="text" class="input-fields" [(ngModel)]="otp" /><br />
-
-              <!-- <label class="input-names">Enter Confirm</label>
-              <input type="text" class="input-fields" [(ngModel)]="otp" /> -->
-              <a (click)="sendEmail()">Resend</a>
+              <a (click)="sendEmail('resent')">Resend</a>
 
               <div class="row">
                 <div class="col-md-6 right">
@@ -529,7 +555,7 @@
                   </button>
                 </div>
                 <div class="col-md-6">
-                  <a><button class="btn-signup" (click)="verifyOTP()">
+                  <a><button class="btn-signup" (click)="verifyForgetOTP()">
                       Verify
                     </button></a>
                 </div>
