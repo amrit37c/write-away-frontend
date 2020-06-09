@@ -241,13 +241,6 @@ export class HeaderComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    // const dob = this.registerForm.value.dob;
-    // const formatDate = new Date(dob)
-    //   .toJSON()
-    //   .slice(0, 10)
-    //   .split("-")
-    //   .reverse()
-    //   .join("/");
 
     this.registerForm.patchValue({
       dob: new Date(
@@ -285,12 +278,16 @@ export class HeaderComponent implements OnInit {
       alert(_response.body.message);
       this.decline();
       this.loginForm.reset();
-      // debugger;
+
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;
       this.router.onSameUrlNavigation = "reload";
       this.router.navigate(["/home"]);
-      // this.router.navigateByUrl("/home");
     });
+  }
+
+  setUserName(name) {
+    console.log("DEBUGGGER CALLed");
+    this.username = name;
   }
 
   checkPassword(group: FormGroup) {

@@ -6,6 +6,11 @@
   padding-bottom: 20px;
 }
 
+.right-header img{
+	width: 50%;
+    margin-left: 10px;
+}
+
 .forget-pass-login-modal {
   font-size: 13px;
   margin-top: 6px;
@@ -54,6 +59,7 @@
   padding-top: 8px;
   display: flex;
   align-items: center;
+	width: 70% !important;
 }
 
 .btn_area .search_btn i {
@@ -64,7 +70,7 @@
 
 .btn_area .btn_img {
   width: 110px;
-  margin-left: 40px;
+  margin-left: 65px;
 }
 
 @media only screen and (min-width: 360px) and (max-width: 470px) {
@@ -442,8 +448,8 @@ forget-pass */
 }
 
 ::ng-deep .modelWidth {
-  margin-top: 147px;
-  margin-right: 280px;
+  margin-top: 125px;
+margin-right: 266px;
 }
 
 /* @media only screen and (min-width:360px) and (max-width:520px) {
@@ -508,7 +514,7 @@ forget-pass */
 ::ng-deep .modal-content {
   width: 146%;
 
-  min-height: 501px;
+  min-height: 425px;
 }
 
 .sign-up-pop-col {

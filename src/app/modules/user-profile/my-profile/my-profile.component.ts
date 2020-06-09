@@ -1,7 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { UserService } from "src/app/service/user/user.service";
 import * as jwt_decode from "jwt-decode";
+import { HeaderComponent } from "src/app/shared/header/header.component";
 
 @Component({
   selector: "app-my-profile",
@@ -13,6 +14,10 @@ export class MyProfileComponent implements OnInit {
   editForm: FormGroup;
   userId;
   selectedName: boolean = true;
+  // @ViewChild(HeaderComponent) private headerComponent: HeaderComponent;
+  // @ViewChild(HeaderComponent, { static: true }) hc: HeaderComponent;
+  // @ViewChild("HeaderComponent") HeaderComponent;
+
   constructor(private formBuilder: FormBuilder, private service: UserService) {}
 
   ngOnInit() {
@@ -55,7 +60,15 @@ export class MyProfileComponent implements OnInit {
   onSubmit() {
     const json = this.editForm.value;
 
-    this.service.put(this.userId, json).subscribe((_response) => {});
+    this.service.put(this.userId, json).subscribe((_response) => {
+      if (json.selectDisplayName === "true") {
+        // debugger;/
+        // this.hc.setUserName("hhjhdjshjhdjh");
+        // const token = _response.body.data.token;
+        // const { firstName } = jwt_decode(token);
+        // localStorage.setItem("token", _response.body.data.token);
+      }
+    });
   }
 
   getUserInfo() {
