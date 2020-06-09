@@ -4,20 +4,20 @@
     <div class="container-fluid">
       <div class="row">
         <!-- Header for main page -->
-        <div class="col-lg-3 col-md-4 col-12" *ngIf="!currentPage">
+        <div class="col-lg-3 col-md-5 " *ngIf="!currentPage">
           <div class="logo">
             <a><img src="assets/images/{{ logo }}" routerLink="/home" alt="logo" style="width: 100%;" /></a>
           </div>
         </div>
         <!-- Header for main page -->
         <!-- Header for other page -->
-        <div class="col-lg-3 col-md-3" *ngIf="currentPage">
+        <div class="col-lg-3 col-md-1" *ngIf="currentPage">
           <div class="logo">
             <a><img src="assets/images/{{ logo }}" routerLink="/home" alt="logo" style="width: 100%;" /></a>
           </div>
         </div>
         <!-- Header for other page -->
-        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+        <div class="col-lg-6 col-md-1  ">
           <div class="col-12">
             <div class="col_form_area">
               <div class="form-group">
@@ -32,7 +32,7 @@
           </div>
         </div>
         <!-- <div class="col-lg-3"></div> -->
-        <div class="col-lg-3 col-md-3 col-sm-6 col-12" *ngIf="!currentPage">
+        <div class="col-lg-3 col-md-6 " *ngIf="!currentPage">
           <div class="btn_area" *ngIf="!userLogin">
             <!-- <form>
               <input type="text" autocomplete="off" name="search" />
