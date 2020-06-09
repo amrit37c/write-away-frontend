@@ -11,6 +11,7 @@ import {
 import { UserService } from "src/app/service/user/user.service";
 import * as jwt_decode from "jwt-decode";
 import { MustMatch } from "src/app/helpers/must-match.validator";
+import { CookieService } from "angular2-cookie/core";
 
 @Component({
   selector: "app-header",
@@ -65,12 +66,14 @@ export class HeaderComponent implements OnInit {
   submitted = false;
   enableSignOTP = false;
   enableSignInOTP = false;
+  checkCookies = false;
 
   constructor(
     private router: Router,
     private modalService: BsModalService,
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private _cookieService: CookieService
   ) {
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
@@ -158,6 +161,7 @@ export class HeaderComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: ["", Validators.required],
       password: ["", Validators.required],
+      remember: [false],
     });
 
     this.registerForm.patchValue({
@@ -177,11 +181,36 @@ export class HeaderComponent implements OnInit {
     } else {
       this.userLogin = false;
     }
+
+    const email = this.getCookie("email");
+    const password = this.getCookie("password");
+    if (email != "" && password != "") {
+      this.loginForm.patchValue({
+        email: email,
+        password: password,
+        remember: true,
+      });
+    }
   }
 
   // convenience getter for easy access to form fields
   get f() {
     return this.registerForm.controls;
+  }
+
+  getCookie(key: string) {
+    return this._cookieService.get(key);
+  }
+  setCookies() {
+    if (this.loginForm.value.remember === true) {
+      console.log("remove");
+      this._cookieService.put("email", "");
+      this._cookieService.put("password", "");
+    } else {
+      console.log("set");
+      this._cookieService.put("email", this.loginForm.value.email);
+      this._cookieService.put("password", this.loginForm.value.password);
+    }
   }
 
   guradianValidation() {
@@ -291,7 +320,6 @@ export class HeaderComponent implements OnInit {
     this.email = json.email;
 
     this.userService.login(json).subscribe((_response) => {
-      debugger;
       if (_response.status == 200 && _response.body.status == "Success") {
         this.userLogin = true;
         const token = _response.body.data.token;
@@ -326,6 +354,15 @@ export class HeaderComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>) {
+    const email = this.getCookie("email");
+    const password = this.getCookie("password");
+    if (email != "" && password != "") {
+      this.loginForm.patchValue({
+        email: email,
+        password: password,
+        remember: true,
+      });
+    }
     this.selectedYear = new Date().getFullYear();
     this.selectedDate = new Date().getDate();
     this.selectedMonth = new Date().toLocaleString("default", {
