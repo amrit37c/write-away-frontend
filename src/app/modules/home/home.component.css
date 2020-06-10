@@ -124,7 +124,7 @@
 
 .services .service_left_img {
   margin-top: -35px;
-  width: 85%;
+  width: 100%;
 }
 
 .services .service_right_desc {
@@ -214,13 +214,26 @@
 
 /* Service Section end */
 
-
 .modelWidth {
   margin-top: 126px !important;
   margin-right: 249px !important;
 }
 
+.updated-content p {
+  font-size: 1.3vw;
+}
 
+.updated-bold {
+  font-size: 3vw;
+}
+
+.write-moress {
+  font-size: 3vw;
+}
+
+.write-hedsd {
+  font-size: 3vw;
+}
 
 /* Know More Section */
 .know_more {
@@ -399,7 +412,7 @@
 
 .hero-area .left_sidebar .publisher_desc .publisher_name {
   margin-top: 15px;
-  margin-left: 35px;
+  margin-left: 0px;
 }
 
 .hero-area .left_sidebar .publisher_desc .publisher_name {
@@ -589,11 +602,20 @@ ul li {
   display: flex;
 }
 
-.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_first_general li {
+.hero_area_2
+  .right_sidebar_area_2
+  .general_parts_show
+  ul.part_first_general
+  li {
   margin-bottom: 5px;
 }
 
-.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_first_general li a {
+.hero_area_2
+  .right_sidebar_area_2
+  .general_parts_show
+  ul.part_first_general
+  li
+  a {
   color: #000;
   font-size: 14px;
   font-weight: 600;
@@ -603,11 +625,20 @@ ul li {
   padding-left: 30px;
 }
 
-.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_first_general li {
+.hero_area_2
+  .right_sidebar_area_2
+  .general_parts_show
+  ul.part_first_general
+  li {
   margin-bottom: 5px;
 }
 
-.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_second_general li a {
+.hero_area_2
+  .right_sidebar_area_2
+  .general_parts_show
+  ul.part_second_general
+  li
+  a {
   color: #666;
   font-weight: 500;
 }
@@ -851,7 +882,6 @@ ul li {
   text-align: center !important;
 }
 
-
 /* carousel */
 .slider-cont {
   order: 0;
@@ -951,7 +981,6 @@ ul li {
   outline: none !important;
 }
 
-
 /* carousel */
 
 /* Testimonials end */
@@ -1050,7 +1079,46 @@ ul li {
 @media only screen and (min-width: 320px) and (max-width: 440px) {
   .mobile-view {
     text-align: center;
-    padding: 0px 15px 0px 15px;
+    padding: 0px 30px 0px 30px;
+  }
+
+  .hero-area .left_sidebar {
+    margin-top: 20px;
+    height: 1200px;
+  }
+
+  .rsp_bl_box {
+    margin-top: 65px;
+  }
+
+  .left_sidebar_img img {
+    width: 345px !important;
+    height: 412px !important;
+  }
+
+  .hero-area .left_sidebar .follow_details {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    float: left;
+    text-align: center;
+  }
+
+  .follow_detailss {
+    margin-top: 35px;
+  }
+
+  .slider-cont {
+    width: 100% !important;
+  }
+
+  .slider-cont {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  :host ::ng-deep .carousel .carousel-inner {
+    display: inherit !important;
   }
 }
 
@@ -1058,6 +1126,110 @@ ul li {
   .responsive-a {
     position: relative;
     right: 42px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .updated-content p {
+    font-size: 14px;
+    font-weight: normal !important;
+    margin-top: 0;
+  }
+
+  .updated-bold {
+    font-size: 29px !important;
+    margin-top: 0 !important;
+  }
+
+  .write-moress {
+    font-size: 29px !important;
+  }
+
+  .about-content {
+    margin-top: 35px !important;
+  }
+
+  .share-img-blog {
+    width: 16% !important;
+  }
+
+  .updated-images-left {
+    width: 27% !important;
+  }
+
+  .rsp_img_share {
+    width: 11%;
+  }
+
+  .publi {
+    right: 0px !important;
+  }
+
+  .updated-left-side {
+    height: 745px !important;
+  }
+
+  .circle {
+    margin-right: 6px !important;
+  }
+
+  .book_store_desc_two {
+    padding-left: 0px !important;
+  }
+
+  .book_store_text p {
+    font-size: 12px !important;
+  }
+
+  .know_more .book_store .book_store_img img {
+    width: 88% !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .updated-content p {
+    font-size: 14px !important;
+  }
+
+  .fadeIn {
+    margin-top: 0px !important;
+  }
+
+  .book_store.book_store_pink .book_store_desc {
+    padding-top: 15px !important;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .updated-content p {
+    font-size: 18px;
+  }
+
+  .updated-images-left {
+    width: 17% !important;
+  }
+
+  .left_sidebar_img img {
+    width: 323px !important;
+    height: 390px !important;
+  }
+
+  .updated-left-side {
+    height: 1225px !important;
+  }
+
+  .hero-area .left_sidebar .follow_details {
+    width: 100% !important;
+    float: left !important;
+    text-align: center !important;
+  }
+
+  .mobile-view {
+    padding: 0 28px;
+  }
+
+  .fadeIn {
+    margin-top: 45px;
   }
 }
 
@@ -1198,7 +1370,6 @@ ul li {
   line-height: 1.4;
   font-size: 18px;
   margin-top: 39px;
-  padding-right: 75px;
 }
 
 .updated-left-side {
@@ -1226,7 +1397,6 @@ ul li {
 }
 
 .updated-bold {
-  font-size: 40px;
   margin-top: 14px;
   margin-bottom: 20px;
   font-weight: 700;
@@ -1247,7 +1417,7 @@ ul li {
 @media only screen and (min-width: 360px) and (max-width: 470px) {
   .responsive-pencil {
     position: absolute !important;
-    top: -77px !important;
+    top: -51px !important;
   }
 
   .main-img-res {
@@ -1267,6 +1437,26 @@ ul li {
     padding-top: 29px;
   }
 
+  .book_store_desc_two {
+    padding-left: 0px !important;
+  }
+
+  .book_store.book_store_pink .book_store_desc,
+  .book_store.book_store_green .book_store_desc {
+    width: 65% !important;
+    padding-left: 14px !important;
+  }
+
+  .know_more .book_store .book_store_desc {
+    width: 57%;
+    padding-left: 15px !important;
+  }
+
+  .know_more .book_store {
+    height: 195px !important;
+    margin-bottom: 26px;
+  }
+
   .modelWidth {
     margin-right: 0px !important;
     position: relative !important;
@@ -1278,7 +1468,7 @@ ul li {
   }
 
   .hero-area .slider_top_text h3 {
-    font-size: 20px;
+    font-size: 23px;
   }
 
   .hero-area .slider_top_text ul li span {
@@ -1336,7 +1526,6 @@ ul li {
 } */
   .write-on-btn {
     position: relative;
-    left: -30px;
   }
 
   .pad-left {
@@ -1368,7 +1557,11 @@ ul li {
 
   .books-index {
     position: absolute !important;
-    bottom: 69px !important;
+    bottom: 38px !important;
+  }
+
+  .book_store.book_store_pink .book_store_desc {
+    padding-top: 30px;
   }
 
   /* .circle-group{
@@ -1395,9 +1588,35 @@ ul li {
   .know_more .book_store .book_store_desc .book_store_heading h3 {
     color: #fff;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 23px;
     margin-top: 0px;
     line-height: 27px;
+  }
+
+  .rsp_img_share {
+    width: 7% !important;
+    margin-top: 0px !important;
+  }
+
+  .updated-images-left {
+    width: 15% !important;
+  }
+
+  .book-icon-n {
+    width: 73% !important;
+  }
+
+  .sssss {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .share-img-blog {
+    width: 16% !important;
+  }
+
+  .rsp_hd_mrg {
+    margin-top: 42px !important;
   }
 
   .know_more {
@@ -1411,23 +1630,27 @@ ul li {
   }
 }
 
+.rsp_img_share {
+  width: 8%;
+  display: inline-block;
+  margin-top: 0px;
+}
+
 .body-updatedss {
   font-size: 14px !important;
 }
 
 .win-coming-soon {
-  width: 82%;
+  width: %;
   position: relative;
   top: -11px;
 }
 
 .write-hedsd {
-  font-size: 32px;
   font-weight: 600;
 }
 
 .write-moress {
-  font-size: 37px;
   margin-top: 9px;
   font-weight: 600;
 }
@@ -1542,17 +1765,51 @@ ul li {
   padding-right: 30px;
 }
 
-@media only screen and (min-width: 360px) and (max-width: 550px) {
+@media only screen and (min-width: 360px) and (max-width: 680px) {
   .updated-bold {
-    font-size: 39px !important;
     margin-top: 14px;
     margin-bottom: 20px;
+  }
+
+  .updated-bold {
+  }
+
+  .write-moress {
+    font-size: 30px !important;
+  }
+
+  .write-hedsd {
+    font-size: 30px !important;
+  }
+
+  .about-content {
+    margin-top: 20px;
+  }
+
+  .know_more {
+    padding: 70px 0;
+  }
+
+  .fadeIn {
+    margin-bottom: 25px;
+  }
+
+  .mb-4 {
+    margin-bottom: 0rem !important;
+  }
+
+  .updated-conts {
+    font-size: 14px !important;
+    margin-top: 10px;
+  }
+
+  .updated-alignment {
+    padding: 0px 0px 0px 0px !important;
   }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1025px) {
   .updated-bold {
-    font-size: 39px !important;
     margin-top: 14px;
     margin-bottom: 20px;
   }
@@ -1567,7 +1824,6 @@ ul li {
   }
 
   .updated-left-side {
-    height: auto !important;
   }
 
   .hero-area .left_sidebar .publisher_desc .publisher_name img {
@@ -1582,7 +1838,6 @@ ul li {
   }
 
   .updated-left-side {
-    height: auto !important;
   }
 
   .publisher_name img {
@@ -1602,7 +1857,8 @@ ul li {
   }
 }
 
-.updated-width {}
+.updated-width {
+}
 
 .updated-clr-pink {
   margin-right: 5px;
@@ -1679,7 +1935,7 @@ ul li {
 }
 
 .updated-images-left {
-  width: 24%;
+  width: 19%;
   display: inline !important;
 }
 
@@ -1692,7 +1948,6 @@ ul li {
 .left_sidebar_img img {
   width: 291px;
   height: 358px;
-
 }
 
 .blog-img {
