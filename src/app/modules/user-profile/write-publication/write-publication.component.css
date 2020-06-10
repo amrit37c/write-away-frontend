@@ -37,7 +37,7 @@
 }
 
 .write-away-img img {
-  width: 95%;
+  width: 100%;
   margin-top: -111px;
   border-top: 2px solid blue;
 }
@@ -163,7 +163,7 @@
 
 .slider-img {
   width: 100% !important;
-  min-width: 136% !important;
+  min-width: 136%;
 }
 
 
@@ -538,7 +538,7 @@ button {
 
 .slider-img {
   width: 100% !important;
-  min-width: 136% !important;
+  min-width: 136% ;
 }
 
 
@@ -775,7 +775,7 @@ button {
 }
 
 .media-upload {
-  padding: 86px;
+  padding: 70px;
   text-align: center;
   border: 1px solid;
   font-style: italic;
@@ -808,4 +808,46 @@ button {
 .col-yel {
   color: #ffaa00;
   font-size: 21px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  ::ng-deep .media-upload{
+    padding: 40px !important;
+  }
+
+  ::ng-deep .write-away-img img {
+    width: 100% !important;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  ::ng-deep .media-upload{
+    padding: 20px !important;
+  }
+
+  ::ng-deep .write-away-img {
+    padding-left: 43px !important;
+   }
+}
+
+@media only screen and (max-width: 375px) {
+  ::ng-deep .write-away-img {
+    padding-left: 20px !important;
+    margin-top: 100px !important;
+  }
+
+  ::ng-deep .carousel-inner {
+    display: inherit !important;
+  }
+
+  ::ng-deep .slider-cont {
+     width: 92% !important;
+  }
+
+  ::ng-deep .slider-img {
+    min-width: 100% !important;
+    margin-bottom: 20px;
+  }
 }

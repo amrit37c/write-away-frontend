@@ -474,13 +474,6 @@ margin-right: 266px;
   }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1025px) {
-  ::ng-deep .modelWidth {
-    margin-right: 174px;
-    margin-top: 161px;
-    width: 31% !important;
-  }
-}
 
 @media only screen and (min-width: 1440px) and (max-width: 1441px) {
   ::ng-deep .modelWidth {
@@ -653,4 +646,193 @@ input {
 
 .errors-chk-fix {
   width: 148px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  ::ng-deep .modelWidth {
+    margin-right: 1px;
+    margin-top: 1px;
+  }
+
+  ::ng-deep .modal-content {
+    width: 100% !important;
+    margin-top: 90px !important;
+    min-height: inherit !important;
+  }
+
+  ::ng-deep .modal-dialog {
+    width: 55.5% !important;
+    max-width: inherit;
+  }
+
+  ::ng-deep .modal-body {
+    padding: 0px !important;
+  }
+
+  ::ng-deep .closepop-btn {
+    left: -18px !important;
+    top: 10px !important;
+    font-size: 18px;
+  }
+
+  ::ng-deep .sign-updateds{
+    left: -5px !important;
+  }
+
+  ::ng-deep .create-acc-head {
+    padding: 6px 7px !important;
+  }
+
+  ::ng-deep .form-details {
+    margin-top: 0px !important;
+  }
+
+  ::ng-deep .headings-input-fields {
+    padding-top: 6px !important;
+  }
+
+  ::ng-deep .input-names {
+    margin-top: 5px !important;
+  }
+
+  ::ng-deep .forget-popup {
+    padding-bottom: 25px !important;
+  }
+
+  ::ng-deep .date-picker {
+    padding-bottom: 80px !important;
+    margin-top: 80px !important;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  ::ng-deep .modelWidth {
+    margin-right: 1px;
+    margin-top: 1px;
+  }
+
+  ::ng-deep .modal-content {
+    width: 100% !important;
+    margin-top: 0px !important;
+    min-height: inherit !important;
+  }
+
+  ::ng-deep .modal-dialog {
+    width: 94.5% !important;
+    max-width: inherit;
+    margin-top: 441px;
+  }
+
+  ::ng-deep .modal-body {
+    padding: 0px !important;
+  }
+
+  ::ng-deep .closepop-btn {
+    left: -18px !important;
+    top: 10px !important;
+    font-size: 18px;
+  }
+
+  ::ng-deep .sign-updateds{
+    left: -5px !important;
+  }
+
+  ::ng-deep .create-acc-head {
+    padding: 12px 12px !important;
+  }
+
+  ::ng-deep .form-details {
+    margin-top: 20px !important;
+  }
+
+  ::ng-deep .headings-input-fields {
+    padding-top: 20px !important;
+  }
+
+  ::ng-deep .input-names {
+    margin-top: 10px !important;
+  }
+
+  ::ng-deep .forget-popup {
+    padding-bottom: 65px !important;
+  }
+
+  ::ng-deep .date-picker {
+    padding-bottom: 165px !important;
+    margin-top: 85px !important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+
+  ::ng-deep .modal-open {
+    overflow: inherit;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-right: 1px;
+    margin-top: 1px;
+  }
+
+  ::ng-deep .modal-content {
+    width: 100% !important;
+    margin-top: 525px !important;
+    min-height: inherit !important;
+  }
+
+  ::ng-deep .fff {
+    left: 0px !important;
+    right: 0px !important;
+    top: 0px !important;
+    margin-top: 0px;
+    position: inherit !important;
+  }
+
+  ::ng-deep .modal-dialog {
+    width: 98% !important;
+    max-width: inherit;
+    margin-top: 0px;
+    margin: 0 1%;
+  }
+
+  ::ng-deep .modal-body {
+    padding: 0px !important;
+  }
+
+  ::ng-deep .closepop-btn {
+    left: -18px !important;
+    top: 10px !important;
+    font-size: 18px;
+  }
+
+  ::ng-deep .sign-updateds{
+    left: -5px !important;
+  }
+
+  ::ng-deep .create-acc-head {
+    padding: 5px 5px !important;
+  }
+
+  ::ng-deep .form-details {
+    margin-top: 20px !important;
+  }
+
+  ::ng-deep .headings-input-fields {
+    padding-top: 20px !important;
+  }
+
+  ::ng-deep .input-names {
+    margin-top: 10px !important;
+  }
+
+  ::ng-deep .forget-popup {
+    padding-bottom: 65px !important;
+  }
+
+  ::ng-deep .date-picker {
+    padding-bottom: 165px !important;
+    margin-top: 85px !important;
+  }
 }

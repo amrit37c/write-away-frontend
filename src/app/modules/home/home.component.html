@@ -299,7 +299,7 @@
                         )
                   "></i>
               </div>
-              <div class="publisher_desc">
+              <div class="publisher_desc publisher_desc3">
                 <div class="publisher_name">
                   <span class="publi">Publisher:</span>
 
@@ -308,10 +308,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 mobile-view col-12">
+            <div class="col-lg-6 mobile-view mobile-vieww col-12">
               <h3 class="text-uppercase" *ngIf="openPublications.length">
                 {{ openPublications[openPublicationIndex].title }}
               </h3>
+
+              
               <p [innerHTML]="getBrief()" *ngIf="openPublications.length">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
@@ -323,6 +325,16 @@
                 containing Lorem Ipsum passages, and more recently with desktop
                 p
               </p>
+
+              <div class="publisher_desc publisher_desc2">
+                <div class="publisher_name">
+                  <span class="publi">Publisher:</span>
+
+                  <img src="./assets/images/publisher.svg" alt="" />
+                  <span class="name">Daniel</span>
+                </div>
+              </div>
+              
               <div class="classic_details details-updated">
                 <div class="classic_post">
                   <p *ngIf="openPublications.length">
@@ -358,7 +370,7 @@
               </div>
             </div>
             <div class="clearfix"></div>
-            <div class="col-lg-9 col-12">
+            <div class="col-lg-9 col-12 follow_detailsss">
               <div class="follow_details follow_detailss fix-updated top-fix">
                 <!-- <div class="follow_links"> -->
                 <!-- <p
@@ -459,7 +471,7 @@
                 </div>
               </div>
 
-              <div class="publisher_desc read-author">
+              <div class="publisher_desc publisher_desc3 read-author">
                 <div class="publisher_name">
                   <span class="publi">Publisher:</span>
 
@@ -473,6 +485,8 @@
               <h3 class="text-uppercase">
                 Writing Prompts for Grades Arnold Cheyney
               </h3>
+
+              
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
@@ -484,6 +498,14 @@
                 containing Lorem Ipsum passages, and more recently with desktop
                 p
               </p>
+              <div class="publisher_desc publisher_desc2 read-author">
+                <div class="publisher_name">
+                  <span class="publi">Publisher:</span>
+
+                  <img src="./assets/images/publisher.svg" alt="" />
+                  <span class="name">Daniel</span>
+                </div>
+              </div>
               <div class="classic_details">
                 <div class="classic_post">
                   <p>
