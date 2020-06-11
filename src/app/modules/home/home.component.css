@@ -1228,6 +1228,14 @@ ul li {
     width: 343px !important;
     height: 410px !important;
   }
+
+  .new-pad2 {
+    width: 35%;
+  }
+
+  .pad-zero{
+    width: 60%;
+  }
 }
 
 .publisher_desc2{
@@ -1956,7 +1964,12 @@ ul li {
 
 .new-pad {
   padding: 0;
-  padding-left: 15px;
+  padding-left: 14px;
+}
+
+.new-pad2 {
+  padding: 0;
+  padding-left: 25px;
 }
 
 .book-icon-n {
