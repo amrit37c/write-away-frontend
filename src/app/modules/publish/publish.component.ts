@@ -1,13 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { BlogService } from "src/app/service/blog/blog.service";
 import { PublicationService } from "src/app/service/publications/publication.service";
-
+import { environment } from "../../../environments/environment";
 @Component({
   selector: "app-publish",
   templateUrl: "./publish.component.html",
   styleUrls: ["./publish.component.css"],
 })
 export class PublishComponent implements OnInit {
+  url = environment.url;
   gridView: Boolean = true;
 
   itemsPerSlide = 3;

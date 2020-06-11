@@ -218,7 +218,7 @@
 
         <div class="row back-light-blue description-container">
           <div class="col-md-4 write-away-img">
-            <img src="http://localhost:3000/images/{{data['mediaCover']}}">
+            <img src="{{url}}/images/{{data['mediaCover']}}">
             <div class="text-right">
               <i class="fa fa-share col-blue share-icons" (click)="openShareModal(socialMedia,data._id)"></i>
               <i class="fa col-yel bokyy book_mark_link" [ngClass]="
@@ -311,18 +311,6 @@
           </div>
 
 
-          <!-- <div class="col-md-12">
-            <input type="text" class="form-control mb-3" placeholder="Enter Topic" [(ngModel)]="topic">
-            <div class="upload-media" (click)="displayGenre()">
-              <div>
-                <img style="float: left;" *ngFor="let row of data.genres && data.genres.topicMedia"
-                  class="img-responsive img-fluid" src="http://localhost:3000/images/{{row}}"
-                  (click)="addToMedia(row)" />
-              </div>
-            </div>
-            <app-editor [data]="editorData" (editorContent)="getContent($event)"></app-editor>
-
-          </div> -->
           <div class="col-md-12 text-center my-btns">
             <button type="button" class="btn btn-cancel">Cancel</button>
             <button type="button" class="btn btn-save" (click)="onSubmit()">Save</button>
@@ -346,7 +334,7 @@
       <slide *ngFor="let slide of suggestedPublication; let index=index" class="slider-cont">
         <div class="row">
           <div class="col-md-4">
-            <img src="http://localhost:3000/images/{{slide.mediaCover}}" alt="image slide" class="slider-img">
+            <img src="{{url}}/images/{{slide.mediaCover}}" alt="image slide" class="slider-img">
           </div>
           <div class="col-md-8 text-justify">
             <h6 class="novel-title">{{ slide.title }}</h6>
@@ -430,7 +418,7 @@
   <div class="modal-body">
     <div class="text-center mb-3" *ngFor="let genre of data['genres']">
       <div *ngFor="let row of genre.topicMedia">
-        <img style="float: left;" class="img-responsive img-fluid mb-2" src="http://localhost:3000/images/{{row}}" />
+        <img style="float: left;" class="img-responsive img-fluid mb-2" src="{{url}}/images/{{row}}" />
         <button class="btn btn-primary" (click)=" mediaAvailable.includes(row) ? removeMedia(row) : addToMedia(row)">
           {{ mediaAvailable.includes(row) ? 'Remove': 'Select this Genre Image' }} </button>
       </div>
