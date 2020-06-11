@@ -51,9 +51,10 @@
           <p>We would love to hear from you:</p>
 
           <div class="footr-icon">
-            <a href="#"><img src="../../../assets/images/2.png" /> <span>Feedback</span></a>
-            <a href="#"><img src="../../../assets/images/12.png" /> <span>Testimonials</span></a>
-            <a href="#"><img src="../../../assets/images/3.png" /> <span>Contact Us</span></a>
+            <a (click)="openModal(feeback)"><img src="../../../assets/images/2.png" /> <span>Feedback</span></a>
+            <a (click)="openModal(testimonials)"><img src="../../../assets/images/12.png" />
+              <span>Testimonials</span></a>
+            <a (click)="openModal(contact)"><img src="../../../assets/images/3.png" /> <span>Contact Us</span></a>
           </div>
 
         </div>
@@ -64,3 +65,21 @@
     <!-- <p class="copyright">Copyright © 2020 Property Agent.All rights reserved.</p> -->
   </div>
 </footer>
+
+
+<ng-template #feedback>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="footer-modal">
+      <p>We would love to know your thoughts about Us!</p>
+      <textarea class="txt_area" name="review"></textarea>
+      <input class="footer-email-input" placeholder="Email Address" type="email">
+      <button class="email-btn ftr_mail_button" type="button" href="feedback@writeawayy.com">Send</button>
+    </div>
+  </div>
+</ng-template>
