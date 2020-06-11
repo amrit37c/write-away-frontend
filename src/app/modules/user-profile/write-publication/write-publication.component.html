@@ -220,18 +220,33 @@
           <div class="col-md-4 write-away-img">
             <img src="http://localhost:3000/images/{{data['mediaCover']}}">
             <div class="text-right">
-              <i class="fa fa-share col-blue share-icons"></i>
-              <i class="fa col-yel bokyy book_mark_link fa-bookmark-o"></i>
+              <i class="fa fa-share col-blue share-icons" (click)="openShareModal(socialMedia,data._id)"></i>
+              <i class="fa col-yel bokyy book_mark_link" [ngClass]="
+              publicationBookMarkStatus(
+                data.bookmark
+              )
+            " (click)="
+                    data.bookmark.length || data.bookmark.bookMarkStatus == '0'
+                      ? updatePublicationBookMark(
+                         data.bookmark
+                        )
+                      : savePublicationBookMark(
+                          data.bookmark
+                        )
+                  "></i>
             </div>
 
             <div class="text-center">
               <div class="left-sec-name">
                 <p class="publisher-name">Publisher:</p>
                 <img class="prof-imgss" src="./assets/images/publisher.svg">
-                <p class="publisher-name">{{ data && data['publishedBy']}}</p>
-                <p class="publisher-name">Age Groups <span
-                    class="col-grey">{{data && data['ageGroup'] && data['ageGroup']['ageRange'].join('-')}}
-                    years</span></p>
+                <p class="publisher-name">{{ data && data['publishedBy'] || 'Admin'}}</p>
+                <p class="publisher-name">Age Groups
+                  <span *ngFor="let age of data.ageGroup" class="col-grey">
+                    {{age.ageRange.join('-')}}
+                    years</span>
+                  <!-- {{data && data['ageGroup'] && data['ageGroup']['ageRange'].join('-')}} -->
+                </p>
                 <p class="publisher-name">Word Count<span
                     class="col-grey">{{data && data['wordCount'] && data['wordCount'].join('-')}}
                     words</span></p>
@@ -245,7 +260,7 @@
                 <div class="col-6">
                   <i class="fa col-redss" [ngClass]="
                   publicationBookMarkStatus(
-                    data.id
+                    data
                   )
                 " (click)="
                   openPublications.length &&
@@ -266,6 +281,11 @@
           <div class="col-md-8">
             <p class="description-p">
               {{data['brief']}}
+            </p>
+            <p class="publisher-name">Genres
+              <span class="col-grey" *ngFor="let genre of data.genres">
+                {{ genre.title }},
+              </span>
             </p>
             <div class="row buttons-editor">
               <div class="col-6"><button>Kick Starter</button></div>
@@ -402,16 +422,43 @@
 <!-- Sliders -->
 <ng-template #genreMedia>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Modal</h4>
+    <h4 class="modal-title pull-left">Select Upload media Images</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <div class="text-center mb-3" *ngFor="let row of data['genres'] && data['genres']['topicMedia']">
-      <img style="float: left;" class="img-responsive img-fluid mb-2" src="http://localhost:3000/images/{{row}}" />
-      <button class="btn btn-primary" (click)="addToMedia(row)">
-        {{ mediaAvailable.includes(row) ? 'Selected': 'Select this Genre Image' }} </button>
+    <div class="text-center mb-3" *ngFor="let genre of data['genres']">
+      <div *ngFor="let row of genre.topicMedia">
+        <img style="float: left;" class="img-responsive img-fluid mb-2" src="http://localhost:3000/images/{{row}}" />
+        <button class="btn btn-primary" (click)=" mediaAvailable.includes(row) ? removeMedia(row) : addToMedia(row)">
+          {{ mediaAvailable.includes(row) ? 'Remove': 'Select this Genre Image' }} </button>
+      </div>
+
     </div>
+  </div>
+</ng-template>
+<ng-template #socialMedia>
+  <div class="modal-body">
+    <span class="close">×</span>
+    <div class="icon5" style="margin-bottom: 32px;">
+      <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Share On social media</h6>
+      <a (click)="blogShareLink('facebook')"><i class="fa  fa-facebook circle5"></i></a>
+      <a (click)="blogShareLink('instagram')"><i class="fa  fa-instagram circle5"></i></a>
+      <a (click)="blogShareLink('linkedin')"><i class="fa  fa-linkedin circle5 "></i></a>
+      <a (click)="blogShareLink('google+')"><i class="fa  fa-google-plus circle5"></i></a>
+      <a (click)="blogShareLink('youtube')"><i class="fa  fa-youtube circle5 "></i></a>
+      <a (click)="blogShareLink('twitter')"><i class="fa  fa-twitter circle5" style="margin-top: -6px;"></i></a>
+    </div>
+
+    <div style="width: 100%; float: left;">
+      <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Copy Link</h6>
+      <input type="text" [(ngModel)]="copiedLink" id="myInput"
+        style="width: 80%;float: left;background: #effdfe;border: none;border-radius: 18px;">
+      <button (click)="blogShareLink('site')"
+        style="width: 20%;float: left;background: #effdfe;border: none;border-radius: 18px;box-shadow: none;border: none;"><img
+          src="/assets/images/link.png"></button>
+    </div>
+
   </div>
 </ng-template>

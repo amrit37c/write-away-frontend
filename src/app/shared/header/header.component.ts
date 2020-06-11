@@ -526,7 +526,7 @@ export class HeaderComponent implements OnInit {
   }
   private changeName(data): void {
     this.username =
-      data.selectDisplayName === true
+      data && data.selectDisplayName === true
         ? data.displayName
         : `${data.firstName} ${data.lastName} `;
   }
