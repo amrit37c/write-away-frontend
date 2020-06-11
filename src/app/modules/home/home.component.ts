@@ -4,6 +4,7 @@ import { PublicationService } from "src/app/service/publications/publication.ser
 import * as jwt_decode from "jwt-decode";
 import { Router } from "@angular/router";
 import { BsModalRef, BsModalService } from "ngx-bootstrap/modal";
+import { debug } from "util";
 
 @Component({
   selector: "app-home",
@@ -32,15 +33,18 @@ export class HomeComponent implements OnInit {
   publications: Array<any> = [];
   openPublications: Array<any> = [];
   closedPublications: Array<any> = [];
+  openPublicationGenresCount: number = 0;
   userId;
   modalRef: BsModalRef;
   blogOpenId;
+  publicationsOpenId;
   Modalconfig = {
     backdrop: true,
     ignoreBackdropClick: true,
     class: "modelWidth",
   };
   copiedLink: string = "";
+  currentShare;
 
   constructor(
     private blogService: BlogService,
@@ -81,6 +85,10 @@ export class HomeComponent implements OnInit {
         this.closedPublications = this.publications.filter(
           (el) => el.publicationStatus == 3
         );
+
+        this.openPublications.forEach((el) => {
+          this.openPublicationGenresCount += el.genres.length;
+        });
       });
   }
 
@@ -309,8 +317,8 @@ export class HomeComponent implements OnInit {
   blogShareLink(platform, id?) {
     // this.modalRef = this.modalService.show(template);
     id = id ? id : this.blogOpenId;
-    this.copiedLink = "http://demo.writeawayy.com/blogs/" + id;
-    console.log("copied", this.copiedLink);
+
+    // console.log("copied", this.copiedLink);
     navigator.clipboard.writeText(this.copiedLink).then(
       function () {
         console.log("Async: Copying to clipboard was successful!");
@@ -322,24 +330,41 @@ export class HomeComponent implements OnInit {
     );
     // this.decline();
 
-    this.blogService
-      .updateShare(id, { platform: platform })
-      .subscribe((_respone) => {});
-    // this.router.navigateByUrl("/blogs/" + id);
+    if (this.currentShare == "blog") {
+      this.blogService
+        .updateShare(id, { platform: platform })
+        .subscribe((_respone) => {});
+    } else {
+      this.publicationService
+        .updateShare(this.publicationsOpenId, { platform: platform })
+        .subscribe((_respone) => {});
+      console.log("publication shar");
+    }
   }
 
-  copyBlogLink(id?) {
-    id = id ? id : this.blogOpenId;
-    this.copiedLink = "http://demo.writeawayy.com/blogs/" + id;
+  copyBlogLink(id, type?) {
+    if (type == "publication") {
+      this.copiedLink = "http://demo.writeawayy.com/publication/" + id;
+    } else {
+      this.copiedLink = "http://demo.writeawayy.com/blogs/" + id;
+    }
   }
 
-  openShareModal(template: TemplateRef<any>, id) {
+  openShareModal(template: TemplateRef<any>, id, type?) {
     if (!this.userId) {
       this.openLogin();
       return;
     }
-    this.blogOpenId = id;
-    this.copyBlogLink(id);
+    if (type == "publication") {
+      this.currentShare = "publication";
+      this.publicationsOpenId = id;
+      this.copyBlogLink(id, "publication");
+    } else {
+      this.currentShare = "blog";
+      this.blogOpenId = id;
+      this.copyBlogLink(id);
+    }
+
     this.modalRef = this.modalService.show(template);
   }
 

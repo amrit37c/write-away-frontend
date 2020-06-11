@@ -10,9 +10,9 @@
 
           <h3 class="updated-bold">Write even more.</h3>
           <p class="updated-conts">
-            Write Awayy is the happy place to read,<br/>write, tell stories and
-            share them. Express<br/>your thoughts to the world in a creative<br/>way,
-            and have fun doing it. You have ideas,<br/>we help you make them happen.
+            Write Awayy is the happy place to read,<br />write, tell stories and
+            share them. Express<br />your thoughts to the world in a creative<br />way,
+            and have fun doing it. You have ideas,<br />we help you make them happen.
           </p>
         </div>
       </div>
@@ -116,28 +116,28 @@
       </div>
       <div class="col-lg-7 wow fadeIn" data-wow-delay="0.6s">
         <div class="book_store cmng-back-color d-flex">
-          
-            <div class="row book-img-cont">
-              <div class="col-5">
-                <img src="./assets/images/coming-soon.svg" alt="" class="coming-res win-coming-soon" />
-              </div>
-              <div class="col-7 book_store_desc responsive-coming">
-                <div class="title_books_store justify-content-between"></div>
-                <div class="book_store_heading">
-                  <h3 class="hd_mrg rsp_hd_mrg">Coming Soon!</h3>
-                </div>
-                <div class="book_store_text body-updatedss">
-                  <p class="responsive-updated parah_mr">
-                    Watch this space for more!
-                  </p>
 
-                  <div class="book_know_btn">
-                    <a href="#" target="_blank" class="text-uppercase"></a>
-                  </div>
+          <div class="row book-img-cont">
+            <div class="col-5">
+              <img src="./assets/images/coming-soon.svg" alt="" class="coming-res win-coming-soon" />
+            </div>
+            <div class="col-7 book_store_desc responsive-coming">
+              <div class="title_books_store justify-content-between"></div>
+              <div class="book_store_heading">
+                <h3 class="hd_mrg rsp_hd_mrg">Coming Soon!</h3>
+              </div>
+              <div class="book_store_text body-updatedss">
+                <p class="responsive-updated parah_mr">
+                  Watch this space for more!
+                </p>
+
+                <div class="book_know_btn">
+                  <a href="#" target="_blank" class="text-uppercase"></a>
                 </div>
               </div>
             </div>
-          
+          </div>
+
         </div>
       </div>
 
@@ -184,7 +184,7 @@
                     "></i>
                   <i class="heart-shape"><img alt="" class="share-img-blog" src="assets/images/Group 561.svg"
                       (click)="openShareModal(socialMedia,blogs[0]._id)"></i>
-                  <!-- <i class="fa fa-share share-icons share-updated" (click)="blogShareLink(blogs[0]._id)"></i> -->
+
 
                   <i class="fa col-yel bokyy" [ngClass]="blogBookMarkStatus()" (click)="
                       blogs.length && blogs[0] && blogs[0].bookmark
@@ -240,23 +240,14 @@
               <span>Titles
 
                 <a href="#" target="_blank" class="cil-updatedsss">
-                  {{
-                    (openPublications.length &&
-                      openPublications[openPublicationIndex].title.length) ||
-                      "0"
-                  }}
+                  {{openPublications.length}}
                 </a></span>
             </li>
             <li class="text_titles">
               <span>
                 Genres
                 <a href="#" target="_blank" class="cil-updatedsss">
-                  {{
-                    (openPublications.length &&
-                      openPublications[openPublicationIndex].genres.title
-                        .length) ||
-                      0
-                  }}
+                  {{openPublicationGenresCount}}
                 </a></span>
             </li>
             <li class="text_titles">
@@ -277,11 +268,9 @@
                   " />
               </div>
               <div class="text-right">
-                <!-- <i class="fa fa-share col-blue share-icons" (click)="
-                    sharePublication(openPublications[openPublicationIndex])
-                  "></i> -->
                 <img alt="" class="rsp_img_share" src="assets/images/Group 561.svg"
-                  (click)="sharePublication(openPublications[openPublicationIndex])">
+                  (click)="openShareModal(socialMedia,openPublications[openPublicationIndex]._id, 'publication')">
+                <!-- (click)="sharePublication(openPublications[openPublicationIndex])" -->
 
                 <i class="fa col-yel bokyy book_mark_link" [ngClass]="
                     publicationBookMarkStatus(
@@ -313,7 +302,7 @@
                 {{ openPublications[openPublicationIndex].title }}
               </h3>
 
-              
+
               <p [innerHTML]="getBrief()" *ngIf="openPublications.length">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
@@ -334,15 +323,14 @@
                   <span class="name">Daniel</span>
                 </div>
               </div>
-              
+
               <div class="classic_details details-updated">
                 <div class="classic_post">
                   <p *ngIf="openPublications.length">
                     Genres:
-                    <span>
-                      {{
-                        openPublications[openPublicationIndex].genres.title
-                      }}</span>
+                    <span *ngFor="let genre of openPublications[openPublicationIndex].genres">
+                      {{ genre.title | titlecase }},
+                    </span>
                   </p>
                   <p *ngIf="openPublications.length">
                     Languages:
@@ -353,11 +341,10 @@
                   </p>
                   <p *ngIf="openPublications.length">
                     Age Group:
-                    <span>{{
-                      openPublications[
-                        openPublicationIndex
-                      ].ageGroup.ageRange.join("-")
-                    }}</span>
+                    <span class="col-grey" *ngFor="let age of openPublications[
+                      openPublicationIndex
+                    ].ageGroup"> {{ age.ageRange.join('-') }}
+                      years,</span>
                   </p>
                   <p *ngIf="openPublications.length">
                     Closing Date:
@@ -372,27 +359,6 @@
             <div class="clearfix"></div>
             <div class="col-lg-9 col-12 follow_detailsss">
               <div class="follow_details follow_detailss fix-updated top-fix">
-                <!-- <div class="follow_links"> -->
-                <!-- <p
-                  (click)="
-                    sharePublication(openPublications[openPublicationIndex].id)
-                  "
-                ></p>
-                <p
-                  class="book_mark_link"
-                  (click)="
-                    openPublications.length &&
-                    openPublications[openPublicationIndex] &&
-                    openPublications[openPublicationIndex].bookmark
-                      ? updatePublicationBookMark(
-                          openPublications[openPublicationIndex]
-                        )
-                      : savePublicationBookMark(
-                          openPublications[openPublicationIndex]
-                        )
-                  "
-                ></p> -->
-                <!-- </div>  -->
                 <div class="follow_btn">
                   <button class="write-on-btn btn-lg" (click)="
                       writePublication(
@@ -465,7 +431,6 @@
                 </div>
                 <div class="col-6 right">
                   <i class="fa fa-heart-o col-red heart-shape"></i>
-
                   <img alt="" class="updated-images-left" src="assets/images/Group 561.svg">
                   <i class="fa fa-bookmark-o col-yel bokyy"></i>
                 </div>
@@ -486,7 +451,7 @@
                 Writing Prompts for Grades Arnold Cheyney
               </h3>
 
-              
+
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy

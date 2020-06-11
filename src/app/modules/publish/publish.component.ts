@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BlogService } from "src/app/service/blog/blog.service";
+import { PublicationService } from "src/app/service/publications/publication.service";
 
 @Component({
   selector: "app-publish",
@@ -12,7 +13,7 @@ export class PublishComponent implements OnInit {
   itemsPerSlide = 3;
   singleSlideOffset = false;
   noWrap = false;
-  blogs: Array<any> = [];
+  publications: Array<any> = [];
 
   slidesChangeMessage = "";
   slides = [
@@ -22,10 +23,13 @@ export class PublishComponent implements OnInit {
     { image: "assets/images/write.svg" },
     { image: "assets/images/write.svg" },
   ];
-  constructor(private service: BlogService) {}
+
+  openPublicationGenresCount: number = 0;
+
+  constructor(private service: PublicationService) {}
 
   ngOnInit() {
-    this.getBlogs(); // fetch blogs
+    this.getPubliactions(); // fetch publications
   }
 
   /**
@@ -38,9 +42,12 @@ export class PublishComponent implements OnInit {
     type === "list" ? (this.gridView = false) : (this.gridView = true);
   }
 
-  getBlogs() {
+  getPubliactions() {
     this.service.get().subscribe((_response) => {
-      this.blogs = _response.body.data;
+      this.publications = _response.body.data;
+      this.publications.forEach((el) => {
+        this.openPublicationGenresCount += el.genres.length;
+      });
     });
   }
   getBrief(content) {
