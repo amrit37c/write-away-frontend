@@ -131,11 +131,12 @@
   font-size: 12px;
   font-weight: 600;
   background-color: white;
-  border-radius: 10px;
-  padding: 02px;
-  padding-left: 15px;
-  padding-right: 15px;
-  -webkit-box-shadow: 0px 6px 10px -7px rgba(0, 0, 0, 0.96);
+  border-radius: 17px;
+  padding: 4px;
+      padding-right: 4px;
+      padding-left: 4px;
+  padding-left: 20px;
+  padding-right: 20px;
   box-shadow: 0px 6px 10px -7px rgba(0, 0, 0, 0.96);
 }
 
@@ -777,11 +778,20 @@ button {
 }
 
 .media-upload {
-  padding: 70px;
-  text-align: center;
-  border: 1px solid;
-  font-style: italic;
-  border-color: #D43299;
+  padding: 95px 40px;
+text-align: center;
+border: 1px solid;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+font-style: italic;
+border-color: #D43299;
+width: 86%;
+float: left;
+position: absolute;
+z-index: 999;
+background: #fff;
 }
 
 .topic {
@@ -810,6 +820,11 @@ button {
 .col-yel {
   color: #ffaa00;
   font-size: 21px;
+}
+
+.ck.ck-editor__editable_inline {
+  width: 120.5% !important;
+  float: right !important;
 }
 
 
