@@ -80,9 +80,9 @@
   <div class="modal-body">
     <div class="footer-modal">
       <p>We would love to know your thoughts about Us!</p>
-      <textarea class="txt_area" name="review"></textarea>
-      <input class="footer-email-input" placeholder="Email Address" type="email">
-      <button class="email-btn ftr_mail_button" type="button" href="feedback@writeawayy.com">Send</button>
+      <textarea class="txt_area" name="review" [(ngModel)]="review"></textarea>
+      <input class="footer-email-input" placeholder="Email Address" type="email" [(ngModel)]="email">
+      <button class="email-btn ftr_mail_button" type="button" (click)="sendFeedBack()">Send</button>
     </div>
   </div>
 </ng-template>

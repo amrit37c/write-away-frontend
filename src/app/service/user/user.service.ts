@@ -138,4 +138,20 @@ export class UserService extends BaseService {
         })
       );
   }
+  sendFeedBack(payload): Observable<any> {
+    const url = `${environment.baseUrl}${environment.apis.user}/${environment.apis.feedback}`;
+    return this.http
+      .post<any>(url, payload, {
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
 }
