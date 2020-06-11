@@ -1,237 +1,3 @@
-<!-- <div class="container-fluid">
-
-
-  <div class="row pad-zero">
-
-    <div class="col-md-3 pad-zero">
-      <button type="button" class="logo-btn">Blog</button>
-    </div>
-
-    <div class="col-md-3 right right-header pull-right ">
-
-    </div>
-
-  </div>
-
-
-
-  <div class="">
-    <div class="container-fluid center blog-body">
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <img src="http://localhost:3000/images/{{blog.media}}" *ngIf="blog && blog.media" class="hunt-img">
-        </div>
-        <div class="col-md-3"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 center">
-          <div class="row">
-            <div class="col-lg-2">
-              <span class="date" *ngIf="blog && blog.content"> {{blog.createdAt | date: 'MMM dd, yyyy'}} </span>
-            </div>
-            <div class="col-lg-10">
-              <h3 class="blog-title" *ngIf="blog && blog.title">{{blog.title}}</h3>
-            </div>
-          </div>
-
-
-          <div class="text-style">
-
-            <p [innerHTML]="blog.content" *ngIf="blog && blog.content">
-
-            </p>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row blog-body-icons">
-                <div class="col-md-4 icons-res updated-img">
-                  <img src="/assets/images/book.svg" class="img-updated" alt="dff">
-                  <span class="pricing" *ngIf="blog && blog.readCount">{{blog.readCount.length || '0'}}</span>
-                  <div>
-                    <span class="info-icon blog-icons">Reads</span>
-                  </div>
-
-                </div>
-
-                <div class="col-md-4 icons-res">
-
-
-                  <i class="fa fa-lg new-icons-blog  fa-heart-o clr2" aria-hidden="true"></i>
-                  <span class="pricing" *ngIf="blog && blog.likeCount">{{blog.likeCount|| '0'}}</span>
-                  <div>
-                    <span class="info-icon blog-icons">Likes</span>
-                  </div>
-
-
-                </div>
-
-                <div class="col-md-4 icons-res">
-                  <i class="fa  new-icons-blog fa-share share-eco  ">
-                  </i>
-
-                  <span class="pricing" *ngIf="blog && blog.shareCount">{{blog.shareCount || '0'}}</span>
-                  <div>
-                    <span class="info-icon blog-icons">Shares</span>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-
-            <div class="col-md-6"></div>
-
-          </div>
-
-
-
-        </div>
-
-      </div>
-    </div>
-    <div class="container recent-blogs center">
-      <div id="share-head" class="rc-head">
-        <h4><span class="recenter">Re</span>cent from Blogs</h4>
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-3 recent-blog-blk" *ngFor="let blog of recentBlogs">
-          <div class="date-recent"> <span> {{ blog.createdAt | date : 'MMM dd,yyyy'   }}</span> </div>
-          <div class="rcbb">
-            <div class="recent-blog-img">
-              <img src="http://localhost:3000/images/{{blog.media}}">
-            </div>
-            <div class="comm-font">
-              <p>{{blog.title}}</p>
-            </div>
-            <div class="recent-text-font">
-              <p [innerHTML]="blog.content"></p>
-            </div>
-            <span class="read-more">
-              <p (click)="addToRecent(blog._id)"> Read More </p>
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="top-margin"></div>
-
-      <div class="archive-section col-md-12">
-        <p class="archive-font"><span class="recenter">Ar</span>chives</p>
-        <div class="archive-date">
-          <p *ngFor="let data of monthsArchievedData | keyvalue" (click)="archieveBlogShow(data.value)">{{ data.key }}
-          </p>
-          <div class="row">
-            <div class="col-md-3 recent-blog-blk" *ngFor="let blog of archieveMonthArr">
-              <div class="date-recent">
-
-                <span> {{ blog.createdAt | date:'MMM dd, yyyy' }}</span>
-              </div>
-              <div class="rcbb">
-                <div class="recent-blog-img">
-                  <img src="http://localhost:3000/images/{{blog.media}}">
-                </div>
-                <div class="comm-font">
-                  <p>{{blog.title}}</p>
-                </div>
-                <div class="recent-text-font">
-                  <p [innerHTML]="blog.content.substr(0,140)"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="container-fluid center blog-body" *ngIf="(recentBlog | json)  != ({} | json)">
-      <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-          <img src="http://localhost:3000/images/{{recentBlog['media']}}" *ngIf="recentBlog && recentBlog['media']"
-            class="hunt-img">
-        </div>
-        <div class="col-md-3"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 center">
-          <div class="row">
-            <div class="col-lg-2">
-              <span class="date" *ngIf="recentBlog && recentBlog['content']">
-                {{recentBlog['createdAt'] | date: 'MMM dd, yyyy'}} </span>
-            </div>
-            <div class="col-lg-10">
-              <h3 class="blog-title" *ngIf="recentBlog && recentBlog['title']">{{recentBlog['title']}}</h3>
-            </div>
-          </div>
-
-
-          <div class="text-style">
-
-            <p [innerHTML]="recentBlog['content']" *ngIf="recentBlog && recentBlog['content']">
-
-            </p>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="row blog-body-icons">
-                <div class="col-md-4 icons-res">
-
-                  <i class="fa fa-book new-icons-blog fa-lg  clr1"></i>
-                  <span class="pricing">{{blog.readCount.length || '0'}}</span>
-                  <div>
-                    <span class="info-icon blog-icons">Reads</span>
-                  </div>
-
-                </div>
-
-                <div class="col-md-4 icons-res">
-
-
-                  <i class="fa fa-lg new-icons-blog  fa-heart-o clr2" aria-hidden="true"></i>
-                  <span class="pricing" *ngIf="recentBlog['likeCount']">{{recentBlog['likeCount'] || 0}}</span>
-                  <div (click)="like()">
-                    <span class="info-icon blog-icons">Likes</span>
-                  </div>
-
-
-                </div>
-
-                <div class="col-md-4 icons-res">
-                  <i class="fa  new-icons-blog fa-share share-eco  ">
-                  </i>
-
-                  <span class="pricing" *ngIf="recentBlog['shareCount']">{{recentBlog['shareCount'] || 0}}</span>
-                  <div>
-                    <span class="info-icon blog-icons">Shares</span>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-
-            <div class="col-md-6"></div>
-
-          </div>
-
-
-
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</div> -->
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
@@ -245,7 +11,7 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-      <img src="http://localhost:3000/images/{{blog.media}}" *ngIf="blog && blog.media" class="hunt-img">
+      <img src="{{url}}/images/{{blog.media}}" *ngIf="blog && blog.media" class="hunt-img">
     </div>
     <div class="col-md-3"></div>
   </div>
@@ -392,8 +158,8 @@
     <div class="col-lg-4 col-sm-6 recent-blog-blk" *ngFor="let blog of recentBlogs">
       <div class="rcbb ">
         <div class="recent-blog-img">
-          <img src="http://localhost:3000/images/{{blog.media}}"
-            onerror="javascript:this.src='/assets/images/no-image-873.png'" class="img-fluid clsImg">
+          <img src="{{url}}/images/{{blog.media}}" onerror="javascript:this.src='/assets/images/no-image-873.png'"
+            class="img-fluid clsImg">
           <span class="date2"
             style="position: relative;margin-top: -202px;float: left;margin-left: 237px;background: #fff;padding: 6px 10px;">
             <p style="margin: 0;font-size: 12px;font-weight: 500;color: #0149a5;">
@@ -434,7 +200,7 @@
             </div>
             <div class="rcbb">
               <div class="recent-blog-img">
-                <img src="http://localhost:3000/images/{{blog.media}}">
+                <img src="{{url}}/images/{{blog.media}}">
               </div>
               <div class="comm-font">
                 <p>{{blog.title}}</p>
@@ -454,8 +220,7 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-      <img src="http://localhost:3000/images/{{recentBlog['media690']}}" *ngIf="recentBlog && recentBlog['media']"
-        class="hunt-img">
+      <img src="{{url}}/images/{{recentBlog['media690']}}" *ngIf="recentBlog && recentBlog['media']" class="hunt-img">
     </div>
     <div class="col-md-3"></div>
   </div>

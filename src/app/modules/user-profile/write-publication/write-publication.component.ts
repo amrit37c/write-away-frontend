@@ -4,13 +4,14 @@ import { PublicationService } from "src/app/service/publications/publication.ser
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 import { FormGroup, FormBuilder } from "@angular/forms";
 import * as jwt_decode from "jwt-decode";
-
+import { environment } from "../../../../environments/environment";
 @Component({
   selector: "app-write-publication",
   templateUrl: "./write-publication.component.html",
   styleUrls: ["./write-publication.component.css"],
 })
 export class WritePublicationComponent implements OnInit {
+  url = environment.url;
   itemsPerSlide = 3;
   singleSlideOffset = false;
   noWrap = false;

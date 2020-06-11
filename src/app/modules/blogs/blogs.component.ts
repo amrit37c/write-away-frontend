@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { BlogService } from "src/app/service/blog/blog.service";
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: "app-blogs",
@@ -9,6 +10,7 @@ import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
   styleUrls: ["./blogs.component.css"],
 })
 export class BlogsComponent implements OnInit {
+  url = environment.url;
   id;
   blog;
   recentBlogs: Array<any> = [];

@@ -5,6 +5,7 @@ import * as jwt_decode from "jwt-decode";
 import { Router } from "@angular/router";
 import { BsModalRef, BsModalService } from "ngx-bootstrap/modal";
 import { debug } from "util";
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: "app-home",
@@ -15,6 +16,7 @@ export class HomeComponent implements OnInit {
   itemsPerSlide = 3;
   singleSlideOffset = false;
   noWrap = false;
+  baseUrl = environment.url;
 
   slidesChangeMessage = "";
   slides = [
