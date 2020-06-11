@@ -156,7 +156,7 @@
               <div class="service_left_img">
 
                 <img src="/assets/images/no-image-593.png" alt="Blog image" *ngIf="!blogs.length" />
-                <img src="http://localhost:3000/images/{{ blogs[0].media520 }}" *ngIf="blogs.length" alt="Blog image"
+                <img src="{{baseUrl}}/images/{{ blogs[0].media520 }}" *ngIf="blogs.length" alt="Blog image"
                   class="blog-img" onerror="javascript:this.src='/assets/images/no-image-593.png'" />
               </div>
               <div class="row">
@@ -260,7 +260,7 @@
           <div class="row" *ngIf="openPublications.length">
             <div class="col-lg-6 col-12">
               <div class="left_sidebar_img">
-                <img src="http://localhost:3000/images/{{
+                <img src="{{baseUrl}}/images/{{
                     openPublications[openPublicationIndex]['mediaCover']
                   }}" onerror="javascript:this.src='/assets/images/dummy291.png'" alt="" *ngIf="
                     openPublications.length &&
