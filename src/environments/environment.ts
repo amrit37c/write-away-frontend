@@ -23,6 +23,7 @@ export const environment = {
     verifySignUpOTP: "verify-signup-otp",
     resendOTP: "resend-otp",
     blogShare: "blog-share",
+    publicationShare: "publication-share",
   },
 };
 

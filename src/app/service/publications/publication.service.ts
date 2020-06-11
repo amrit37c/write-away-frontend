@@ -185,4 +185,26 @@ export class PublicationService extends BaseService {
         })
       );
   }
+
+  /*** update share on the server **/
+  updateShare(id, payload): Observable<any> {
+    return this.http
+      .post<any>(
+        `${this.url}/${environment.apis.publicationShare}/${id}`,
+        payload,
+        {
+          headers: this.token(),
+          responseType: "json",
+          observe: "response",
+        }
+      )
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
 }

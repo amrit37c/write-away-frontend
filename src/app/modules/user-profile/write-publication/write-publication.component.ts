@@ -45,6 +45,7 @@ export class WritePublicationComponent implements OnInit {
   };
   submissionForm: FormGroup;
   editAble: boolean = false;
+  copiedLink: string;
 
   constructor(
     private service: PublicationService,
@@ -80,7 +81,7 @@ export class WritePublicationComponent implements OnInit {
   getPublication(id) {
     this.service.getOne(id).subscribe((_response) => {
       this.data = _response.body.data[0];
-      if (this.data["userPublication"].length) {
+      if (this.data["userPublication"] && this.data["userPublication"].length) {
         this.editAble = true;
         this.submissionId = this.data["userPublication"][0]["_id"];
         this.submissionForm.patchValue(this.data["userPublication"][0]);
@@ -96,9 +97,13 @@ export class WritePublicationComponent implements OnInit {
     if (!this.mediaAvailable.includes(img)) {
       this.mediaAvailable.push(img);
     }
-    alert("added");
+    alert("Added");
   }
 
+  removeMedia(img) {
+    this.mediaAvailable = this.mediaAvailable.filter((el) => el != img);
+    alert("Removed");
+  }
   getAllPublication() {
     this.service.get().subscribe((_response) => {
       this.suggestedPublication = _response.body.data;
@@ -106,14 +111,6 @@ export class WritePublicationComponent implements OnInit {
   }
 
   onSubmit(type?) {
-    // const json = {};
-    // json["mediaAvailable"] = this.mediaAvailable;
-    // json["topic"] = this.topic;
-    // json["content"] = this.editorData;
-    // json["publicationId"] = this.id;
-    // if (type) {
-    //   json["isActive"] = true;
-    // }
     const json = this.submissionForm.value;
     json["mediaAvailable"] = this.mediaAvailable;
     json["content"] = this.editorData;
@@ -133,6 +130,7 @@ export class WritePublicationComponent implements OnInit {
         if (type) {
           message = "Publish Content Updated";
         }
+        alert(message);
       });
     }
     this.getAllPublication();
@@ -157,9 +155,10 @@ export class WritePublicationComponent implements OnInit {
   }
 
   publicationBookMarkStatus(publication) {
+    console.log(">>>", publication);
     return publication &&
-      publication.bookmark &&
-      publication.bookmark.bookMarkStatus === "1"
+      publication[0] &&
+      publication[0].bookMarkStatus === "1"
       ? " fa-bookmark"
       : "fa-bookmark-o";
   }
@@ -168,7 +167,7 @@ export class WritePublicationComponent implements OnInit {
     this.service
       .postBookMark({
         bookMarkStatus: 1,
-        publicationId: publication._id,
+        publicationId: this.id,
       })
       .subscribe((_response) => {
         this.getPublication(this.id); //get single publication
@@ -177,16 +176,37 @@ export class WritePublicationComponent implements OnInit {
 
   updatePublicationBookMark(publication) {
     this.service
-      .putBookMark(publication.bookmark._id, {
-        bookMarkStatus: publication.bookmark.bookMarkStatus === "0" ? 1 : 0,
-        publicationId: publication._id,
+      .putBookMark(publication[0]._id, {
+        bookMarkStatus: publication[0].bookMarkStatus === "0" ? 1 : 0,
+        publicationId: publication[0]._id,
       })
       .subscribe((_response) => {
         this.getPublication(this.id); //get single publication
       });
   }
 
+  // publicationBookMarkStatus(publication) {
+  //   return publication &&
+  //     publication.bookmark &&
+  //     publication.bookmark.bookMarkStatus === "1"
+  //     ? " fa-bookmark"
+  //     : "fa-bookmark-o";
+  // }
+
   getBrief(brief) {
     return brief.substr(0, 100);
+  }
+
+  openShareModal(template: TemplateRef<any>, id) {
+    this.copyBlogLink(id, "publication");
+    this.modalRef = this.modalService.show(template);
+  }
+
+  copyBlogLink(id, type?) {
+    if (type == "publication") {
+      this.copiedLink = "http://demo.writeawayy.com/publication/" + id;
+    } else {
+      this.copiedLink = "http://demo.writeawayy.com/blogs/" + id;
+    }
   }
 }
