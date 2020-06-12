@@ -15,7 +15,9 @@ export class FooterComponent implements OnInit {
     class: "modelWidth",
   };
   review: string = "";
+  testimonials: string = "";
   email: string = "";
+  info: string = "";
 
   constructor(
     private modalService: BsModalService,
@@ -36,11 +38,36 @@ export class FooterComponent implements OnInit {
       })
       .subscribe((_response) => {
         alert(_response.body.message);
+        this.decline();
+      });
+  }
+  sendTestimonial() {
+    this.service
+      .sendTestimonial({
+        email: this.email,
+        testimonial: this.testimonials,
+      })
+      .subscribe((_response) => {
+        alert(_response.body.message);
+        this.decline();
+      });
+  }
+  sendContactus() {
+    this.service
+      .sendTestimonial({
+        email: this.email,
+        info: this.info,
+      })
+      .subscribe((_response) => {
+        alert(_response.body.message);
+        this.decline();
       });
   }
   decline(): void {
     this.modalRef.hide();
     this.review = "";
+    this.testimonials = "";
+    this.info = "";
     this.email = "";
   }
 }

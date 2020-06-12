@@ -75,8 +75,6 @@ export class BlogsComponent implements OnInit {
       this.recentBlogs = [];
       this.recentBlogs = allBlogs.slice(0, 2);
 
-      // this.recentBlogs = _response.body.data;
-
       this.archievedBlogs.splice(0, 2);
 
       this.monthsArchievedData = [];
@@ -115,10 +113,7 @@ export class BlogsComponent implements OnInit {
       .subscribe((_response) => {
         this.getBlogDetails(this.id);
         this.getBlogs("recent", { isPublished: "today", activeBlog: "false" });
-        // this.getBlogs("recent", { isPublished: "today" });
-        // this.getBlogs("archieved", { isPublished: "yesterday" });
-        // this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-        // this.router.onSameUrlNavigation = "reload";
+        this.recentBlog = {};
       });
   }
 
@@ -130,9 +125,8 @@ export class BlogsComponent implements OnInit {
       })
       .subscribe((_response) => {
         this.getBlogDetails(this.id);
-        // this.getBlogs("recent", { isPublished: "today" });
-        // this.getBlogs("archieved", { isPublished: "yesterday" });
         this.getBlogs("recent", { isPublished: "today", activeBlog: "false" });
+        this.recentBlog = {};
       });
   }
 
