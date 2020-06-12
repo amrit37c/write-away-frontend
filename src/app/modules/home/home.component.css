@@ -1236,6 +1236,10 @@ ul li {
   .pad-zero{
     width: 60%;
   }
+
+  .blog-img{
+    height: 400px !important;
+  }
 }
 
 .publisher_desc2{
@@ -2015,7 +2019,7 @@ ul li {
 
 .blog-img {
   width: 593px;
-  height: 481px;
+  height: 400px;
   background-color: #ebebeb;
 }
 
