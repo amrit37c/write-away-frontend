@@ -27,6 +27,8 @@ export const environment = {
     blogShare: "blog-share",
     publicationShare: "publication-share",
     feedback: "feedback",
+    testimonial: "testimonial",
+    contactus: "contactus",
   },
 };
 

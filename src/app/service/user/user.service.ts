@@ -154,4 +154,36 @@ export class UserService extends BaseService {
         })
       );
   }
+  sendTestimonial(payload): Observable<any> {
+    const url = `${environment.baseUrl}${environment.apis.user}/${environment.apis.testimonial}`;
+    return this.http
+      .post<any>(url, payload, {
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+  sendContact(payload): Observable<any> {
+    const url = `${environment.baseUrl}${environment.apis.user}/${environment.apis.contactus}`;
+    return this.http
+      .post<any>(url, payload, {
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
 }

@@ -96,9 +96,9 @@
   <div class="modal-body">
     <div class="footer-modal">
       <p>We would love to know your thoughts about Us!</p>
-      <textarea class="txt_area" name="review"></textarea>
-      <input class="footer-email-input" placeholder="Email Address" type="email">
-      <button class="email-btn ftr_mail_button" type="button" href="feedback@writeawayy.com">Send</button>
+      <textarea class="txt_area" name="review" [(ngModel)]="testimonials"></textarea>
+      <input class="footer-email-input" placeholder="Email Address" type="email" [(ngModel)]="email">
+      <button class="email-btn ftr_mail_button" type="button" (click)="sendTestimonial()">Send</button>
     </div>
   </div>
 </ng-template>
@@ -112,9 +112,9 @@
   <div class="modal-body">
     <div class="footer-modal">
       <p>We would love to know your thoughts about Us!</p>
-      <textarea class="txt_area" name="review"></textarea>
-      <input class="footer-email-input" placeholder="Email Address" type="email">
-      <button class="email-btn ftr_mail_button" type="button" href="feedback@writeawayy.com">Send</button>
+      <textarea class="txt_area" name="review" [(ngModel)]="info"></textarea>
+      <input class="footer-email-input" placeholder="Email Address" type="email" [(ngModel)]="email">
+      <button class="email-btn ftr_mail_button" type="button" (click)="sendContactus()">Send</button>
     </div>
   </div>
 </ng-template>

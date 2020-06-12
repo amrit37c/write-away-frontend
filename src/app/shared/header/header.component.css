@@ -6,9 +6,9 @@
   padding-bottom: 20px;
 }
 
-.right-header img{
-	width: 50%;
-    margin-left: 10px;
+.right-header img {
+  width: 50%;
+  margin-left: 10px;
 }
 
 .forget-pass-login-modal {
@@ -59,7 +59,7 @@
   padding-top: 8px;
   display: flex;
   align-items: center;
-	width: 70% !important;
+  width: 70% !important;
 }
 
 .btn_area .search_btn i {
@@ -204,11 +204,6 @@
 /* NEW CSS _ C */
 .pad-zero {
   padding: 0% !important;
-}
-
-.right-header {
-  padding-top: 15px !important;
-  padding-right: 30px !important;
 }
 
 .terms-fix-pad {
@@ -449,7 +444,7 @@ forget-pass */
 
 ::ng-deep .modelWidth {
   margin-top: 125px;
-margin-right: 266px;
+  margin-right: 266px;
 }
 
 /* @media only screen and (min-width:360px) and (max-width:520px) {
@@ -676,7 +671,7 @@ input {
     font-size: 18px;
   }
 
-  ::ng-deep .sign-updateds{
+  ::ng-deep .sign-updateds {
     left: -5px !important;
   }
 
@@ -735,7 +730,7 @@ input {
     font-size: 18px;
   }
 
-  ::ng-deep .sign-updateds{
+  ::ng-deep .sign-updateds {
     left: -5px !important;
   }
 
@@ -807,7 +802,7 @@ input {
     font-size: 18px;
   }
 
-  ::ng-deep .sign-updateds{
+  ::ng-deep .sign-updateds {
     left: -5px !important;
   }
 
