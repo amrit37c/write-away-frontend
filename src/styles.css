@@ -98,7 +98,6 @@ ul,
 ul li {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 /* .btn {
@@ -496,6 +495,7 @@ input:-webkit-autofill:focus {
 .main-item-p {
   font-family: Montserrat;
 }
+
 .ck.ck-editor__editable_inline {
   text-align: left;
   height: 507px !important;

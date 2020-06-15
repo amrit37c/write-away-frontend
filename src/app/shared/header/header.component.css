@@ -831,3 +831,15 @@ input {
     margin-top: 85px !important;
   }
 }
+
+.dropdown-toggle {
+  background: transparent !important;
+  color: #3b9bf1 !important;
+}
+
+.dropdown-menu.show,
+.dropdown-item {
+  background: #ecfdff !important;
+  color: #3b9bf1 !important;
+  font-size: 14px !important;
+}

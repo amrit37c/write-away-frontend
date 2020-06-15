@@ -4,14 +4,17 @@
   <div class="row pad-zero">
 
     <div class="col-md-3 pad-zero">
-      <button type="button" class="logo-btn">We're Publishing</button>
+      <button type="button" class="logo-btn">We're Publishing!</button>
     </div>
 
-    <div class="col-md-9 right right-header pull-right ">
-      <div class="my-desk-heading background-light-pink">
+    <div class="col-md-9 right-header text-center">
+      <p>
+        <!--Write on this-->
+      </p>
+      <!-- <div class="my-desk-heading background-light-pink">
         <p> <span class="color-pink">He</span>llo! Ricky <span class="col-blue">{{count || 0}}</span></p>
 
-      </div>
+      </div> -->
     </div>
 
   </div>
@@ -242,9 +245,12 @@
                 <img class="prof-imgss" src="./assets/images/publisher.svg">
                 <p class="publisher-name">{{ data && data['publishedBy'] || 'Admin'}}</p>
                 <p class="publisher-name">Age Groups
-                  <span *ngFor="let age of data.ageGroup" class="col-grey">
+                  <span *ngFor="let age of data.ageGroup;let i = index" class="col-grey">
                     {{age.ageRange.join('-')}}
-                    years</span>
+                    years
+                    <span *ngIf="i == data.ageGroup.length - 1"></span>
+                    <span *ngIf="i != data.ageGroup.length - 1">,</span>
+                  </span>
                   <!-- {{data && data['ageGroup'] && data['ageGroup']['ageRange'].join('-')}} -->
                 </p>
                 <p class="publisher-name">Word Count<span
@@ -282,18 +288,24 @@
             <p class="description-p">
               {{data['brief']}}
             </p>
-            <p class="publisher-name">Genres
-              <span class="col-grey" *ngFor="let genre of data.genres">
-                {{ genre.title }},
+            <p class="publisher-name" *ngFor="let genre of data.genres;let i=index">Genres
+              <span class="col-grey">{{ genre.title }}<br />
+                <!-- <span *ngIf="i==data.genres.length-1"></span>
+                <span *ngIf="i!=data.genres.length-1">,</span> -->
+                <span>Description: {{data.genreDescription[i]}} </span><br />
               </span>
             </p>
             <div class="row buttons-editor">
-              <div class="col-6"><button>Kick Starter</button></div>
-              <div class="col-6 text-right"><button>Your 'How-To' Book Starter</button></div>
+              <div class="col-6">
+                <button (click)="kickInfo('starter')">Kick Starter</button>
+              </div>
+              <div class="col-6 text-right">
+                <button (click)="kickInfo('book')">Your 'How-To' Book Starter</button>
+              </div>
 
             </div>
-            <div class="notes">
-              {{data['kickbookDesc']}}
+            <div class="notes" [innerHTML]="kickStartInfo">
+
             </div>
           </div>
         </div>
@@ -334,7 +346,7 @@
       <slide *ngFor="let slide of suggestedPublication; let index=index" class="slider-cont">
         <div class="row">
           <div class="col-md-4">
-            <img src="{{url}}/images/{{slide.mediaCover}}" alt="image slide" class="slider-img">
+            <img src="{{url}}/images/{{slide.media142}}" alt="image slide" class="slider-img">
           </div>
           <div class="col-md-8 text-justify">
             <h6 class="novel-title">{{ slide.title }}</h6>
@@ -399,8 +411,7 @@
         </div>
 
         <div class="carousel-caption">
-          <!-- <p>- John Doe</p>
-            <span class="firm_name">ABC Company</span> -->
+
         </div>
       </slide>
     </carousel>

@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
   }
   getPublications() {
     this.publicationService
-      .get({ isPublished: false })
+      .get({ isPublished: false, publicationStatus: "2" })
       .subscribe((_response) => {
         this.publications = _response.body.data;
 
@@ -197,27 +197,44 @@ export class HomeComponent implements OnInit {
   }
 
   blogBookMarkStatus() {
+    // return this.blogs.length &&
+    //   this.blogs[0].bookmark &&
+    //   this.blogs[0].bookmark.bookMarkStatus === "1"
+    //   ? " fa-bookmark"
+    //   : "fa-bookmark-o";
+
     return this.blogs.length &&
       this.blogs[0].bookmark &&
       this.blogs[0].bookmark.bookMarkStatus === "1"
-      ? " fa-bookmark"
-      : "fa-bookmark-o";
+      ? "assets/images/book_icon2.png"
+      : "assets/images/book_icon.png";
   }
 
   blogLikeStatus() {
+    // return this.blogs.length &&
+    //   this.blogs[0].like &&
+    //   this.blogs[0].like.likeStatus === "1"
+    //   ? "fa-heart"
+    //   : "fa-heart-o";
+    // assets/images/hrt_icon.png
     return this.blogs.length &&
       this.blogs[0].like &&
       this.blogs[0].like.likeStatus === "1"
-      ? "fa-heart"
-      : "fa-heart-o";
+      ? "assets/images/hrt_icon2.png"
+      : "assets/images/hrt_icon.png";
   }
 
   publicationBookMarkStatus(publication) {
+    // return publication &&
+    //   publication.bookmark &&
+    //   publication.bookmark.bookMarkStatus === "1"
+    //   ? " fa-bookmark"
+    //   : "fa-bookmark-o";
     return publication &&
       publication.bookmark &&
       publication.bookmark.bookMarkStatus === "1"
-      ? " fa-bookmark"
-      : "fa-bookmark-o";
+      ? "assets/images/book_icon2.png"
+      : "assets/images/book_icon.png";
   }
 
   saveBlogBookMark(blog) {
@@ -382,6 +399,10 @@ export class HomeComponent implements OnInit {
     );
   }
   getBlogContent(content) {
-    return content.substr(0, 1750);
+    return content.substr(0, 686);
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 }
