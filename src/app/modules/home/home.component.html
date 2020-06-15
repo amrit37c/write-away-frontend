@@ -200,8 +200,8 @@
       </div>
     </div>
 
-    <div class="col-lg-7">
-      <div class="des_data">
+    <div class="col-lg-7 d-flex" style="flex-direction: column;">
+      <div class="des_data" style="flex: 1;">
         <h1 *ngIf="blogs.length">{{ blogs[0].title | titlecase }}</h1>
         <span>
           <p *ngIf="blogs.length">
@@ -210,7 +210,10 @@
         </span>
         <h5>{{ blogs[0] && blogs[0].author }}</h5>
         <p [innerHTML]="getBlogContent(blogs[0].content)" *ngIf="blogs.length"></p>
-
+        
+        
+      </div>
+      <div class="des_data2">
         <a (click)="readBlog(blogs[0]._id)" *ngIf="blogs.length">Read More</a>
       </div>
     </div>
@@ -313,17 +316,21 @@
       <a routerLink="/publish">View All<i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
       <div class="box_2_blogs" *ngIf="openPublications.length">
         <div class="b1st_blog">
-          <img src="{{ baseUrl }}/images/{{
+          <img src="/assets/images/read-away-publish.jpg" />
+          <!--<img src="{{ baseUrl }}/images/{{
               openPublications[openPublicationIndex]['mediaCover']
             }}" onerror="javascript:this.src='/assets/images/dummy291.png'" alt="" *ngIf="
               openPublications.length &&
               openPublications[openPublicationIndex].mediaCover
-            " />
+            " />-->
           <div class="box_blg_second">
             <div class="box_blg_half_second box_blg_haf_second"></div>
 
             <div class="box_blg_half_second">
               <div class="box_blg_half_icon_wd_second">
+                <a>
+
+                </a>
                 <a (click)="
                     openShareModal(
                       socialMedia,
@@ -485,17 +492,14 @@
         </div>
 
         <div class="b1st_blog_des">
-          <h3 class="text-uppercase">ONE NOVELIST'S APPROACH</h3>
-          <h3 class="text-uppercase">ELIZABETH GEORGE</h3>
+          <h3 class="text-uppercase">FIREFLIES - some shiny short stories</h3>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
             only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop p
+            remaining essentially unchanged.
           </p>
         </div>
 
@@ -514,10 +518,10 @@
                    "ng-reflect-ng-if": "1"
                  }-->
               <p _ngcontent-fdf-c3="" class="srs_to">
-                <span>Genres:</span>
+                Genres:
                 <!--bindings={
                    "ng-reflect-ng-for-of": "[object Object],[object Object"
-                 }--><span _ngcontent-fdf-c3=""> Fantasy </span>
+                 }--><span  _ngcontent-fdf-c3="" > Fantasy </span>
               </p>
               <!--bindings={
                    "ng-reflect-ng-if": "1"
@@ -526,7 +530,7 @@
                    "ng-reflect-ng-if": "1"
                  }-->
               <p _ngcontent-fdf-c3="" class="srs_to">
-                <span>Group:</span> 
+                Age-Group:
                 <!--bindings={
                    "ng-reflect-ng-for-of": "[object Object]"
                  }--><span _ngcontent-fdf-c3="" class="col-grey">

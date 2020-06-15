@@ -139,6 +139,16 @@
   color: #3691ce;
 }
 
+.des_data2{
+  width: 100%;
+float: left;
+text-align: right;
+color: #3691ce;
+font-size: 16px;
+font-weight: 600;
+font-family: Montserrat;
+padding-bottom: 25px;
+}
 
 .blog_second_prt {
   padding: 0 35px;
@@ -297,7 +307,7 @@
 }
 
 .classic_post5 {
-  padding: 0 0 37px 0 !important;
+  padding: 0 0 25px 0px !important;
 }
 
 .classic_post p {
@@ -310,7 +320,7 @@
 
 
 .classic_post p span {
-  color: rgb(111, 105, 105) !important;
+  color: #534f4f;
 }
 
 
