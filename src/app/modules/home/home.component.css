@@ -86,7 +86,7 @@
   width: 70%;
   float: left;
   font-family: Montserrat;
-  color: #000;
+  color: #3691ce;
   font-size: 27px;
   font-weight: 600;
 }
@@ -123,7 +123,7 @@
   float: left;
   font-family: Montserrat;
   margin-top: 20px;
-  font-size: 13px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -783,19 +783,19 @@ margin-top: 9px;
 }
 
 .updated-content p {
-  font-size: 1.3vw;
+  font-size: 1.5vw;
 }
 
 .updated-bold {
-  font-size: 3vw;
+  font-size: 2.7vw;
 }
 
 .write-moress {
-  font-size: 3vw;
+  font-size: 2.3vw;
 }
 
 .write-hedsd {
-  font-size: 3vw;
+  font-size: 2vw;
 }
 
 /* Know More Section */
@@ -820,6 +820,7 @@ margin-top: 9px;
 
 .know_more .book_store .book_store_img img {
   height: 100%;
+  width: 90%;
 }
 
 .book_store.book_store_pink .book_store_desc,
@@ -848,6 +849,7 @@ margin-top: 9px;
   color: #fff;
   font-weight: 500;
   font-size: 2rem;
+  font-weight:750;
 }
 
 .know_more .book_store .book_store_desc .book_store_text p {
@@ -856,6 +858,30 @@ margin-top: 9px;
   font-weight: 500;
   margin-top: 15px;
   margin-bottom: 25px;
+}
+
+.p_spaan{
+  width: 100% !important;
+  float: left !important;
+  padding: 18px 0 30px 0;
+}
+
+.p_spaan2{
+  width: 100% !important;
+  float: left !important;
+  padding: 18px 0 30px 0;
+}
+
+.p_spaan3{
+  width: 100% !important;
+  float: left !important;
+  padding: 18px 0 30px 0;
+}
+
+.p_spaan4{
+  width: 100% !important;
+  float: left !important;
+  padding: 18px 0 0 0;
 }
 
 .know_more .book_store .book_store_desc .book_store_text .book_know_btn a {
@@ -898,7 +924,7 @@ margin-top: 9px;
 
 .know_more .book_store .book_store_desc {
   padding-left: 15px;
-  padding-top: 6px;
+  padding-top: 2px;
 }
 
 .mb-4,
@@ -1005,7 +1031,6 @@ ul,
 ul li {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 .modal-content5 {
@@ -1165,20 +1190,11 @@ ul li {
   display: flex;
 }
 
-.hero_area_2
-  .right_sidebar_area_2
-  .general_parts_show
-  ul.part_first_general
-  li {
+.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_first_general li {
   margin-bottom: 5px;
 }
 
-.hero_area_2
-  .right_sidebar_area_2
-  .general_parts_show
-  ul.part_first_general
-  li
-  a {
+.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_first_general li a {
   color: #000;
   font-size: 14px;
   font-weight: 600;
@@ -1188,20 +1204,11 @@ ul li {
   padding-left: 30px;
 }
 
-.hero_area_2
-  .right_sidebar_area_2
-  .general_parts_show
-  ul.part_first_general
-  li {
+.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_first_general li {
   margin-bottom: 5px;
 }
 
-.hero_area_2
-  .right_sidebar_area_2
-  .general_parts_show
-  ul.part_second_general
-  li
-  a {
+.hero_area_2 .right_sidebar_area_2 .general_parts_show ul.part_second_general li a {
   color: #666;
   font-weight: 500;
 }
@@ -1484,7 +1491,7 @@ ul li {
   padding-left: 16px !important;
   padding-right: 65px !important;
   padding-right: 34px;
-  margin-top: 25px;
+  margin-top: 13px;
   padding-right: 40px;
 }
 
@@ -1575,7 +1582,7 @@ ul li {
 
 .book_store_img img {
   position: absolute;
-  bottom: 27px;
+  bottom: 40px;
 }
 
 .book_store_desc_one {
@@ -1583,7 +1590,16 @@ ul li {
 }
 
 .book_store_text p {
-  font-size: 16px;
+  font-size: 17px;
+}
+
+.book_store_heading{
+  margin-top: 20px;
+}
+
+.author_des{
+  width: inherit;
+  color: #000;
 }
 
 .book-img-cont {
@@ -1600,7 +1616,7 @@ ul li {
 }
 
 .book_store_desc_two {
-  padding-left: 40px !important;
+  padding-left: 20px !important;
 }
 
 .book_store_desc_three {
@@ -1615,7 +1631,7 @@ ul li {
 /* 01/05 */
 .books-index {
   position: absolute !important;
-  bottom: 22px !important;
+  bottom: 28px !important;
 }
 
 .col-red {
@@ -1738,7 +1754,7 @@ ul li {
   }
 
   .about-content {
-    margin-top: 35px !important;
+    margin-top: 60px !important;
   }
 
   .share-img-blog {
@@ -1854,7 +1870,7 @@ ul li {
 }
 
 .updated-alignment {
-  padding: 0px 44px 0px 72px;
+  /*padding: 0px 44px 0px 72px;*/
 }
 
 .right {
@@ -1908,7 +1924,7 @@ ul li {
 }
 
 .about-content {
-  margin-top: 83px;
+  margin-top: 52px;
 }
 
 .updated-conts {
@@ -1946,7 +1962,7 @@ ul li {
 .updated-bold {
   margin-top: 14px;
   margin-bottom: 20px;
-  font-weight: 700;
+  font-weight: 550;
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1025px) {
@@ -2128,6 +2144,7 @@ ul li {
     margin-bottom: 15px;
   }
 
+
   .responsive-coming {
     margin-left: -19px !important;
   }
@@ -2188,7 +2205,7 @@ ul li {
 }
 
 .win-coming-soon {
-  width: %;
+
   position: relative;
   top: -11px;
 }
@@ -2199,7 +2216,7 @@ ul li {
 
 .write-moress {
   margin-top: 9px;
-  font-weight: 600;
+  font-weight: 550;
 }
 
 .update-padd {
@@ -2209,6 +2226,7 @@ ul li {
 .updated-radmore {
   position: absolute;
   bottom: 18px;
+  color: #4898dd;
   right: 26px;
 }
 
@@ -2312,8 +2330,7 @@ ul li {
     margin-bottom: 20px;
   }
 
-  .updated-bold {
-  }
+  .updated-bold {}
 
   .write-moress {
     font-size: 30px !important;
@@ -2364,8 +2381,7 @@ ul li {
     padding-right: 0px;
   }
 
-  .updated-left-side {
-  }
+  .updated-left-side {}
 
   .hero-area .left_sidebar .publisher_desc .publisher_name img {
     margin-right: 29px;
@@ -2378,8 +2394,7 @@ ul li {
     top: 0px !important;
   }
 
-  .updated-left-side {
-  }
+  .updated-left-side {}
 
   .publisher_name img {
     margin-right: 0px !important;
@@ -2398,8 +2413,7 @@ ul li {
   }
 }
 
-.updated-width {
-}
+.updated-width {}
 
 .updated-clr-pink {
   margin-right: 5px;
@@ -2491,7 +2505,7 @@ ul li {
 }
 
 .left_sidebar_img img {
-  width: 291px ;
+  width: 291px;
   height: 358px;
 }
 
@@ -2502,7 +2516,7 @@ ul li {
 }
 
 .close {
-  color: white;
+
   float: right;
   font-size: 28px;
   font-weight: bold;

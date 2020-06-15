@@ -4,14 +4,15 @@
   <div class="row pad-zero">
 
     <div class="col-md-3 pad-zero">
-      <button type="button" class="logo-btn">We're Publishing</button>
+      <button type="button" class="logo-btn">We're Publishing!</button>
     </div>
 
-    <div class="col-md-9 right right-header pull-right ">
-      <div class="my-desk-heading background-light-pink">
+    <div class="col-md-9 right-header text-center">
+      <p><!--Write on this--></p>
+      <!-- <div class="my-desk-heading background-light-pink">
         <p> <span class="color-pink">He</span>llo! Ricky <span class="col-blue">{{count || 0}}</span></p>
 
-      </div>
+      </div> -->
     </div>
 
   </div>
@@ -283,17 +284,21 @@
               {{data['brief']}}
             </p>
             <p class="publisher-name">Genres
-              <span class="col-grey" *ngFor="let genre of data.genres">
-                {{ genre.title }},
+              <span class="col-grey" *ngFor="let genre of data.genres;let i=index">{{ genre.title }}<span
+                  *ngIf="i==data.genres.length-1"></span><span *ngIf="i!=data.genres.length-1">,</span>
               </span>
             </p>
             <div class="row buttons-editor">
-              <div class="col-6"><button>Kick Starter</button></div>
-              <div class="col-6 text-right"><button>Your 'How-To' Book Starter</button></div>
+              <div class="col-6">
+                <button (click)="kickInfo('starter')">Kick Starter</button>
+              </div>
+              <div class="col-6 text-right">
+                <button (click)="kickInfo('book')">Your 'How-To' Book Starter</button>
+              </div>
 
             </div>
-            <div class="notes">
-              {{data['kickbookDesc']}}
+            <div class="notes" [innerHTML]="kickStartInfo">
+
             </div>
           </div>
         </div>
@@ -399,8 +404,7 @@
         </div>
 
         <div class="carousel-caption">
-          <!-- <p>- John Doe</p>
-            <span class="firm_name">ABC Company</span> -->
+
         </div>
       </slide>
     </carousel>

@@ -1,7 +1,5 @@
 /* Footer area */
-.footer-logo {
-  width: 80% !important;
-}
+
 
 .left-icon-head {
   font-size: 12px;
@@ -362,4 +360,8 @@
   font-weight: 600;
   font-family: Montserrat;
   margin-top: 10px;
+}
+
+.res-fot {
+  list-style: none;
 }

@@ -101,7 +101,7 @@ export class HeaderComponent implements OnInit {
           } else {
             this.logo = "logo.svg";
             this.blogRoute = false;
-            this.currentPage = true;
+            this.currentPage = false;
           }
         }
       }
