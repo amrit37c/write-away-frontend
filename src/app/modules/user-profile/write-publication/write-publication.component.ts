@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
 import { PublicationService } from "src/app/service/publications/publication.service";
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 import { FormGroup, FormBuilder } from "@angular/forms";
@@ -53,7 +53,8 @@ export class WritePublicationComponent implements OnInit {
     private service: PublicationService,
     private activateRouter: ActivatedRoute,
     private modalService: BsModalService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -67,6 +68,12 @@ export class WritePublicationComponent implements OnInit {
     if (this.id) {
       this.getPublication(this.id); //get single publication
       this.getAllPublication(); // get suggested Publication
+      this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+          return;
+        }
+        window.scrollTo(0, 0);
+      });
     }
 
     this.submissionForm = this.formBuilder.group({
@@ -109,9 +116,14 @@ export class WritePublicationComponent implements OnInit {
     alert("Removed");
   }
   getAllPublication() {
-    this.service.get().subscribe((_response) => {
-      this.suggestedPublication = _response.body.data;
-    });
+    this.service
+      .get({ isPublished: false, publicationStatus: "2" })
+      .subscribe((_response) => {
+        let filterArr = _response.body.data;
+
+        // remove display publication for suggested
+        this.suggestedPublication = filterArr.filter((el) => el._id != this.id);
+      });
   }
 
   onSubmit(type?) {

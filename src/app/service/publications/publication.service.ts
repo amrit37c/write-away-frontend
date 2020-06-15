@@ -20,12 +20,17 @@ export class PublicationService extends BaseService {
     // let httpParams = new HttpParams()
     //   .set("size", environment.ItemperPage)
     //   .set("page", page);
-    let httpParams;
+    let httpParams = new HttpParams();
     if (json) {
-      httpParams = new HttpParams().set(
-        Object.keys(json)[0],
-        Object.values(json)[0]
-      );
+      // httpParams = new HttpParams().set(
+      //   Object.keys(json)[0],
+      //   Object.values(json)[0]
+      // );
+      for (const key in json) {
+        // console.log(`${key}: ${type[key]}`);
+        console.log("APPEND IN JSON FILTER");
+        httpParams = httpParams.append(key, json[key]);
+      }
     }
     return this.http
       .get<any>(this.url, {

@@ -100,7 +100,7 @@
 }
 
 .notes {
-
+  min-height: 410px;
   border: 1px solid #D43299;
   border-radius: 4px;
   background-color: #fff;
@@ -793,6 +793,7 @@ button {
   position: absolute;
   z-index: 999;
   background: #fff;
+  cursor: pointer;
 }
 
 .topic {

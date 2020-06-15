@@ -855,7 +855,7 @@
   color: #fff;
   font-weight: 500;
   font-size: 2rem;
-  font-weight:750;
+  font-weight: 750;
 }
 
 .know_more .book_store .book_store_desc .book_store_text p {
@@ -866,25 +866,25 @@
   margin-bottom: 25px;
 }
 
-.p_spaan{
+.p_spaan {
   width: 100% !important;
   float: left !important;
   padding: 18px 0 30px 0;
 }
 
-.p_spaan2{
+.p_spaan2 {
   width: 100% !important;
   float: left !important;
   padding: 18px 0 30px 0;
 }
 
-.p_spaan3{
+.p_spaan3 {
   width: 100% !important;
   float: left !important;
   padding: 18px 0 30px 0;
 }
 
-.p_spaan4{
+.p_spaan4 {
   width: 100% !important;
   float: left !important;
   padding: 18px 0 0 0;
@@ -1599,11 +1599,11 @@ ul li {
   font-size: 17px;
 }
 
-.book_store_heading{
+.book_store_heading {
   margin-top: 20px;
 }
 
-.author_des{
+.author_des {
   width: inherit;
   color: #000;
 }
@@ -1760,7 +1760,7 @@ ul li {
   }
 
   .about-content {
-    margin-top: 60px !important;
+    margin-top: 35px !important;
   }
 
   .share-img-blog {
@@ -1779,13 +1779,10 @@ ul li {
     right: 0px !important;
   }
 
-<<<<<<< HEAD
   .updated-left-side {
    
   }
-=======
-  .updated-left-side {}
->>>>>>> 593fafb1a83071e1a8beb858dcd35ca0f71ccc62
+
 
   .circle {
     margin-right: 6px !important;
@@ -2547,13 +2544,19 @@ ul li {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .box_blg_haf {
   font-family: Montserrat;
 }
 >>>>>>> 593fafb1a83071e1a8beb858dcd35ca0f71ccc62
+=======
+<<<<<<< HEAD .box_blg_haf {
+  font-family: Montserrat;
+}
+>>>>>>> 482aa37bb1508ad23f7c53421143a93822947be6
 
-.publisher_desc2 {
+=======>>>>>>>a4f678431417def9fd3b26ce865100676b25088a .publisher_desc2 {
   display: none;
 }
 

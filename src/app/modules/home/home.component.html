@@ -202,7 +202,7 @@
 
     <div class="col-lg-7">
       <div class="des_data">
-        <h1 *ngIf="blogs.length">{{ blogs[0].title || "" }}</h1>
+        <h1 *ngIf="blogs.length">{{ blogs[0].title | titlecase }}</h1>
         <span>
           <p *ngIf="blogs.length">
             {{ blogs[0].createdAt | date: "MMMM dd, yyyy" }}
