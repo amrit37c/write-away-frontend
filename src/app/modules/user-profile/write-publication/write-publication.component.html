@@ -243,9 +243,12 @@
                 <img class="prof-imgss" src="./assets/images/publisher.svg">
                 <p class="publisher-name">{{ data && data['publishedBy'] || 'Admin'}}</p>
                 <p class="publisher-name">Age Groups
-                  <span *ngFor="let age of data.ageGroup" class="col-grey">
+                  <span *ngFor="let age of data.ageGroup;let i = index" class="col-grey">
                     {{age.ageRange.join('-')}}
-                    years</span>
+                    years
+                    <span *ngIf="i == data.ageGroup.length - 1"></span>
+                    <span *ngIf="i != data.ageGroup.length - 1">,</span>
+                  </span>
                   <!-- {{data && data['ageGroup'] && data['ageGroup']['ageRange'].join('-')}} -->
                 </p>
                 <p class="publisher-name">Word Count<span
@@ -283,9 +286,11 @@
             <p class="description-p">
               {{data['brief']}}
             </p>
-            <p class="publisher-name">Genres
-              <span class="col-grey" *ngFor="let genre of data.genres;let i=index">{{ genre.title }}<span
-                  *ngIf="i==data.genres.length-1"></span><span *ngIf="i!=data.genres.length-1">,</span>
+            <p class="publisher-name" *ngFor="let genre of data.genres;let i=index">Genres
+              <span class="col-grey">{{ genre.title }}<br />
+                <!-- <span *ngIf="i==data.genres.length-1"></span>
+                <span *ngIf="i!=data.genres.length-1">,</span> -->
+                <span>Description: {{data.genreDescription[i]}} </span><br />
               </span>
             </p>
             <div class="row buttons-editor">

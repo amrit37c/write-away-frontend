@@ -10,9 +10,16 @@
 
           <h3 class="updated-bold">Write even more.</h3>
           <p class="updated-conts">
+<<<<<<< HEAD
             Write Awayy is the happy place to read, write, tell<br />stories and
             share them. Express your thoughts to<br />the world in a creativeway,
             and have fun doing<br />it. You have ideas, we help you make them<br />happen.
+=======
+            Write Awayy is the happy place to read,<br />write, tell stories and
+            share them. Express<br />your thoughts to the world in a creative<br />way,
+            and have fun doing it. You have ideas,<br />we help you make them
+            happen.
+>>>>>>> 593fafb1a83071e1a8beb858dcd35ca0f71ccc62
           </p>
         </div>
       </div>
@@ -115,7 +122,6 @@
       </div>
       <div class="col-lg-5 wow fadeIn" data-wow-delay="0.6s">
         <div class="book_store cmng-back-color d-flex">
-
           <div class="row book-img-cont">
             <div class="col-5">
               <img src="./assets/images/coming-soon.svg" alt="" class="coming-res win-coming-soon" />
@@ -136,10 +142,8 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -147,51 +151,79 @@
 
 <!-- Services2 Start -->
 <div class="container-fluid blg_bg_topsec">
-    <div class="row">
-        <div class="col-lg-5">
-            <div class="bg_blog_img">
-                <img src="../../../assets/images/hunt.svg" />
-             </div>
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="bg_blog_img">
+        <!-- <img src="../../../assets/images/hunt.svg" /> -->
+        <img src="/assets/images/no-image-593.png" alt="Blog image" *ngIf="!blogs.length" />
+        <img src="{{ baseUrl }}/images/{{ blogs[0].media520 }}" *ngIf="blogs.length" alt="Blog image"
+          onerror="javascript:this.src='/assets/images/no-image-593.png'" />
+      </div>
 
-             <div class="box_blg">
-                   <div class="box_blg_half box_blg_haf">
-                        <img src="/assets/images/book.svg">
-                         <span>
-                         <p>1500</p>
-                         <p>Reads</p>
-                         </span>
-                    </div>
-
-                   <div class="box_blg_half">
-                        <div class="box_blg_half_icon_wd">
-                           <a href="#">
-                              <img alt=""  src="assets/images/hrt_icon.png">
-                           </a>
-                           <a href="#">
-                              <img alt=""  src="assets/images/share_icon.png">
-                           </a>
-                           <a href="#">
-                              <img alt=""  src="assets/images/book_icon.png">
-                           </a>
-                        </div>
-                   </div>
-              </div>
+      <div class="box_blg">
+        <div class="box_blg_half box_blg_haf">
+          <img src="/assets/images/book.svg" />
+          <span>
+            <p>{{ (blogs.length && blogs[0].readCount.length) || "0" }}</p>
+            <p>Reads</p>
+          </span>
         </div>
 
-        <div class="col-lg-7">
-           <div class="des_data">
-                <h1>ONE NOVELIST'S APPROACH</h1>
-                <span><p>jUNE 10,2019</p></span>
-                <h5><spann class="author_des">by</spann> ELIZABETH GEORGE</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</P>
-                <a href="#">Read More</a>
-            </div>
+        <div class="box_blg_half">
+          <div class="box_blg_half_icon_wd">
+            <!-- <i class="fa col-red heart-shape" [ngClass]="blogLikeStatus()" (click)="
+            blogs.length && blogs[0] && blogs[0].like
+              ? updateBlogLike(blogs[0])
+              : saveBlogLike(blogs[0])
+          "></i>
+        <i class="heart-shape"><img alt="" class="share-img-blog share-img-blog2" src="assets/images/Group 561.svg"
+            (click)="openShareModal(socialMedia,blogs[0]._id)"></i>
+
+
+        <i class="fa col-yel bokyy" [ngClass]="blogBookMarkStatus()" (click)="
+            blogs.length && blogs[0] && blogs[0].bookmark
+              ? updateBlogBookMark(blogs[0])
+              : saveBlogBookMark(blogs[0])
+          "></i> -->
+            <a (click)="
+                blogs.length && blogs[0] && blogs[0].like
+                  ? updateBlogLike(blogs[0])
+                  : saveBlogLike(blogs[0])
+              ">
+              <img alt="" [src]="blogLikeStatus()" />
+            </a>
+            <a (click)="openShareModal(socialMedia, blogs[0]._id)">
+              <img alt="" src="assets/images/share_icon.png" />
+            </a>
+            <a (click)="
+                blogs.length && blogs[0] && blogs[0].bookmark
+                  ? updateBlogBookMark(blogs[0])
+                  : saveBlogBookMark(blogs[0])
+              ">
+              <img alt="" [src]="blogBookMarkStatus()" />
+            </a>
+          </div>
         </div>
+      </div>
     </div>
+
+    <div class="col-lg-7">
+      <div class="des_data">
+        <h1 *ngIf="blogs.length">{{ blogs[0].title || "" }}</h1>
+        <span>
+          <p *ngIf="blogs.length">
+            {{ blogs[0].createdAt | date: "MMMM dd, yyyy" }}
+          </p>
+        </span>
+        <h5>{{ blogs[0] && blogs[0].author }}</h5>
+        <p [innerHTML]="getBlogContent(blogs[0].content)" *ngIf="blogs.length"></p>
+
+        <a (click)="readBlog(blogs[0]._id)" *ngIf="blogs.length">Read More</a>
+      </div>
+    </div>
+  </div>
 </div>
 <!--/ End Services2 -->
-
 
 <!-- Services Start -->
 <!--<section class="services section">
@@ -276,181 +308,290 @@
 </section>--->
 <!--/ End Services -->
 
-
 <!-- Hero area static2 -->
 <div class="container-fluid blog_second_prt">
-    <div class="row">
-           <div class="col-md-6 box_2_blogs_hd">
-               <h1>We're Publishing!</h1>
-               <p class="box_2_blogs_hd1">Titles <span>1</span> &nbsp;&nbsp;&nbsp; Genres <span>2</span> </p>
-               <a href="#">View All<i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
-               <div class="box_2_blogs">
-                 <div class="b1st_blog">
-                  <img src="/assets/images/read-away-publish.jpg">
-                  <div class="box_blg_second">
-                    <div class="box_blg_half_second box_blg_haf_second">
-                         
-                     </div>
- 
-                    <div class="box_blg_half_second">
-                         <div class="box_blg_half_icon_wd_second">
-                            <a href="#">
-                            </a>
-                            <a href="#">
-                               <img alt=""  src="assets/images/share_icon.png">
-                            </a>
-                            <a href="#">
-                               <img alt=""  src="assets/images/book_icon.png">
-                            </a>
-                         </div>
-                    </div>
-                  </div>
-                 
-                 </div>
+  <div class="row">
+    <div class="col-md-6 box_2_blogs_hd">
+      <h1>We're Publishing!</h1>
+      <p class="box_2_blogs_hd1">
+        Titles <span> {{ openPublications.length }}</span> &nbsp;&nbsp;&nbsp;
+        Genres <span> {{ openPublicationGenresCount }}</span>
+      </p>
+      <a routerLink="/publish">View All<i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
+      <div class="box_2_blogs" *ngIf="openPublications.length">
+        <div class="b1st_blog">
+          <img src="{{ baseUrl }}/images/{{
+              openPublications[openPublicationIndex]['mediaCover']
+            }}" onerror="javascript:this.src='/assets/images/dummy291.png'" alt="" *ngIf="
+              openPublications.length &&
+              openPublications[openPublicationIndex].mediaCover
+            " />
+          <div class="box_blg_second">
+            <div class="box_blg_half_second box_blg_haf_second"></div>
 
-                 <div class="b1st_blog_des">
-                  <h3 class="text-uppercase">ONE NOVELIST'S APPROACH</h3>
-                  <h3 class="text-uppercase">ELIZABETH GEORGE</h3>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p</p>
-                 </div>
-
-                 <div class="b1st_blog_publisher">
-                    <div _ngcontent-fdf-c3="" class="publisher_desc">
-                    <div _ngcontent-fdf-c3="" class="publisher_name">
-                      <span _ngcontent-fdf-c3="" class="publi">Publisher:</span>
-                      <img _ngcontent-fdf-c3="" alt="" src="./assets/images/publisher.svg">
-                      <span _ngcontent-fdf-c3="" class="name">Daniel</span>
-                    </div>
-                    </div>
-
-                    <div _ngcontent-fdf-c3="" class="classic_details details-updated"><div _ngcontent-fdf-c3="" class="classic_post"><!--bindings={
-                      "ng-reflect-ng-if": "1"
-                    }--><p _ngcontent-fdf-c3="" class="srs_to"> Genres: <!--bindings={
-                      "ng-reflect-ng-for-of": "[object Object],[object Object"
-                    }--><span _ngcontent-fdf-c3=""> Westerns, </span><span _ngcontent-fdf-c3=""> Classic, </span></p><!--bindings={
-                      "ng-reflect-ng-if": "1"
-                    }--><p _ngcontent-fdf-c3="" class="srs_to"> Languages: <span _ngcontent-fdf-c3="">English</span></p><!--bindings={
-                      "ng-reflect-ng-if": "1"
-                    }--><p _ngcontent-fdf-c3="" class="srs_to"> Age Group: <!--bindings={
-                      "ng-reflect-ng-for-of": "[object Object]"
-                    }--><span _ngcontent-fdf-c3="" class="col-grey"> 20-30 years,</span></p><!--bindings={
-                      "ng-reflect-ng-if": "1"
-                    }--><p _ngcontent-fdf-c3="" class="srs_to"> Closing Date: <span _ngcontent-fdf-c3="">Jul 11, 2020</span></p></div>
-                                 
-                   </div>
-
-                  <div class="dts1">
-                    
-                  </div> 
-                  <div class="dts2">
-                    <button _ngcontent-fll-c3="" class="write-on-btn btn-lg"> Write</button>   
-                  </div>  
-                </div>
-
-
-               </div>
-
-               <div class="out-of-hero-area">
-                 <p>
-                   <span class="fa fa-angle-left slider-direction-icon">
-                   </span>
-                   <span  class="sp-sp">
-                     <span class="clr-pink updated-clr-pink"> 3</span>/ 10 </span>
-                     <span class="fa fa-angle-right slider-direction-icon"></span>
-                 </p>
-               </div>
-           </div>
-           <div class="col-md-6 box_2_blogs_hd">
-            <h1>Reading Room!</h1>
-            <p class="box_2_blogs_hd1">Titles <span>300</span> &nbsp;&nbsp;&nbsp; Genres <span>300</span> &nbsp;&nbsp;&nbsp; Topics <span>0</span> </p>
-            <a href="#">View All<i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
-            <div class="box_2_blogs">
-              <div class="b1st_blog">
-               <img src="/assets/images/read-away-publish.jpg">
-               <div class="box_blg_second">
-                 <div class="box_blg_half_second box_blg_haf_second">
-                      <img src="/assets/images/book.svg">
-                       <span>
-                       <p>1500</p>
-                       <p>Reads</p>
-                       </span>
-                  </div>
-
-                 <div class="box_blg_half_second">
-                      <div class="box_blg_half_icon_wd_second">
-                         <a href="#">
-                            <img alt=""  src="assets/images/hrt_icon.png">
-                         </a>
-                         <a href="#">
-                            <img alt=""  src="assets/images/share_icon.png">
-                         </a>
-                         <a href="#">
-                            <img alt=""  src="assets/images/book_icon.png">
-                         </a>
-                      </div>
-                 </div>
-               </div>
-              
+            <div class="box_blg_half_second">
+              <div class="box_blg_half_icon_wd_second">
+                <a (click)="
+                    openShareModal(
+                      socialMedia,
+                      openPublications[openPublicationIndex]._id,
+                      'publication'
+                    )
+                  ">
+                  <img alt="" src="assets/images/share_icon.png" />
+                </a>
+                <a (click)="
+                    openPublications.length &&
+                    openPublications[openPublicationIndex] &&
+                    openPublications[openPublicationIndex].bookmark
+                      ? updatePublicationBookMark(
+                          openPublications[openPublicationIndex]
+                        )
+                      : savePublicationBookMark(
+                          openPublications[openPublicationIndex]
+                        )
+                  ">
+                  <img alt="" [src]="
+                      publicationBookMarkStatus(
+                        openPublications[openPublicationIndex]
+                      )
+                    " />
+                </a>
               </div>
-
-              <div class="b1st_blog_des">
-               <h3 class="text-uppercase">ONE NOVELIST'S APPROACH</h3>
-               <h3 class="text-uppercase">ELIZABETH GEORGE</h3>
-               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop p</p>
-              </div>
-
-              <div class="b1st_blog_publisher">
-                 <div _ngcontent-fdf-c3="" class="publisher_desc">
-                 <div _ngcontent-fdf-c3="" class="publisher_name">
-                   <span _ngcontent-fdf-c3="" class="publi">Publisher:</span>
-                   <img _ngcontent-fdf-c3="" alt="" src="./assets/images/publisher.svg">
-                   <span _ngcontent-fdf-c3="" class="name">Daniel</span>
-                 </div>
-                 </div>
-
-                 <div _ngcontent-fdf-c3="" class="classic_details details-updated"><div _ngcontent-fdf-c3="" class="classic_post classic_post5"><!--bindings={
-                   "ng-reflect-ng-if": "1"
-                 }--><p _ngcontent-fdf-c3="" class="srs_to"> Genres: <!--bindings={
-                   "ng-reflect-ng-for-of": "[object Object],[object Object"
-                 }--><span _ngcontent-fdf-c3=""> Westerns, </span><span _ngcontent-fdf-c3=""> Classic, </span></p><!--bindings={
-                   "ng-reflect-ng-if": "1"
-                 }--><!--bindings={
-                   "ng-reflect-ng-if": "1"
-                 }--><p _ngcontent-fdf-c3="" class="srs_to"> Age Group: <!--bindings={
-                   "ng-reflect-ng-for-of": "[object Object]"
-                 }--><span _ngcontent-fdf-c3="" class="col-grey"> 20-30 years,</span></p><!--bindings={
-                   "ng-reflect-ng-if": "1"
-                 }--><p _ngcontent-fdf-c3="" class="srs_to"> Topics: <span _ngcontent-fdf-c3="">10</span></p></div>
-                              
-                </div>
-
-               <div class="dts1">
-                 <div _ngcontent-csn-c3="" class="follow_links"><div _ngcontent-csn-c3="" class="center taing_data"><ul _ngcontent-csn-c3=""><li _ngcontent-csn-c3=""><i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i></li><li _ngcontent-csn-c3=""><i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i></li><li _ngcontent-csn-c3=""><i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i></li><li _ngcontent-csn-c3=""><i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i></li><li _ngcontent-csn-c3=""><i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i></li></ul></div></div>
-               </div> 
-               <div class="dts2">
-                 <button _ngcontent-fll-c3="" class="write-on-btn btn-lg"> Read</button>   
-               </div>  
-             </div>
-
-
             </div>
+          </div>
+        </div>
 
-            <div class="out-of-hero-area">
-              <p>
-                <span class="fa fa-angle-left slider-direction-icon">
+        <div class="b1st_blog_des">
+          <h3 class="text-uppercase">
+            {{ openPublications[openPublicationIndex].title }}
+          </h3>
+          <!-- <h3 class="text-uppercase">ELIZABETH GEORGE</h3> -->
+          <p [innerHTML]="getBrief()" *ngIf="openPublications.length">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop p
+          </p>
+        </div>
+
+        <div class="b1st_blog_publisher">
+          <div _ngcontent-fdf-c3="" class="publisher_desc">
+            <div _ngcontent-fdf-c3="" class="publisher_name">
+              <span _ngcontent-fdf-c3="" class="publi">Publisher:</span>
+              <img _ngcontent-fdf-c3="" alt="" src="./assets/images/publisher.svg" />
+              <span _ngcontent-fdf-c3="" class="name">{{ "Admin" }}</span>
+            </div>
+          </div>
+
+          <div class="classic_details details-updated">
+            <div class="classic_post">
+              <p *ngIf="openPublications.length" class="srs_to">
+                Genres:
+                <span *ngFor="
+                    let genre of openPublications[openPublicationIndex].genres;
+                    let i = index
+                  ">
+                  {{genre.title|titlecase}}
+                  <span *ngIf="i == openPublications[openPublicationIndex].genres.length - 1"></span>
+                  <span *ngIf="i != openPublications[openPublicationIndex].genres.length - 1">,</span>
+
+                  <!-- <span *ngIf="i==data.genres.length-1"></span>
+                <span *ngIf="i!=data.genres.length-1">,</span> -->
                 </span>
-                <span  class="sp-sp">
-                  <span class="clr-pink updated-clr-pink"> 3</span>/ 10 </span>
-                  <span class="fa fa-angle-right slider-direction-icon"></span>
+              </p>
+
+              <p class="srs_to" *ngIf="openPublications.length">
+                Languages:
+                <span>{{
+                  openPublications[openPublicationIndex].language | titlecase
+                }}</span>
+              </p>
+
+              <p class="srs_to" *ngIf="openPublications.length">
+                Age Group:
+                <span class="col-grey" *ngFor="
+                    let age of openPublications[openPublicationIndex].ageGroup;let i =index">
+                  {{ age.ageRange.join("-") }} years
+                  <span *ngIf="i == openPublications[openPublicationIndex].ageGroup.length - 1"></span>
+                  <span *ngIf="i != openPublications[openPublicationIndex].ageGroup.length - 1">,</span>
+                </span>
+              </p>
+
+              <p *ngIf="openPublications.length">
+                Closing Date:
+                <span>{{
+                  openPublications[openPublicationIndex].closingDate
+                    | date: "MMM dd, yyyy"
+                }}</span>
               </p>
             </div>
-           </div>
-        
+          </div>
+
+          <div class="dts1"></div>
+          <div class="dts2">
+            <button class="write-on-btn btn-lg" (click)="
+                writePublication(openPublications[openPublicationIndex]._id)
+              ">
+              Write
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="out-of-hero-area">
+        <p>
+          <span (click)="publishCationSlider('-', 'open')" class="fa fa-angle-left slider-direction-icon">
+          </span>
+          <span class="sp-sp">
+            <span class="clr-pink updated-clr-pink"> {{
+              openPublicationIndex + 1
+            }}</span>/ {{ openPublications && openPublications.length }}
+          </span>
+          <span class="fa fa-angle-right slider-direction-icon" (click)="publishCationSlider('+', 'open')"></span>
+        </p>
+      </div>
     </div>
+    <div class="col-md-6 box_2_blogs_hd">
+      <h1>Reading Room!</h1>
+      <p class="box_2_blogs_hd1">
+        Titles <span>300</span> &nbsp;&nbsp;&nbsp; Genres
+        <span>300</span> &nbsp;&nbsp;&nbsp; Topics <span>0</span>
+      </p>
+      <a href="#">View All<i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
+      <div class="box_2_blogs">
+        <div class="b1st_blog">
+          <img src="/assets/images/read-away-publish.jpg" />
+          <div class="box_blg_second">
+            <div class="box_blg_half_second box_blg_haf_second">
+              <img src="/assets/images/book.svg" />
+              <span>
+                <p>1500</p>
+                <p>Reads</p>
+              </span>
+            </div>
+
+            <div class="box_blg_half_second">
+              <div class="box_blg_half_icon_wd_second">
+                <a href="#">
+                  <img alt="" src="assets/images/hrt_icon.png" />
+                </a>
+                <a href="#">
+                  <img alt="" src="assets/images/share_icon.png" />
+                </a>
+                <a href="#">
+                  <img alt="" src="assets/images/book_icon.png" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="b1st_blog_des">
+          <h3 class="text-uppercase">ONE NOVELIST'S APPROACH</h3>
+          <h3 class="text-uppercase">ELIZABETH GEORGE</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop p
+          </p>
+        </div>
+
+        <div class="b1st_blog_publisher">
+          <div _ngcontent-fdf-c3="" class="publisher_desc">
+            <div _ngcontent-fdf-c3="" class="publisher_name">
+              <span _ngcontent-fdf-c3="" class="publi">Publisher:</span>
+              <img _ngcontent-fdf-c3="" alt="" src="./assets/images/publisher.svg" />
+              <span _ngcontent-fdf-c3="" class="name">Daniel</span>
+            </div>
+          </div>
+
+          <div _ngcontent-fdf-c3="" class="classic_details details-updated">
+            <div _ngcontent-fdf-c3="" class="classic_post classic_post5">
+              <!--bindings={
+                   "ng-reflect-ng-if": "1"
+                 }-->
+              <p _ngcontent-fdf-c3="" class="srs_to">
+                Genres:
+                <!--bindings={
+                   "ng-reflect-ng-for-of": "[object Object],[object Object"
+                 }--><span _ngcontent-fdf-c3=""> Westerns, </span><span _ngcontent-fdf-c3=""> Classic, </span>
+              </p>
+              <!--bindings={
+                   "ng-reflect-ng-if": "1"
+                 }-->
+              <!--bindings={
+                   "ng-reflect-ng-if": "1"
+                 }-->
+              <p _ngcontent-fdf-c3="" class="srs_to">
+                Age Group:
+                <!--bindings={
+                   "ng-reflect-ng-for-of": "[object Object]"
+                 }--><span _ngcontent-fdf-c3="" class="col-grey">
+                  20-30 years,</span>
+              </p>
+              <!--bindings={
+                   "ng-reflect-ng-if": "1"
+                 }-->
+              <p _ngcontent-fdf-c3="" class="srs_to">
+                Topics: <span _ngcontent-fdf-c3="">10</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="dts1">
+            <div _ngcontent-csn-c3="" class="follow_links">
+              <div _ngcontent-csn-c3="" class="center taing_data">
+                <ul _ngcontent-csn-c3="">
+                  <li _ngcontent-csn-c3="">
+                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                  </li>
+                  <li _ngcontent-csn-c3="">
+                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                  </li>
+                  <li _ngcontent-csn-c3="">
+                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                  </li>
+                  <li _ngcontent-csn-c3="">
+                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                  </li>
+                  <li _ngcontent-csn-c3="">
+                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="dts2">
+            <button _ngcontent-fll-c3="" class="write-on-btn btn-lg">
+              Read
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="out-of-hero-area">
+        <p>
+          <span class="fa fa-angle-left slider-direction-icon"> </span>
+          <span class="sp-sp">
+            <span class="clr-pink updated-clr-pink"> 3</span>/ 10
+          </span>
+          <span class="fa fa-angle-right slider-direction-icon"></span>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- /End Hero area static2 -->
-
-
 
 <!-- Hero area static -->
 <!--<section class="hero-area">
@@ -496,7 +637,7 @@
                   (click)="openShareModal(socialMedia,openPublications[openPublicationIndex]._id, 'publication')">
                 <!-- (click)="sharePublication(openPublications[openPublicationIndex])" -->
 
-                <!--<i class="fa col-yel bokyy book_mark_link" [ngClass]="
+<!--<i class="fa col-yel bokyy book_mark_link" [ngClass]="
                     publicationBookMarkStatus(
                       openPublications[openPublicationIndex]
                     )
@@ -779,9 +920,7 @@
               <p class="font-updated">- John Doe</p>
               <span class="firm_name font-abc">ABC Company</span>
             </div>
-            <div class="carousel-caption">
-
-            </div>
+            <div class="carousel-caption"></div>
           </slide>
         </carousel>
       </div>
@@ -793,24 +932,50 @@
   <div class="modal-body">
     <span class="close">×</span>
     <div class="icon5" style="margin-bottom: 32px;">
-      <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Share On social media</h6>
-      <a (click)="blogShareLink('facebook')"><i class="fa  fa-facebook circle5"></i></a>
-      <a (click)="blogShareLink('instagram')"><i class="fa  fa-instagram circle5"></i></a>
-      <a (click)="blogShareLink('linkedin')"><i class="fa  fa-linkedin circle5 "></i></a>
-      <a (click)="blogShareLink('google+')"><i class="fa  fa-google-plus circle5"></i></a>
-      <a (click)="blogShareLink('youtube')"><i class="fa  fa-youtube circle5 "></i></a>
-      <a (click)="blogShareLink('twitter')"><i class="fa  fa-twitter circle5" style="margin-top: -6px;"></i></a>
+      <h6 style="
+          text-align: left;
+          font-size: 11px;
+          font-weight: 600;
+          color: #777575;
+        ">
+        Share On social media
+      </h6>
+      <a (click)="blogShareLink('facebook')"><i class="fa fa-facebook circle5"></i></a>
+      <a (click)="blogShareLink('instagram')"><i class="fa fa-instagram circle5"></i></a>
+      <a (click)="blogShareLink('linkedin')"><i class="fa fa-linkedin circle5"></i></a>
+      <a (click)="blogShareLink('google+')"><i class="fa fa-google-plus circle5"></i></a>
+      <a (click)="blogShareLink('youtube')"><i class="fa fa-youtube circle5"></i></a>
+      <a (click)="blogShareLink('twitter')"><i class="fa fa-twitter circle5" style="margin-top: -6px;"></i></a>
     </div>
 
     <div style="width: 100%; float: left;">
-      <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Copy Link</h6>
-      <input type="text" [(ngModel)]="copiedLink" id="myInput"
-        style="width: 80%;float: left;background: #effdfe;border: none;border-radius: 18px;">
-      <button (click)="blogShareLink('site')"
-        style="width: 20%;float: left;background: #effdfe;border: none;border-radius: 18px;box-shadow: none;border: none;"><img
-          src="/assets/images/link.png"></button>
+      <h6 style="
+          text-align: left;
+          font-size: 11px;
+          font-weight: 600;
+          color: #777575;
+        ">
+        Copy Link
+      </h6>
+      <input type="text" [(ngModel)]="copiedLink" id="myInput" style="
+          width: 80%;
+          float: left;
+          background: #effdfe;
+          border: none;
+          border-radius: 18px;
+        " />
+      <button (click)="blogShareLink('site')" style="
+          width: 20%;
+          float: left;
+          background: #effdfe;
+          border: none;
+          border-radius: 18px;
+          box-shadow: none;
+          border: none;
+        ">
+        <img src="/assets/images/link.png" />
+      </button>
     </div>
-
   </div>
 </ng-template>
 
@@ -831,19 +996,30 @@
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
-
   </div>
   <div class="modal-body">
     <div class="know-more-info col_bg_aqua">
       <ul class="know-more-ul">
         <li>
-          You write a story for one of our titles. Send it to us. </li>
-        <li>We proof read your story. This means that we check the grammar and spellings, and make other little changes
-          (only if it is required). </li>
-        <li>After that, our creative team adds an image to make your story look groovier! </li>
-        <li>And then, we publish your story in our Reading Room and social media platforms. </li>
-        <li>Of course! You can also share your published stories with family and friends. Get their feedback and reviews
-          and keep rolling towards your writing goals! </li>
+          You write a story for one of our titles. Send it to us.
+        </li>
+        <li>
+          We proof read your story. This means that we check the grammar and
+          spellings, and make other little changes (only if it is required).
+        </li>
+        <li>
+          After that, our creative team adds an image to make your story look
+          groovier!
+        </li>
+        <li>
+          And then, we publish your story in our Reading Room and social media
+          platforms.
+        </li>
+        <li>
+          Of course! You can also share your published stories with family and
+          friends. Get their feedback and reviews and keep rolling towards your
+          writing goals!
+        </li>
       </ul>
     </div>
   </div>
