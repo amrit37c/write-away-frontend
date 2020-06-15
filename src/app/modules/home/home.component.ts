@@ -225,11 +225,16 @@ export class HomeComponent implements OnInit {
   }
 
   publicationBookMarkStatus(publication) {
+    // return publication &&
+    //   publication.bookmark &&
+    //   publication.bookmark.bookMarkStatus === "1"
+    //   ? " fa-bookmark"
+    //   : "fa-bookmark-o";
     return publication &&
       publication.bookmark &&
       publication.bookmark.bookMarkStatus === "1"
-      ? " fa-bookmark"
-      : "fa-bookmark-o";
+      ? "assets/images/book_icon2.png"
+      : "assets/images/book_icon.png";
   }
 
   saveBlogBookMark(blog) {

@@ -2506,7 +2506,11 @@ ul li {
   display: none;
 }
 
-
+.know-more-ul {
+  padding: 10px;
+  color: #3b9bf1 !important;
+  background: #ecfdff;
+}
 
 @media only screen and (max-width: 375px) {
   .updated-content p {
