@@ -382,6 +382,10 @@ export class HomeComponent implements OnInit {
     );
   }
   getBlogContent(content) {
-    return content.substr(0, 1750);
+    return content.substr(0, 686);
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 }

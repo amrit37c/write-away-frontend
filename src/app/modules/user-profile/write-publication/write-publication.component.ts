@@ -47,6 +47,7 @@ export class WritePublicationComponent implements OnInit {
   submissionForm: FormGroup;
   editAble: boolean = false;
   copiedLink: string;
+  kickStartInfo: string;
 
   constructor(
     private service: PublicationService,
@@ -82,6 +83,8 @@ export class WritePublicationComponent implements OnInit {
   getPublication(id) {
     this.service.getOne(id).subscribe((_response) => {
       this.data = _response.body.data[0];
+      this.kickStartInfo = this.data["kickstarter"];
+      console.log("this", this.data["kickstarter"]);
       if (this.data["userPublication"] && this.data["userPublication"].length) {
         this.editAble = true;
         this.submissionId = this.data["userPublication"][0]["_id"];
@@ -156,7 +159,6 @@ export class WritePublicationComponent implements OnInit {
   }
 
   publicationBookMarkStatus(publication) {
-    console.log(">>>", publication);
     return publication &&
       publication[0] &&
       publication[0].bookMarkStatus === "1"
@@ -208,6 +210,14 @@ export class WritePublicationComponent implements OnInit {
       this.copiedLink = "http://demo.writeawayy.com/publication/" + id;
     } else {
       this.copiedLink = "http://demo.writeawayy.com/blogs/" + id;
+    }
+  }
+
+  kickInfo(type) {
+    if (type === "starter") {
+      this.kickStartInfo = this.data["kickstarter"];
+    } else {
+      this.kickStartInfo = this.data["kickbookDesc"];
     }
   }
 }

@@ -51,7 +51,7 @@
                 </p>
 
                 <div class="book_know_btn">
-                  <a href="#" target="_blank" class="text-uppercase">know more</a>
+                  <a (click)="openModal(knowMore)" target="_blank" class="text-uppercase">know more</a>
                 </div>
               </div>
             </div>
@@ -201,7 +201,7 @@
                     {{ blogs[0].title }}
                   </h3>
                   <span *ngIf="blogs.length">{{
-                    blogs[0].createdAt | date: "MMM dd, yyyy"
+                    blogs[0].createdAt | date: "MMMM dd, yyyy"
                   }}</span>
                 </div>
                 <div class="service_top_span">
@@ -328,8 +328,10 @@
                 <div class="classic_post">
                   <p *ngIf="openPublications.length">
                     Genres:
-                    <span *ngFor="let genre of openPublications[openPublicationIndex].genres">
-                      {{ genre.title | titlecase }},
+                    <span *ngFor="let genre of openPublications[openPublicationIndex].genres;let i=index">
+                      {{ genre.title | titlecase }}
+                      <span *ngIf="i==openPublications.length-1"></span><span
+                        *ngIf="i!=openPublications.length-1">,</span>
                     </span>
                   </p>
                   <p *ngIf="openPublications.length">
@@ -596,5 +598,28 @@
   </div>
   <div class="modal-body">
     This is a modal.
+  </div>
+</ng-template>
+<ng-template #knowMore>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Know More</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+  </div>
+  <div class="modal-body">
+    <div class="know-more-info col_bg_aqua">
+      <ul class="know-more-ul">
+        <li>
+          You write a story for one of our titles. Send it to us. </li>
+        <li>We proof read your story. This means that we check the grammar and spellings, and make other little changes
+          (only if it is required). </li>
+        <li>After that, our creative team adds an image to make your story look groovier! </li>
+        <li>And then, we publish your story in our Reading Room and social media platforms. </li>
+        <li>Of course! You can also share your published stories with family and friends. Get their feedback and reviews
+          and keep rolling towards your writing goals! </li>
+      </ul>
+    </div>
   </div>
 </ng-template>

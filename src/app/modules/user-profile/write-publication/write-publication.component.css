@@ -99,7 +99,7 @@
 }
 
 .notes {
-  height: 208px;
+
   border: 1px solid #D43299;
   border-radius: 4px;
   background-color: #fff;
@@ -133,8 +133,8 @@
   background-color: white;
   border-radius: 17px;
   padding: 4px;
-      padding-right: 4px;
-      padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 4px;
   padding-left: 20px;
   padding-right: 20px;
   box-shadow: 0px 6px 10px -7px rgba(0, 0, 0, 0.96);
@@ -779,19 +779,19 @@ button {
 
 .media-upload {
   padding: 95px 40px;
-text-align: center;
-border: 1px solid;
-    border-top-color: currentcolor;
-    border-right-color: currentcolor;
-    border-bottom-color: currentcolor;
-    border-left-color: currentcolor;
-font-style: italic;
-border-color: #D43299;
-width: 86%;
-float: left;
-position: absolute;
-z-index: 999;
-background: #fff;
+  text-align: center;
+  border: 1px solid;
+  border-top-color: currentcolor;
+  border-right-color: currentcolor;
+  border-bottom-color: currentcolor;
+  border-left-color: currentcolor;
+  font-style: italic;
+  border-color: #D43299;
+  width: 86%;
+  float: left;
+  position: absolute;
+  z-index: 999;
+  background: #fff;
 }
 
 .topic {
@@ -873,4 +873,14 @@ background: #fff;
   color: lightgray;
   font-weight: 600;
   margin-left: 10px;
+}
+
+.right-header {
+  padding-top: 10px;
+}
+
+.right-header p {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2199d5;
 }
