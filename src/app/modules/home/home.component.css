@@ -136,6 +136,7 @@
   font-weight: 600;
   text-align: right;
   letter-spacing: 1px;
+  color: #3691ce;
 }
 
 
@@ -156,7 +157,7 @@
   width: 40%;
   float: left;
   color: #3b9bf1 !important;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 27px;
   font-family: Montserrat;
 }
@@ -195,12 +196,12 @@
 }
 
 .b1st_blog {
-  width: 45%;
+  width: 40%;
   float: left;
 }
 
 .b1st_blog_des {
-  width: 50%;
+  width: 55%;
   float: left;
   margin-left: 5%;
   padding: 20px 20px 0 0;
@@ -211,6 +212,7 @@
   float: left;
   font-size: 18px;
   font-family: Montserrat;
+  color: #3b9bf1;
 }
 
 .b1st_blog_des p {
@@ -245,7 +247,7 @@
 }
 
 .publisher_desc {
-  width: 45%;
+  width: 40%;
   float: left;
   margin-right: 5%;
   margin-top: 30px;
@@ -253,7 +255,7 @@
 
 
 .classic_details {
-  width: 50%;
+  width: 55%;
   float: left;
 }
 
@@ -263,26 +265,29 @@
 }
 
 .publisher_name img {
-  width: 15%;
+  width: 30%;
   float: left;
-  margin: 0 5%;
+  margin: 10px 35%;
 }
 
-.publi {
-  width: 37.5%;
+.publi{
+  width: 100%;
   float: left;
-  text-align: right;
+  text-align: center;
   font-weight: 600;
   font-family: Montserrat;
   margin-top: 9px;
+  font-size: 15px;
 }
 
-.name {
-  width: 37.5%;
+.name{
+  width: 100%;
   float: left;
   font-weight: 600;
   font-family: Montserrat;
   margin-top: 9px;
+  text-align: center;
+  font-size: 20px;
 }
 
 .classic_post {
@@ -310,15 +315,16 @@
 
 
 .dts1 {
-  width: 50%;
+  width: 55%;
   float: left;
   padding-top: 10px;
 }
 
 .dts2 {
-  width: 50%;
+  width: 55%;
   float: right;
   padding-top: 10px;
+  text-align: center;
 }
 
 .follow_links {
@@ -382,7 +388,7 @@
 }
 
 .box_blg_half_icon_wd_second {
-  width: 85%;
+  width: 100%;
   float: right;
 }
 
@@ -1754,11 +1760,7 @@ ul li {
   }
 
   .about-content {
-<<<<<<< HEAD
     margin-top: 60px !important;
-=======
-    margin-top: 35px !important;
->>>>>>> 593fafb1a83071e1a8beb858dcd35ca0f71ccc62
   }
 
   .share-img-blog {
