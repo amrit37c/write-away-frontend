@@ -197,19 +197,31 @@ export class HomeComponent implements OnInit {
   }
 
   blogBookMarkStatus() {
+    // return this.blogs.length &&
+    //   this.blogs[0].bookmark &&
+    //   this.blogs[0].bookmark.bookMarkStatus === "1"
+    //   ? " fa-bookmark"
+    //   : "fa-bookmark-o";
+
     return this.blogs.length &&
       this.blogs[0].bookmark &&
       this.blogs[0].bookmark.bookMarkStatus === "1"
-      ? " fa-bookmark"
-      : "fa-bookmark-o";
+      ? "assets/images/book_icon2.png"
+      : "assets/images/book_icon.png";
   }
 
   blogLikeStatus() {
+    // return this.blogs.length &&
+    //   this.blogs[0].like &&
+    //   this.blogs[0].like.likeStatus === "1"
+    //   ? "fa-heart"
+    //   : "fa-heart-o";
+    // assets/images/hrt_icon.png
     return this.blogs.length &&
       this.blogs[0].like &&
       this.blogs[0].like.likeStatus === "1"
-      ? "fa-heart"
-      : "fa-heart-o";
+      ? "assets/images/hrt_icon2.png"
+      : "assets/images/hrt_icon.png";
   }
 
   publicationBookMarkStatus(publication) {

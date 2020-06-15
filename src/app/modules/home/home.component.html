@@ -12,7 +12,8 @@
           <p class="updated-conts">
             Write Awayy is the happy place to read,<br />write, tell stories and
             share them. Express<br />your thoughts to the world in a creative<br />way,
-            and have fun doing it. You have ideas,<br />we help you make them happen.
+            and have fun doing it. You have ideas,<br />we help you make them
+            happen.
           </p>
         </div>
       </div>
@@ -20,7 +21,11 @@
       <div class="col-lg-7 col-sm-12 wow fadeInLeft" data-wow-delay="0.8s">
         <div class="about-video">
           <div class="single-video overlay">
-            <img src="./assets/images//main-banner77.svg" class="main-img-res" alt="#" />
+            <img
+              src="./assets/images//main-banner77.svg"
+              class="main-img-res"
+              alt="#"
+            />
           </div>
         </div>
       </div>
@@ -37,7 +42,11 @@
         <div class="book_store book_store_blue d-flex">
           <div class="row">
             <div class="col-md-5 book_store_img">
-              <img src="./assets/images/write-away.svg" class="responsive-pencil" alt="" />
+              <img
+                src="./assets/images/write-away.svg"
+                class="responsive-pencil"
+                alt=""
+              />
             </div>
             <div class="col-md-7 book_store_desc updated-leftss">
               <div class="book_store_heading">
@@ -51,7 +60,12 @@
                 </p>
 
                 <div class="book_know_btn">
-                  <a (click)="openModal(knowMore)" target="_blank" class="text-uppercase">know more</a>
+                  <a
+                    (click)="openModal(knowMore)"
+                    target="_blank"
+                    class="text-uppercase"
+                    >know more</a
+                  >
                 </div>
               </div>
             </div>
@@ -62,10 +76,16 @@
         <div class="book_store book_store_pink d-flex">
           <div class="row book-img-cont">
             <div class="col-md-5 book_store_img">
-              <img src="./assets/images/read-away.svg" class="books-index read-awayresponsive" alt="" />
+              <img
+                src="./assets/images/read-away.svg"
+                class="books-index read-awayresponsive"
+                alt=""
+              />
             </div>
             <div class="col-md-7 book_store_desc book_store_desc_two">
-              <div class="title_books_store d-flex justify-content-between"></div>
+              <div
+                class="title_books_store d-flex justify-content-between"
+              ></div>
               <div class="book_store_heading">
                 <h3 class="hd_mrg">Read Awayy!</h3>
               </div>
@@ -91,10 +111,16 @@
         <div class="book_store book_store_pink back_green d-flex">
           <div class="row book-img-cont updated-coming">
             <div class="col-md-5 book_store_img img-share-div">
-              <img src="./assets/images/share-away.svg" class="circle-group" alt="" />
+              <img
+                src="./assets/images/share-away.svg"
+                class="circle-group"
+                alt=""
+              />
             </div>
             <div class="col-md-7 book_store_desc">
-              <div class="title_books_store d-flex justify-content-between"></div>
+              <div
+                class="title_books_store d-flex justify-content-between"
+              ></div>
               <div class="book_store_heading">
                 <h3>Share Awayy!</h3>
               </div>
@@ -116,10 +142,13 @@
       </div>
       <div class="col-lg-7 wow fadeIn" data-wow-delay="0.6s">
         <div class="book_store cmng-back-color d-flex">
-
           <div class="row book-img-cont">
             <div class="col-5">
-              <img src="./assets/images/coming-soon.svg" alt="" class="coming-res win-coming-soon" />
+              <img
+                src="./assets/images/coming-soon.svg"
+                alt=""
+                class="coming-res win-coming-soon"
+              />
             </div>
             <div class="col-7 book_store_desc responsive-coming">
               <div class="title_books_store justify-content-between"></div>
@@ -137,16 +166,106 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
 </section>
 <!--/ End Know More -->
+
+<!-- Services2 Start -->
+<div class="container-fluid blg_bg_topsec">
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="bg_blog_img">
+        <!-- <img src="../../../assets/images/hunt.svg" /> -->
+        <img
+          src="/assets/images/no-image-593.png"
+          alt="Blog image"
+          *ngIf="!blogs.length"
+        />
+        <img
+          src="{{ baseUrl }}/images/{{ blogs[0].media520 }}"
+          *ngIf="blogs.length"
+          alt="Blog image"
+          onerror="javascript:this.src='/assets/images/no-image-593.png'"
+        />
+      </div>
+
+      <div class="box_blg">
+        <div class="box_blg_half box_blg_haf">
+          <img src="/assets/images/book.svg" />
+          <span>
+            <p>{{ (blogs.length && blogs[0].readCount.length) || "0" }}</p>
+            <p>Reads</p>
+          </span>
+        </div>
+
+        <div class="box_blg_half">
+          <div class="box_blg_half_icon_wd">
+            <!-- <i class="fa col-red heart-shape" [ngClass]="blogLikeStatus()" (click)="
+            blogs.length && blogs[0] && blogs[0].like
+              ? updateBlogLike(blogs[0])
+              : saveBlogLike(blogs[0])
+          "></i>
+        <i class="heart-shape"><img alt="" class="share-img-blog share-img-blog2" src="assets/images/Group 561.svg"
+            (click)="openShareModal(socialMedia,blogs[0]._id)"></i>
+
+
+        <i class="fa col-yel bokyy" [ngClass]="blogBookMarkStatus()" (click)="
+            blogs.length && blogs[0] && blogs[0].bookmark
+              ? updateBlogBookMark(blogs[0])
+              : saveBlogBookMark(blogs[0])
+          "></i> -->
+            <a
+              (click)="
+                blogs.length && blogs[0] && blogs[0].like
+                  ? updateBlogLike(blogs[0])
+                  : saveBlogLike(blogs[0])
+              "
+            >
+              <img alt="" [src]="blogLikeStatus()" />
+            </a>
+            <a href="#">
+              <img alt="" src="assets/images/share_icon.png" />
+            </a>
+            <a
+              (click)="
+                blogs.length && blogs[0] && blogs[0].bookmark
+                  ? updateBlogBookMark(blogs[0])
+                  : saveBlogBookMark(blogs[0])
+              "
+            >
+              <img alt="" [src]="blogBookMarkStatus()" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="des_data">
+        <h1 *ngIf="blogs.length">{{ blogs[0].title || "" }}</h1>
+        <span>
+          <p *ngIf="blogs.length">
+            {{ blogs[0].createdAt | date: "MMMM dd, yyyy" }}
+          </p>
+        </span>
+        <h5>{{ blogs[0] && blogs[0].author }}</h5>
+        <p
+          [innerHTML]="getBlogContent(blogs[0].content)"
+          *ngIf="blogs.length"
+        ></p>
+
+        <a (click)="readBlog(blogs[0]._id)" *ngIf="blogs.length">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ End Services2 -->
+
 <!-- Services Start -->
-<section class="services section">
+<!--<section class="services section">
   <div class="container-fluid" style="background-color: #3691ce;">
     <div class="row">
       <div class="col-12 p-0 wow fadeInUp">
@@ -182,7 +301,7 @@
                         ? updateBlogLike(blogs[0])
                         : saveBlogLike(blogs[0])
                     "></i>
-                  <i class="heart-shape"><img alt="" class="share-img-blog" src="assets/images/Group 561.svg"
+                  <i class="heart-shape"><img alt="" class="share-img-blog share-img-blog2" src="assets/images/Group 561.svg"
                       (click)="openShareModal(socialMedia,blogs[0]._id)"></i>
 
 
@@ -225,11 +344,269 @@
       </div>
     </div>
   </div>
-</section>
+</section>--->
 <!--/ End Services -->
 
+<!-- Hero area static2 -->
+<div class="container-fluid blog_second_prt">
+  <div class="row">
+    <div class="col-md-6 box_2_blogs_hd">
+      <h1>We're Publishing!</h1>
+      <p class="box_2_blogs_hd1">
+        Titles <span>1</span> &nbsp;&nbsp;&nbsp; Genres <span>2</span>
+      </p>
+      <a href="#"
+        >View All<i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i
+      ></a>
+      <div class="box_2_blogs">
+        <div class="b1st_blog">
+          <img src="/assets/images/read-away-publish.jpg" />
+          <div class="box_blg_second">
+            <div class="box_blg_half_second box_blg_haf_second"></div>
+
+            <div class="box_blg_half_second">
+              <div class="box_blg_half_icon_wd_second">
+                <a href="#">
+                  <img alt="" src="assets/images/hrt_icon.png" />
+                </a>
+                <a href="#">
+                  <img alt="" src="assets/images/share_icon.png" />
+                </a>
+                <a href="#">
+                  <img alt="" src="assets/images/book_icon.png" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="b1st_blog_des">
+          <h3 class="text-uppercase">ONE NOVELIST'S APPROACH</h3>
+          <h3 class="text-uppercase">ELIZABETH GEORGE</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop p
+          </p>
+        </div>
+
+        <div class="b1st_blog_publisher">
+          <div _ngcontent-fdf-c3="" class="publisher_desc">
+            <div _ngcontent-fdf-c3="" class="publisher_name">
+              <span _ngcontent-fdf-c3="" class="publi">Publisher:</span>
+              <img
+                _ngcontent-fdf-c3=""
+                alt=""
+                src="./assets/images/publisher.svg"
+              />
+              <span _ngcontent-fdf-c3="" class="name">Daniel</span>
+            </div>
+          </div>
+
+          <div _ngcontent-fdf-c3="" class="classic_details details-updated">
+            <div _ngcontent-fdf-c3="" class="classic_post">
+              <p _ngcontent-fdf-c3="" class="srs_to">
+                Genres:
+                <span _ngcontent-fdf-c3=""> Westerns, </span>
+                <span _ngcontent-fdf-c3=""> Classic, </span>
+              </p>
+              <!--bindings={
+                      "ng-reflect-ng-if": "1"
+                    }-->
+              <p _ngcontent-fdf-c3="" class="srs_to">
+                Languages: <span _ngcontent-fdf-c3="">English</span>
+              </p>
+              <!--bindings={
+                      "ng-reflect-ng-if": "1"
+                    }-->
+              <p _ngcontent-fdf-c3="" class="srs_to">
+                Age Group:
+                <!--bindings={
+                      "ng-reflect-ng-for-of": "[object Object]"
+                    }--><span _ngcontent-fdf-c3="" class="col-grey">
+                  20-30 years,</span
+                >
+              </p>
+              <!--bindings={
+                      "ng-reflect-ng-if": "1"
+                    }-->
+              <p _ngcontent-fdf-c3="" class="srs_to">
+                Closing Date: <span _ngcontent-fdf-c3="">Jul 11, 2020</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="dts1"></div>
+          <div class="dts2">
+            <button _ngcontent-fll-c3="" class="write-on-btn btn-lg">
+              Write
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="out-of-hero-area">
+        <p>
+          <span class="fa fa-angle-left slider-direction-icon"> </span>
+          <span class="sp-sp">
+            <span class="clr-pink updated-clr-pink"> 3</span>/ 10
+          </span>
+          <span class="fa fa-angle-right slider-direction-icon"></span>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 box_2_blogs_hd">
+      <h1>Reading Room!</h1>
+      <p class="box_2_blogs_hd1">
+        Titles <span>300</span> &nbsp;&nbsp;&nbsp; Genres
+        <span>300</span> &nbsp;&nbsp;&nbsp; Topics <span>0</span>
+      </p>
+      <a href="#"
+        >View All<i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i
+      ></a>
+      <div class="box_2_blogs">
+        <div class="b1st_blog">
+          <img src="/assets/images/read-away-publish.jpg" />
+          <div class="box_blg_second">
+            <div class="box_blg_half_second box_blg_haf_second">
+              <img src="/assets/images/book.svg" />
+              <span>
+                <p>1500</p>
+                <p>Reads</p>
+              </span>
+            </div>
+
+            <div class="box_blg_half_second">
+              <div class="box_blg_half_icon_wd_second">
+                <a href="#">
+                  <img alt="" src="assets/images/hrt_icon.png" />
+                </a>
+                <a href="#">
+                  <img alt="" src="assets/images/share_icon.png" />
+                </a>
+                <a href="#">
+                  <img alt="" src="assets/images/book_icon.png" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="b1st_blog_des">
+          <h3 class="text-uppercase">ONE NOVELIST'S APPROACH</h3>
+          <h3 class="text-uppercase">ELIZABETH GEORGE</h3>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop p
+          </p>
+        </div>
+
+        <div class="b1st_blog_publisher">
+          <div _ngcontent-fdf-c3="" class="publisher_desc">
+            <div _ngcontent-fdf-c3="" class="publisher_name">
+              <span _ngcontent-fdf-c3="" class="publi">Publisher:</span>
+              <img
+                _ngcontent-fdf-c3=""
+                alt=""
+                src="./assets/images/publisher.svg"
+              />
+              <span _ngcontent-fdf-c3="" class="name">Daniel</span>
+            </div>
+          </div>
+
+          <div _ngcontent-fdf-c3="" class="classic_details details-updated">
+            <div _ngcontent-fdf-c3="" class="classic_post classic_post5">
+              <!--bindings={
+                   "ng-reflect-ng-if": "1"
+                 }-->
+              <p _ngcontent-fdf-c3="" class="srs_to">
+                Genres:
+                <!--bindings={
+                   "ng-reflect-ng-for-of": "[object Object],[object Object"
+                 }--><span _ngcontent-fdf-c3=""> Westerns, </span
+                ><span _ngcontent-fdf-c3=""> Classic, </span>
+              </p>
+              <!--bindings={
+                   "ng-reflect-ng-if": "1"
+                 }-->
+              <!--bindings={
+                   "ng-reflect-ng-if": "1"
+                 }-->
+              <p _ngcontent-fdf-c3="" class="srs_to">
+                Age Group:
+                <!--bindings={
+                   "ng-reflect-ng-for-of": "[object Object]"
+                 }--><span _ngcontent-fdf-c3="" class="col-grey">
+                  20-30 years,</span
+                >
+              </p>
+              <!--bindings={
+                   "ng-reflect-ng-if": "1"
+                 }-->
+              <p _ngcontent-fdf-c3="" class="srs_to">
+                Topics: <span _ngcontent-fdf-c3="">10</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="dts1">
+            <div _ngcontent-csn-c3="" class="follow_links">
+              <div _ngcontent-csn-c3="" class="center taing_data">
+                <ul _ngcontent-csn-c3="">
+                  <li _ngcontent-csn-c3="">
+                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                  </li>
+                  <li _ngcontent-csn-c3="">
+                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                  </li>
+                  <li _ngcontent-csn-c3="">
+                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                  </li>
+                  <li _ngcontent-csn-c3="">
+                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                  </li>
+                  <li _ngcontent-csn-c3="">
+                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="dts2">
+            <button _ngcontent-fll-c3="" class="write-on-btn btn-lg">
+              Read
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="out-of-hero-area">
+        <p>
+          <span class="fa fa-angle-left slider-direction-icon"> </span>
+          <span class="sp-sp">
+            <span class="clr-pink updated-clr-pink"> 3</span>/ 10
+          </span>
+          <span class="fa fa-angle-right slider-direction-icon"></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /End Hero area static2 -->
+
 <!-- Hero area static -->
-<section class="hero-area">
+<!--<section class="hero-area">
   <div class="container-fluid">
     <div class="row sssss">
       <div class="col-lg-6 col-md-6 col-12">
@@ -268,11 +645,11 @@
                   " />
               </div>
               <div class="text-right">
-                <img alt="" class="rsp_img_share" src="assets/images/Group 561.svg"
+                <img alt="" class="rsp_img_share rsp_img_share2" src="assets/images/Group 561.svg"
                   (click)="openShareModal(socialMedia,openPublications[openPublicationIndex]._id, 'publication')">
                 <!-- (click)="sharePublication(openPublications[openPublicationIndex])" -->
 
-                <i class="fa col-yel bokyy book_mark_link" [ngClass]="
+<!--<i class="fa col-yel bokyy book_mark_link" [ngClass]="
                     publicationBookMarkStatus(
                       openPublications[openPublicationIndex]
                     )
@@ -531,19 +908,30 @@
       </div>
     </div>
   </div>
-</section>
+</section>-->
+<!-- /End Hero area static -->
 
 <!-- Testimonials -->
 <section class="testimonials">
   <div class="container-fluid">
     <div class="row m-0">
       <div class="col-lg-12 col-12">
-        <h3 class="text-center testi-updated testimonials_title testi-updated mt-5 mb-2">
+        <h3
+          class="text-center testi-updated testimonials_title testi-updated mt-5 mb-2"
+        >
           <span>Te</span>stimonials
         </h3>
-        <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
-          [indicatorsByChunk]="true">
-          <slide *ngFor="let slide of slides; let index = index" class="slider-cont">
+        <carousel
+          [itemsPerSlide]="itemsPerSlide"
+          [singleSlideOffset]="false"
+          [interval]="false"
+          [noWrap]="false"
+          [indicatorsByChunk]="true"
+        >
+          <slide
+            *ngFor="let slide of slides; let index = index"
+            class="slider-cont"
+          >
             <img [src]="slide.image" alt="image slide" class="slider-img" />
             <p class="itilicks">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -554,9 +942,7 @@
               <p class="font-updated">- John Doe</p>
               <span class="firm_name font-abc">ABC Company</span>
             </div>
-            <div class="carousel-caption">
-
-            </div>
+            <div class="carousel-caption"></div>
           </slide>
         </carousel>
       </div>
@@ -568,31 +954,86 @@
   <div class="modal-body">
     <span class="close">×</span>
     <div class="icon5" style="margin-bottom: 32px;">
-      <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Share On social media</h6>
-      <a (click)="blogShareLink('facebook')"><i class="fa  fa-facebook circle5"></i></a>
-      <a (click)="blogShareLink('instagram')"><i class="fa  fa-instagram circle5"></i></a>
-      <a (click)="blogShareLink('linkedin')"><i class="fa  fa-linkedin circle5 "></i></a>
-      <a (click)="blogShareLink('google+')"><i class="fa  fa-google-plus circle5"></i></a>
-      <a (click)="blogShareLink('youtube')"><i class="fa  fa-youtube circle5 "></i></a>
-      <a (click)="blogShareLink('twitter')"><i class="fa  fa-twitter circle5" style="margin-top: -6px;"></i></a>
+      <h6
+        style="
+          text-align: left;
+          font-size: 11px;
+          font-weight: 600;
+          color: #777575;
+        "
+      >
+        Share On social media
+      </h6>
+      <a (click)="blogShareLink('facebook')"
+        ><i class="fa fa-facebook circle5"></i
+      ></a>
+      <a (click)="blogShareLink('instagram')"
+        ><i class="fa fa-instagram circle5"></i
+      ></a>
+      <a (click)="blogShareLink('linkedin')"
+        ><i class="fa fa-linkedin circle5"></i
+      ></a>
+      <a (click)="blogShareLink('google+')"
+        ><i class="fa fa-google-plus circle5"></i
+      ></a>
+      <a (click)="blogShareLink('youtube')"
+        ><i class="fa fa-youtube circle5"></i
+      ></a>
+      <a (click)="blogShareLink('twitter')"
+        ><i class="fa fa-twitter circle5" style="margin-top: -6px;"></i
+      ></a>
     </div>
 
     <div style="width: 100%; float: left;">
-      <h6 style="text-align: left;font-size: 11px;font-weight: 600;color: #777575;">Copy Link</h6>
-      <input type="text" [(ngModel)]="copiedLink" id="myInput"
-        style="width: 80%;float: left;background: #effdfe;border: none;border-radius: 18px;">
-      <button (click)="blogShareLink('site')"
-        style="width: 20%;float: left;background: #effdfe;border: none;border-radius: 18px;box-shadow: none;border: none;"><img
-          src="/assets/images/link.png"></button>
+      <h6
+        style="
+          text-align: left;
+          font-size: 11px;
+          font-weight: 600;
+          color: #777575;
+        "
+      >
+        Copy Link
+      </h6>
+      <input
+        type="text"
+        [(ngModel)]="copiedLink"
+        id="myInput"
+        style="
+          width: 80%;
+          float: left;
+          background: #effdfe;
+          border: none;
+          border-radius: 18px;
+        "
+      />
+      <button
+        (click)="blogShareLink('site')"
+        style="
+          width: 20%;
+          float: left;
+          background: #effdfe;
+          border: none;
+          border-radius: 18px;
+          box-shadow: none;
+          border: none;
+        "
+      >
+        <img src="/assets/images/link.png" />
+      </button>
     </div>
-
   </div>
 </ng-template>
 
 <ng-template #template>
   <div class="modal-header">
     <h4 class="modal-title pull-left">Modal</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -603,22 +1044,38 @@
 <ng-template #knowMore>
   <div class="modal-header">
     <h4 class="modal-title pull-left">Know More</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
       <span aria-hidden="true">&times;</span>
     </button>
-
   </div>
   <div class="modal-body">
     <div class="know-more-info col_bg_aqua">
       <ul class="know-more-ul">
         <li>
-          You write a story for one of our titles. Send it to us. </li>
-        <li>We proof read your story. This means that we check the grammar and spellings, and make other little changes
-          (only if it is required). </li>
-        <li>After that, our creative team adds an image to make your story look groovier! </li>
-        <li>And then, we publish your story in our Reading Room and social media platforms. </li>
-        <li>Of course! You can also share your published stories with family and friends. Get their feedback and reviews
-          and keep rolling towards your writing goals! </li>
+          You write a story for one of our titles. Send it to us.
+        </li>
+        <li>
+          We proof read your story. This means that we check the grammar and
+          spellings, and make other little changes (only if it is required).
+        </li>
+        <li>
+          After that, our creative team adds an image to make your story look
+          groovier!
+        </li>
+        <li>
+          And then, we publish your story in our Reading Room and social media
+          platforms.
+        </li>
+        <li>
+          Of course! You can also share your published stories with family and
+          friends. Get their feedback and reviews and keep rolling towards your
+          writing goals!
+        </li>
       </ul>
     </div>
   </div>
