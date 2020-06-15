@@ -2,7 +2,7 @@
 <section class="about-us section">
   <div class="container-fluid">
     <div class="row updated-alignment">
-      <div class="col-lg-5 col-sm-12 wows fadeInRight" data-wow-delay="0.6s">
+      <div class="col-lg-6 col-sm-12 wows fadeInRight" data-wow-delay="0.6s">
         <div class="about-content updated-content">
           <!-- <span class="short_heading">Start</span> -->
           <h3 class="write-hedsd">Write.</h3>
@@ -10,15 +10,14 @@
 
           <h3 class="updated-bold">Write even more.</h3>
           <p class="updated-conts">
-            Write Awayy is the happy place to read,<br />write, tell stories and
-            share them. Express<br />your thoughts to the world in a creative<br />way,
-            and have fun doing it. You have ideas,<br />we help you make them
-            happen.
+            Write Awayy is the happy place to read, write, tell<br />stories and
+            share them. Express your thoughts to<br />the world in a creativeway,
+            and have fun doing<br />it. You have ideas, we help you make them<br />happen.
           </p>
         </div>
       </div>
 
-      <div class="col-lg-7 col-sm-12 wow fadeInLeft" data-wow-delay="0.8s">
+      <div class="col-lg-6 col-sm-12 wow fadeInLeft" data-wow-delay="0.8s">
         <div class="about-video">
           <div class="single-video overlay">
             <img src="./assets/images//main-banner77.svg" class="main-img-res" alt="#" />
@@ -34,7 +33,7 @@
 <section class="know_more section">
   <div class="container-fluid">
     <div class="row updated-alignment mb-4">
-      <div class="col-lg-7 wow fadeIn" data-wow-delay="0.6s">
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.6s">
         <div class="book_store book_store_blue d-flex">
           <div class="row">
             <div class="col-md-5 book_store_img">
@@ -46,9 +45,8 @@
               </div>
               <div class="book_store_text responsive-updated">
                 <p class="responsive-updated">
-                  We create a title and you write a story on it. Use your
-                  imagination and make it great. Send it to us and we will
-                  publish it.
+                  We create a title and you write a story on it.
+                  <span class="p_spaan">Send it to us and we will publish it.</span>
                 </p>
 
                 <div class="book_know_btn">
@@ -59,13 +57,13 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-5 wow fadeIn" data-wow-delay="0.8s">
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.8s">
         <div class="book_store book_store_pink d-flex">
           <div class="row book-img-cont">
-            <div class="col-md-5 book_store_img">
+            <div class="col-md-4 book_store_img">
               <img src="./assets/images/read-away.svg" class="books-index read-awayresponsive" alt="" />
             </div>
-            <div class="col-md-7 book_store_desc book_store_desc_two">
+            <div class="col-md-8 book_store_desc book_store_desc_two">
               <div class="title_books_store d-flex justify-content-between"></div>
               <div class="book_store_heading">
                 <h3 class="hd_mrg">Read Awayy!</h3>
@@ -73,8 +71,8 @@
               <div class="book_store_text responsive-updated">
                 <p class="responsive-updated parah_chk">
                   Read the published stories; your own, and those written by
-                  others. If you’ve got to write better, you’ve got to read
-                  better!
+                  others. <span class="p_spaan2">If you’ve got to write better, you’ve got to read
+                    better!</span>
                 </p>
 
                 <div class="book_know_btn">
@@ -88,23 +86,23 @@
       <!-- share away -->
     </div>
     <div class="row updated-alignment">
-      <div class="col-lg-5 wow fadeIn" data-wow-delay="0.8s">
+      <div class="col-lg-7 wow fadeIn" data-wow-delay="0.8s">
         <div class="book_store book_store_pink back_green d-flex">
           <div class="row book-img-cont updated-coming">
-            <div class="col-md-5 book_store_img img-share-div">
+            <div class="col-md-4 book_store_img img-share-div">
               <img src="./assets/images/share-away.svg" class="circle-group" alt="" />
             </div>
-            <div class="col-md-7 book_store_desc">
+            <div class="col-md-8 book_store_desc">
               <div class="title_books_store d-flex justify-content-between"></div>
               <div class="book_store_heading">
                 <h3>Share Awayy!</h3>
               </div>
               <div class="book_store_text">
                 <p class="responsive-updated">
-                  Express the power of writing. Share your published stories
-                  with family and friends. Let them know how good you are at
-                  writing them.Get their likes, ratings and feedback and keep
-                  rolling toward your writing goals.
+                  Express the power of writing.
+                  <span class="p_spaan4">Share your published stories with family and friends.</span>
+                  <span class="p_spaan4">Let the world know how good you are!</span>
+                  <span class="p_spaan4">Get their feedback and rewiews!</span>
                 </p>
 
                 <div class="book_know_btn">
@@ -115,7 +113,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-7 wow fadeIn" data-wow-delay="0.6s">
+      <div class="col-lg-5 wow fadeIn" data-wow-delay="0.6s">
         <div class="book_store cmng-back-color d-flex">
           <div class="row book-img-cont">
             <div class="col-5">
@@ -204,7 +202,7 @@
 
     <div class="col-lg-7">
       <div class="des_data">
-        <h1 *ngIf="blogs.length">{{ blogs[0].title || "" }}</h1>
+        <h1 *ngIf="blogs.length">{{ blogs[0].title | titlecase }}</h1>
         <span>
           <p *ngIf="blogs.length">
             {{ blogs[0].createdAt | date: "MMMM dd, yyyy" }}

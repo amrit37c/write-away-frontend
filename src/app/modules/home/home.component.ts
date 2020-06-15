@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
   }
   getPublications() {
     this.publicationService
-      .get({ isPublished: false })
+      .get({ isPublished: false, publicationStatus: "2" })
       .subscribe((_response) => {
         this.publications = _response.body.data;
 
