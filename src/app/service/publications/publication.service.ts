@@ -16,18 +16,9 @@ export class PublicationService extends BaseService {
   }
 
   get(json?: Object, page?, sort?): Observable<any> {
-    // const queryStrings = { size: environment.ItemperPage, page };
-    // let httpParams = new HttpParams()
-    //   .set("size", environment.ItemperPage)
-    //   .set("page", page);
     let httpParams = new HttpParams();
     if (json) {
-      // httpParams = new HttpParams().set(
-      //   Object.keys(json)[0],
-      //   Object.values(json)[0]
-      // );
       for (const key in json) {
-        // console.log(`${key}: ${type[key]}`);
         console.log("APPEND IN JSON FILTER");
         httpParams = httpParams.append(key, json[key]);
       }
@@ -207,6 +198,43 @@ export class PublicationService extends BaseService {
         map((data) => {
           return data;
         }),
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+
+  getRecentWriting(): Observable<any> {
+    return this.http
+      .get<any>(`${this.url}/${environment.apis.recentWriting}`, {
+        headers: this.token(),
+
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+
+        catchError((error: any) => {
+          return this.handleError(error);
+        })
+      );
+  }
+  getFollowing(): Observable<any> {
+    return this.http
+      .get<any>(`${this.url}/${environment.apis.following}`, {
+        headers: this.token(),
+
+        responseType: "json",
+        observe: "response",
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        }),
+
         catchError((error: any) => {
           return this.handleError(error);
         })
