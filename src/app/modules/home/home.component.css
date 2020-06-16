@@ -172,7 +172,7 @@ padding-bottom: 25px;
   font-family: Montserrat;
 }
 
-.box_2_blogs_hd p {
+.box_2_blogs_hd1 {
   width: 43%;
   float: left;
   color: #66666d !important;
@@ -316,11 +316,13 @@ padding-bottom: 25px;
   font-size: 14px;
   font-family: Montserrat;
   color: #000 !important;
+  font-weight: 550;
 }
 
 
 .classic_post p span {
   color: #534f4f;
+  font-weight: normal;
 }
 
 
