@@ -210,8 +210,8 @@
         </span>
         <h5>{{ blogs[0] && blogs[0].author }}</h5>
         <p [innerHTML]="getBlogContent(blogs[0].content)" *ngIf="blogs.length"></p>
-        
-        
+
+
       </div>
       <div class="des_data2">
         <a (click)="readBlog(blogs[0]._id)" *ngIf="blogs.length">Read More</a>
@@ -313,16 +313,17 @@
         Titles <span> {{ openPublications.length }}</span> &nbsp;&nbsp;&nbsp;
         Genres <span> {{ openPublicationGenresCount }}</span>
       </p>
-      <a routerLink="/publish">View All<i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
+      <a routerLink="/publish">View All
+        <i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
       <div class="box_2_blogs" *ngIf="openPublications.length">
         <div class="b1st_blog">
-          <img src="/assets/images/read-away-publish.jpg" />
-          <!--<img src="{{ baseUrl }}/images/{{
+          <!-- <img src="/assets/images/read-away-publish.jpg" /> -->
+          <img src="{{ baseUrl }}/images/{{
               openPublications[openPublicationIndex]['mediaCover']
             }}" onerror="javascript:this.src='/assets/images/dummy291.png'" alt="" *ngIf="
               openPublications.length &&
               openPublications[openPublicationIndex].mediaCover
-            " />-->
+            " />
           <div class="box_blg_second">
             <div class="box_blg_half_second box_blg_haf_second"></div>
 
@@ -507,7 +508,8 @@
           <div _ngcontent-fdf-c3="" class="publisher_desc">
             <div _ngcontent-fdf-c3="" class="publisher_name">
               <span _ngcontent-fdf-c3="" class="publi">Publisher:</span>
-              <div class="w-100 center"><img _ngcontent-fdf-c3="" alt="" class="center" src="./assets/images/publisher.svg" /></div>
+              <div class="w-100 center"><img _ngcontent-fdf-c3="" alt="" class="center"
+                  src="./assets/images/publisher.svg" /></div>
               <span _ngcontent-fdf-c3="" class="name">Daniel</span>
             </div>
           </div>
@@ -521,7 +523,7 @@
                 Genres:
                 <!--bindings={
                    "ng-reflect-ng-for-of": "[object Object],[object Object"
-                 }--><span  _ngcontent-fdf-c3="" > Fantasy </span>
+                 }--><span _ngcontent-fdf-c3=""> Fantasy </span>
               </p>
               <!--bindings={
                    "ng-reflect-ng-if": "1"
@@ -539,7 +541,7 @@
               <!--bindings={
                    "ng-reflect-ng-if": "1"
                  }-->
-             
+
             </div>
           </div>
 

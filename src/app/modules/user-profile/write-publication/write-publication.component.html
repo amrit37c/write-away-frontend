@@ -369,15 +369,14 @@
     </div>
     <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
       [indicatorsByChunk]="true">
-      <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+      <slide *ngFor="let slide of following; let index=index" class="slider-cont">
         <div class="row">
           <div class="col-md-4">
-            <img [src]="slide.image" alt="image slide" class="slider-img">
+            <img src="{{url}}/images/{{slide.publicationId.media142}}" alt="image slide" class="slider-img">
           </div>
           <div class="col-md-8 text-justify">
-            <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur
-              elit.Impedit debitis doloremque at quos non officiis.
+            <h6 class="novel-title">{{ slide.publicationId.title }}</h6>
+            <p class="text-justify" [innerHTML]="getBrief(slide.publicationId.brief)"> {{ slide.publicationId.brief }}
             </p>
           </div>
 
@@ -396,15 +395,14 @@
     </div>
     <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="false" [interval]="false" [noWrap]="false"
       [indicatorsByChunk]="true">
-      <slide *ngFor="let slide of slides; let index=index" class="slider-cont">
+      <slide *ngFor="let slide of recentWriting; let index=index" class="slider-cont">
         <div class="row">
           <div class="col-md-4">
-            <img [src]="slide.image" alt="image slide" class="slider-img">
+            <img src="{{url}}/images/{{slide.publicationId.media142}}" alt="image slide" class="slider-img">
           </div>
           <div class="col-md-8 text-justify">
-            <h6 class="novel-title">ONE NOVELIST'S APPROACH ELISABETH GEORGE</h6>
-            <p class="text-justify">Lorem ipsum dolor sit amet consectetur
-              elit.Impedit debitis doloremque at quos non officiis.
+            <h6 class="novel-title">{{ slide.publicationId.title }}</h6>
+            <p class="text-justify" [innerHTML]="getBrief(slide.publicationId.brief)"> {{ slide.publicationId.brief }}
             </p>
           </div>
 

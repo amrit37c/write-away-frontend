@@ -48,6 +48,8 @@ export class WritePublicationComponent implements OnInit {
   editAble: boolean = false;
   copiedLink: string;
   kickStartInfo: string;
+  recentWriting: Array<any> = [];
+  following: Array<any> = [];
 
   constructor(
     private service: PublicationService,
@@ -67,7 +69,9 @@ export class WritePublicationComponent implements OnInit {
     }
     if (this.id) {
       this.getPublication(this.id); //get single publication
-      this.getAllPublication(); // get suggested Publication
+      this.getSuggestedPublication(); // get suggested Publication
+      this.getRecentWritingPublication(); // get user writing publication
+      this.getFollowing(); // get user following publication
       this.router.events.subscribe((evt) => {
         if (!(evt instanceof NavigationEnd)) {
           return;
@@ -115,7 +119,7 @@ export class WritePublicationComponent implements OnInit {
     this.mediaAvailable = this.mediaAvailable.filter((el) => el != img);
     alert("Removed");
   }
-  getAllPublication() {
+  getSuggestedPublication() {
     this.service
       .get({ isPublished: false, publicationStatus: "2" })
       .subscribe((_response) => {
@@ -124,6 +128,23 @@ export class WritePublicationComponent implements OnInit {
         // remove display publication for suggested
         this.suggestedPublication = filterArr.filter((el) => el._id != this.id);
       });
+  }
+  getRecentWritingPublication() {
+    this.service.getRecentWriting().subscribe((_response) => {
+      let filterArr = _response.body.data;
+      this.recentWriting = filterArr.filter(
+        (el) => el.publicationId._id != this.id
+      );
+    });
+  }
+  getFollowing() {
+    this.service.getFollowing().subscribe((_response) => {
+      let filterArr = _response.body.data;
+      this.following = filterArr.filter(
+        (el) => el.publicationId._id != this.id
+      );
+      console.log(">>>", this.following);
+    });
   }
 
   onSubmit(type?) {
@@ -149,7 +170,7 @@ export class WritePublicationComponent implements OnInit {
         alert(message);
       });
     }
-    this.getAllPublication();
+    this.getSuggestedPublication();
   }
 
   openModal(template: TemplateRef<any>) {
