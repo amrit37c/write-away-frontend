@@ -405,4 +405,8 @@ export class HomeComponent implements OnInit {
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
+
+  openReadingRoom() {
+    this.router.navigate(['/reading-room']);
+  }
 }

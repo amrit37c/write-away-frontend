@@ -567,7 +567,7 @@
             </div>
           </div>
           <div class="dts2">
-            <button _ngcontent-fll-c3="" class="write-on-btn btn-lg">
+            <button _ngcontent-fll-c3="" class="write-on-btn btn-lg" (click)="openReadingRoom()">
               Read
             </button>
           </div>
@@ -630,7 +630,7 @@
               <div class="text-right">
                 <img alt="" class="rsp_img_share rsp_img_share2" src="assets/images/Group 561.svg"
                   (click)="openShareModal(socialMedia,openPublications[openPublicationIndex]._id, 'publication')">
-                <!-- (click)="sharePublication(openPublications[openPublicationIndex])" -->
+                (click)="sharePublication(openPublications[openPublicationIndex])" -->
 
 <!--<i class="fa col-yel bokyy book_mark_link" [ngClass]="
                     publicationBookMarkStatus(

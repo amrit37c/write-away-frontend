@@ -9,29 +9,25 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "signup", component: SignupComponent },
   { path: "forget-pass", component: ForgetPassComponent },
-
   {
     path: "home",
-    loadChildren: () =>
-      import("./modules/home/home.module").then((m) => m.HomeModule),
+    loadChildren: () => import("./modules/home/home.module").then((m) => m.HomeModule),
   },
   {
     path: "publish",
-    loadChildren: () =>
-      import("./modules/publish/publish.module").then((m) => m.PublishModule),
+    loadChildren: () => import("./modules/publish/publish.module").then((m) => m.PublishModule),
   },
   {
     path: "blogs",
-    loadChildren: () =>
-      import("./modules/blogs/blogs.module").then((m) => m.BlogsModule),
+    loadChildren: () => import("./modules/blogs/blogs.module").then((m) => m.BlogsModule),
   },
   {
     path: "user-profile",
-    loadChildren: () =>
-      import("./modules/user-profile/user-profile.module").then(
-        (m) => m.UserProfileModule
-      ),
+    loadChildren: () => import("./modules/user-profile/user-profile.module").then((m) => m.UserProfileModule),
   },
+  {
+    path: "reading-room", loadChildren: () => import('./reading-room/reading-room.module').then((m) => m.ReadingRoomModule)
+  }
   // { path: 'components', loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule) },
 ];
 
