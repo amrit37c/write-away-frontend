@@ -443,8 +443,8 @@ forget-pass */
 }
 
 ::ng-deep .modelWidth {
-  margin-top: 125px;
-  margin-right: 266px;
+  margin-top: 139px;
+  margin-right: 230px;
 }
 
 /* @media only screen and (min-width:360px) and (max-width:520px) {
@@ -501,8 +501,7 @@ forget-pass */
 
 ::ng-deep .modal-content {
   width: 146%;
-
-  min-height: 425px;
+  min-height: 395px;
 }
 
 .sign-up-pop-col {
@@ -717,7 +716,7 @@ input {
   ::ng-deep .modal-dialog {
     width: 94.5% !important;
     max-width: inherit;
-    margin-top: 441px;
+    margin-top: 425px;
   }
 
   ::ng-deep .modal-body {
@@ -842,4 +841,329 @@ input {
   background: #ecfdff !important;
   color: #3b9bf1 !important;
   font-size: 14px !important;
+}
+
+@media only screen and (min-width: 1277px) and (max-width: 1343px) {
+  ::ng-deep .modal-content {
+    width: 135% !important;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 130px !important;
+    margin-right: 175px !important;
+  }
+}
+
+@media only screen and (min-width: 1225px) and (max-width: 1277px) {
+  ::ng-deep .modal-content {
+    width: 130% !important;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 120px !important;
+    margin-right: 150px !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1225px) {
+  ::ng-deep .modal-content {
+    width: 125% !important;
+    min-height: 380px !important;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 115px !important;
+    margin-right: 130px !important;
+  }
+
+  .form-details {
+    margin-top: 0px !important;
+  }
+}
+
+@media only screen and (min-width: 1150px) and (max-width: 1200px) {
+  ::ng-deep .modal-content {
+    width: 120% !important;
+    min-height: 355px !important;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 115px !important;
+    margin-right: 101px !important;
+  }
+
+  .form-details {
+    margin-top: 0px !important;
+  }
+
+  .login-modal {
+    padding-bottom: 0px !important;
+  }
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1150px) {
+  ::ng-deep .modal-content {
+    width: 120% !important;
+    min-height: 355px !important;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 115px !important;
+    margin-right: 101px !important;
+  }
+
+  .form-details {
+    margin-top: 0px !important;
+  }
+
+  .login-modal {
+    padding-bottom: 0px !important;
+  }
+}
+
+@media only screen and (min-width: 1050px) and (max-width: 1100px) {
+  ::ng-deep .modal-content {
+    width: 115% !important;
+    min-height: 75px !important;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 104px !important;
+    margin-right: 77px !important;
+  }
+
+  .form-details {
+    margin-top: 0px !important;
+  }
+
+  .login-modal {
+    padding-bottom: 0px !important;
+  }
+
+  .modal-body {
+    padding: 5px !important;
+  }
+
+  .sign-updateds {
+    left: -9px !important;
+  }
+
+  .closepop-btn {
+    left: -21px !important;
+    top: 8px !important;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1050px) {
+  ::ng-deep .modal-content {
+    width: 115% !important;
+    min-height: 75px !important;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 104px !important;
+    margin-right: 77px !important;
+  }
+
+  .form-details {
+    margin-top: 0px !important;
+  }
+
+  .login-modal {
+    padding-bottom: 0px !important;
+  }
+
+  .modal-body {
+    padding: 5px !important;
+  }
+
+  .sign-updateds {
+    left: -9px !important;
+  }
+
+  .closepop-btn {
+    left: -21px !important;
+    top: 8px !important;
+  }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 992px) {
+
+  ::ng-deep .modal-dialog {
+    width: 100% !important;
+    max-width: inherit;
+  }
+
+  ::ng-deep .modal-content {
+    width: 98% !important;
+    margin: 0 1%;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 380px !important;
+    margin-right: 0px !important;
+  } 
+}
+
+@media only screen and (min-width: 900px) and (max-width: 950px) {
+
+  ::ng-deep .modal-dialog {
+    width: 100% !important;
+    max-width: inherit;
+  }
+
+  ::ng-deep .modal-content {
+    width: 98% !important;
+    margin: 0 1%;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 360px !important;
+    margin-right: 0px !important;
+  } 
+}
+
+@media only screen and (min-width: 800px) and (max-width: 900px) {
+
+  ::ng-deep .modal-dialog {
+    width: 100% !important;
+    max-width: inherit;
+  }
+
+  ::ng-deep .modal-content {
+    width: 98% !important;
+    margin: 0 1%;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 340px !important;
+    margin-right: 0px !important;
+  } 
+}
+
+@media only screen and (min-width: 769px) and (max-width: 800px) {
+
+  ::ng-deep .modal-dialog {
+    width: 100% !important;
+    max-width: inherit;
+  }
+
+  ::ng-deep .modal-content {
+    width: 98% !important;
+    margin: 0 1%;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 340px !important;
+    margin-right: 0px !important;
+  } 
+}
+
+@media only screen and (min-width: 650px) and (max-width: 767px) {
+
+  ::ng-deep .modal-dialog {
+    width: 100% !important;
+    max-width: inherit;
+  }
+
+  ::ng-deep .modal-content {
+    width: 98% !important;
+    margin: 0 1%;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 100px !important;
+    margin-right: 0px !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 650px) {
+
+  ::ng-deep .modal-dialog {
+    width: 100% !important;
+    max-width: inherit;
+  }
+
+  ::ng-deep .modal-content {
+    width: 98% !important;
+    margin: 0 1%;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 100px !important;
+    margin-right: 0px !important;
+  }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 600px) {
+
+  ::ng-deep .modal-dialog {
+    width: 100% !important;
+    max-width: inherit;
+  }
+
+  ::ng-deep .modal-content {
+    width: 98% !important;
+    margin: 0 1%;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 100px !important;
+    margin-right: 0px !important;
+  }
+
+  ::ng-deep .fff {
+    left: 10px !important;
+    right: 10px !important;
+    top: 140 !important;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+
+  ::ng-deep .modal-dialog {
+    width: 100% !important;
+    max-width: inherit;
+  }
+
+  ::ng-deep .modal-content {
+    width: 98% !important;
+    margin: 0 1%;
+  }
+
+  ::ng-deep .modelWidth {
+    margin-top: 40px !important;
+    margin-right: 0px !important;
+  }
+
+  ::ng-deep .fff {
+    left: 0px !important;
+    right: 0px !important;
+    top: 140 !important;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1100px) {
+  .date-picker {
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .sign-updateds {
+    left: -25px;
+    font-size: 21px;
+  }
+}
+
+@media only screen and (min-width: 1040px) and (max-width: 1100px) {
+  .date-picker {
+    margin-bottom: 75px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) {
+  .date-picker {
+    margin-bottom: 75px;
+  }
 }
