@@ -24,7 +24,7 @@
 .my-footer {
   background-color: #f7fafe;
   padding: 50px 24px;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .left-icon-head {
@@ -364,6 +364,14 @@
 
 .res-fot {
   list-style: none;
+}
+
+.res-fot li{
+  font-family: Montserrat;
+font-size: 13px;
+font-weight: 500;
+color: #000;
+letter-spacing: 0.2px;
 }
 
 .set_mrg{

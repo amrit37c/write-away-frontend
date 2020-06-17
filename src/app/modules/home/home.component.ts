@@ -45,6 +45,12 @@ export class HomeComponent implements OnInit {
     ignoreBackdropClick: true,
     class: "modelWidth",
   };
+  ModalKnowconfig = {
+    backdrop: true,
+    ignoreBackdropClick: true,
+    class: "modelWidthKnow",
+  };
+
   copiedLink: string = "";
   currentShare;
 
@@ -403,7 +409,7 @@ export class HomeComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, this.ModalKnowconfig);
   }
 
   postFb() {
