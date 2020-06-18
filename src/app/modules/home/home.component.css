@@ -290,14 +290,14 @@ text-transform: lowercase;
   width: 40%;
   float: left;
   margin-right: 5%;
-  margin-top: 30px;
+  margin-top: 54px;
 }
 
 
 .classic_details {
   width: 55%;
   float: left;
-  min-height: 95px;
+  min-height: 120px;
 }
 
 .publisher_name {
