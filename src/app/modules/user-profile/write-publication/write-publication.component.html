@@ -37,7 +37,7 @@
         </div>
 
         <div class="row back-light-blue description-container">
-          <div class="col-md-4 write-away-img">
+          <div class="col-md-5 write-away-img">
             <img src="./assets/images/read-away-publish.jpg">
 
             <div class="text-center">
@@ -67,7 +67,7 @@
 
 
           </div>
-          <div class="col-md-8">
+          <div class="col-md-7">
             <p class="description-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus,
               nemo fugit, explicabo nihil blanditiis vel placeat aperiam facere esse
               eligendi sequi et nulla repudiandae asperiores repellat magnam! Quod
@@ -84,7 +84,7 @@
               libero alias deserunt, sunt rerum quisquam facilis recusandae sapiente.</p>
             <div class="row buttons-editor">
               <div class="col-6"><button>Kick Starter</button></div>
-              <div class="col-6 text-right"><button>Your 'How-To' Book Starter</button></div>
+              <div class="col-6 text-right"><button>Your 'How-To' Book</button></div>
 
             </div>
             <div class="notes">
@@ -109,8 +109,8 @@
 
         <!-- Sliders -->
         <!--<div class="container">
-          <!-- <h4 class="load-more">Load More...</h4> -->
-        <div class="carousel-cont">
+        <h4 class="load-more">Load More...</h4> -->
+        <!-- <div class="carousel-cont">
           <div class="carousel-headings text-center">
             <p> <span class="color-pink">Su</span>ggested Publishing</p>
           </div>
@@ -131,8 +131,8 @@
               </div>
 
               <div class="carousel-caption">
-                <!-- <p>- John Doe</p>
-                    <span class="firm_name">ABC Company</span> -->
+                 <p>- John Doe</p>
+                    <span class="firm_name">ABC Company</span> 
               </div>
             </slide>
           </carousel>
@@ -183,12 +183,12 @@
               </div>
 
               <div class="carousel-caption">
-                <!-- <p>- John Doe</p>
-                    <span class="firm_name">ABC Company</span> -->
+                 <p>- John Doe</p>
+                    <span class="firm_name">ABC Company</span>\
               </div>
             </slide>
           </carousel>
-        </div>
+        </div>-->
       </div>
 
       <!-- Sliders -->
@@ -212,18 +212,38 @@
       <div class="main-body">
 
         <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-8 right-pink-head">
+          <div class="col-md-5"></div>
+          <div class="col-md-7 right-pink-head">
             <p class="novelists-approach">{{data['title']}}</p>
-            <p class="novelists-approach">{{ data['publishedBy'] | titlecase }}</p>
+            <!-- <p class="novelists-approach">{{ data['publishedBy'] | titlecase }}</p> -->
           </div>
         </div>
 
         <div class="row back-light-blue description-container">
-          <div class="col-md-4 write-away-img">
-            <img src="{{url}}/images/{{data['mediaCover']}}">
+          <div class="col-md-5 write-away-img">
+            <div class="img_wpb">
+              <img src="{{url}}/images/{{data['mediaCover']}}">
+            </div>
+
+            <div class="box_blg_half_second5">
+
+            </div>
+
+            <div class="box_blg_half_second">
+              <div class="box_blg_half_icon_wd_second">
+                <a href="#">
+                </a>
+                <a href="#">
+                  <img alt="" src="assets/images/share_icon.png" />
+                </a>
+                <a href="#">
+                  <img alt="" src="assets/images/book_icon3.png" />
+                </a>
+              </div>
+            </div> 
+            
             <div class="text-right">
-              <i class="fa fa-share col-blue share-icons" (click)="openShareModal(socialMedia,data._id)"></i>
+              <!--<i class="fa fa-share col-blue share-icons" (click)="openShareModal(socialMedia,data._id)"></i>
               <i class="fa col-yel bokyy book_mark_link" [ngClass]="
               publicationBookMarkStatus(
                 data.bookmark
@@ -236,28 +256,34 @@
                       : savePublicationBookMark(
                           data.bookmark
                         )
-                  "></i>
+                  "></i>-->
             </div>
 
             <div class="text-center">
               <div class="left-sec-name">
-                <p class="publisher-name">Publisher:</p>
-                <img class="prof-imgss" src="./assets/images/publisher.svg">
-                <p class="publisher-name">{{ data && data['publishedBy'] || 'Admin'}}</p>
-                <p class="publisher-name">Age Groups
-                  <span *ngFor="let age of data.ageGroup;let i = index" class="col-grey">
-                    {{age.ageRange.join('-')}}
-                    years
-                    <span *ngIf="i == data.ageGroup.length - 1"></span>
-                    <span *ngIf="i != data.ageGroup.length - 1">,</span>
-                  </span>
-                  <!-- {{data && data['ageGroup'] && data['ageGroup']['ageRange'].join('-')}} -->
-                </p>
-                <p class="publisher-name">Word Count<span
-                    class="col-grey">{{data && data['wordCount'] && data['wordCount'].join('-')}}
-                    words</span></p>
-                <p class="publisher-name">Closing Date<span
-                    class="col-grey">{{ data && data['closingDate'] | date : 'MMM dd, yyyy'}}</span></p>
+                <div class="publi_nm_img">
+                  <p class="publisher-name publisher-name1">Publisher:</p>
+                  <img class="prof-imgss prof-imgss1" src="./assets/images/publisher.svg">
+                  <p class="publisher-name publisher-name2">{{ data && data['publishedBy'] || 'Admin'}}</p>
+                </div>
+                
+                <div class="publi_nm_img">
+                  <p class="publisher-name">Age Groups:
+                    <span *ngFor="let age of data.ageGroup;let i = index" class="col-grey">
+                      {{age.ageRange.join('-')}}
+                      years
+                      <span *ngIf="i == data.ageGroup.length - 1"></span>
+                      <span *ngIf="i != data.ageGroup.length - 1">,</span>
+                    </span>
+                    <!-- {{data && data['ageGroup'] && data['ageGroup']['ageRange'].join('-')}} -->
+                  </p>
+                  <p class="publisher-name">Word Count:<span
+                      class="col-grey">{{data && data['wordCount'] && data['wordCount'].join('-')}}
+                      words</span></p>
+                  <p class="publisher-name">Closing Date:<span
+                      class="col-grey">{{ data && data['closingDate'] | date : 'MMM dd, yyyy'}}</span></p>
+                </div>
+                
               </div>
               <div class="row names-icons" style="display: none;">
                 <div class="col-6 ">
@@ -284,7 +310,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-7">
             <p class="description-p">
               {{data['brief']}}
             </p>
@@ -300,7 +326,7 @@
                 <button (click)="kickInfo('starter')">Kick Starter</button>
               </div>
               <div class="col-6 text-right">
-                <button (click)="kickInfo('book')">Your 'How-To' Book Starter</button>
+                <button (click)="kickInfo('book')">Your 'How-To' Book</button>
               </div>
 
             </div>
@@ -311,11 +337,11 @@
         </div>
         <!-- Editor -->
         <div class="row">
-          <div class="col-lg-2 col-sm-2">
+          <!-- <div class="col-lg-2 col-sm-2">
             <div class="media-upload" (click)="openModal(genreMedia)">Upload Media
             </div>
-          </div>
-          <div class="col-lg-10 col-sm-12">
+          </div> -->
+          <div class="col-lg-12 col-sm-12">
             <form role="form" [formGroup]="submissionForm">
               <input type="text" class="topic" placeholder="Enter Topic" formControlName="topic" />
               <app-editor [data]=" editorData" (editorContent)="getContent($event)"></app-editor>
@@ -333,10 +359,9 @@
     </div>
   </div>
 </div>
-
 <!-- Sliders -->
-<div class="container">
-  <!-- <h4 class="load-more">Load More...</h4> -->
+<!--<div class="container">
+  <h4 class="load-more">Load More...</h4> 
   <div class="carousel-cont" *ngIf="suggestedPublication.length>0">
     <div class="carousel-headings text-center">
       <p> <span class="color-pink">Su</span>ggested Publishing</p>
@@ -357,8 +382,8 @@
         </div>
 
         <div class="carousel-caption">
-          <!-- <p>- John Doe</p>
-            <span class="firm_name">ABC Company</span> -->
+           <p>- John Doe</p>
+            <span class="firm_name">ABC Company</span> 
         </div>
       </slide>
     </carousel>
@@ -413,7 +438,7 @@
       </slide>
     </carousel>
   </div>
-</div>
+</div>-->
 
 <!-- Sliders -->
 <ng-template #genreMedia>

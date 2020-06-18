@@ -52,6 +52,7 @@
                 <p class="responsive-updated">
                   We create a title and you write a story on it.
                   <span class="p_spaan">Send it to us and we will publish it.</span>
+                  <span class="p_spaan12">It's really that simple!</span>
                 </p>
 
                 <div class="book_know_btn">
@@ -122,15 +123,15 @@
       <div class="col-lg-5 wow fadeIn" data-wow-delay="0.6s">
         <div class="book_store cmng-back-color d-flex">
           <div class="row book-img-cont">
-            <div class="col-5">
+            <div class="col-6 cmg_sn_img">
               <img src="./assets/images/coming-soon.svg" alt="" class="coming-res win-coming-soon" />
             </div>
-            <div class="col-7 book_store_desc responsive-coming">
+            <div class="col-6 book_store_desc responsive-coming cmg_sn_img2">
               <div class="title_books_store justify-content-between"></div>
               <div class="book_store_heading">
                 <h3 class="hd_mrg rsp_hd_mrg">Coming Soon!</h3>
               </div>
-              <div class="book_store_text body-updatedss">
+              <div class="book_store_text body-updatedss cmg_sn_text">
                 <p class="responsive-updated parah_mr">
                   Watch this space for more!
                 </p>
@@ -151,12 +152,12 @@
 <!-- Services2 Start -->
 <div class="container-fluid blg_bg_topsec">
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-6">
       <div class="bg_blog_img">
-        <!-- <img src="../../../assets/images/hunt.svg" /> -->
-        <img src="/assets/images/no-image-593.png" alt="Blog image" *ngIf="!blogs.length" />
+        <img src="../../../assets/images/blg_img_ww.jpg" />
+        <!--<img src="/assets/images/no-image-593.png" alt="Blog image" *ngIf="!blogs.length" />
         <img src="{{ baseUrl }}/images/{{ blogs[0].media520 }}" *ngIf="blogs.length" alt="Blog image"
-          onerror="javascript:this.src='/assets/images/no-image-593.png'" />
+          onerror="javascript:this.src='/assets/images/no-image-593.png'" />-->
       </div>
 
       <div class="box_blg">
@@ -206,7 +207,7 @@
       </div>
     </div>
 
-    <div class="col-lg-7 d-flex" style="flex-direction: column;">
+    <div class="col-lg-6 d-flex" style="flex-direction: column;">
       <div class="des_data" style="flex: 1;">
         <h1 *ngIf="blogs.length">{{ blogs[0].title | titlecase }}</h1>
         <span>
@@ -314,10 +315,10 @@
     <div class="col-md-6 box_2_blogs_hd">
       <h1>We're Publishing!</h1>
       <p class="box_2_blogs_hd1">
-        Titles <span> {{ openPublications.length }}</span> &nbsp;&nbsp;&nbsp;
+        Titles <span> {{ openPublications.length }}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Genres <span> {{ openPublicationGenresCount }}</span>
       </p>
-      <a routerLink="/publish">View All <i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
+      <a routerLink="/publish" class="veiw_al_btn">View All <i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
       <div class="box_2_blogs" *ngIf="openPublications.length">
         <div class="b1st_blog">
           <!-- <img src="/assets/images/read-away-publish.jpg" /> -->
@@ -393,7 +394,7 @@
           <div class="classic_details details-updated">
             <div class="classic_post">
               <p *ngIf="openPublications.length" class="srs_to">
-                Genres:
+                <span class="cntr_publisher_detl">Genres:</span>
                 <span *ngFor="
                     let genre of openPublications[openPublicationIndex].genres;
                     let i = index
@@ -414,14 +415,14 @@
               </p>
 
               <p class="srs_to" *ngIf="openPublications.length">
-                Languages:
+                <span class="cntr_publisher_detl">Languages:</span>
                 <span>{{
                   openPublications[openPublicationIndex].language | titlecase
                 }}</span>
               </p>
 
               <p class="srs_to" *ngIf="openPublications.length">
-                Age Group:
+                <span class="cntr_publisher_detl">Age Group:</span>
                 <span class="col-grey" *ngFor="
                     let age of openPublications[openPublicationIndex].ageGroup;
                     let i = index
@@ -439,7 +440,7 @@
               </p>
 
               <p *ngIf="openPublications.length">
-                Closing Date:
+                <span class="cntr_publisher_detl">Closing Date:</span>
                 <span>{{
                   openPublications[openPublicationIndex].closingDate
                     | date: "MMM dd, yyyy"
@@ -474,10 +475,10 @@
     <div class="col-md-6 box_2_blogs_hd">
       <h1>Reading Room!</h1>
       <p class="box_2_blogs_hd1">
-        Titles <span>300</span> &nbsp;&nbsp;&nbsp; Genres
-        <span>300</span> &nbsp;&nbsp;&nbsp; Topics <span>0</span>
+        Titles <span>300</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Genres
+        <span>300</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Topics <span>0</span>
       </p>
-      <a href="#">View All<i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
+      <a href="#" class="veiw_al_btn">View All<i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
       <div class="box_2_blogs">
         <div class="b1st_blog">
           <img src="/assets/images/read-away-publish.jpg" />
@@ -499,7 +500,7 @@
                   <img alt="" src="assets/images/share_icon.png" />
                 </a>
                 <a href="#">
-                  <img alt="" src="assets/images/book_icon.png" />
+                  <img alt="" src="assets/images/book_icon3.png" />
                 </a>
               </div>
             </div>
@@ -507,14 +508,14 @@
         </div>
 
         <div class="b1st_blog_des">
-          <h3 class="text-uppercase">FIREFLIES - some shiny short stories</h3>
+          <h3 class="text-uppercase">FIREFLIES <span>- some shiny short stories</span></h3>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+            <span class="b1st_blog_des_spn1">"Oh the summer night has a smile of light!"<br/>-Barry cornwall</span>
+              
+            The sparkle of firelies on a warm summer night give us wonder and cheer.
+            In the darkness of existing times, each story like a firefly -full of brightness, pulsing with
+            excitment and lightening up hearts and minds! Enjoy reading them as much as your bright young authors
+            have enjoyed writing them.
           </p>
         </div>
 
@@ -525,7 +526,7 @@
               <div class="w-100 center">
                 <img _ngcontent-fdf-c3="" alt="" class="center" src="./assets/images/publisher.svg" />
               </div>
-              <span _ngcontent-fdf-c3="" class="name">Daniel</span>
+              <span _ngcontent-fdf-c3="" class="name">Write Awayy</span>
             </div>
           </div>
 
@@ -535,7 +536,7 @@
                    "ng-reflect-ng-if": "1"
                  }-->
               <p _ngcontent-fdf-c3="" class="srs_to">
-                Genres:
+                <span class="cntr_publisher_detl">Genres:</span>
                 <!--bindings={
                    "ng-reflect-ng-for-of": "[object Object],[object Object"
                  }--><span _ngcontent-fdf-c3=""> Fantasy </span>
@@ -547,7 +548,7 @@
                    "ng-reflect-ng-if": "1"
                  }-->
               <p _ngcontent-fdf-c3="" class="srs_to">
-                Age-Group:
+                <span class="cntr_publisher_detl">Age-Group:</span>
                 <!--bindings={
                    "ng-reflect-ng-for-of": "[object Object]"
                  }--><span _ngcontent-fdf-c3="" class="col-grey">
@@ -564,19 +565,19 @@
               <div _ngcontent-csn-c3="" class="center taing_data">
                 <ul _ngcontent-csn-c3="">
                   <li _ngcontent-csn-c3="">
-                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                    <img src="../../../assets/images/star.svg" />
                   </li>
                   <li _ngcontent-csn-c3="">
-                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                    <img src="../../../assets/images/star.svg" />
                   </li>
                   <li _ngcontent-csn-c3="">
-                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                    <img src="../../../assets/images/star.svg" />
                   </li>
                   <li _ngcontent-csn-c3="">
-                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                    <img src="../../../assets/images/star.svg" />
                   </li>
                   <li _ngcontent-csn-c3="">
-                    <i _ngcontent-csn-c3="" class="fa fa-2x fa-star"></i>
+                    <img src="../../../assets/images/star.svg" />
                   </li>
                 </ul>
               </div>
@@ -594,7 +595,7 @@
         <p>
           <span class="fa fa-angle-left slider-direction-icon"> </span>
           <span class="sp-sp">
-            <span class="clr-pink updated-clr-pink"> 3</span>/ 10
+            <span class="clr-pink updated-clr-pink"> 1</span>/ 1
           </span>
           <span class="fa fa-angle-right slider-direction-icon"></span>
         </p>
@@ -911,7 +912,7 @@
 <!-- /End Hero area static -->
 
 <!-- Testimonials -->
-<!--<section class="testimonials">
+<section class="testimonials">
   <div class="container-fluid">
     <div class="row m-0">
       <div class="col-lg-12 col-12">
@@ -937,7 +938,7 @@
       </div>
     </div>
   </div>
-</section>-->
+</section>
 <!-- Testimonials end -->
 <ng-template #socialMedia>
   <div class="modal-body">
@@ -1013,34 +1014,36 @@
   </div>
 </ng-template>
 <ng-template #knowMore>
-  <div class="modal-header">
+  <!--<div class="modal-header">
     <h4 class="modal-title pull-left">Know More</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
+  </div>-->
+  <div class="modal-body modal-content_km">
     <div class="know-more-info col_bg_aqua">
+      <button type="button" class="close_km" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true"><img src="../../../assets/images/cross.svg" /></span>
+    </button>
       <ul class="know-more-ul">
+        <span>.</span>
         <li>
-          You write a story for one of our titles. Send it to us.
+          Write a story for one of our titles. Send it to us.
         </li>
+
+        <span>.</span>
         <li>
-          We proof read your story. This means that we check the grammar and
-          spellings, and make other little changes (only if it is required).
+          We proof and edit your story. This means that we check the grammar and
+          spellings, and tweak it a little (only if it is required).
         </li>
+
+        <span>.</span>
         <li>
           After that, our creative team adds an image to make your story look
           groovier!
         </li>
+
+        <span>.</span>
         <li>
-          And then, we publish your story in our Reading Room and social media
+          All this take about 3 week and then, we publish your story in our Reading Room and social media
           platforms.
-        </li>
-        <li>
-          Of course! You can also share your published stories with family and
-          friends. Get their feedback and reviews and keep rolling towards your
-          writing goals!
         </li>
       </ul>
     </div>
