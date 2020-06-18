@@ -525,9 +525,14 @@ export class HeaderComponent implements OnInit {
       .subscribe((_response) => this.changeName(_response.body.data[0]));
   }
   private changeName(data): void {
-    this.username =
+    if(typeof data == 'undefined') {
+      this.username = 'User';
+    } else {
+      this.username =
       data && data.selectDisplayName === true
         ? data.displayName
         : `${data.firstName} ${data.lastName} `;
+    }
+    
   }
 }

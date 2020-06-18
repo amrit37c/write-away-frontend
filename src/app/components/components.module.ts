@@ -13,9 +13,10 @@ import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { ModalComponent } from "./modal/modal.component";
 import { EditorComponent } from "./editor/editor.component";
+import { SearchIconComponent } from './search-icon/search-icon.component';
 
 @NgModule({
-  declarations: [CarouselComponent, ModalComponent, EditorComponent],
+  declarations: [CarouselComponent, ModalComponent, EditorComponent, SearchIconComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -24,6 +25,6 @@ import { EditorComponent } from "./editor/editor.component";
     ModalModule.forRoot(),
     CKEditorModule,
   ],
-  exports: [CarouselComponent, ModalComponent, EditorComponent],
+  exports: [CarouselComponent, ModalComponent, EditorComponent, SearchIconComponent],
 })
 export class ComponentsModule {}

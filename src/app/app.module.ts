@@ -33,7 +33,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     LoginComponent,
     SignupComponent,
     FooterComponent,
-    ForgetPassComponent,
+    ForgetPassComponent
   ],
   imports: [
     BrowserModule,
