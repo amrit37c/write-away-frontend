@@ -1,3 +1,64 @@
+.box_blg_half_second5{
+  width: 70%;
+  float: left;
+  padding-top: 3px;
+}
+
+.box_blg_half_second {
+  width: 30%;
+  float: left;
+  padding-top: 3px;
+}
+
+.box_blg_half_icon_wd_second {
+  width: 100%;
+  float: right;
+}
+
+.box_blg_half_second a {
+  width: 24%;
+  float: left;
+  margin-left: 9%;
+  margin-top: 15px;
+}
+
+.left-sec-name{
+  width: 100%;
+  float: left;
+}
+
+.publisher-name1{
+  width: 40%;
+  float: left;
+  text-align: right !important;
+  margin-top: 16px;
+  font-family: Montserrat;
+  letter-spacing: 0.5px;
+}
+
+.publisher-name2{
+  width: 40%;
+  float: left;
+  text-align: left;
+  margin-top: 16px;
+  font-family: Montserrat;
+  letter-spacing: 0.5px;
+  font-size: 19px !important;
+}
+
+.prof-imgss1{
+  width: 20% !important;
+  float: left;
+  margin: 0 2.5%;
+}
+
+.publi_nm_img{
+  width: 100%;
+  float: left;
+  margin-top: 35px;
+}
+
+
 .logo-btn {
   background-color: #D43299;
   color: white;
@@ -5,6 +66,10 @@
   width: 100%;
   height: 40px;
   font-size: 20px;
+}
+
+.btn-cance{
+  
 }
 
 /* submission */
@@ -15,12 +80,17 @@
 .right-pink-head {
   border-top: 2px solid #C83993;
   background-color: #FDF7FB;
-  margin-bottom: 20px;
-  padding-top: 10px;
+  margin-bottom: 0px;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 
 .novelists-approach {
-  font-weight: 600;
+  font-weight: 700;
+width: 50%;
+float: left;
+color: #1ca9c9;
+font-size: 31px;
 }
 
 .description-container {
@@ -34,33 +104,40 @@
 }
 
 .write-away-img {
-  padding-left: 100px;
+  padding-left: 142px;
+  padding-right: 40px;
 }
 
-.write-away-img img {
+.img_wpb img {
   width: 100%;
-  margin-top: -100px;
-  border-top: 2px solid blue;
+  margin-top: -72px;
+  background: #e7f4f457;
+}
+
+.img_wpb{
+  width: 100%;
+  float: left;
 }
 
 .prof-imgss {
-  margin-top: 17px !important;
-  width: 20% !important;
+  width: 15% !important;
   border: none !important;
   display: inline-block;
 }
 
 .publisher-name {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 550;
   margin-bottom: 1rem;
   color: #000102;
+  text-align: left;
 }
 
 .left-sec-name span {
-  color: lightgray;
-  font-weight: 600;
+  color: #000;
+  font-weight: normal;
   margin-left: 10px;
+  letter-spacing: 1px;
 }
 
 .names-icons {
@@ -82,28 +159,38 @@
 }
 
 .description-p {
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.3;
-  padding-bottom: 10px;
+  font-size: 18px;
+font-weight: 600;
+line-height: 26px;
+padding-bottom: 25px;
+padding-top: 20px;
+color: #000;
+font-family: Montserrat;
 }
 
 .buttons-editor button {
   color: white;
-  background-color: #1ca9c9;
-  border-radius: 10px;
-  border: none;
-  margin-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 2px;
+background-color: #1ca9c9;
+border-radius: 17px;
+border: none;
+margin-bottom: 10px;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 2px;
+font-weight: 500;
+font-size: 17px;
+border: 0.1px solid #e192c4;
+}
+
+.text-right button{
+  background-color: #5fb9cc;
 }
 
 .notes {
   min-height: 410px;
-  border: 1px solid #D43299;
-  border-radius: 4px;
-  background-color: #fff;
+border: 1px solid #D43299;
+border-radius: 17px;
+margin-top: 2px;
 }
 
 #editor {
@@ -133,12 +220,13 @@
   font-weight: 600;
   background-color: white;
   border-radius: 17px;
-  padding: 4px;
+  padding: 5px;
   padding-right: 4px;
   padding-left: 4px;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-shadow: 0px 6px 10px -7px rgba(0, 0, 0, 0.96);
+  padding-left: 25px;
+  padding-right: 25px;
+  box-shadow: 0px 6px 10px -7px rgba(162, 148, 148, 0.96);
+  letter-spacing: 1px;
 }
 
 /* submission */

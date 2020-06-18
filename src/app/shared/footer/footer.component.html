@@ -55,9 +55,9 @@
           <p class="set_ww_P">We would love to hear from you:</p>
 
           <div class="footr-icon">
-            <a (click)="openModal(feedback)" type="button"><img src="../../../assets/images/2.png" />
+            <a (click)="openFbModal(feedback)" type="button"><img src="../../../assets/images/2.png" />
               <span>Feedback</span></a>
-            <a (click)="openModal(testimonial)"><img src="../../../assets/images/12.png" />
+            <a (click)="openTmModal(testimonial)"><img src="../../../assets/images/12.png" />
               <span>Testimonials</span></a>
             <a (click)="openModal(contact)"><img src="../../../assets/images/3.png" /> <span>Contact Us</span></a>
           </div>
@@ -73,13 +73,14 @@
 
 
 <ng-template #feedback>
-  <div class="modal-header">
+  <!-- <div class="modal-header">
     <h4 class="modal-title pull-left">FeedBack</h4>
-    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
+    
+  </div> -->
+  <div class="modal-body fd_bc">
+    <button type="button" class="close_km" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true"><img src="../../../assets/images/cross.svg" /></span>
     </button>
-  </div>
-  <div class="modal-body">
     <div class="footer-modal">
       <p>We would love to know your thoughts about Us!</p>
       <textarea class="txt_area" name="review" [(ngModel)]="review"></textarea>

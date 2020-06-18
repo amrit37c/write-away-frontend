@@ -716,7 +716,27 @@ input {
   ::ng-deep .modal-dialog {
     width: 94.5% !important;
     max-width: inherit;
-    margin-top: 425px;
+    margin-top: 452px;
+  }
+
+  ::ng-deep .create-acc-head {
+    padding: 20px 7px !important;
+  }
+
+  ::ng-deep .back-image {
+    padding: 34px 0;
+  }
+
+  ::ng-deep .form-details{
+    padding: 30px 20px;
+  }
+
+  ::ng-deep .input-names {
+    margin-top: 15px !important;
+  }
+
+  ::ng-deep .headings-input-fields {
+    padding-top: 35px !important;
   }
 
   ::ng-deep .modal-body {
@@ -954,6 +974,8 @@ input {
   }
 }
 
+
+
 @media only screen and (min-width: 1025px) and (max-width: 1050px) {
   ::ng-deep .modal-content {
     width: 115% !important;
@@ -997,12 +1019,37 @@ input {
   ::ng-deep .modal-content {
     width: 98% !important;
     margin: 0 1%;
+    padding: 25px 25px 53px 25px;
+  }
+
+  ::ng-deep .create-acc-head {
+    padding: 20px 7px !important;
+  }
+
+  ::ng-deep .back-image {
+    padding: 30px 0;
+  }
+
+  ::ng-deep .form-details{
+    padding: 30px 20px;
+  }
+
+  ::ng-deep .input-names {
+    margin-top: 15px !important;
+  }
+
+  ::ng-deep .headings-input-fields {
+    padding-top: 45px !important;
   }
 
   ::ng-deep .modelWidth {
-    margin-top: 380px !important;
+    margin-top: 396px !important;
     margin-right: 0px !important;
   } 
+
+  ::ng-deep .date-picker {
+    padding-bottom: 223px !important;
+  }
 }
 
 @media only screen and (min-width: 900px) and (max-width: 950px) {
@@ -1015,12 +1062,37 @@ input {
   ::ng-deep .modal-content {
     width: 98% !important;
     margin: 0 1%;
+    padding: 25px 25px 53px 25px;
+  }
+
+  ::ng-deep .create-acc-head {
+    padding: 20px 7px !important;
+  }
+
+  ::ng-deep .back-image {
+    padding: 30px 0;
+  }
+
+  ::ng-deep .form-details{
+    padding: 30px 20px;
+  }
+
+  ::ng-deep .input-names {
+    margin-top: 15px !important;
+  }
+
+  ::ng-deep .headings-input-fields {
+    padding-top: 45px !important;
   }
 
   ::ng-deep .modelWidth {
-    margin-top: 360px !important;
+    margin-top: 385px !important;
     margin-right: 0px !important;
   } 
+
+  ::ng-deep .date-picker {
+    padding-bottom: 223px !important;
+  }
 }
 
 @media only screen and (min-width: 800px) and (max-width: 900px) {
@@ -1033,12 +1105,38 @@ input {
   ::ng-deep .modal-content {
     width: 98% !important;
     margin: 0 1%;
+    padding: 25px 25px 25px 25px;
+  }
+
+
+  ::ng-deep .create-acc-head {
+    padding: 20px 7px !important;
+  }
+
+  ::ng-deep .back-image {
+    padding: 30px 0;
+  }
+
+  ::ng-deep .form-details{
+    padding: 30px 20px;
+  }
+
+  ::ng-deep .input-names {
+    margin-top: 15px !important;
+  }
+
+  ::ng-deep .headings-input-fields {
+    padding-top: 35px !important;
   }
 
   ::ng-deep .modelWidth {
-    margin-top: 340px !important;
+    margin-top: 366px !important;
     margin-right: 0px !important;
   } 
+
+  ::ng-deep .date-picker {
+    padding-bottom: 200px !important;
+  }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 800px) {
@@ -1051,12 +1149,37 @@ input {
   ::ng-deep .modal-content {
     width: 98% !important;
     margin: 0 1%;
+    padding: 25px 25px 25px 25px;
+  }
+
+  ::ng-deep .create-acc-head {
+    padding: 20px 7px !important;
+  }
+
+  ::ng-deep .back-image {
+    padding: 30px 0;
+  }
+
+  ::ng-deep .form-details{
+    padding: 30px 20px;
+  }
+
+  ::ng-deep .input-names {
+    margin-top: 15px !important;
+  }
+
+  ::ng-deep .headings-input-fields {
+    padding-top: 10px !important;
   }
 
   ::ng-deep .modelWidth {
-    margin-top: 340px !important;
+    margin-top: 358px !important;
     margin-right: 0px !important;
-  } 
+  }
+  
+  ::ng-deep .date-picker {
+    padding-bottom: 140px !important;
+  }
 }
 
 @media only screen and (min-width: 650px) and (max-width: 767px) {

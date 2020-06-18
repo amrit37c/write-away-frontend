@@ -12,7 +12,17 @@ export class FooterComponent implements OnInit {
   Modalconfig = {
     backdrop: true,
     ignoreBackdropClick: true,
-    class: "modelWidth",
+    class: "modalWidth contact-us",
+  };
+  ModalFbconfig = {
+    backdrop: true,
+    ignoreBackdropClick: true,
+    class: "modalWidth feedback",
+  };
+  ModalTmconfig = {
+    backdrop: true,
+    ignoreBackdropClick: true,
+    class: "modalWidth test-mon",
   };
   review: string = "";
   testimonials: string = "";
@@ -29,6 +39,17 @@ export class FooterComponent implements OnInit {
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.Modalconfig);
   }
+
+  
+  openFbModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.ModalFbconfig);
+  }
+
+  openTmModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.ModalTmconfig);
+  }
+
+
 
   sendFeedBack() {
     this.service
