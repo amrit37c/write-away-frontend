@@ -5,6 +5,10 @@
       <div class="col-lg-6 col-sm-12 wows fadeInRight" data-wow-delay="0.6s">
         <div class="about-content updated-content">
           <!-- <span class="short_heading">Start</span> -->
+
+          <!-- <button shareButton="facebook">Share</button>
+          <button shareButton="twitter">Tweet</button>
+          <button shareButton="pinterest">Pin</button> -->
           <h3 class="write-hedsd">Write.</h3>
           <h3 class="write-moress">Write more.</h3>
 
@@ -949,8 +953,13 @@
       </h6>
       <!-- Your share button code -->
       <!-- <div class="fb-share-button" data-href="http://demo.writeawayy.com/" data-layout="button"> -->
+
+      <share-buttons [theme]="'material-light'" [include]="['facebook', 'twitter', 'linkedin', 'copy']" [show]="6"
+        [size]="1" [url]="'http://write-away.knickglobal.co.in/'" [title]="'test'" [description]="'desc'" [image]="
+          'https://demo.rasatva.com/catalog/view/theme/default/image/logo.jpg'
+        " (opened)="trackShare($event)" (closed)="onClosed($event)"></share-buttons>
+
       <div class="fb-share-button" data-href="http://demo.writeawayy.com/" data-layout="button"></div>
-      <button shareButton="facebook">Share</button>
       <a class="fb-share-button fa fa-facebook circle5" (click)="postFb()" data-href="http://demo.writeawayy.com/"
         data-layout="button"><i></i></a>
       <!--  (click)="blogShareLink('facebook')"  -->

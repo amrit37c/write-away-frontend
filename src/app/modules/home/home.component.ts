@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
 import { BsModalRef, BsModalService } from "ngx-bootstrap/modal";
 import { debug } from "util";
 import { environment } from "../../../environments/environment";
+import { ShareService } from "ngx-sharebuttons";
 
 @Component({
   selector: "app-home",
@@ -52,7 +53,8 @@ export class HomeComponent implements OnInit {
     private blogService: BlogService,
     private publicationService: PublicationService,
     private router: Router,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private shareService: ShareService
   ) {}
 
   ngOnInit() {
@@ -403,7 +405,7 @@ export class HomeComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, this.Modalconfig);
   }
 
   openReadingRoom() {
@@ -414,5 +416,9 @@ export class HomeComponent implements OnInit {
     var windowObj = window.open();
     windowObj.document.head.innerHTML =
       '<meta property="og:title" content="The Rock"/><meta property="og:type" content="movie"/><meta property="og:url" content="http://www.imdb.com/title/tt0117500/"/><meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/><meta property="og:site_name" content="IMDb"/><meta property="fb:admins" content="USER_ID"/><meta property="og:description"      content="A group of U.S. Marines, under command of               a renegade general, take over Alcatraz and               threaten San Francisco Bay with biological               weapons."/>';
+  }
+  
+  trackShare(btn) {
+    console.log("share1", btn);
   }
 }
