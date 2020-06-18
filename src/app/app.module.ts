@@ -25,6 +25,7 @@ import { ForgetPassComponent } from "./modules/forget-pass/forget-pass.component
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { CookieService } from "angular2-cookie/services/cookies.service";
 import { Platform } from "@angular/cdk/platform";
+import { EditorModule } from '@tinymce/tinymce-angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { Platform } from "@angular/cdk/platform";
     AppRoutingModule,
     CommonModule,
     ComponentsModule,
+    EditorModule,
     ModalModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,

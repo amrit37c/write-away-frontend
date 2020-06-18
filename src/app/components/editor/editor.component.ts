@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+// import * as ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { ChangeEvent } from "@ckeditor/ckeditor5-angular";
+
+declare var ClassicEditor;
 
 @Component({
   selector: "app-editor",
