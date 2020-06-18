@@ -154,10 +154,10 @@
   <div class="row">
     <div class="col-lg-6">
       <div class="bg_blog_img">
-        <img src="../../../assets/images/blg_img_ww.jpg" />
-        <!--<img src="/assets/images/no-image-593.png" alt="Blog image" *ngIf="!blogs.length" />
+        <!-- <img src="../../../assets/images/blg_img_ww.jpg" /> -->
+        <img src="/assets/images/no-image-593.png" alt="Blog image" *ngIf="!blogs.length" />
         <img src="{{ baseUrl }}/images/{{ blogs[0].media520 }}" *ngIf="blogs.length" alt="Blog image"
-          onerror="javascript:this.src='/assets/images/no-image-593.png'" />-->
+          onerror="javascript:this.src='/assets/images/no-image-593.png'" />
       </div>
 
       <div class="box_blg">
@@ -354,11 +354,7 @@
                           openPublications[openPublicationIndex]
                         )
                   ">
-                  <img alt="" [src]="
-                      publicationBookMarkStatus(
-                        openPublications[openPublicationIndex]
-                      )
-                    " />
+                  <img alt="" [src]="publicationBookMarkStatus(openPublications[openPublicationIndex])" />
                 </a>
               </div>
             </div>
