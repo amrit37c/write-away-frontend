@@ -327,7 +327,6 @@
 .footer-modal {
   height: 200px;
   padding: 13px;
-  background: white;
   border-radius: 10px;
 }
 
@@ -410,8 +409,226 @@ letter-spacing: 0.2px;
 
 ::ng-deep .feedback{
   opacity: inherit;
+  margin-top: 125px;
 }
 
 ::ng-deep .fd_bc{
    padding: 0px !important;
+   background: #f7fafe;
+   border-right: 49px solid #3791cf;
+}
+
+::ng-deep .fd_bc .txt_area {
+  width: 100%;
+float: left;
+background: inherit;
+border: 1px solid #736d6d;
+border-radius: 5px;
+padding: 10px 10px;
+font-size: 19px;
+font-style: italic;
+color: #807b7b;
+height: 200px;
+}
+
+::ng-deep .fd_bc .close_km {
+  background: inherit;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+::ng-deep .fd_bc .footer-email-input{
+  background-color: #F7FAFE;
+}
+
+::ng-deep .fd_bc .ftr_mail_button{
+  width: 25% !important;
+  height: 44px;
+}
+
+::ng-deep .fd_bc .footer-email-input {
+  width: 75% !important;
+  height: 44px;
+  font-size: 19px;
+  font-style: italic;
+}
+
+::ng-deep .fd_bc .footer-modal p {
+  padding-bottom: 0px !important;
+  margin-top: 5px !important;
+  width: 100% !important;
+  float: left !important;
+  font-size: 21px !important;
+  color: #4a97de !important;
+  font-family: Montserrat !important;
+  width: 100% !important;
+  float: left !important;
+  font-weight: 600 !important;
+  margin-bottom: 10px !important;
+}
+
+
+::ng-deep .contact-us {
+  opacity: inherit;
+  margin-top: 125px;
+}
+
+::ng-deep .footer-email-input12{
+  width: 100% !important;
+  height: 44px;
+  font-size: 19px;
+  font-style: italic;
+  background-color: #F7FAFE;
+  color: #807b7b;
+border-radius: 5px;
+font-family: Montserrat;
+margin-top: 10px;
+border: 1px solid #716f6f;
+margin-bottom: 5px;
+padding-left: 10px;
+}
+
+::ng-deep .fd_bc2 {
+  padding-bottom: 25px !important;
+}
+
+::ng-deep .test-mon {
+  opacity: inherit;
+  margin-top: 125px;
+  width: 49% !important;
+  max-width: inherit;
+  margin-right: 315px !important;
+}
+
+::ng-deep .footer-modally{
+   width: 80% !important;
+}
+
+::ng-deep .ftr_popup_img{
+  width: 20%;
+  float:right;
+  top: -255px;
+  position: relative;
+}
+
+::ng-deep .ftr_popup_img img{
+  width: 80%;
+  margin: 0 10%;
+}
+
+::ng-deep .ftr_popup_img p{
+  text-align: center;
+  font-size: 18px;
+  color: #3791cf;
+  margin-top: 25px;
+}
+
+::ng-deep .footer-modally .txt_area{
+  height: 280px;
+}
+
+::ng-deep .fd_bcc3{
+  height: 450px !important;
+}
+
+
+@media only screen and (min-width:1024px) and (max-width:1150px) {
+  ::ng-deep .test-mon {
+    opacity: inherit;
+    margin-top: 100px !important;
+    width: 60% !important;
+    max-width: inherit;
+    margin: 0 20%;
+    margin-right: 265px !important;
+  }
+}
+
+@media only screen and (min-width:992px) and (max-width:1024px) {
+  ::ng-deep .test-mon {
+    opacity: inherit;
+    margin-top: 80px !important;
+    width: 80% !important;
+    max-width: inherit;
+    margin: 0 10%;
+    margin-right: 90px !important;
+  }
+
+  .fd_bcc3 {
+    height: 470px !important;
+  }
+}
+
+@media only screen and (min-width:768px) and (max-width:992px) {
+  ::ng-deep .test-mon {
+    opacity: inherit;
+    margin-top: 80px !important;
+    width: 80% !important;
+    max-width: inherit;
+    margin: 0 10%;
+    margin-right: 90px !important;
+  }
+
+  .fd_bcc3 {
+    height: 470px !important;
+  }
+
+  ::ng-deep .modal-content{
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (min-width:600px) and (max-width:768px) {
+  ::ng-deep .test-mon {
+    opacity: inherit;
+    margin-top: 80px !important;
+    width: 90% !important;
+    max-width: inherit;
+    margin: 0 5%;
+    margin-right: 40px !important;
+  }
+
+  .fd_bcc3 {
+    height: 470px !important;
+  }
+
+}
+
+@media only screen and (min-width:320px) and (max-width:600px) {
+  ::ng-deep .test-mon {
+    opacity: inherit;
+    margin-top: 80px !important;
+    width: 90% !important;
+    max-width: inherit;
+    margin: 0 5%;
+    margin-right: 40px !important;
+  }
+
+  .fd_bcc3 {
+    height: 470px !important;
+  }
+
+  .fd_bc {
+    padding: 0px !important;
+    background: #f7fafe;
+    border-right: 10px solid #3791cf;
+  }
+
+  .footer-modally{
+    width: 100% !important;
+  }
+
+  .ftr_popup_img {
+    width: 20% !important;
+  }
+
+}
+
+@media only screen and (min-width:320px) and (max-width:992px) {
+  ::ng-deep .feedback{
+     margin-right: 0 !important;
+  }
+
+  ::ng-deep .contact-us{
+    margin-right: 0 !important;
+  }
 }

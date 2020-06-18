@@ -82,42 +82,53 @@
       <span aria-hidden="true"><img src="../../../assets/images/cross.svg" /></span>
     </button>
     <div class="footer-modal">
-      <p>We would love to know your thoughts about Us!</p>
-      <textarea class="txt_area" name="review" [(ngModel)]="review"></textarea>
-      <input class="footer-email-input" placeholder="Email Address" type="email" [(ngModel)]="email">
+      <p>We would love to know your thoughts about us!</p>
+      <textarea class="txt_area" placeholder="Enter your Feedback here." name="review" [(ngModel)]="review"></textarea>
+      <input class="footer-email-input" placeholder="Enter your Email Address" type="email" [(ngModel)]="email">
       <button class="email-btn ftr_mail_button" type="button" (click)="sendFeedBack()">Send</button>
     </div>
   </div>
 </ng-template>
 <ng-template #testimonial>
-  <div class="modal-header">
+  <!-- <div class="modal-header">
     <h4 class="modal-title pull-left">Testimonial</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
-  </div>
-  <div class="modal-body">
-    <div class="footer-modal">
-      <p>We would love to know your thoughts about Us!</p>
-      <textarea class="txt_area" name="review" [(ngModel)]="testimonials"></textarea>
-      <input class="footer-email-input" placeholder="Email Address" type="email" [(ngModel)]="email">
-      <button class="email-btn ftr_mail_button" type="button" (click)="sendTestimonial()">Send</button>
+  </div> -->
+  <div class="modal-body fd_bc fd_bcc3">
+    <button type="button" class="close_km" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true"><img src="../../../assets/images/cross.svg" /></span>
+    </button>
+    <div class="footer-modal footer-modally">
+      <p>If you like what we do, we don’t mind you telling us about it!</p>
+      <textarea class="txt_area" placeholder="Enter your Feedback here." name="review" [(ngModel)]="review"></textarea>
+      <input class="footer-email-input" placeholder="Enter your Email Address" type="email" [(ngModel)]="email">
+      <button class="email-btn ftr_mail_button" type="button" (click)="sendFeedBack()">Send</button>
+    </div>
+    <div class="ftr_popup_img center">
+       <img src="../../../assets/images/publisher.svg"/>
+       <p>Send us Your picture to display on site.</p>
     </div>
   </div>
 </ng-template>
 <ng-template #contact>
-  <div class="modal-header">
+  <!-- <div class="modal-header">
     <h4 class="modal-title pull-left">Contact</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
-  </div>
-  <div class="modal-body">
+  </div> -->
+  <div class="modal-body fd_bc fd_bc2">
+    <button type="button" class="close_km" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true"><img src="../../../assets/images/cross.svg" /></span>
+    </button>
     <div class="footer-modal">
-      <p>We would love to know your thoughts about Us!</p>
-      <textarea class="txt_area" name="review" [(ngModel)]="info"></textarea>
-      <input class="footer-email-input" placeholder="Email Address" type="email" [(ngModel)]="email">
-      <button class="email-btn ftr_mail_button" type="button" (click)="sendContactus()">Send</button>
+      <p>We would love to here from you!</p>
+      <input class="footer-email-input12" placeholder="Enter your Subject here" type="email" [(ngModel)]="email">
+      <textarea class="txt_area" placeholder="Enter your Feedback here." name="review" [(ngModel)]="review"></textarea>
+      <input class="footer-email-input" placeholder="Enter your Email Address" type="email" [(ngModel)]="email">
+      <button class="email-btn ftr_mail_button" type="button" (click)="sendFeedBack()">Send</button>
     </div>
   </div>
 </ng-template>
