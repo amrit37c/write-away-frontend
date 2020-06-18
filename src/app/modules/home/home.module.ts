@@ -8,21 +8,27 @@ import { HomeComponent } from "./home.component";
 import { ModalModule } from "ngx-bootstrap/modal";
 import { CarouselModule } from "ngx-bootstrap/carousel";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-
-// import { ShareButtonsConfig } from "ngx-sharebuttons";
 // import { ShareButtonsModule } from "ngx-sharebuttons/buttons";
-// import { ShareModule } from "ngx-sharebuttons";
-// routing modules
+// import { ShareIconsModule } from "ngx-sharebuttons/icons";
 
-// components
+import { ShareButtonsModule } from "ngx-sharebuttons/buttons";
+import { ShareIconsModule } from "ngx-sharebuttons/icons";
+import { ShareModule } from "ngx-sharebuttons";
 
-// const customConfig: ShareButtonsConfig = {
-//   include: ["facebook", "twitter", "google"],
-//   exclude: ["tumblr", "stumble", "vk"],
-//   theme: "modern-light",
-//   gaTracking: true,
-//   twitterAccount: "twitterUsername",
-// };
+import { FaIconLibrary } from "@fortawesome/angular-fontawesome";
+import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons/faFacebookSquare";
+import { Platform } from "@angular/cdk/platform";
+
+const icons = [
+  // ... other icons
+  faFacebookSquare,
+];
+
+const shareProp = {
+  facebook: {
+    icon: ["fab", "facebook-square"],
+  },
+};
 
 @NgModule({
   declarations: [HomeComponent],
@@ -33,8 +39,17 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     CarouselModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    // ShareButtonsModule.withConfig(customConfig),
+    ShareButtonsModule,
+    // ShareButtonsModule.withConfig({ prop: shareProp }),
+    // .withConfig({
+    //   debug: true,
+    // }),
+    ShareIconsModule,
     // ShareModule,
   ],
 })
-export class HomeModule {}
+export class HomeModule {
+  // constructor(iconLibrary: FaIconLibrary) {
+  //   iconLibrary.addIcons(...icons);
+  // }
+}

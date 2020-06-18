@@ -24,7 +24,7 @@ import { ForgetPassComponent } from "./modules/forget-pass/forget-pass.component
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { CookieService } from "angular2-cookie/services/cookies.service";
-
+import { Platform } from "@angular/cdk/platform";
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +46,7 @@ import { CookieService } from "angular2-cookie/services/cookies.service";
     HttpClientModule,
     BsDropdownModule.forRoot(),
   ],
-  providers: [CookieService],
+  providers: [CookieService, Platform],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

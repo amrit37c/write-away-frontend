@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+// @import '~ngx-sharebuttons/themes/material/material-dark-theme';
+// @import '~ngx-sharebuttons/themes/modern/modern-light-theme';
+
+@import '~ngx-sharebuttons/themes/default/default-theme';
+
+
 * {
   padding: 0;
   margin: 0;
@@ -18,6 +25,7 @@ body {
   color: #333;
   position: relative;
 }
+
 
 /* Font-Family */
 /* @font-face {
