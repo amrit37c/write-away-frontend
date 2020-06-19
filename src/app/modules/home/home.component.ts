@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   noWrap = false;
   baseUrl = environment.url;
 
+  
   slidesChangeMessage = "";
   slides = [
     { image: "assets/images/2.jpg" },
@@ -44,7 +45,7 @@ export class HomeComponent implements OnInit {
   Modalconfig = {
     backdrop: true,
     ignoreBackdropClick: true,
-    class: "modelWidth",
+    class: "modalWidth contact-us2",
   };
   ModalKnowconfig = {
     backdrop: true,
@@ -378,21 +379,20 @@ export class HomeComponent implements OnInit {
   }
 
   openShareModal(template: TemplateRef<any>, id, type?) {
-    if (!this.userId) {
-      this.openLogin();
-      return;
-    }
-    if (type == "publication") {
-      this.currentShare = "publication";
-      this.publicationsOpenId = id;
-      this.copyBlogLink(id, "publication");
-    } else {
-      this.currentShare = "blog";
-      this.blogOpenId = id;
-      this.copyBlogLink(id);
-    }
-
-    this.modalRef = this.modalService.show(template);
+    // if (!this.userId) {
+    //   this.openLogin();
+    //   return;
+    // }
+    // if (type == "publication") {
+    //   this.currentShare = "publication";
+    //   this.publicationsOpenId = id;
+    //   this.copyBlogLink(id, "publication");
+    // } else {
+    //   this.currentShare = "blog";
+    //   this.blogOpenId = id;
+    //   this.copyBlogLink(id);
+    // }
+      this.modalRef = this.modalService.show(template, this.Modalconfig);
   }
 
   decline(): void {
