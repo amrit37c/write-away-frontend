@@ -483,9 +483,9 @@
 
             <div class="box_blg_half_second">
               <div class="box_blg_half_icon_wd_second">
-                  <img alt="" src="assets/images/hrt_icon.png" />
-                  <img alt="" src="assets/images/share_icon.png" (click)="openShareModal(socialMedia, blogs[0]._id)" />
-                  <img alt="" src="assets/images/book_icon3.png" />
+                  <a><img alt="" src="assets/images/hrt_icon.png" /></a>
+                  <a><img alt="" src="assets/images/share_icon.png" (click)="openShareModal(socialMedia, 1)" /></a>
+                  <a><img alt="" src="assets/images/book_icon3.png" /></a>
               </div>
             </div>
           </div>
@@ -925,7 +925,29 @@
 </section>
 <!-- Testimonials end -->
 <ng-template #socialMedia>
-  <div class="modal-body">
+
+  <div class="modal-body fd_bc_rr">
+    <button type="button" class="close_km2" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true"><img src="../../../assets/images/cross.svg" /></span>
+    </button>
+    <div class="footer-modal">
+      <p>Share on your Social Media:</p>
+      <div class="social-icons">
+        <a href="http://www.facebook.com/writeawayystory" target="_blank"> <i
+            class="fa fa-facebook circle "></i></a>
+        <a href="http://www.instagram.com/writeawayystory" target="_blank"><i
+            class="fa fa-instagram circle"></i></a>
+        <a href="http://www.linkedin.com/in/writeawayystory" target="_blank"><i
+            class="fa fa-linkedin circle "></i></a>
+        <!-- <i class="fa  fa-google-plus circle google-icon"></i> -->
+      </div>
+      <p>Copy the link below:</p>
+      <input class="footer-email-input" placeholder="URL" type="email" [(ngModel)]="email">
+      <button class="email-btn ftr_mail_button" type="button" (click)="sendFeedBack()">Copy</button>
+    </div>
+  </div>
+  
+  <!-- <div class="modal-body">
     <span class="close">×</span>
     <div class="icon5" style="margin-bottom: 32px;">
       <h6 style="
@@ -936,8 +958,8 @@
         ">
         Share On social media
       </h6>
-      <!-- Your share button code -->
-      <!-- <div class="fb-share-button" data-href="http://demo.writeawayy.com/" data-layout="button"> -->
+      Your share button code 
+      <div class="fb-share-button" data-href="http://demo.writeawayy.com/" data-layout="button"> 
 
       <share-buttons [theme]="'material-light'" [include]="['facebook', 'twitter', 'linkedin', 'copy']" [show]="6"
         [size]="1" [url]="'http://write-away.knickglobal.co.in/'" [title]="'test'" [description]="'desc'" [image]="
@@ -947,7 +969,7 @@
       <div class="fb-share-button" data-href="http://demo.writeawayy.com/" data-layout="button"></div>
       <a class="fb-share-button fa fa-facebook circle5" (click)="postFb()" data-href="http://demo.writeawayy.com/"
         data-layout="button"><i></i></a>
-      <!--  (click)="blogShareLink('facebook')"  -->
+       (click)="blogShareLink('facebook')" 
       <a (click)="blogShareLink('instagram')"><i class="fa fa-instagram circle5"></i></a>
       <a (click)="blogShareLink('linkedin')"><i class="fa fa-linkedin circle5"></i></a>
       <a (click)="blogShareLink('google+')"><i class="fa fa-google-plus circle5"></i></a>
@@ -983,7 +1005,7 @@
         <img src="/assets/images/link.png" />
       </button>
     </div>
-  </div>
+  </div> -->
 </ng-template>
 
 <ng-template #template>
