@@ -15,7 +15,7 @@
                             <img src="assets/images/book.svg"/>
                         </div>
                         <div class="info">
-                            <div style="border-bottom: 1px solid #aeaeae;">1500</div>
+                            <div style="border-bottom: 1px solid #aeaeae;">{{reading.publication.reads}}</div>
                             <div>Reads</div>
                         </div>
                     </div>
@@ -39,68 +39,35 @@
                 <div style="flex:1">
                     <div class="title-bar w-100">
                         <div class="col-12 col-sm-9 col-md-9 title-text">
-                            <span>WRITING PROMPTS FOR GRADES</span>
+                            <span>{{reading.publication.title}}</span>
                         </div>
                         <div class="col-12 col-sm-3 col-md-3 stars">
-                            <img src="assets/images/star.svg" width="30px" />
-                            <img src="assets/images/star.svg" width="30px" />
-                            <img src="assets/images/star.svg" width="30px" />
-                            <img src="assets/images/star.svg" width="30px" />
-                            <img src="assets/images/star.svg" width="30px" />
+                            <img *ngIf="reading.publication.rating > 0" src="assets/images/star.svg" width="30px" />
+                            <img *ngIf="reading.publication.rating > 1" src="assets/images/star.svg" width="30px" />
+                            <img *ngIf="reading.publication.rating > 2" src="assets/images/star.svg" width="30px" />
+                            <img *ngIf="reading.publication.rating > 3" src="assets/images/star.svg" width="30px" />
+                            <img *ngIf="reading.publication.rating > 4" src="assets/images/star.svg" width="30px" />
                         </div>
                     </div>
                     <div class="genres-outer">
                         <div class="genres">
-                            <b>Genres:</b> Fantasy, Classic
+                            <b>Genres:</b> {{reading.publication.genres}}
                         </div>
                         <div class="date">
-                            <b>June 24, 2020</b>
+                            <b>{{reading.publication.created_at}}</b>
                         </div>
                     </div>
 
                     <div class="content-list-outer">
                         <h1>Contents</h1>
-                        <h2>Theme Name (If Any)</h2>
-
+                        <h2>{{reading.volumes[currentVol].name}}</h2>
                         <div class="list-outer">
-                            <div class="item">
-                                <div class="topic">
-                                    1. Topic
+                            <div class="item" *ngFor="let x of reading.volumes[currentVol].topics; let i = index" (click)="loadTopic(x)">
+                                <div class="topic" style="cursor: pointer;">
+                                    {{i+1}}. {{x.title}}
                                 </div>
                                 <div class="byname">
-                                    by Ricky Pointing
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="topic">
-                                    2. Topic
-                                </div>
-                                <div class="byname">
-                                    by Ricky Pointing
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="topic">
-                                    3. Topic
-                                </div>
-                                <div class="byname">
-                                    by Ricky Pointing
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="topic">
-                                    4. Topic
-                                </div>
-                                <div class="byname">
-                                    by Ricky Pointing
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="topic">
-                                    5. Topic
-                                </div>
-                                <div class="byname">
-                                    by Ricky Pointing
+                                    by {{x.created_by}}
                                 </div>
                             </div>
                         </div>
@@ -108,7 +75,7 @@
                 </div>
 
                 <div class="pagination py-3">
-                    <div class="pagenumber">&lt; <span class="currentpage">3</span> / 10 &gt;</div>
+                    <div class="pagenumber"><span style="cursor: pointer;" (click)="decrement()">&lt;</span><span class="currentpage"> {{currentVol + 1}} </span> / {{reading.volumes.length}} <span style="cursor: pointer;" (click)="increment()">&gt;</span></div>
                 </div>
                 
             </div>
@@ -116,7 +83,7 @@
         </div>
     </div>
 
-    <div class="bottom-section-outer">
+    <div class="bottom-section-outer" *ngIf="currentTopic != null">
         <div class="bottom-section">
             <div class="photo-outer">
                 <div class="photo" style="background: url('assets/images/writeaway-banner.png')">
@@ -124,18 +91,11 @@
             </div>
            
             <div class="title">
-                Topic Name By Ricky Pointing
+                {{currentTopic.title}}
             </div>
 
             <div class="content-text">
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-
-                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                {{currentTopic.content}}
             </div>
 
             <div style="clear:both"></div>
@@ -148,28 +108,20 @@
                                 <img src="assets/images/book.svg"/>
                             </div>
                             <div class="info">
-                                <div style="border-bottom: 1px solid #aeaeae;">1500</div>
+                                <div style="border-bottom: 1px solid #aeaeae;">{{currentTopic.reads}}</div>
                                 <div>Reads</div>
                             </div>
                         </div>
                         <div class="social-icon mr-4" style="width:100px; min-width: 100px;">
-                            <div class="px-1">
-                                <img src="assets/images/hrt_icon.png">
-                            </div>
-                            <div class="px-1">
-                                <img src="assets/images/share_icon.png">
-                            </div>
-                            <div class="px-1">
-                                <img src="assets/images/bookmark.svg">
-                            </div>
+                            <div class="px-1"><img src="assets/images/hrt_icon.png"></div>
                         </div>
 
                         <div class="stars">
-                            <img src="assets/images/star.svg" width="30px" />
-                            <img src="assets/images/star.svg" width="30px" />
-                            <img src="assets/images/star.svg" width="30px" />
-                            <img src="assets/images/star.svg" width="30px" />
-                            <img src="assets/images/star.svg" width="30px" />
+                            <img *ngIf="currentTopic.rating > 0" src="assets/images/star.svg" width="30px" />
+                            <img *ngIf="currentTopic.rating > 1" src="assets/images/star.svg" width="30px" />
+                            <img *ngIf="currentTopic.rating > 2" src="assets/images/star.svg" width="30px" />
+                            <img *ngIf="currentTopic.rating > 3" src="assets/images/star.svg" width="30px" />
+                            <img *ngIf="currentTopic.rating > 4" src="assets/images/star.svg" width="30px" />
                         </div>
                     </div>
                     <div class="col-12 col-md-4 d-flex justify-content-center align-items-center  mb-2">
