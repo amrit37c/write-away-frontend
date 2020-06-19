@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef } from "@angular/core";
 import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
 import { BsModalService, BsModalRef, ModalOptions } from "ngx-bootstrap/modal";
+import { ToastrService } from 'ngx-toastr';
 import {
   FormGroup,
   FormBuilder,
@@ -73,7 +74,8 @@ export class HeaderComponent implements OnInit {
     private modalService: BsModalService,
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private _cookieService: CookieService
+    private _cookieService: CookieService,
+    private toastr: ToastrService
   ) {
     this.router.events.subscribe((evt) => {
       if (!(evt instanceof NavigationEnd)) {
@@ -334,6 +336,11 @@ export class HeaderComponent implements OnInit {
         this.router.onSameUrlNavigation = "reload";
         this.router.navigate(["/home"]);
       }
+
+      if(_response.status == 200 && _response.body.status == 'Failure') {
+        this.toastr.error('Oops! The Username and/or Password does not match. Please try again!');
+      }
+
       if (_response.body.message === "Please verify account first") {
         this.enableSignInOTP = true;
       }

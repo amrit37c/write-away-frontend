@@ -26,6 +26,9 @@ import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { CookieService } from "angular2-cookie/services/cookies.service";
 import { Platform } from "@angular/cdk/platform";
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { ToastrModule } from 'ngx-toastr';
+ 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +43,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     BrowserAnimationsModule,
     AppRoutingModule,
     CommonModule,
+    ToastrModule,
     ComponentsModule,
     EditorModule,
     ModalModule.forRoot(),
@@ -47,6 +51,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     ReactiveFormsModule,
     HttpClientModule,
     BsDropdownModule.forRoot(),
+    ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [CookieService, Platform],
   bootstrap: [AppComponent],
