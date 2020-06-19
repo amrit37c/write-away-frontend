@@ -185,21 +185,14 @@
               ? updateBlogBookMark(blogs[0])
               : saveBlogBookMark(blogs[0])
           "></i> -->
-            <a (click)="
-                blogs.length && blogs[0] && blogs[0].like
-                  ? updateBlogLike(blogs[0])
-                  : saveBlogLike(blogs[0])
-              ">
+            <a (click)="blogs.length && blogs[0] && blogs[0].like ? updateBlogLike(blogs[0]) : saveBlogLike(blogs[0])">
               <img alt="" [src]="blogLikeStatus()" />
             </a>
             <a (click)="openShareModal(socialMedia, blogs[0]._id)">
               <img alt="" src="assets/images/share_icon.png" />
             </a>
-            <a (click)="
-                blogs.length && blogs[0] && blogs[0].bookmark
-                  ? updateBlogBookMark(blogs[0])
-                  : saveBlogBookMark(blogs[0])
-              ">
+            <a
+              (click)="blogs.length && blogs[0] && blogs[0].bookmark ? updateBlogBookMark(blogs[0]) : saveBlogBookMark(blogs[0])">
               <img alt="" [src]="blogBookMarkStatus()" />
             </a>
           </div>
@@ -318,7 +311,8 @@
         Titles <span> {{ openPublications.length }}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Genres <span> {{ openPublicationGenresCount }}</span>
       </p>
-      <a routerLink="/publish" class="veiw_al_btn">View All <i _ngcontent-tmm-c3="" class="fa fa-long-arrow-right"></i></a>
+      <a routerLink="/publish" class="veiw_al_btn">View All <i _ngcontent-tmm-c3=""
+          class="fa fa-long-arrow-right"></i></a>
       <div class="box_2_blogs" *ngIf="openPublications.length">
         <div class="b1st_blog">
           <!-- <img src="/assets/images/read-away-publish.jpg" /> -->
@@ -489,15 +483,9 @@
 
             <div class="box_blg_half_second">
               <div class="box_blg_half_icon_wd_second">
-                <a href="#">
                   <img alt="" src="assets/images/hrt_icon.png" />
-                </a>
-                <a href="#">
-                  <img alt="" src="assets/images/share_icon.png" />
-                </a>
-                <a href="#">
+                  <img alt="" src="assets/images/share_icon.png" (click)="openShareModal(socialMedia, blogs[0]._id)" />
                   <img alt="" src="assets/images/book_icon3.png" />
-                </a>
               </div>
             </div>
           </div>
@@ -506,8 +494,8 @@
         <div class="b1st_blog_des">
           <h3 class="text-uppercase">FIREFLIES <span>- some shiny short stories</span></h3>
           <p>
-            <span class="b1st_blog_des_spn1">"Oh the summer night has a smile of light!"<br/>-Barry cornwall</span>
-              
+            <span class="b1st_blog_des_spn1">"Oh the summer night has a smile of light!"<br />-Barry cornwall</span>
+
             The sparkle of firelies on a warm summer night give us wonder and cheer.
             In the darkness of existing times, each story like a firefly -full of brightness, pulsing with
             excitment and lightening up hearts and minds! Enjoy reading them as much as your bright young authors
@@ -1016,8 +1004,8 @@
   <div class="modal-body modal-content_km">
     <div class="know-more-info col_bg_aqua">
       <button type="button" class="close_km" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true"><img src="../../../assets/images/cross.svg" /></span>
-    </button>
+        <span aria-hidden="true"><img src="../../../assets/images/cross.svg" /></span>
+      </button>
       <ul class="know-more-ul">
         <span>.</span>
         <li>

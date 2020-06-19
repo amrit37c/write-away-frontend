@@ -487,9 +487,9 @@ export class HeaderComponent implements OnInit {
           this.emailSend = true;
         }
         if (resent) {
-          alert("Mail Send done, Please check your inbox!");
+          this.toastr.success("Mail Send done, Please check your inbox!");
         } else {
-          alert(_response.body.message);
+          this.toastr.error(_response.body.message);
         }
       });
     }
